@@ -1,451 +1,252 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Options Scanner Dashboard</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<style>
-:root{--navy:#1F3864;--blue:#2E75B6;--lb:#D5E8F0;--green:#145214;--lg:#E2EFDA;
-  --red:#7B0000;--lr:#FCE4D6;--orange:#C55A11;--gold:#7B5B00;
-  --gray:#F2F2F2;--dg:#595959;--white:#fff;--bg:#0d1117;--card:#161b22;--border:#30363d;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:#c9d1d9;min-height:100vh;}
-header{background:linear-gradient(135deg,#1F3864,#2E75B6);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
-header h1{font-size:1.35rem;color:#fff;font-weight:700;letter-spacing:.3px;}
-header h1 span{font-size:.85rem;font-weight:400;color:#8b949e;margin-left:10px;}
-#last-update{font-size:.78rem;color:#8b949e;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;padding:18px 20px;}
-.wide{grid-column:1/-1;}
-.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;transition:box-shadow .2s;}
-.card:hover{box-shadow:0 0 0 1px var(--blue);}
-.card-title{font-size:.75rem;color:#8b949e;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
-.card-title .dot{width:8px;height:8px;border-radius:50%;}
-.dot-green{background:#238636;} .dot-red{background:#da3633;} .dot-blue{background:#388bfd;} .dot-orange{background:#d18616;} .dot-gray{background:#8b949e;}
-.stat-big{font-size:2.2rem;font-weight:700;line-height:1;}
-.stat-sub{font-size:.8rem;color:#8b949e;margin-top:4px;}
-.bull{color:#3fb950;} .bear{color:#f85149;} .neutral{color:#8b949e;}
-.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.72rem;font-weight:600;}
-.badge-bull{background:#1b4332;color:#3fb950;} .badge-bear{background:#3d0c0a;color:#f85149;} .badge-neutral{background:#21262d;color:#8b949e;}
-table{width:100%;border-collapse:collapse;font-size:.82rem;}
-th{color:#8b949e;font-weight:600;padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);font-size:.73rem;text-transform:uppercase;letter-spacing:.5px;}
-td{padding:8px 10px;border-bottom:1px solid #21262d;}
-tr:hover td{background:#1c2128;}
-.bar-container{background:#21262d;border-radius:4px;height:6px;margin-top:4px;}
-.bar-fill{height:6px;border-radius:4px;transition:width .6s ease;}
-.bar-bull{background:linear-gradient(90deg,#238636,#3fb950);}
-.bar-bear{background:linear-gradient(90deg,#da3633,#f85149);}
-.tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:.7rem;}
-.tag-bull{background:#1b4332;color:#3fb950;} .tag-bear{background:#3d0c0a;color:#f85149;} .tag-short-call{background:#3a2200;color:#d18616;}
-.section-title{font-size:1rem;font-weight:700;color:#e6edf3;padding:14px 20px 4px;border-bottom:1px solid var(--border);}
-.gamma-wall{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #21262d;}
-.gamma-strike{font-size:1.05rem;font-weight:700;color:#e6edf3;min-width:80px;}
-.gamma-bar-bg{flex:1;background:#21262d;border-radius:4px;height:14px;position:relative;}
-.gamma-bar-fill{height:14px;border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:.7rem;font-weight:600;color:#fff;}
-.gamma-vol{font-size:.8rem;color:#8b949e;min-width:70px;text-align:right;}
-.signal-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #21262d;font-size:.82rem;}
-.signal-time{color:#8b949e;min-width:55px;font-family:monospace;}
-.signal-opt{min-width:70px;}
-.signal-strike{font-weight:700;color:#e6edf3;min-width:60px;}
-.signal-vol{color:#8b949e;min-width:60px;}
-.signal-prem{font-weight:600;min-width:65px;}
-.signal-dir{min-width:80px;}
-.loading{color:#8b949e;text-align:center;padding:40px;font-size:.9rem;}
-.error{color:#f85149;text-align:center;padding:20px;font-size:.85rem;}
-.refresh-btn{background:#21262d;border:1px solid var(--border);color:#c9d1d9;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:.78rem;}
-.refresh-btn:hover{background:#30363d;}
-canvas{max-height:180px;}
-#spx-price{font-size:2.4rem;}
-.alert-box{background:#21262d;border-left:3px solid var(--orange);padding:10px 14px;border-radius:0 6px 6px 0;margin:4px 0;font-size:.82rem;}
-.alert-box.bull{border-left-color:#3fb950;} .alert-box.bear{border-left-color:#f85149;}
-.key-level{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #21262d;}
-.key-level-price{font-size:1.1rem;font-weight:700;}
-.key-level-label{font-size:.75rem;color:#8b949e;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options Scanner Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0e17; color: #e1e5eb; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { text-align: center; color: #00d4ff; margin-bottom: 30px; font-size: 2em; }
+        .section { background: #151b2e; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #2a3555; }
+        .section h2 { color: #00d4ff; margin-bottom: 15px; font-size: 1.3em; border-bottom: 2px solid #2a3555; padding-bottom: 10px; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .metric { background: #1a2332; padding: 15px; border-radius: 8px; border-left: 4px solid #00d4ff; }
+        .metric label { display: block; color: #8892a8; font-size: 0.85em; margin-bottom: 5px; }
+        .metric .value { font-size: 1.5em; font-weight: bold; color: #00d4ff; }
+        .metric .value.negative { color: #ff4757; }
+        .metric .value.positive { color: #2ed573; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #2a3555; }
+        th { background: #1a2332; color: #00d4ff; font-weight: 600; }
+        tr:hover { background: #1a2332; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 0.85em; font-weight: 600; }
+        .badge.put { background: #ff4757; color: white; }
+        .badge.call { background: #2ed573; color: white; }
+        .badge.neutral { background: #ffa502; color: white; }
+        .loading { text-align: center; color: #8892a8; padding: 40px; }
+        .error { background: #ff4757; color: white; padding: 15px; border-radius: 8px; margin: 10px 0; }
+        #last-update { text-align: center; color: #8892a8; margin-top: 30px; font-size: 0.9em; }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>📊 Options Scanner Dashboard</h1>
 
-<header>
-  <div>
-    <h1>📊 Options Scanner <span>实时期权流仪表盘</span></h1>
-    <div id="last-update">正在加载...</div>
-  </div>
-  <div style="display:flex;gap:8px;align-items:center;">
-    <button class="refresh-btn" onclick="loadAll()">🔄 刷新</button>
-    <a href="https://github.com/liujuandalian/OptionScannerSnapshots" target="_blank"
-       style="color:#8b949e;font-size:.78rem;text-decoration:none;">GitHub ↗</a>
-  </div>
-</header>
-
-<!-- SPX 核心指标 -->
-<div class="section-title">📈 SPX 盘中指标</div>
-<div class="grid">
-  <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>SPX 收盘价</div>
-    <div id="spx-price" class="stat-big">—</div>
-    <div class="stat-sub" id="spx-date">—</div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>净Delta敞口</div>
-    <div class="stat-big" id="net-delta">—</div>
-    <div class="stat-sub" id="delta-dir">—</div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-orange"></span>0DTE 信号方向</div>
-    <div class="stat-big" id="dte-dir">—</div>
-    <div class="stat-sub" id="dte-prem">—</div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-orange"></span>SHORT CALL 占比</div>
-    <div class="stat-big" id="short-call-pct">—</div>
-    <div class="stat-sub">⚠️ >40% 为偏空警戒</div>
-    <div class="bar-container" style="margin-top:8px;">
-      <div class="bar-fill bar-bear" id="short-call-bar" style="width:0%"></div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>0DTE CALL 权利金</div>
-    <div class="stat-big bull" id="call-prem">—</div>
-    <div class="stat-sub" id="call-count">—</div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-red"></span>0DTE PUT 权利金</div>
-    <div class="stat-big bear" id="put-prem">—</div>
-    <div class="stat-sub" id="put-count">—</div>
-  </div>
-</div>
-
-<!-- Gamma墙 -->
-<div class="section-title">🧲 Gamma墙（行权价集中度）</div>
-<div class="grid">
-  <div class="card wide" id="gamma-wall-card">
-    <div class="loading">加载中...</div>
-  </div>
-</div>
-
-<!-- 信号列表 -->
-<div class="section-title">⚡ 最新 SPX 大单（前20条）</div>
-<div class="grid">
-  <div class="card wide" id="signals-card">
-    <div class="loading">加载中...</div>
-  </div>
-</div>
-
-<!-- OI 分析 -->
-<div class="section-title">📊 OI 快照分析</div>
-<div class="grid">
-  <div class="card">
-    <div class="card-title"><span class="dot dot-green"></span>OI 盘前快照</div>
-    <div class="stat-big" id="oi-pre-tickers">—</div>
-    <div class="stat-sub">只标的</div>
-    <div style="margin-top:8px;font-size:.78rem;color:#8b949e;" id="oi-pre-time">—</div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>OI 核心快照</div>
-    <div class="stat-big" id="oi-core-tickers">—</div>
-    <div class="stat-sub">只标的（72只核心）</div>
-    <div style="margin-top:8px;font-size:.78rem;color:#8b949e;" id="oi-core-time">—</div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-orange"></span>OI 变化报告</div>
-    <div style="display:flex;gap:20px;margin-top:4px;">
-      <div><div class="stat-big bull" id="oi-surging">—</div><div class="stat-sub">OI 激增</div></div>
-      <div><div class="stat-big bear" id="oi-shrinking">—</div><div class="stat-sub">OI 萎缩</div></div>
-    </div>
-    <div style="margin-top:8px;font-size:.78rem;color:#8b949e;" id="oi-report-time">—</div>
-  </div>
-</div>
-
-<!-- 期权流 TOP10 -->
-<div class="section-title">🔥 今日期权流 TOP10（净多空方向）</div>
-<div class="grid">
-  <div class="card wide" id="flow-card">
-    <div class="loading">加载中...</div>
-  </div>
-</div>
-
-<!-- 关键价位 -->
-<div class="section-title">🎯 关键价位 & 操作建议</div>
-<div class="grid">
-  <div class="card" id="key-levels-card">
-    <div class="card-title"><span class="dot dot-orange"></span>Gamma引力区间</div>
-    <div id="key-levels"><div class="loading">加载中...</div></div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>今日信号摘要</div>
-    <div id="signal-summary"><div class="loading">加载中...</div></div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-green"></span>AI分析（Claude）</div>
-    <div id="ai-analysis" style="font-size:.83rem;line-height:1.6;"><div class="loading">加载中...</div></div>
-  </div>
-</div>
-
-<div style="text-align:center;padding:20px;color:#8b949e;font-size:.75rem;">
-  数据来源：Schwab Options Scanner · 自动同步至 GitHub · 仅供参考，不构成投资建议
-</div>
-
-<script>
-const RAW = 'https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main';
-const fmtM = v => v >= 1e6 ? `$${(v/1e6).toFixed(2)}M` : v >= 1e3 ? `$${(v/1e3).toFixed(0)}K` : `$${v}`;
-const fmtN = v => v > 0 ? `+${v.toLocaleString()}` : v.toLocaleString();
-let latestData = {};
-
-async function fetchJSON(url) {
-  try {
-    const r = await fetch(url + '?t=' + Date.now());
-    if (!r.ok) return null;
-    return await r.json();
-  } catch { return null; }
-}
-
-async function loadLatest() {
-  const data = await fetchJSON(`${RAW}/data/latest.json`);
-  if (!data) return null;
-  latestData = data;
-  document.getElementById('last-update').textContent =
-    '最后更新：' + (data._updated || '—') + ' ET';
-  return data;
-}
-
-async function loadSPXEod(data) {
-  if (!data || !data.spx_eod) return;
-  const eod = await fetchJSON(`${RAW}/${data.spx_eod.github_path}`);
-  if (!eod) return;
-
-  // SPX 价格
-  const close = eod.spx_close || 0;
-  document.getElementById('spx-price').textContent = close ? `$${close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}` : '—';
-  document.getElementById('spx-date').textContent = eod.date || '—';
-
-  // 0DTE 方向
-  const d0 = eod['0dte'] || {};
-  const net0 = d0.net_prem || 0;
-  const dir0 = d0.net_dir || 'NONE';
-  const dirEl = document.getElementById('dte-dir');
-  dirEl.textContent = dir0 === 'BULL' ? '🟢 净多头' : dir0 === 'BEAR' ? '🔴 净空头' : '⬜ 中性';
-  dirEl.className = 'stat-big ' + (dir0==='BULL'?'bull':dir0==='BEAR'?'bear':'neutral');
-  document.getElementById('dte-prem').textContent = fmtM(Math.abs(net0));
-
-  // Call/Put 权利金
-  document.getElementById('call-prem').textContent = fmtM(d0.bull_prem || 0);
-  document.getElementById('call-count').textContent = `${d0.bull_count || 0} 条CALL信号`;
-  document.getElementById('put-prem').textContent = fmtM(d0.bear_prem || 0);
-  document.getElementById('put-count').textContent = `${d0.bear_count || 0} 条PUT信号`;
-
-  // 从信号中统计 Delta 和 SHORT CALL
-  const sigs = d0.signals || [];
-  loadSignals(sigs);
-  buildGammaWall(sigs);
-  buildSignalSummary(sigs, eod);
-}
-
-function loadSignals(sigs) {
-  // 净Delta
-  let netDelta = 0;
-  let shortCallVol = 0, totalVol = 0;
-  sigs.forEach(s => {
-    const posSign = s.position === 'SHORT' ? -1 : 1;
-    const optSign = s.opt_type === 'CALL' ? 1 : -1;
-    netDelta += s.volume * Math.abs(s.delta || 0) * posSign * optSign;
-    totalVol += s.volume;
-    if (s.position === 'SHORT' && s.opt_type === 'CALL') shortCallVol += s.volume;
-  });
-  const deltaEl = document.getElementById('net-delta');
-  deltaEl.textContent = fmtN(Math.round(netDelta));
-  deltaEl.className = 'stat-big ' + (netDelta > 0 ? 'bull' : 'bear');
-  document.getElementById('delta-dir').textContent = netDelta > 0 ? '偏多头方向' : '偏空头方向';
-
-  const scPct = totalVol > 0 ? shortCallVol / totalVol * 100 : 0;
-  document.getElementById('short-call-pct').textContent = scPct.toFixed(1) + '%';
-  document.getElementById('short-call-pct').className = 'stat-big ' + (scPct > 40 ? 'bear' : 'neutral');
-  document.getElementById('short-call-bar').style.width = Math.min(scPct, 100) + '%';
-
-  // 信号列表（最新20条）
-  const card = document.getElementById('signals-card');
-  const top20 = [...sigs].reverse().slice(0, 20);
-  if (!top20.length) { card.innerHTML = '<div class="loading">暂无信号</div>'; return; }
-  card.innerHTML = top20.map(s => {
-    const isBull = s.direction === 'BULL';
-    const isShortCall = s.position === 'SHORT' && s.opt_type === 'CALL';
-    const tagCls = isShortCall ? 'tag-short-call' : isBull ? 'tag-bull' : 'tag-bear';
-    const tagText = isShortCall ? '卖Call⚠️' : isBull ? '看涨' : '看跌';
-    const prem = s.est_premium || 0;
-    return `<div class="signal-row">
-      <span class="signal-time">${(s.ts||'').slice(0,5)}</span>
-      <span class="signal-opt">${s.opt_type||''}${s.position==='SHORT'?'(卖)':''}</span>
-      <span class="signal-strike">$${(s.strike||0).toLocaleString()}</span>
-      <span class="signal-vol">Vol:${(s.volume||0).toLocaleString()}</span>
-      <span class="signal-prem ${isBull?'bull':'bear'}">${fmtM(prem)}</span>
-      <span class="tag ${tagCls}">${tagText}</span>
-      <span style="font-size:.75rem;color:#8b949e;">IV:${(s.iv||0).toFixed(1)}%</span>
-    </div>`;
-  }).join('');
-}
-
-function buildGammaWall(sigs) {
-  const strikeVol = {};
-  const strikeShortCall = {};
-  sigs.forEach(s => {
-    const k = s.strike;
-    strikeVol[k] = (strikeVol[k]||0) + s.volume;
-    if (s.position==='SHORT' && s.opt_type==='CALL')
-      strikeShortCall[k] = (strikeShortCall[k]||0) + s.volume;
-  });
-  const sorted = Object.entries(strikeVol).sort((a,b)=>b[1]-a[1]).slice(0,10);
-  const maxVol = sorted[0]?.[1] || 1;
-  const card = document.getElementById('gamma-wall-card');
-  if (!sorted.length) { card.innerHTML='<div class="loading">暂无Gamma墙数据</div>'; return; }
-  card.innerHTML = sorted.map(([strike, vol]) => {
-    const pct = vol / maxVol * 100;
-    const scVol = strikeShortCall[strike] || 0;
-    const scPct = vol > 0 ? scVol/vol*100 : 0;
-    const color = scPct > 50 ? '#f85149' : scPct > 30 ? '#d18616' : '#3fb950';
-    return `<div class="gamma-wall">
-      <span class="gamma-strike">$${parseFloat(strike).toLocaleString()}</span>
-      <div class="gamma-bar-bg">
-        <div class="gamma-bar-fill" style="width:${pct}%;background:${color};">
-          ${scPct>30?'SHORT CALL '+(scPct.toFixed(0))+'%':''}
+        <!-- SPX 指标 -->
+        <div class="section">
+            <h2>📈 SPX 盘中指标</h2>
+            <div class="metric-grid" id="spx-metrics">
+                <div class="loading">加载中...</div>
+            </div>
         </div>
-      </div>
-      <span class="gamma-vol">${vol.toLocaleString()}张</span>
-    </div>`;
-  }).join('') + `<div style="font-size:.73rem;color:#8b949e;margin-top:8px;">
-    🔴红色=SHORT CALL占比>50%（强阻力）·🟡橙色=30-50%·🟢绿色=LONG CALL为主（支撑）
-  </div>`;
 
-  // 关键价位
-  const kl = document.getElementById('key-levels');
-  const top3 = sorted.slice(0,3);
-  kl.innerHTML = top3.map(([strike, vol], i) => {
-    const sc = strikeShortCall[strike] || 0;
-    const scP = vol>0?sc/vol*100:0;
-    const label = scP>50 ? '强阻力（大量SHORT CALL）' : i===0 ? 'Gamma墙最强磁铁' : 'Gamma引力区';
-    const cls = scP>50?'bear':i===0?'neutral':'bull';
-    return `<div class="key-level">
-      <div>
-        <div class="key-level-price ${cls}">$${parseFloat(strike).toLocaleString()}</div>
-        <div class="key-level-label">${label}</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:.82rem;">${vol.toLocaleString()}张</div>
-        <div style="font-size:.72rem;color:#8b949e;">SHORT CALL ${scP.toFixed(0)}%</div>
-      </div>
-    </div>`;
-  }).join('');
-}
+        <!-- OI 快照分析 -->
+        <div class="section">
+            <h2>📊 OI 快照分析 (2026-06-06)</h2>
+            <div id="oi-analysis">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
 
-function buildSignalSummary(sigs, eod) {
-  const el = document.getElementById('signal-summary');
-  const total = sigs.length;
-  const bull = sigs.filter(s=>s.direction==='BULL').length;
-  const bear = total - bull;
-  const shortCall = sigs.filter(s=>s.position==='SHORT'&&s.opt_type==='CALL').length;
-  const longPut = sigs.filter(s=>s.position==='LONG'&&s.opt_type==='PUT').length;
-  const bullPct = total>0?bull/total*100:0;
-  const scPct = total>0?shortCall/total*100:0;
-  const warn = scPct>40||longPut>0;
-  el.innerHTML = `
-    <div style="font-size:.83rem;line-height:2;">
-      <div>总信号数：<b>${total}</b></div>
-      <div>看涨信号：<b class="bull">${bull}</b>（${bullPct.toFixed(0)}%）</div>
-      <div>看跌信号：<b class="bear">${bear}</b></div>
-      <div>SHORT CALL：<b class="${scPct>40?'bear':'neutral'}">${shortCall}（${scPct.toFixed(0)}%）${scPct>40?'⚠️':''}</b></div>
-      <div>LONG PUT：<b class="${longPut>0?'bear':'neutral'}">${longPut}${longPut>0?'  🚨早盘空头信号！':''}</b></div>
+        <!-- 期权流 TOP10 -->
+        <div class="section">
+            <h2>🔥 期权流 TOP10</h2>
+            <div id="alerts-top10">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+
+        <!-- 完整 Alerts 表格 -->
+        <div class="section">
+            <h2>⚡ 完整 Alerts (最近 100 条)</h2>
+            <div id="alerts-table">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+
+        <div id="last-update">最后更新: <span id="update-time">—</span></div>
     </div>
-    ${warn?`<div class="alert-box bear" style="margin-top:10px;">⚠️ 早盘预警：SHORT CALL${scPct>40?'占比'+scPct.toFixed(0)+'%（>40%警戒线）':''}${longPut>0?'，出现LONG PUT信号':''}，方向偏空</div>`:''}`;
 
-  // AI分析（从信号中提取）
-  const aiEl = document.getElementById('ai-analysis');
-  const strikes = {};
-  sigs.forEach(s=>{ strikes[s.strike]=(strikes[s.strike]||0)+s.volume; });
-  const topK = Object.entries(strikes).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k])=>'$'+parseFloat(k).toLocaleString());
-  const dir = (eod['0dte']||{}).net_dir;
-  aiEl.innerHTML = `<div style="line-height:1.7;color:#c9d1d9;">
-    ${dir==='BEAR'?'<div class="alert-box bear">🔴 0DTE净空头，机构偏空。</div>':dir==='BULL'?'<div class="alert-box bull">🟢 0DTE净多头，机构偏多。</div>':''}
-    <div style="margin-top:8px;">
-    📍 最大Gamma墙：${topK.join(' | ')}<br>
-    📊 SHORT CALL占比：${scPct.toFixed(1)}%${scPct>40?'（偏空预警）':''}<br>
-    ${longPut>0?`🚨 出现${longPut}条LONG PUT，是早盘空头最早信号<br>`:''}
-    💡 操作参考：Gamma墙最大处（${topK[0]||'—'}）是今日最强价格磁铁，价格容易被"吸附"在附近。
-    </div>
-  </div>`;
-}
+    <script>
+        const REPO_BASE = 'https://liujuandalian.github.io/OptionScannerSnapshots';
 
-async function loadFlow(data) {
-  if (!data || !data.alerts_full) {
-    document.getElementById('flow-card').innerHTML='<div class="loading">暂无期权流数据</div>';
-    return;
-  }
-  const alerts = await fetchJSON(`${RAW}/${data.alerts_full.github_path}`);
-  if (!alerts || !Array.isArray(alerts)) return;
+        async function fetchJSON(path) {
+            const url = `${REPO_BASE}/${path}?t=${Date.now()}`;
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error(`Failed to load ${path}`);
+            return resp.json();
+        }
 
-  const bp = alerts.filter(x=>x.signal_type==='BIG_PREMIUM');
-  const flow = {};
-  bp.forEach(a => {
-    const t = a.ticker; if(!t) return;
-    if(!flow[t]) flow[t]={bull:0,bear:0,count:0};
-    const p = a.est_premium||0;
-    if(a.direction==='BULLISH') flow[t].bull+=p;
-    else flow[t].bear+=p;
-    flow[t].count++;
-  });
-  const nets = Object.entries(flow)
-    .map(([t,v])=>({t,net:v.bull-v.bear,bull:v.bull,bear:v.bear,count:v.count}))
-    .sort((a,b)=>Math.abs(b.net)-Math.abs(a.net)).slice(0,10);
+        function formatNumber(num) {
+            if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+            if (num >= 1e3) return (num / 1e3).toFixed(1) + 'K';
+            return num.toString();
+        }
 
-  const maxAbs = Math.max(...nets.map(r=>Math.abs(r.net)), 1);
-  const card = document.getElementById('flow-card');
-  card.innerHTML = `<table>
-    <tr><th>标的</th><th>净流量</th><th>多头</th><th>空头</th><th>信号数</th><th>方向</th><th>流量图</th></tr>
-    ${nets.map(r=>{
-      const isBull = r.net>0;
-      const pct = Math.abs(r.net)/maxAbs*100;
-      return `<tr>
-        <td><b>${r.t}</b></td>
-        <td class="${isBull?'bull':'bear'}" style="font-weight:700;">${fmtM(Math.abs(r.net))}</td>
-        <td class="bull">${fmtM(r.bull)}</td>
-        <td class="bear">${fmtM(r.bear)}</td>
-        <td>${r.count}</td>
-        <td><span class="badge ${isBull?'badge-bull':'badge-bear'}">${isBull?'🟢 净多头':'🔴 净空头'}</span></td>
-        <td style="min-width:120px;">
-          <div class="bar-container">
-            <div class="bar-fill ${isBull?'bar-bull':'bar-bear'}" style="width:${pct}%"></div>
-          </div>
-        </td>
-      </tr>`;
-    }).join('')}
-  </table>`;
-}
+        // 加载 SPX 数据
+        async function loadSPX() {
+            try {
+                const data = await fetchJSON('SPXalerts/spx_eod_20260605.json');
+                const html = `
+                    <div class="metric">
+                        <label>SPX 收盘价</label>
+                        <div class="value">${data.closing_price || '—'}</div>
+                    </div>
+                    <div class="metric">
+                        <label>净 Delta 敞口</label>
+                        <div class="value ${data.net_delta > 0 ? 'positive' : 'negative'}">${data.net_delta || '—'}</div>
+                    </div>
+                    <div class="metric">
+                        <label>0DTE 信号方向</label>
+                        <div class="value">${data.signal_direction || '—'}</div>
+                    </div>
+                `;
+                document.getElementById('spx-metrics').innerHTML = html;
+            } catch (e) {
+                document.getElementById('spx-metrics').innerHTML = `<div class="error">SPX 数据加载失败: ${e.message}</div>`;
+            }
+        }
 
-async function loadOI(data) {
-  if (data?.oi_pre_mkt) {
-    document.getElementById('oi-pre-tickers').textContent = data.oi_pre_mkt.summary?.tickers || '—';
-    document.getElementById('oi-pre-time').textContent = '更新：' + (data.oi_pre_mkt.upload_time||'—');
-  }
-  if (data?.oi_core72) {
-    document.getElementById('oi-core-tickers').textContent = data.oi_core72.summary?.tickers || '—';
-    document.getElementById('oi-core-time').textContent = '更新：' + (data.oi_core72.upload_time||'—');
-  }
-  if (data?.oi_report) {
-    document.getElementById('oi-surging').textContent = data.oi_report.summary?.surging || '—';
-    document.getElementById('oi-shrinking').textContent = data.oi_report.summary?.shrinking || '—';
-    document.getElementById('oi-report-time').textContent = '更新：' + (data.oi_report.upload_time||'—');
-  }
-}
+        // 加载 OI 分析
+        async function loadOI() {
+            try {
+                const data = await fetchJSON('oi_snapshots/oi_snapshot_20260606.json');
+                const summary = data.summary;
+                
+                let html = `
+                    <div class="metric-grid">
+                        <div class="metric">
+                            <label>总标的数</label>
+                            <div class="value">${summary.total_tickers}</div>
+                        </div>
+                        <div class="metric">
+                            <label>Put 主导</label>
+                            <div class="value negative">${summary.put_dominant} 只</div>
+                        </div>
+                        <div class="metric">
+                            <label>Call 主导</label>
+                            <div class="value positive">${summary.call_dominant} 只</div>
+                        </div>
+                        <div class="metric">
+                            <label>市场情绪</label>
+                            <div class="value">${summary.market_sentiment}</div>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 20px; color: #ff4757;">🔴 Put 激增 TOP 3</h3>
+                    <table>
+                        <tr><th>标的</th><th>Put OI 增量</th></tr>
+                        ${summary.top_put_surge.map(t => `
+                            <tr>
+                                <td><strong>${t.ticker}</strong></td>
+                                <td class="negative">+${formatNumber(t.put_oi_add)}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                    <h3 style="margin-top: 20px; color: #2ed573;">🟢 Call 激增 TOP 3</h3>
+                    <table>
+                        <tr><th>标的</th><th>Call OI 增量</th></tr>
+                        ${summary.top_call_surge.map(t => `
+                            <tr>
+                                <td><strong>${t.ticker}</strong></td>
+                                <td class="positive">+${formatNumber(t.call_oi_add)}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                `;
+                
+                document.getElementById('oi-analysis').innerHTML = html;
+            } catch (e) {
+                document.getElementById('oi-analysis').innerHTML = `<div class="error">OI 数据加载失败: ${e.message}</div>`;
+            }
+        }
 
-async function loadAll() {
-  document.getElementById('last-update').textContent = '刷新中...';
-  const latest = await loadLatest();
-  if (!latest) {
-    document.getElementById('last-update').textContent = '❌ 无法加载数据，请检查网络或仓库设置';
-    return;
-  }
-  await Promise.all([loadSPXEod(latest), loadFlow(latest), loadOI(latest)]);
-}
+        // 加载 Alerts TOP10
+        async function loadAlertsTop10() {
+            try {
+                const data = await fetchJSON('alerts/alerts_20260605_slim.json');
+                const alerts = data.slice(0, 10);
+                
+                let html = `
+                    <table>
+                        <tr>
+                            <th>时间</th>
+                            <th>标的</th>
+                            <th>类型</th>
+                            <th>方向</th>
+                            <th>权利金</th>
+                        </tr>
+                        ${alerts.map(a => `
+                            <tr>
+                                <td>${new Date(a.timestamp).toLocaleTimeString('zh-CN')}</td>
+                                <td><strong>${a.ticker}</strong></td>
+                                <td><span class="badge ${a.signal_type.includes('PUT') ? 'put' : 'call'}">${a.signal_type}</span></td>
+                                <td class="${a.direction === 'BULLISH' ? 'positive' : 'negative'}">${a.direction}</td>
+                                <td>$${formatNumber(a.est_premium)}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                `;
+                
+                document.getElementById('alerts-top10').innerHTML = html;
+            } catch (e) {
+                document.getElementById('alerts-top10').innerHTML = `<div class="error">Alerts 数据加载失败: ${e.message}</div>`;
+            }
+        }
 
-loadAll();
-setInterval(loadAll, 5 * 60 * 1000); // 每5分钟自动刷新
-</script>
+        // 加载完整 Alerts 表格
+        async function loadAlertsTable() {
+            try {
+                const data = await fetchJSON('alerts/alerts_20260605_slim.json');
+                const alerts = data.slice(0, 100);
+                
+                let html = `
+                    <table>
+                        <tr>
+                            <th>时间</th>
+                            <th>标的</th>
+                            <th>类型</th>
+                            <th>行权价</th>
+                            <th>到期日</th>
+                            <th>Volume</th>
+                            <th>OI</th>
+                            <th>权利金</th>
+                        </tr>
+                        ${alerts.map(a => `
+                            <tr>
+                                <td>${new Date(a.timestamp).toLocaleString('zh-CN')}</td>
+                                <td><strong>${a.ticker}</strong></td>
+                                <td><span class="badge ${a.option_type === 'PUT' ? 'put' : 'call'}">${a.option_type}</span></td>
+                                <td>${a.strike}</td>
+                                <td>${a.expiry}</td>
+                                <td>${formatNumber(a.volume)}</td>
+                                <td>${formatNumber(a.open_interest)}</td>
+                                <td>$${formatNumber(a.est_premium)}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                `;
+                
+                document.getElementById('alerts-table').innerHTML = html;
+            } catch (e) {
+                document.getElementById('alerts-table').innerHTML = `<div class="error">Alerts 数据加载失败: ${e.message}</div>`;
+            }
+        }
+
+        // 主函数
+        async function main() {
+            await Promise.all([
+                loadSPX(),
+                loadOI(),
+                loadAlertsTop10(),
+                loadAlertsTable()
+            ]);
+            
+            document.getElementById('update-time').textContent = new Date().toLocaleString('zh-CN');
+        }
+
+        main();
+    </script>
 </body>
 </html>
