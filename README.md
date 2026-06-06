@@ -33,3 +33,18 @@ https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/{pat
 
 ---
 
+
+
+## 📅 2026-06-06
+
+> 本日快照文件列表，AI Agent 可直接读取下方 JSON 路径
+
+### 📄 `test_connection.json`
+- **类型**：快照文件
+- **上传时间**：2026-06-06 04:25 ET
+- **GitHub路径**：`SPXalerts/20260606/test_connection.json`
+- **AI Agent提示**：期权扫描数据
+- **内容摘要**：
+  - test: `True`
+  - message: `GitHub同步测试`
+  - time: `2026-06-06T04:25:22.664810`
