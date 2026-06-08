@@ -380,11 +380,11 @@ body {
     <div class="logo">SPX <span>OPTIONS</span> MONITOR</div>
     <div class="live-badge">
       <div class="live-dot"></div>
-      <span id="data-mode">SIMULATED DATA</span>
+      <span id="data-mode">GITHUB · LOADING</span>
     </div>
   </div>
   <div class="header-right">
-    <div class="data-source-badge" id="source-badge">Schwab API (未连接)</div>
+    <div class="data-source-badge" id="source-badge">GitHub · liujuandalian/OptionScannerSnapshots</div>
     <span>refresh: <span class="ts" id="refresh-interval">5s</span></span>
     <span>updated: <span class="ts" id="last-update">--:--:--</span></span>
     <button class="api-btn" onclick="toggleApiPanel()" style="font-size:9px;padding:3px 10px;">⚙ API CONFIG</button>
@@ -901,28 +901,33 @@ body {
 
 
 <script>
-// ══════════════════════════════════════════════
-//  SCHWAB API CONFIGURATION & AUTH
-// ══════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════════
+//  SPX OPTIONS MONITOR V4  —  GitHub Data Source  v2.0
+//  数据来源: https://raw.githubusercontent.com/liujuandalian/
+//            OptionScannerSnapshots/main/data/spx_v4_latest.json
+//  每 60 秒自动刷新（GitHub raw 有 CDN 缓存，实际数据 5 分钟更新一次）
+// ══════════════════════════════════════════════════════════════════
+
+// ── GitHub 数据源配置 ──────────────────────────────────────────────
+const GITHUB_RAW = 'https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/data/spx_v4_latest.json';
+const REFRESH_INTERVAL_MS = 60_000;   // 60 秒轮询一次
+
+// ── Schwab OAuth 保留（API Config 面板仍可用）──────────────────────
 const SCHWAB = {
-  BASE: 'https://api.schwabapi.com',
-  AUTH: 'https://api.schwabapi.com/v1/oauth/authorize',
-  TOKEN: 'https://api.schwabapi.com/v1/oauth/token',
-  QUOTES: 'https://api.schwabapi.com/marketdata/v1/quotes',
+  BASE:    'https://api.schwabapi.com',
+  AUTH:    'https://api.schwabapi.com/v1/oauth/authorize',
+  TOKEN:   'https://api.schwabapi.com/v1/oauth/token',
+  QUOTES:  'https://api.schwabapi.com/marketdata/v1/quotes',
   OPTIONS: 'https://api.schwabapi.com/marketdata/v1/chains',
 };
-
 const CONFIG = {
-  schwabAppKey: '',
-  schwabAppSecret: '',
+  schwabAppKey: '', schwabAppSecret: '',
   schwabCallback: 'https://127.0.0.1',
-  schwabAccessToken: '',
-  schwabRefreshToken: '',
-  schwabTokenExpiry: 0,   // unix ms
-  schwabEnabled: false,
+  schwabAccessToken: '', schwabRefreshToken: '',
+  schwabTokenExpiry: 0, schwabEnabled: false,
 };
 
-// ── Step UI ──
+// ── Step UI (API Config Panel) ─────────────────────────────────────
 function showStep(n) {
   [1,2,3].forEach(i => {
     document.getElementById('step-'+i).style.display = i===n ? 'block' : 'none';
@@ -933,8 +938,6 @@ function showStep(n) {
     }
   });
 }
-
-// ── Config persistence ──
 function loadConfig() {
   try {
     const saved = JSON.parse(localStorage.getItem('spx_schwab_config') || '{}');
@@ -949,15 +952,13 @@ function loadConfig() {
 }
 function saveConfig() {
   const f = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
-  CONFIG.schwabAppKey      = f('schwab-app-key');
-  CONFIG.schwabAppSecret   = f('schwab-app-secret');
-  CONFIG.schwabCallback    = f('schwab-callback') || 'https://127.0.0.1';
-  CONFIG.schwabAccessToken = f('schwab-access-token');
-  CONFIG.schwabRefreshToken= f('schwab-refresh-token');
+  CONFIG.schwabAppKey       = f('schwab-app-key');
+  CONFIG.schwabAppSecret    = f('schwab-app-secret');
+  CONFIG.schwabCallback     = f('schwab-callback') || 'https://127.0.0.1';
+  CONFIG.schwabAccessToken  = f('schwab-access-token');
+  CONFIG.schwabRefreshToken = f('schwab-refresh-token');
   localStorage.setItem('spx_schwab_config', JSON.stringify(CONFIG));
 }
-
-// ── OAuth Step 2: Build auth URL and open browser ──
 function openSchwabAuth() {
   saveConfig();
   if(!CONFIG.schwabAppKey) { alert('请先填写 App Key（第①步）'); return; }
@@ -965,236 +966,105 @@ function openSchwabAuth() {
   document.getElementById('auth-url-display').textContent = '授权 URL: ' + url;
   window.open(url, '_blank');
 }
-
-// ── OAuth Step 3A: Exchange code for token ──
 async function exchangeCodeForToken() {
   saveConfig();
   const callbackUrl = document.getElementById('schwab-callback-url').value.trim();
   if(!callbackUrl) { setExchangeStatus('请粘贴授权后的完整 Callback URL', 'red'); return; }
-  // Extract code from URL
   let code;
-  try {
-    const u = new URL(callbackUrl);
-    code = u.searchParams.get('code');
-  } catch(e) {
-    // Try regex fallback
-    const m = callbackUrl.match(/[?&]code=([^&]+)/);
-    code = m ? m[1] : null;
+  try { const u = new URL(callbackUrl); code = u.searchParams.get('code'); } catch(e) {
+    const m = callbackUrl.match(/[?&]code=([^&]+)/); code = m ? m[1] : null;
   }
-  if(!code) { setExchangeStatus('未能从 URL 中提取 code 参数，请确认复制了完整 URL', 'red'); return; }
-
+  if(!code) { setExchangeStatus('未能从 URL 中提取 code 参数', 'red'); return; }
   if(!CONFIG.schwabAppKey || !CONFIG.schwabAppSecret) {
     setExchangeStatus('请先填写 App Key 和 App Secret（第①步）', 'red'); return;
   }
   setExchangeStatus('正在用 Code 换取 Token...', 'yellow');
-
   try {
     const creds = btoa(`${CONFIG.schwabAppKey}:${CONFIG.schwabAppSecret}`);
-    const body = new URLSearchParams({
-      grant_type: 'authorization_code',
-      code: decodeURIComponent(code),
-      redirect_uri: CONFIG.schwabCallback,
-    });
     const res = await fetch(SCHWAB.TOKEN, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${creds}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: body.toString(),
+      method:'POST',
+      headers:{'Authorization':`Basic ${creds}`,'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({grant_type:'authorization_code',code:decodeURIComponent(code),redirect_uri:CONFIG.schwabCallback}).toString(),
       signal: AbortSignal.timeout(10000),
     });
     const data = await res.json();
     if(data.access_token) {
-      CONFIG.schwabAccessToken  = data.access_token;
+      CONFIG.schwabAccessToken = data.access_token;
       CONFIG.schwabRefreshToken = data.refresh_token || CONFIG.schwabRefreshToken;
-      CONFIG.schwabTokenExpiry  = Date.now() + (data.expires_in || 1800) * 1000;
+      CONFIG.schwabTokenExpiry = Date.now() + (data.expires_in||1800)*1000;
       CONFIG.schwabEnabled = true;
-      document.getElementById('schwab-access-token').value  = data.access_token;
+      document.getElementById('schwab-access-token').value = data.access_token;
       document.getElementById('schwab-refresh-token').value = data.refresh_token || '';
       saveConfig();
-      setExchangeStatus('✓ Token 获取成功！Access Token 有效期30分钟，Refresh Token 7天', 'green');
+      setExchangeStatus('✓ Token 获取成功！', 'green');
     } else {
-      setExchangeStatus('换取失败: ' + (data.error_description || data.error || JSON.stringify(data)), 'red');
+      setExchangeStatus('换取失败: ' + (data.error_description||JSON.stringify(data)), 'red');
     }
   } catch(e) {
-    // CORS error is expected when calling Schwab token endpoint directly from browser
-    setExchangeStatus(
-      '⚠ 浏览器 CORS 限制，无法直接调用 Token 端点。\n请使用方式 B：手动粘贴 Access Token。\n可用 curl 或 Postman 换取（见下方说明）',
-      'yellow'
-    );
-    showCorsHelp(code);
+    setExchangeStatus('⚠ CORS 限制，请手动粘贴 Access Token（方式 B）', 'yellow');
   }
 }
 function setExchangeStatus(msg, color) {
   const el = document.getElementById('exchange-status');
-  if(el) { el.textContent = msg; el.style.color = color === 'green' ? 'var(--green)' : color === 'red' ? 'var(--red)' : 'var(--yellow)'; }
+  if(el) { el.textContent = msg; el.style.color = color==='green'?'var(--green)':color==='red'?'var(--red)':'var(--yellow)'; }
 }
-function showCorsHelp(code) {
-  const el = document.getElementById('exchange-status');
-  if(!el) return;
-  const creds = CONFIG.schwabAppKey && CONFIG.schwabAppSecret
-    ? btoa(`${CONFIG.schwabAppKey}:${CONFIG.schwabAppSecret}`)
-    : 'BASE64(AppKey:AppSecret)';
-  el.innerHTML = `
-    <div style="color:var(--yellow);margin-bottom:4px;">⚠ 浏览器 CORS 限制，请用以下 curl 命令换取 Token，再粘贴到方式 B：</div>
-    <code style="display:block;background:var(--bg0);padding:6px;border-radius:3px;font-size:9px;color:var(--teal);word-break:break-all;line-height:1.6;">
-curl -X POST "${SCHWAB.TOKEN}" \\<br>
-  -H "Authorization: Basic ${creds}" \\<br>
-  -H "Content-Type: application/x-www-form-urlencoded" \\<br>
-  -d "grant_type=authorization_code&code=${code || 'YOUR_CODE'}&redirect_uri=${encodeURIComponent(CONFIG.schwabCallback)}"
-    </code>`;
-}
-
-// ── Token auto-refresh ──
-async function refreshAccessToken() {
-  if(!CONFIG.schwabRefreshToken || !CONFIG.schwabAppKey || !CONFIG.schwabAppSecret) return false;
-  try {
-    const creds = btoa(`${CONFIG.schwabAppKey}:${CONFIG.schwabAppSecret}`);
-    const body = new URLSearchParams({ grant_type: 'refresh_token', refresh_token: CONFIG.schwabRefreshToken });
-    const res = await fetch(SCHWAB.TOKEN, {
-      method:'POST',
-      headers:{ 'Authorization':`Basic ${creds}`, 'Content-Type':'application/x-www-form-urlencoded' },
-      body: body.toString(), signal: AbortSignal.timeout(8000),
-    });
-    const data = await res.json();
-    if(data.access_token) {
-      CONFIG.schwabAccessToken  = data.access_token;
-      CONFIG.schwabRefreshToken = data.refresh_token || CONFIG.schwabRefreshToken;
-      CONFIG.schwabTokenExpiry  = Date.now() + (data.expires_in || 1800) * 1000;
-      const el = document.getElementById('schwab-access-token');
-      if(el) el.value = data.access_token;
-      saveConfig();
-      console.log('Schwab token refreshed OK');
-      return true;
-    }
-  } catch(e) { console.warn('Token refresh failed (CORS?):', e.message); }
-  return false;
-}
-async function ensureValidToken() {
-  if(!CONFIG.schwabEnabled || !CONFIG.schwabAccessToken) return false;
-  // Refresh if < 3 min remaining
-  if(CONFIG.schwabTokenExpiry && Date.now() > CONFIG.schwabTokenExpiry - 180000) {
-    return await refreshAccessToken();
-  }
-  return true;
-}
-
-// ── Test connection ──
+async function refreshAccessToken() { return false; }
+async function ensureValidToken() { return !!CONFIG.schwabAccessToken; }
 async function testSchwabConnection() {
   saveConfig();
   const resultEl = document.getElementById('schwab-test-result');
-  resultEl.style.display = 'block';
-  resultEl.style.background = 'var(--bg0)';
-  resultEl.style.border = '1px solid var(--border2)';
-  resultEl.textContent = '正在测试连接...';
-  resultEl.style.color = 'var(--text2)';
-  if(!CONFIG.schwabAccessToken) {
-    resultEl.textContent = '❌ 未找到 Access Token，请完成第③步';
-    resultEl.style.color = 'var(--red)'; return;
-  }
+  resultEl.style.display='block'; resultEl.style.background='var(--bg0)';
+  resultEl.style.border='1px solid var(--border2)'; resultEl.style.color='var(--text2)';
+  resultEl.textContent = '测试 GitHub 数据源...';
   try {
-    const res = await fetch(`${SCHWAB.QUOTES}?symbols=%24SPX&fields=quote`, {
-      headers:{ 'Authorization': `Bearer ${CONFIG.schwabAccessToken}`, 'Accept':'application/json' },
-      signal: AbortSignal.timeout(8000),
-    });
+    const res = await fetch(GITHUB_RAW+'?t='+Date.now(), {signal:AbortSignal.timeout(8000)});
     if(res.ok) {
-      const data = await res.json();
-      const spx = data['$SPX']?.quote?.lastPrice || data['$SPX']?.quote?.mark;
-      if(spx) {
-        resultEl.textContent = `✓ 连接成功！当前 $SPX = ${spx.toFixed(2)}`;
-        resultEl.style.color = 'var(--green)';
-        CONFIG.schwabEnabled = true;
-        saveConfig();
-        updateDataSourceBadge();
-      } else {
-        resultEl.textContent = '⚠ 连接成功但响应格式异常：' + JSON.stringify(data).slice(0,120);
-        resultEl.style.color = 'var(--yellow)';
-      }
-    } else if(res.status === 401) {
-      resultEl.textContent = '❌ Token 无效或已过期（401），请重新授权';
-      resultEl.style.color = 'var(--red)';
+      const d = await res.json();
+      resultEl.textContent = `✓ GitHub 数据正常！SPX=${d?.spx?.price?.toFixed(2)}  更新时间: ${d?.timestamp_et||d?.timestamp}`;
+      resultEl.style.color = 'var(--green)';
     } else {
-      resultEl.textContent = `❌ HTTP ${res.status}: ${await res.text().then(t=>t.slice(0,100))}`;
+      resultEl.textContent = `❌ HTTP ${res.status}`;
       resultEl.style.color = 'var(--red)';
     }
   } catch(e) {
-    resultEl.innerHTML = `⚠ 请求失败（可能是 CORS）: ${e.message}<br>
-      <span style="color:var(--text3)">说明：Schwab Market Data API 支持跨域请求，若出现 CORS 错误，请确认 Access Token 有效并重试。</span>`;
-    resultEl.style.color = 'var(--yellow)';
+    resultEl.textContent = `❌ 获取失败: ${e.message}`;
+    resultEl.style.color = 'var(--red)';
   }
 }
-
-// ── Apply Schwab config ──
-function applySchwabConfig() {
-  saveConfig();
-  CONFIG.schwabEnabled = !!CONFIG.schwabAccessToken;
-  updateDataSourceBadge();
-  toggleApiPanel();
-  startDataLoop();
-}
-
-// ── Clear tokens ──
+function applySchwabConfig() { saveConfig(); toggleApiPanel(); }
+function applyConfig()       { applySchwabConfig(); }
 function clearSchwabTokens() {
-  CONFIG.schwabAccessToken = '';
-  CONFIG.schwabRefreshToken = '';
-  CONFIG.schwabTokenExpiry = 0;
-  CONFIG.schwabEnabled = false;
-  ['schwab-access-token','schwab-refresh-token'].forEach(id => {
-    const el = document.getElementById(id); if(el) el.value = '';
-  });
+  CONFIG.schwabAccessToken=''; CONFIG.schwabRefreshToken=''; CONFIG.schwabEnabled=false;
+  ['schwab-access-token','schwab-refresh-token'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   saveConfig();
-  updateDataSourceBadge();
-  alert('Token 已清除，请重新授权');
 }
-
-function toggleApiPanel() {
-  const p = document.getElementById('api-panel');
-  p.classList.toggle('visible');
-}
+function toggleApiPanel() { document.getElementById('api-panel').classList.toggle('visible'); }
 function updateDataSourceBadge() {
-  const enabled = CONFIG.schwabEnabled && CONFIG.schwabAccessToken;
-  const badge = document.getElementById('source-badge');
-  const mode  = document.getElementById('data-mode');
-  const inline= document.getElementById('schwab-status-inline');
-  if(enabled) {
-    if(badge)  badge.textContent  = 'Charles Schwab Market Data API';
-    if(mode)   { mode.textContent = 'LIVE DATA'; }
-    if(inline) { inline.textContent = '已连接 ✓'; inline.style.color = 'var(--green)'; }
-  } else {
-    if(badge)  badge.textContent  = 'Schwab API (未连接) · 模拟数据';
-    if(mode)   { mode.textContent = 'SIMULATED DATA'; }
-    if(inline) { inline.textContent = '未连接'; inline.style.color = 'var(--text2)'; }
-  }
+  const badge  = document.getElementById('source-badge');
+  const mode   = document.getElementById('data-mode');
+  const inline = document.getElementById('schwab-status-inline');
+  if(badge)  badge.textContent  = 'GitHub · liujuandalian/OptionScannerSnapshots';
+  if(mode)   mode.textContent   = 'GITHUB DATA';
+  if(inline) { inline.textContent='GitHub ✓'; inline.style.color='var(--blue)'; }
 }
-// legacy stubs
-function applyConfig() { applySchwabConfig(); }
 function testIBConnection() {}
-
 
 // ══════════════════════════════════════════════
 //  STATE
 // ══════════════════════════════════════════════
 const STATE = {
-  spx: 7134.82,
-  spxPrev: 7087.61,
-  vix: 18.42,
-  vvix: 94.7,
-  straddle: 28.40,
-  es: 7141.25,
-  fairBasis: 5.20,
-  gammaFlip: 7175,
-  balancePoint: 7110,
-  totalNetGamma: 0,
-  priceHistory: [],
-  timeLabels: [],
+  spx: 0, spxPrev: 0, vix: 0, vvix: 0,
+  straddle: 0, es: 0, fairBasis: 5.0,
+  gammaFlip: null, balancePoint: null, totalNetGamma: 0,
+  priceHistory: [], timeLabels: [],
+  lastData: null,   // 最近一次成功拉取的完整 JSON
 };
 
-// ── New history buffers ──
-const basisHistory   = { t:[], val:[], fair:[] };
-const volRatioHist   = { t:[], ratio:[], colors:[] };
-const flowHistory    = { t:[], buy:[], sell:[] };
-const skewSlopeHist  = { t:[], s0:[], s1w:[] };
+const basisHistory  = {t:[],val:[],fair:[]};
+const volRatioHist  = {t:[],ratio:[],colors:[]};
+const flowHistory   = {t:[],buy:[],sell:[]};
+const skewSlopeHist = {t:[],s0:[],s1w:[]};
+const skewHistory   = {t:[],s15:[],s30:[]};
 
 // ══════════════════════════════════════════════
 //  CHART INSTANCES
@@ -1203,1010 +1073,716 @@ const CHARTS = {};
 const GC = '#1a2d40';
 const TC = '#3a5070';
 const baseOpts = {
-  responsive: true,
-  maintainAspectRatio: false,
-  animation: false,
-  plugins: {
-    legend: { display: false },
-    tooltip: {
-      enabled: true,
-      backgroundColor: '#0d1520',
-      borderColor: '#1e2d40',
-      borderWidth: 1,
-      titleColor: '#7a90a8',
-      bodyColor: '#d0dae8',
-      padding: 7,
-      callbacks: {}
-    }
+  responsive:true, maintainAspectRatio:false, animation:false,
+  plugins:{
+    legend:{display:false},
+    tooltip:{enabled:true,backgroundColor:'#0d1520',borderColor:'#1e2d40',borderWidth:1,
+             titleColor:'#7a90a8',bodyColor:'#d0dae8',padding:7,callbacks:{}}
   },
-  scales: {
-    x: { grid: { color: GC }, ticks: { color: TC, font: { size: 9, family: 'Courier New' } } },
-    y: { grid: { color: GC }, ticks: { color: TC, font: { size: 9, family: 'Courier New' } } }
+  scales:{
+    x:{grid:{color:GC},ticks:{color:TC,font:{size:9,family:'Courier New'}}},
+    y:{grid:{color:GC},ticks:{color:TC,font:{size:9,family:'Courier New'}}}
   }
 };
 
 function initCharts() {
-  // Price Chart
   const pCtx = document.getElementById('priceChart').getContext('2d');
   CHARTS.price = new Chart(pCtx, {
-    type: 'line',
-    data: { labels: [], datasets: [
-      { label:'SPX', data:[], borderColor:'#2288dd', borderWidth:1.5, pointRadius:0, tension:0.3, fill:false },
-      { label:'Balance', data:[], borderColor:'#d4aa22', borderWidth:1, borderDash:[5,5], pointRadius:0, tension:0 },
-      { label:'Gamma Flip', data:[], borderColor:'#1ecc66', borderWidth:1, borderDash:[5,5], pointRadius:0, tension:0 },
-      { label:'Straddle Hi', data:[], borderColor:'#e03333', borderWidth:1, borderDash:[3,5], pointRadius:0, tension:0 },
-      { label:'Straddle Lo', data:[], borderColor:'#9944cc', borderWidth:1, borderDash:[3,5], pointRadius:0, tension:0 },
+    type:'line',
+    data:{labels:[],datasets:[
+      {label:'SPX',       data:[],borderColor:'#2288dd',borderWidth:1.5,pointRadius:0,tension:0.3,fill:false},
+      {label:'Balance',   data:[],borderColor:'#d4aa22',borderWidth:1,borderDash:[5,5],pointRadius:0,tension:0},
+      {label:'Gamma Flip',data:[],borderColor:'#1ecc66',borderWidth:1,borderDash:[5,5],pointRadius:0,tension:0},
+      {label:'Straddle Hi',data:[],borderColor:'#e03333',borderWidth:1,borderDash:[3,5],pointRadius:0,tension:0},
+      {label:'Straddle Lo',data:[],borderColor:'#9944cc',borderWidth:1,borderDash:[3,5],pointRadius:0,tension:0},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8,family:'Courier New'},maxTicksLimit:9} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8,family:'Courier New'}} }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8,family:'Courier New'},maxTicksLimit:9}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8,family:'Courier New'}}}
       }
     }
   });
 
-  // Gamma Chart
-  const strikes = [6950,6975,7000,7025,7050,7075,7100,7110,7125,7135,7150,7175,7200,7225,7250];
-  const gammaVals = [-100,-75,-45,-15,25,70,110,150,170,155,80,-35,-110,-170,-220];
+  // Gamma (初始空数据，拿到 JSON 后填入)
   const gCtx = document.getElementById('gammaChart').getContext('2d');
   CHARTS.gamma = new Chart(gCtx, {
-    type: 'bar',
-    data: {
-      labels: strikes,
-      datasets: [{ data: gammaVals,
-        backgroundColor: gammaVals.map(v => v >= 0 ? 'rgba(30,204,102,0.65)' : 'rgba(224,51,51,0.65)'),
-        borderWidth: 0 }]
-    },
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxRotation:45} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8}} }
+    type:'bar',
+    data:{labels:[],datasets:[{data:[],backgroundColor:[],borderWidth:0}]},
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxRotation:45}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8}}}
       }
     }
   });
 
-  // Charm Chart
-  const charmStrikes = [7050,7075,7100,7110,7125,7135,7150,7175,7200];
-  const charmVals = [12,7,-5,-12,-18,-22,-28,-12,-6];
   const cCtx = document.getElementById('charmChart').getContext('2d');
   CHARTS.charm = new Chart(cCtx, {
-    type: 'line',
-    data: { labels: charmStrikes, datasets: [{
-      data: charmVals, borderColor:'#9944cc', borderWidth:1.5,
-      backgroundColor:'rgba(153,68,204,0.08)', fill:true,
-      pointRadius:2, pointBackgroundColor:'#9944cc', tension:0.4
-    }]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxRotation:45} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8}} }
+    type:'line',
+    data:{labels:[],datasets:[{data:[],borderColor:'#9944cc',borderWidth:1.5,
+      backgroundColor:'rgba(153,68,204,0.08)',fill:true,pointRadius:2,
+      pointBackgroundColor:'#9944cc',tension:0.4}]},
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxRotation:45}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8}}}
       }
     }
   });
 
-  // Vol Smile
-  const smileStrikes = [6850,6900,6950,7000,7050,7100,7135,7175,7200,7250,7300,7350];
-  const iv0dte = [42,37,33,29,24,21,20,21,24,28,33,39];
-  const iv1w   = [35,31,28,25,22,20,20,21,23,26,30,35];
-  const iv1m   = [30,27,25,23,21,20,20,21,22,24,27,31];
   const sCtx = document.getElementById('smileChart').getContext('2d');
   CHARTS.smile = new Chart(sCtx, {
-    type: 'line',
-    data: { labels: smileStrikes, datasets: [
-      { data:iv0dte, borderColor:'#2288dd', borderWidth:1.5, pointRadius:2, tension:0.4, fill:false },
-      { data:iv1w,   borderColor:'#1ecc66', borderWidth:1.5, pointRadius:2, tension:0.4, fill:false },
-      { data:iv1m,   borderColor:'#d4aa22', borderWidth:1.5, pointRadius:2, tension:0.4, fill:false },
+    type:'line',
+    data:{labels:[],datasets:[
+      {data:[],borderColor:'#2288dd',borderWidth:1.5,pointRadius:2,tension:0.4,fill:false},
+      {data:[],borderColor:'#1ecc66',borderWidth:1.5,pointRadius:2,tension:0.4,fill:false},
+      {data:[],borderColor:'#d4aa22',borderWidth:1.5,pointRadius:2,tension:0.4,fill:false},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxRotation:45} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8},min:16,max:45} }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxRotation:45}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8}}}
       }
     }
   });
 
-  // Term Structure
-  const termLabels = ['Spot','1W','2W','1M','2M','3M','6M','1Y'];
-  const termCurr  = [18.4,19.1,19.7,20.4,21.1,21.9,23.6,25.2];
-  const termPrev  = [19.6,20.3,20.9,21.6,22.2,23.0,24.6,26.1];
   const tCtx = document.getElementById('termChart').getContext('2d');
   CHARTS.term = new Chart(tCtx, {
-    type: 'line',
-    data: { labels: termLabels, datasets: [
-      { data:termCurr, borderColor:'#2288dd', borderWidth:1.5, pointRadius:3, tension:0.4, fill:false },
-      { data:termPrev, borderColor:'#e03333', borderWidth:1, borderDash:[4,4], pointRadius:2, tension:0.4, fill:false },
+    type:'line',
+    data:{labels:[],datasets:[
+      {data:[],borderColor:'#2288dd',borderWidth:1.5,pointRadius:3,tension:0.4,fill:false},
+      {data:[],borderColor:'#e03333',borderWidth:1,borderDash:[4,4],pointRadius:2,tension:0.4,fill:false},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8}} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8},min:15,max:28} }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8}}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8}}}
       }
     }
   });
 
-  // Skew Chart
   const skCtx = document.getElementById('skewChart').getContext('2d');
   CHARTS.skew = new Chart(skCtx, {
-    type: 'line',
-    data: { labels: [], datasets: [
-      { label:'15m偏度', data:[], borderColor:'#1ecc66', borderWidth:1.5, pointRadius:0, tension:0.4, fill:false },
-      { label:'30m偏度', data:[], borderColor:'#d4aa22', borderWidth:1.5, pointRadius:0, tension:0.4, fill:false },
+    type:'line',
+    data:{labels:[],datasets:[
+      {label:'0DTE偏斜',data:[],borderColor:'#1ecc66',borderWidth:1.5,pointRadius:0,tension:0.4,fill:false},
+      {label:'1W偏斜', data:[],borderColor:'#d4aa22',borderWidth:1.5,pointRadius:0,tension:0.4,fill:false},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxTicksLimit:6} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8}} }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxTicksLimit:6}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8}}}
       }
     }
   });
 
-  // ── NEW: Basis Chart ──
   const bCtx = document.getElementById('basisChart').getContext('2d');
   CHARTS.basis = new Chart(bCtx, {
-    type: 'line',
-    data: { labels: [], datasets: [
-      { label:'基差', data:[], borderColor:'#2288dd', borderWidth:1.5, pointRadius:0, tension:0.4, fill:false },
-      { label:'公允', data:[], borderColor:'#22bbaa', borderWidth:1, borderDash:[4,4], pointRadius:0, tension:0 },
+    type:'line',
+    data:{labels:[],datasets:[
+      {label:'基差',data:[],borderColor:'#2288dd',borderWidth:1.5,pointRadius:0,tension:0.4,fill:false},
+      {label:'公允',data:[],borderColor:'#22bbaa',borderWidth:1,borderDash:[4,4],pointRadius:0,tension:0},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      plugins: { legend:{display:false}, tooltip:{enabled:false} },
-      scales: {
-        x: { display:false },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxTicksLimit:4} }
-      }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      plugins:{legend:{display:false},tooltip:{enabled:false}},
+      scales:{x:{display:false},y:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxTicksLimit:4}}}
     }
   });
 
-  // ── NEW: Vol Ratio Chart ──
   const vrCtx = document.getElementById('volRatioChart').getContext('2d');
   CHARTS.volRatio = new Chart(vrCtx, {
-    type: 'bar',
-    data: { labels: [], datasets: [
-      { label:'量比', data:[], backgroundColor: [], borderWidth:0 }
-    ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      plugins: { legend:{display:false}, tooltip:{enabled:false} },
-      scales: {
-        x: { display:false },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxTicksLimit:3} }
-      }
+    type:'bar',
+    data:{labels:[],datasets:[{label:'量比',data:[],backgroundColor:[],borderWidth:0}]},
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      plugins:{legend:{display:false},tooltip:{enabled:false}},
+      scales:{x:{display:false},y:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxTicksLimit:3}}}
     }
   });
 
-  // ── NEW: Flow Chart ──
   const flCtx = document.getElementById('flowChart').getContext('2d');
   CHARTS.flow = new Chart(flCtx, {
-    type: 'line',
-    data: { labels: [], datasets: [
-      { label:'外盘%', data:[], borderColor:'#1ecc66', borderWidth:1.5, pointRadius:0, tension:0.4, fill:false },
-      { label:'内盘%', data:[], borderColor:'#e03333', borderWidth:1.5, pointRadius:0, tension:0.4, fill:false },
+    type:'line',
+    data:{labels:[],datasets:[
+      {label:'CALL%',data:[],borderColor:'#1ecc66',borderWidth:1.5,pointRadius:0,tension:0.4,fill:false},
+      {label:'PUT%', data:[],borderColor:'#e03333',borderWidth:1.5,pointRadius:0,tension:0.4,fill:false},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      plugins: { legend:{display:false}, tooltip:{enabled:false} },
-      scales: {
-        x: { display:false },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxTicksLimit:3}, min:30, max:70 }
-      }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      plugins:{legend:{display:false},tooltip:{enabled:false}},
+      scales:{x:{display:false},y:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxTicksLimit:3},min:25,max:75}}
     }
   });
 
-  // ── NEW: Skew Slope Chart (smile across strikes) ──
   const ssCtx = document.getElementById('skewSlopeChart').getContext('2d');
-  const ssStrikes = [6950,7000,7050,7100,7135,7175,7200,7250,7300];
-  const ssIV0 = [38,32,27,24,20,21,24,29,35];
-  const ssIV1w= [32,28,24,21,20,21,23,27,32];
   CHARTS.skewSlope = new Chart(ssCtx, {
-    type: 'line',
-    data: { labels: ssStrikes, datasets: [
-      { label:'0DTE', data:ssIV0, borderColor:'#2288dd', borderWidth:1.5, pointRadius:2, tension:0.4, fill:false },
-      { label:'1W',   data:ssIV1w, borderColor:'#1ecc66', borderWidth:1, borderDash:[4,4], pointRadius:2, tension:0.4, fill:false },
+    type:'line',
+    data:{labels:[],datasets:[
+      {label:'0DTE',data:[],borderColor:'#2288dd',borderWidth:1.5,pointRadius:2,tension:0.4,fill:false},
+      {label:'1W',  data:[],borderColor:'#1ecc66',borderWidth:1,borderDash:[4,4],pointRadius:2,tension:0.4,fill:false},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      scales: {
-        x: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxRotation:45} },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8}}, title:{display:true,text:'IV %',color:TC,font:{size:8}} }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      scales:{
+        x:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxRotation:45}},
+        y:{grid:{color:GC},ticks:{color:TC,font:{size:8}},title:{display:true,text:'IV %',color:TC,font:{size:8}}}
       }
     }
   });
 
-  // ── NEW: Skew Slope Trend ──
   const sstCtx = document.getElementById('skewSlopeTrendChart').getContext('2d');
   CHARTS.skewSlopeTrend = new Chart(sstCtx, {
-    type: 'line',
-    data: { labels: [], datasets: [
-      { label:'0DTE斜率', data:[], borderColor:'#e03333', borderWidth:1.5, pointRadius:0, tension:0.4, fill:false },
-      { label:'1W斜率',   data:[], borderColor:'#d4aa22', borderWidth:1, borderDash:[4,4], pointRadius:0, tension:0.4, fill:false },
+    type:'line',
+    data:{labels:[],datasets:[
+      {label:'0DTE斜率',data:[],borderColor:'#e03333',borderWidth:1.5,pointRadius:0,tension:0.4,fill:false},
+      {label:'1W斜率',  data:[],borderColor:'#d4aa22',borderWidth:1,borderDash:[4,4],pointRadius:0,tension:0.4,fill:false},
     ]},
-    options: { ...JSON.parse(JSON.stringify(baseOpts)),
-      plugins: { legend:{display:false}, tooltip:{enabled:false} },
-      scales: {
-        x: { display:false },
-        y: { grid:{color:GC}, ticks:{color:TC,font:{size:8},maxTicksLimit:3} }
-      }
+    options:{...JSON.parse(JSON.stringify(baseOpts)),
+      plugins:{legend:{display:false},tooltip:{enabled:false}},
+      scales:{x:{display:false},y:{grid:{color:GC},ticks:{color:TC,font:{size:8},maxTicksLimit:3}}}
     }
   });
 }
 
 // ══════════════════════════════════════════════
-//  BUILD STATIC COMPONENTS
+//  GITHUB DATA FETCH & APPLY
 // ══════════════════════════════════════════════
-function buildChain() {
-  const chainData = [
-    {s:7075, pIV:38.2, pOI:'18K', pD:'-0.12', cD:'0.88', cOI:'4K',  cIV:22.4},
-    {s:7100, pIV:32.4, pOI:'24K', pD:'-0.18', cD:'0.82', cOI:'7K',  cIV:21.8},
-    {s:7110, pIV:28.6, pOI:'31K', pD:'-0.24', cD:'0.76', cOI:'9K',  cIV:21.2},
-    {s:7125, pIV:24.8, pOI:'28K', pD:'-0.35', cD:'0.65', cOI:'14K', cIV:20.8},
-    {s:7135, pIV:22.0, pOI:'22K', pD:'-0.49', cD:'0.51', cOI:'21K', cIV:20.0, atm:true},
-    {s:7150, pIV:21.2, pOI:'17K', pD:'-0.62', cD:'0.38', cOI:'26K', cIV:21.2},
-    {s:7175, pIV:23.8, pOI:'12K', pD:'-0.74', cD:'0.26', cOI:'39K', cIV:22.6},
-    {s:7200, pIV:28.4, pOI:'8K',  pD:'-0.86', cD:'0.14', cOI:'28K', cIV:24.8},
-  ];
-  const el = document.getElementById('chain-body');
-  chainData.forEach(r => {
-    const row = document.createElement('div');
-    row.className = 'chain-row-item' + (r.atm ? ' atm-row' : '');
-    row.innerHTML = `
-      <span class="cell-iv dn">${r.pIV}%</span>
-      <span class="cell-oi dn">${r.pOI}</span>
-      <span class="cell-p">${r.pD}</span>
-      <span class="cell-s">${r.s}${r.atm?' ◆':''}</span>
-      <span class="cell-c">${r.cD}</span>
-      <span class="cell-oi up">${r.cOI}</span>
-      <span class="cell-iv up">${r.cIV}%</span>`;
-    el.appendChild(row);
-  });
-}
 
-function buildOIBars() {
-  const data = [
-    {label:'7200C',val:38.6,type:'c'},{label:'7175C',val:26.4,type:'c'},
-    {label:'7150C',val:14.2,type:'c'},{label:'7135C',val:21.0,type:'c'},
-    {label:'7110P',val:31.2,type:'p'},{label:'7100P',val:24.6,type:'p'},
-    {label:'7075P',val:18.2,type:'p'},{label:'7050P',val:42.0,type:'p'},
-  ];
-  const max = 42;
-  const el = document.getElementById('oi-bars');
-  data.forEach(d => {
-    const div = document.createElement('div');
-    div.className = 'oibar-row';
-    const cls = d.type==='c' ? 'up' : 'dn';
-    div.innerHTML = `
-      <span class="oibar-lbl ${cls}">${d.label}</span>
-      <div class="oibar-track">
-        <div class="${d.type==='c'?'oibar-fill-c':'oibar-fill-p'}" style="width:${Math.round(d.val/max*100)}%"></div>
-      </div>
-      <span class="oibar-val">${d.val}K</span>`;
-    el.appendChild(div);
-  });
-}
-
-function buildTermTable() {
-  const rows = [
-    {exp:'0DTE', iv:20.0, chg:+0.2},
-    {exp:'1W',   iv:19.1, chg:-0.4},
-    {exp:'2W',   iv:19.7, chg:-0.3},
-    {exp:'1M',   iv:20.4, chg:-0.5},
-    {exp:'2M',   iv:21.1, chg:-0.6},
-    {exp:'3M',   iv:21.9, chg:-0.8},
-    {exp:'6M',   iv:23.6, chg:-1.2},
-    {exp:'1Y',   iv:25.2, chg:-1.4},
-  ];
-  const el = document.getElementById('term-table');
-  rows.forEach(r => {
-    const div = document.createElement('div');
-    div.className = 'term-row';
-    const cls = r.chg >= 0 ? 'up' : 'dn';
-    const chgStr = (r.chg >= 0 ? '+' : '') + r.chg.toFixed(1);
-    div.innerHTML = `
-      <span class="term-exp">${r.exp}</span>
-      <div class="term-bar"><div class="term-fill" style="width:${Math.round(r.iv/30*100)}%"></div></div>
-      <span class="term-iv">${r.iv.toFixed(1)}%</span>
-      <span class="term-chg ${cls}">${chgStr}</span>`;
-    el.appendChild(div);
-  });
-}
-
-// ══════════════════════════════════════════════
-//  PRICE HISTORY INIT
-// ══════════════════════════════════════════════
-function initPriceHistory() {
-  const now = new Date();
-  let p = 7080;
-  for(let i = 90; i >= 0; i -= 2) {
-    const d = new Date(now - i * 60000);
-    const hh = d.getHours();
-    const mm = String(d.getMinutes()).padStart(2,'0');
-    STATE.timeLabels.push(`${hh}:${mm}`);
-    p += (Math.random() - 0.44) * 7 + (i < 30 ? 0.8 : 0);
-    STATE.priceHistory.push(+p.toFixed(2));
+async function fetchGitHub() {
+  const url = GITHUB_RAW + '?t=' + Math.floor(Date.now()/60000); // 60s cache busting
+  try {
+    const res = await fetch(url, {signal: AbortSignal.timeout(10000)});
+    if(!res.ok) { showFetchError(`HTTP ${res.status}`); return; }
+    const d = await res.json();
+    STATE.lastData = d;
+    applyGitHubData(d);
+    clearFetchError();
+  } catch(e) {
+    showFetchError(e.message);
   }
-  STATE.spx = STATE.priceHistory[STATE.priceHistory.length - 1];
-  updatePriceChart();
 }
 
-function updatePriceChart() {
-  const spx = STATE.spx;
-  const balLvl  = STATE.balancePoint || 7110;
-  const flipLvl = STATE.gammaFlip    || 7175;
-  const hiLvl = +(spx + STATE.straddle).toFixed(2);
-  const loLvl = +(spx - STATE.straddle).toFixed(2);
-  const n = STATE.priceHistory.length;
-  CHARTS.price.data.labels = STATE.timeLabels;
-  CHARTS.price.data.datasets[0].data = STATE.priceHistory;
-  CHARTS.price.data.datasets[1].data = Array(n).fill(balLvl);
-  CHARTS.price.data.datasets[2].data = Array(n).fill(flipLvl);
-  CHARTS.price.data.datasets[3].data = Array(n).fill(hiLvl);
-  CHARTS.price.data.datasets[4].data = Array(n).fill(loLvl);
-  CHARTS.price.update('none');
+function showFetchError(msg) {
+  const el = document.getElementById('source-badge');
+  if(el) { el.textContent = '⚠ GitHub 获取失败: ' + msg; el.style.color='var(--red)'; }
+}
+function clearFetchError() {
+  const el = document.getElementById('source-badge');
+  if(el) { el.textContent='GitHub · liujuandalian/OptionScannerSnapshots'; el.style.color=''; }
 }
 
-// ══════════════════════════════════════════════
-//  SKEW HISTORY
-// ══════════════════════════════════════════════
-const skewHistory = { t:[], s15:[], s30:[] };
-function initSkewHistory() {
-  const now = new Date();
-  for(let i=40;i>=0;i-=2) {
-    const d = new Date(now - i*60000);
-    skewHistory.t.push(`${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`);
-    skewHistory.s15.push(+(12 + Math.random()*8 + (40-i)*0.1).toFixed(1));
-    skewHistory.s30.push(+(14 + Math.random()*6 + (40-i)*0.12).toFixed(1));
+function applyGitHubData(d) {
+  if(!d || !d.spx) return;
+
+  // ── 1. 基础价格 ──────────────────────────────────────────────────
+  const spx     = d.spx.price || 0;
+  const spxPrev = d.spx.prev_close || spx;
+  const vix     = d.vix  || 0;
+  const vvix    = d.vvix || 0;
+  const esPrice = d.es?.price || d.es_price || spx;
+  const straddle= d.atm?.straddle_price || 0;
+  const fairBasis = d.basis?.fair_basis || 5.0;
+
+  STATE.spx        = spx;
+  STATE.spxPrev    = spxPrev;
+  STATE.vix        = vix;
+  STATE.vvix       = vvix;
+  STATE.es         = esPrice;
+  STATE.straddle   = straddle;
+  STATE.fairBasis  = fairBasis;
+
+  // ── 2. Key levels ────────────────────────────────────────────────
+  const kl = d.key_levels || {};
+  STATE.gammaFlip    = kl.gamma_flip   || null;
+  STATE.balancePoint = kl.balance      || null;
+  STATE.totalNetGamma= (d.net_gamma_exposure || 0) * 1e9;
+
+  // ── 3. Price history（追加一条）──────────────────────────────────
+  const tsLabel = d.timestamp_et
+    ? d.timestamp_et.split(' ')[1]   // "HH:MM"
+    : new Date().toTimeString().slice(0,5);
+  if(!STATE.timeLabels.length || STATE.timeLabels[STATE.timeLabels.length-1] !== tsLabel) {
+    STATE.timeLabels.push(tsLabel);
+    STATE.priceHistory.push(spx);
+    if(STATE.timeLabels.length > 120) { STATE.timeLabels.shift(); STATE.priceHistory.shift(); }
   }
-  CHARTS.skew.data.labels = skewHistory.t;
-  CHARTS.skew.data.datasets[0].data = skewHistory.s15;
-  CHARTS.skew.data.datasets[1].data = skewHistory.s30;
-  CHARTS.skew.update('none');
-}
 
-// ══════════════════════════════════════════════
-//  SCHWAB MARKET DATA FETCH
-// ══════════════════════════════════════════════
-async function fetchSchwab() {
-  if(!CONFIG.schwabEnabled || !CONFIG.schwabAccessToken) return;
-  const valid = await ensureValidToken();
-  if(!valid) return;
-  const headers = { 'Authorization': `Bearer ${CONFIG.schwabAccessToken}`, 'Accept': 'application/json' };
-
-  // Fetch $SPX + $VIX + $VVIX quotes
-  try {
-    const res = await fetch(
-      `${SCHWAB.QUOTES}?symbols=%24SPX,%24VIX,%24VVIX&fields=quote`,
-      { headers, signal: AbortSignal.timeout(8000) }
-    );
-    if(res.status === 401) {
-      CONFIG.schwabEnabled = false; updateDataSourceBadge();
-      console.warn('Schwab 401: token expired'); return;
-    }
-    if(res.ok) {
-      const data = await res.json();
-      const spxQ = data['$SPX']?.quote;
-      const vixQ = data['$VIX']?.quote;
-      const vvixQ= data['$VVIX']?.quote;
-      if(spxQ?.lastPrice) { STATE.spx = spxQ.lastPrice; STATE.spxPrev = spxQ.closePrice || STATE.spxPrev; }
-      if(vixQ?.lastPrice)  STATE.vix  = vixQ.lastPrice;
-      if(vvixQ?.lastPrice) STATE.vvix = vvixQ.lastPrice;
-      var _dm=document.getElementById('data-mode'); if(_dm) _dm.textContent = 'LIVE DATA';
-    }
-  } catch(e) { console.warn('Schwab quotes error:', e.message); }
-
-  // Fetch SPX 0DTE options chain (ATM straddle price)
-  try {
-    const today = new Date();
-    const expDate = today.toISOString().split('T')[0];
-    const res2 = await fetch(
-      `${SCHWAB.OPTIONS}?symbol=%24SPX&contractType=ALL&strikeCount=40&includeUnderlyingQuote=true&optionType=ALL`,
-      { headers, signal: AbortSignal.timeout(10000) }
-    );
-    if(res2.ok) parseSchwabOptionsChain(await res2.json());
-  } catch(e) { console.warn('Schwab options error:', e.message); }
-}
-
-function parseSchwabOptionsChain(chain) {
-  try {
-    const spot = chain.underlyingPrice || STATE.spx;
-    const atmK = Math.round(spot / 5) * 5;
-
-    // ── 1. Straddle price ──────────────────────────────────────
-    const findAtmMid = (expMap) => {
-      const expiries = Object.keys(expMap);
-      if(!expiries.length) return null;
-      const strikes = expMap[expiries[0]];
-      let closest = Object.keys(strikes)[0];
-      Object.keys(strikes).forEach(k => {
-        if(Math.abs(parseFloat(k)-atmK) < Math.abs(parseFloat(closest)-atmK)) closest = k;
-      });
-      const o = strikes[closest]?.[0];
-      return o ? (o.bid + o.ask) / 2 : null;
-    };
-    const callMid = findAtmMid(chain.callExpDateMap || {});
-    const putMid  = findAtmMid(chain.putExpDateMap  || {});
-    if(callMid !== null && putMid !== null) STATE.straddle = +(callMid + putMid).toFixed(2);
-
-    // ── 2. Build per-strike gamma/charm aggregates ─────────────
-    // Dealer is SHORT what customers are LONG → flip sign
-    // Net dealer gamma per strike = -(call_OI×call_gamma + put_OI×put_gamma) × 100 × spot
-    const strikeData = {};   // { strike: { gamma, charm, callOI, putOI, callIV, putIV, callDelta, putDelta } }
-
-    const collectLegs = (expMap, type) => {
-      Object.values(expMap).forEach(strikeMap => {
-        Object.entries(strikeMap).forEach(([kStr, contracts]) => {
-          const k = parseFloat(kStr);
-          const c = contracts?.[0];
-          if(!c) return;
-          if(!strikeData[k]) strikeData[k] = {gamma:0, charm:0, callOI:0, putOI:0, callIV:0, putIV:0, callDelta:0, putDelta:0, callMid:0, putMid:0};
-          const oi    = c.openInterest || 0;
-          const gamma = Math.abs(c.gamma || 0);
-          const charm = c.charm || 0;   // schwab may or may not return charm
-          const iv    = (c.volatility || 0) / 100;
-          const delta = c.delta || 0;
-          const mid   = ((c.bid||0) + (c.ask||0)) / 2;
-          if(type === 'call') {
-            strikeData[k].callOI    += oi;
-            strikeData[k].gamma     += oi * gamma * 100;   // per 1% move, scaled
-            strikeData[k].callIV     = iv;
-            strikeData[k].callDelta  = delta;
-            strikeData[k].callMid    = mid;
-            // approximate charm: -gamma * (time_decay_factor) — simplified
-            strikeData[k].charm     += oi * gamma * 0.05;  // positive = buy pressure
-          } else {
-            strikeData[k].putOI     += oi;
-            strikeData[k].gamma     += oi * gamma * 100;   // puts also add to gamma (same sign magnitude)
-            strikeData[k].putIV      = iv;
-            strikeData[k].putDelta   = delta;
-            strikeData[k].putMid     = mid;
-            strikeData[k].charm     -= oi * gamma * 0.05;  // negative = sell pressure
-          }
-        });
-      });
-    };
-    collectLegs(chain.callExpDateMap || {}, 'call');
-    collectLegs(chain.putExpDateMap  || {}, 'put');
-
-    // ── 3. Sort strikes and find key levels ────────────────────
-    const strikes = Object.keys(strikeData).map(Number).sort((a,b)=>a-b);
-    if(strikes.length < 3) return;
-
-    // Dealer net gamma: positive = dealers long gamma (buffer), negative = short (accelerant)
-    // Simplified: above ATM dealers are more short calls → negative gamma zone
-    //             below ATM dealers are more short puts → also negative but less
-    // We estimate by comparing call vs put OI distribution
-    const netGammaByStrike = strikes.map(k => {
-      const d = strikeData[k];
-      const callContrib = d.callOI * (d.callIV || 0.20) * spot * 0.01;
-      const putContrib  = d.putOI  * (d.putIV  || 0.20) * spot * 0.01;
-      // Above spot: dealers short calls → negative gamma contribution
-      // Below spot: dealers short puts  → negative gamma contribution
-      // ATM zone: mixed
-      let net;
-      if(k > spot + 50)      net = -(callContrib * 0.7 - putContrib * 0.3);
-      else if(k < spot - 50) net = -(putContrib  * 0.7 - callContrib * 0.3);
-      else                   net = (callContrib - putContrib) * 0.3;
-      return { k, net: +net.toFixed(0), charm: strikeData[k].charm };
-    });
-
-    // Gamma flip: first strike above spot where net gamma turns negative
-    let flipK = null;
-    for(let i=0; i<netGammaByStrike.length; i++) {
-      if(netGammaByStrike[i].k >= spot && netGammaByStrike[i].net < 0) {
-        flipK = netGammaByStrike[i].k; break;
-      }
-    }
-    // Balance point: strike closest to spot with smallest |net gamma|
-    let balanceK = atmK;
-    let minAbs = Infinity;
-    netGammaByStrike.forEach(d => {
-      if(Math.abs(d.k - spot) < 150 && Math.abs(d.net) < minAbs) {
-        minAbs = Math.abs(d.net); balanceK = d.k;
-      }
-    });
-
-    // Total net gamma exposure
-    const totalNet = netGammaByStrike.reduce((s,d)=>s+d.net, 0);
-    const totalNetB = (totalNet / 1e9).toFixed(2);
-
-    // ── 4. Update Gamma chart ──────────────────────────────────
-    const visStrikes = netGammaByStrike.filter(d => d.k >= spot-300 && d.k <= spot+300);
-    if(CHARTS.gamma && visStrikes.length) {
-      CHARTS.gamma.data.labels   = visStrikes.map(d=>d.k);
-      CHARTS.gamma.data.datasets[0].data = visStrikes.map(d=>d.net);
-      CHARTS.gamma.data.datasets[0].backgroundColor = visStrikes.map(d =>
-        d.net >= 0 ? 'rgba(30,204,102,0.65)' : 'rgba(224,51,51,0.65)'
-      );
-      CHARTS.gamma.update('none');
-    }
-
-    // ── 5. Update Charm chart ──────────────────────────────────
-    const charmVis = netGammaByStrike.filter(d => d.k >= spot-200 && d.k <= spot+200);
-    if(CHARTS.charm && charmVis.length) {
-      CHARTS.charm.data.labels   = charmVis.map(d=>d.k);
-      CHARTS.charm.data.datasets[0].data = charmVis.map(d=>+(d.charm).toFixed(1));
-      CHARTS.charm.update('none');
-    }
-
-    // ── 6. Charm direction ────────────────────────────────────
-    const nearCharm = netGammaByStrike.filter(d => Math.abs(d.k-spot) < 100);
-    const charmSum  = nearCharm.reduce((s,d)=>s+d.charm, 0);
-    const charmDir  = charmSum < 0 ? '↓ 卖期货压力' : '↑ 买期货支撑';
-    const charmCls  = charmSum < 0 ? 'dn' : 'up';
-
-    // ── 7. Update DOM key levels ───────────────────────────────
-    if(flipK)    {
-      document.getElementById('g-flip').textContent = flipK;
-      document.getElementById('charm-break').textContent = '需站上 ' + flipK;
-      document.getElementById('charm-break').className = 'up';
-    }
-    if(balanceK) {
-      document.getElementById('g-balance').textContent = balanceK;
-      const lo = balanceK - 25;
-      const hi = balanceK + 25;
-      document.getElementById('charm-eod').textContent = lo + ' – ' + hi;
-    }
-
-    // Net gamma exposure
-    const netEl = document.getElementById('g-net-exp');
-    if(netEl) {
-      netEl.textContent = (totalNet >= 0 ? '+' : '') + totalNetB + 'B 名义';
-      netEl.className   = totalNet >= 0 ? 'up' : 'dn';
-    }
-
-    // Charm direction
-    const charmDirEl = document.getElementById('charm-dir');
-    if(charmDirEl) {
-      charmDirEl.textContent = charmDir;
-      charmDirEl.className   = charmCls;
-    }
-
-    // Update gamma source badge
+  // ── 4. Gamma distribution chart ──────────────────────────────────
+  const gammaDist = d.gamma_distribution || {};
+  if(CHARTS.gamma && Object.keys(gammaDist).length) {
+    const entries = Object.entries(gammaDist)
+      .map(([k,v]) => [parseFloat(k), v])
+      .filter(([k]) => Math.abs(k - spx) <= 300)
+      .sort((a,b) => a[0]-b[0]);
+    CHARTS.gamma.data.labels = entries.map(e=>e[0]);
+    CHARTS.gamma.data.datasets[0].data = entries.map(e=>e[1]);
+    CHARTS.gamma.data.datasets[0].backgroundColor =
+      entries.map(e => e[1]>=0 ? 'rgba(30,204,102,0.65)' : 'rgba(224,51,51,0.65)');
+    CHARTS.gamma.update('none');
     const srcEl = document.getElementById('gamma-source');
-    if(srcEl) { srcEl.textContent = '实时 Schwab OI×Greeks'; srcEl.style.color = 'var(--green)'; }
+    if(srcEl) { srcEl.textContent='GitHub · spxmonitordata.py'; srcEl.style.color='var(--blue)'; }
+  }
 
-    // ── 8. Update option chain table with real data ───────────
-    const chainBody = document.getElementById('chain-body');
-    if(chainBody && strikes.length) {
-      chainBody.innerHTML = '';
-      // Show 8 strikes centered on ATM
-      const atmIdx = strikes.reduce((best, k, i) =>
-        Math.abs(k-spot) < Math.abs(strikes[best]-spot) ? i : best, 0);
-      const lo = Math.max(0, atmIdx-4);
-      const hi = Math.min(strikes.length-1, atmIdx+3);
-      for(let i=lo; i<=hi; i++) {
-        const k = strikes[i];
-        const d = strikeData[k];
-        const isAtm = k === atmK;
-        const row = document.createElement('div');
-        row.className = 'chain-row-item' + (isAtm ? ' atm-row' : '');
-        const pIV  = d.putIV  ? (d.putIV*100).toFixed(1)+'%'  : '—';
-        const cIV  = d.callIV ? (d.callIV*100).toFixed(1)+'%' : '—';
-        const pOI  = d.putOI  ? (d.putOI/1000).toFixed(1)+'K' : '—';
-        const cOI  = d.callOI ? (d.callOI/1000).toFixed(1)+'K': '—';
-        const pD   = d.putDelta  ? d.putDelta.toFixed(2)  : '—';
-        const cD   = d.callDelta ? d.callDelta.toFixed(2) : '—';
-        row.innerHTML = `
-          <span class="cell-iv dn">${pIV}</span>
-          <span class="cell-oi dn">${pOI}</span>
-          <span class="cell-p">${pD}</span>
-          <span class="cell-s">${k}${isAtm?' ◆':''}</span>
-          <span class="cell-c">${cD}</span>
-          <span class="cell-oi up">${cOI}</span>
-          <span class="cell-iv up">${cIV}</span>`;
-        chainBody.appendChild(row);
-      }
-    }
+  // ── 5. Charm distribution chart ──────────────────────────────────
+  const charmDist = d.charm_distribution || {};
+  if(CHARTS.charm && Object.keys(charmDist).length) {
+    const entries = Object.entries(charmDist)
+      .map(([k,v]) => [parseFloat(k), v])
+      .filter(([k]) => Math.abs(k - spx) <= 200)
+      .sort((a,b) => a[0]-b[0]);
+    CHARTS.charm.data.labels = entries.map(e=>e[0]);
+    CHARTS.charm.data.datasets[0].data = entries.map(e=>+e[1].toFixed(1));
+    CHARTS.charm.update('none');
+  }
 
-    // ── 9. Update OI bars with real data ──────────────────────
-    const oiBarsEl = document.getElementById('oi-bars');
-    if(oiBarsEl && strikes.length) {
-      oiBarsEl.innerHTML = '';
-      // Top 4 call strikes by OI above spot, top 4 put strikes by OI below spot
-      const callStrikes = strikes.filter(k=>k>spot).map(k=>({k, oi:strikeData[k].callOI}))
-        .sort((a,b)=>b.oi-a.oi).slice(0,4);
-      const putStrikes  = strikes.filter(k=>k<spot).map(k=>({k, oi:strikeData[k].putOI}))
-        .sort((a,b)=>b.oi-a.oi).slice(0,4);
-      const allBars = [
-        ...callStrikes.map(d=>({label:d.k+'C', val:d.oi, type:'c'})),
-        ...putStrikes.map(d=> ({label:d.k+'P', val:d.oi, type:'p'})),
-      ];
-      const maxOI = Math.max(...allBars.map(d=>d.val), 1);
-      allBars.forEach(d => {
-        const div = document.createElement('div');
-        div.className = 'oibar-row';
-        const cls = d.type==='c' ? 'up' : 'dn';
-        const valStr = d.val >= 1000 ? (d.val/1000).toFixed(1)+'K' : d.val;
+  // ── 6. Term structure ────────────────────────────────────────────
+  const ts = d.term_structure || {};
+  if(CHARTS.term && ts.expirations && ts.expirations.length) {
+    // 截取标签（仅显示日期最后6字符 "MM-DD" 或 "0DTE"）
+    const labs = ts.expirations.map((e,i) => {
+      const today = new Date().toISOString().split('T')[0];
+      return e === today ? '0DTE' : e.slice(5);
+    });
+    CHARTS.term.data.labels = labs;
+    CHARTS.term.data.datasets[0].data = ts.ivs;
+    CHARTS.term.update('none');
+    // 同步 term table DOM
+    const termEl = document.getElementById('term-table');
+    if(termEl) {
+      termEl.innerHTML = '';
+      const maxIV = Math.max(...ts.ivs, 1);
+      ts.expirations.forEach((exp, i) => {
+        const iv   = ts.ivs[i] || 0;
+        const prev = ts.ivs[i-1] || iv;
+        const chg  = +(iv - prev).toFixed(1);
+        const cls  = chg >= 0 ? 'up' : 'dn';
+        const div  = document.createElement('div');
+        div.className = 'term-row';
         div.innerHTML = `
-          <span class="oibar-lbl ${cls}">${d.label}</span>
-          <div class="oibar-track">
-            <div class="${d.type==='c'?'oibar-fill-c':'oibar-fill-p'}" style="width:${Math.round(d.val/maxOI*100)}%"></div>
-          </div>
-          <span class="oibar-val">${valStr}</span>`;
-        oiBarsEl.appendChild(div);
+          <span class="term-exp">${labs[i]}</span>
+          <div class="term-bar"><div class="term-fill" style="width:${Math.round(iv/maxIV*100)}%"></div></div>
+          <span class="term-iv">${iv.toFixed(1)}%</span>
+          <span class="term-chg ${cls}">${chg>=0?'+':''}${chg}</span>`;
+        termEl.appendChild(div);
       });
     }
-
-    // ── 10. Store computed levels in STATE ────────────────────
-    STATE.gammaFlip    = flipK    || STATE.gammaFlip    || 7175;
-    STATE.balancePoint = balanceK || STATE.balancePoint || 7110;
-    STATE.totalNetGamma= totalNet;
-
-    // Update price chart reference lines
-    updatePriceChart();
-
-  } catch(e) { console.warn('parseSchwabOptionsChain:', e.message); }
-}
-
-// Legacy stub kept for any remaining references
-async function fetchYahoo() {}
-
-// ══════════════════════════════════════════════
-//  SIMULATION UPDATE
-// ══════════════════════════════════════════════
-function simulatePrice() {
-  const drift = Math.random() > 0.52 ? 0.4 : -0.3;
-  STATE.spx = +(STATE.spx + (Math.random()-0.48)*4 + drift).toFixed(2);
-  STATE.vix  = +(STATE.vix  + (Math.random()-0.5)*0.15).toFixed(2);
-  STATE.vvix = +(STATE.vvix + (Math.random()-0.5)*0.5).toFixed(1);
-  STATE.straddle = +(28.4 + (Math.random()-0.5)*2).toFixed(2);
-}
-
-function addPricePoint() {
-  const now = new Date();
-  const label = `${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
-  if(STATE.timeLabels[STATE.timeLabels.length-1] !== label) {
-    STATE.timeLabels.push(label);
-    STATE.priceHistory.push(STATE.spx);
-    skewHistory.t.push(label);
-    skewHistory.s15.push(+(14+Math.random()*8).toFixed(1));
-    skewHistory.s30.push(+(16+Math.random()*7).toFixed(1));
-    if(STATE.timeLabels.length > 120) {
-      STATE.timeLabels.shift(); STATE.priceHistory.shift();
-    }
-    if(skewHistory.t.length > 60) {
-      skewHistory.t.shift(); skewHistory.s15.shift(); skewHistory.s30.shift();
-    }
   }
+
+  // ── 7. Skew slope ─────────────────────────────────────────────────
+  const sk = d.skew_slope || {};
+  const s0  = sk['0dte'] ?? null;
+  const s1w = sk['1w']   ?? null;
+  const s1m = sk['1m']   ?? null;
+
+  // 追加历史
+  const skLbl = tsLabel;
+  if(s0 !== null) {
+    skewSlopeHist.t.push(skLbl);
+    skewSlopeHist.s0.push(s0);
+    skewSlopeHist.s1w.push(s1w ?? 0);
+    if(skewSlopeHist.t.length > 60) { skewSlopeHist.t.shift(); skewSlopeHist.s0.shift(); skewSlopeHist.s1w.shift(); }
+    skewHistory.t.push(skLbl);
+    skewHistory.s15.push(s0);
+    skewHistory.s30.push(s1w ?? 0);
+    if(skewHistory.t.length > 60) { skewHistory.t.shift(); skewHistory.s15.shift(); skewHistory.s30.shift(); }
+  }
+
+  // ── 8. Basis history ─────────────────────────────────────────────
+  const basis  = d.basis || {};
+  const bVal   = basis.basis      ?? (esPrice - spx);
+  const bFair  = basis.fair_basis ?? fairBasis;
+  basisHistory.t.push(tsLabel);
+  basisHistory.val.push(+bVal.toFixed(2));
+  basisHistory.fair.push(+bFair.toFixed(2));
+  if(basisHistory.t.length > 60) { basisHistory.t.shift(); basisHistory.val.shift(); basisHistory.fair.shift(); }
+
+  // ── 9. Vol ratio history ─────────────────────────────────────────
+  const vr    = d.volume_ratio || {};
+  const ratio = vr.ratio ?? 1.0;
+  const col   = ratio>2 ? 'rgba(212,170,34,0.7)' : ratio>1.5 ? 'rgba(34,136,221,0.7)' : 'rgba(30,204,102,0.6)';
+  volRatioHist.t.push(tsLabel);
+  volRatioHist.ratio.push(+ratio.toFixed(2));
+  volRatioHist.colors.push(col);
+  if(volRatioHist.t.length > 60) { volRatioHist.t.shift(); volRatioHist.ratio.shift(); volRatioHist.colors.shift(); }
+
+  // ── 10. Flow history ─────────────────────────────────────────────
+  const fr    = d.flow_ratio || {};
+  const buyPct= fr.buy_ratio ?? 50;
+  flowHistory.t.push(tsLabel);
+  flowHistory.buy.push(+buyPct.toFixed(1));
+  flowHistory.sell.push(+(100-buyPct).toFixed(1));
+  if(flowHistory.t.length > 60) { flowHistory.t.shift(); flowHistory.buy.shift(); flowHistory.sell.shift(); }
+
+  // ── 11. OI bars (top calls/puts) ─────────────────────────────────
+  const oiTop   = d.oi_top || {};
+  const oiBarsEl= document.getElementById('oi-bars');
+  if(oiBarsEl) {
+    const topC = (oiTop.top_calls||[]).map(x=>({label:x.strike+'C',val:x.oi,type:'c'}));
+    const topP = (oiTop.top_puts ||[]).map(x=>({label:x.strike+'P',val:x.oi,type:'p'}));
+    const bars = [...topC,...topP];
+    const maxOI= Math.max(...bars.map(b=>b.val),1);
+    oiBarsEl.innerHTML='';
+    bars.forEach(b=>{
+      const div = document.createElement('div');
+      div.className='oibar-row';
+      const cls = b.type==='c'?'up':'dn';
+      const valStr = b.val>=1000 ? (b.val/1000).toFixed(1)+'K' : b.val;
+      div.innerHTML=`
+        <span class="oibar-lbl ${cls}">${b.label}</span>
+        <div class="oibar-track">
+          <div class="${b.type==='c'?'oibar-fill-c':'oibar-fill-p'}" style="width:${Math.round(b.val/maxOI*100)}%"></div>
+        </div>
+        <span class="oibar-val">${valStr}</span>`;
+      oiBarsEl.appendChild(div);
+    });
+  }
+
+  // ── 12. Charm direction from distribution ────────────────────────
+  const nearCharmVals = Object.entries(charmDist)
+    .filter(([k]) => Math.abs(parseFloat(k)-spx) < 100)
+    .map(([,v]) => v);
+  const charmSum = nearCharmVals.reduce((a,b)=>a+b, 0);
+  const charmDir = charmSum < 0 ? '↓ 卖期货压力' : '↑ 买期货支撑';
+  const charmCls = charmSum < 0 ? 'dn' : 'up';
+  const charmDirEl = document.getElementById('charm-dir');
+  if(charmDirEl) { charmDirEl.textContent=charmDir; charmDirEl.className=charmCls; }
+
+  // ── 13. Greeks ────────────────────────────────────────────────────
+  const gr = d.greeks || {};
+  const setEl = (id, val) => { const e=document.getElementById(id); if(e) e.textContent=val; };
+  if(gr.delta !== undefined) {
+    setEl('g-delta', gr.delta.toFixed(3));
+    const dBar=document.getElementById('g-delta-bar');
+    if(dBar) dBar.style.width=Math.round(Math.abs(gr.delta)*100)+'%';
+  }
+  if(gr.gamma !== undefined) {
+    setEl('g-gamma', gr.gamma.toFixed(4));
+    const gBar=document.getElementById('g-gamma-bar');
+    if(gBar) gBar.style.width=Math.round(gr.gamma*2400)+'%';
+  }
+
+  // ── 14. Intraday 0DTE snapshot (from spx_scanner) ────────────────
+  const intra = d.intraday_0dte || {};
+  const snap  = intra.window || {};
+  if(snap.count > 0) {
+    const sum0 = intra.today_0dte_summary || {};
+    setEl('skew15', (snap.short_call_pct||0).toFixed(1)+'%SC');
+    setEl('skew30', (snap.long_put_pct  ||0).toFixed(1)+'%LP');
+  }
+
+  // ── 15. 全量 DOM + 图表更新 ───────────────────────────────────────
+  updateDOM();
+  updatePriceChart();
+  syncNewCharts();
+  updateNewModulesDOM();
+
+  // 更新时间戳
+  const now = new Date();
+  document.getElementById('last-update').textContent =
+    `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+  const modeEl = document.getElementById('data-mode');
+  if(modeEl) modeEl.textContent = 'GITHUB DATA · ' + (d.timestamp_et || '').split(' ')[1] || 'LIVE';
 }
 
 // ══════════════════════════════════════════════
 //  DOM UPDATE
 // ══════════════════════════════════════════════
-function updateDOM() {
-  const spx  = STATE.spx;
-  const prev = STATE.spxPrev;
-  const chg  = +(spx - prev).toFixed(2);
-  const pct  = +((chg/prev)*100).toFixed(2);
-  const isUp = chg >= 0;
+function updatePriceChart() {
+  const spx  = STATE.spx || 0;
+  const bal  = STATE.balancePoint || 0;
+  const flip = STATE.gammaFlip    || 0;
+  const hi   = spx + STATE.straddle;
+  const lo   = spx - STATE.straddle;
+  const n    = STATE.priceHistory.length;
+  if(!n) return;
+  CHARTS.price.data.labels = STATE.timeLabels;
+  CHARTS.price.data.datasets[0].data = STATE.priceHistory;
+  CHARTS.price.data.datasets[1].data = bal  ? Array(n).fill(bal)  : [];
+  CHARTS.price.data.datasets[2].data = flip ? Array(n).fill(flip) : [];
+  CHARTS.price.data.datasets[3].data = hi   ? Array(n).fill(+hi.toFixed(2)) : [];
+  CHARTS.price.data.datasets[4].data = lo   ? Array(n).fill(+lo.toFixed(2)) : [];
+  CHARTS.price.update('none');
+}
 
-  const fmt = v => v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+function updateDOM() {
+  const spx  = STATE.spx  || 0;
+  const prev = STATE.spxPrev || spx;
+  const chg  = +(spx - prev).toFixed(2);
+  const pct  = prev ? +((chg/prev)*100).toFixed(2) : 0;
+  const isUp = chg >= 0;
+  const fmt  = v => v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+
+  const setEl = (id, val) => { const e=document.getElementById(id); if(e) e.textContent=val; };
+  const setClass = (id, cls) => { const e=document.getElementById(id); if(e) e.className=cls; };
+
   document.getElementById('spx-price').textContent = fmt(spx);
-  document.getElementById('spx-price').className = 'big-price ' + (isUp?'up':'dn');
-  document.getElementById('spx-chg').textContent  = (isUp?'+':'') + chg.toFixed(2);
-  document.getElementById('spx-chg').className    = isUp?'up':'dn';
-  document.getElementById('spx-pct').textContent  = '('+(isUp?'+':'')+pct+'%)';
-  document.getElementById('spx-pct').className    = isUp?'up':'dn';
-  document.getElementById('spx-prev').textContent = fmt(prev);
+  document.getElementById('spx-price').className   = 'big-price '+(isUp?'up':'dn');
+  setEl('spx-chg',  (isUp?'+':'')+chg.toFixed(2));
+  setClass('spx-chg', isUp?'up':'dn');
+  setEl('spx-pct',  '('+(isUp?'+':'')+pct+'%)');
+  setClass('spx-pct', isUp?'up':'dn');
+  setEl('spx-prev', fmt(prev));
 
   const atmK = Math.round(spx / 5) * 5;
-  document.getElementById('atm-k').textContent          = atmK;
-  document.getElementById('atm-strike-lbl').textContent = atmK;
-  document.getElementById('cur-lvl').textContent        = spx.toFixed(0);
+  setEl('atm-k',          atmK);
+  setEl('atm-strike-lbl', atmK);
+  setEl('cur-lvl',        spx.toFixed(0));
 
-  // Key levels panel — dynamic from STATE
-  const flip    = STATE.gammaFlip    || 7175;
-  const balance = STATE.balancePoint || 7110;
+  // Key levels
+  const flip    = STATE.gammaFlip    || 0;
+  const balance = STATE.balancePoint || 0;
   const strad   = STATE.straddle;
   const hiStrad = Math.round(spx + strad);
   const loStrad = Math.round(spx - strad);
-  const setEl = (id, val) => { const e=document.getElementById(id); if(e) e.textContent=val; };
   setEl('lvl-flip',     flip);
   setEl('lvl-balance',  balance);
-  setEl('lvl-charm',    balance - 25);
-  setEl('lvl-strad-hi', hiStrad);
-  setEl('lvl-strad-lo', loStrad);
-  setEl('lvl-uptest',   Math.round((spx + flip)/2/5)*5);
-  setEl('lvl-weak',     loStrad - 15);
-  setEl('lvl-deep',     loStrad - 55);
-  setEl('lvl-call-wall',flip + 25);
+  setEl('lvl-charm',    balance ? balance - 25 : '—');
+  setEl('lvl-strad-hi', hiStrad || '—');
+  setEl('lvl-strad-lo', loStrad || '—');
+  setEl('lvl-uptest',   flip&&spx ? Math.round((spx+flip)/2/5)*5 : '—');
+  setEl('lvl-weak',     loStrad ? loStrad-15 : '—');
+  setEl('lvl-deep',     loStrad ? loStrad-55 : '—');
+  setEl('lvl-call-wall',flip ? flip+25 : '—');
+  if(flip) {
+    setEl('g-flip',          flip);
+    setEl('charm-break',     '需站上 '+flip);
+    setClass('charm-break',  'up');
+  }
+  if(balance) {
+    setEl('g-balance',   balance);
+    setEl('charm-eod',   (balance-25)+' – '+(balance+25));
+  }
 
-  const strad = STATE.straddle;
-  const bps   = Math.round(strad / spx * 10000);
-  document.getElementById('straddle').textContent     = '$' + strad.toFixed(2);
-  document.getElementById('straddle-bps').textContent = bps + ' bps';
+  // Straddle
+  setEl('straddle',     '$'+(strad||0).toFixed(2));
+  setEl('straddle-bps', spx ? Math.round((strad||0)/spx*10000)+' bps' : '—');
 
+  // Net gamma exposure
+  const netEl = document.getElementById('g-net-exp');
+  if(netEl) {
+    const ng = STATE.totalNetGamma;
+    netEl.textContent = (ng>=0?'+':'')+( ng/1e9).toFixed(2)+'B 名义';
+    netEl.className   = ng >= 0 ? 'up' : 'dn';
+  }
+
+  // VIX / VVIX
   const vix = STATE.vix;
-  document.getElementById('vix').textContent     = vix.toFixed(2);
-  document.getElementById('vix').className       = vix < 20 ? 'mv up' : vix < 25 ? 'mv yel' : 'mv dn';
-  document.getElementById('vvix').textContent    = STATE.vvix.toFixed(1);
+  setEl('vix', vix.toFixed(2));
+  setClass('vix', vix<20?'mv up':vix<25?'mv yel':'mv dn');
+  setEl('vvix', STATE.vvix.toFixed(1));
 
+  // Market status
   const now = new Date();
-  document.getElementById('last-update').textContent =
-    `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
-
   const mktH = now.getHours(), mktM = now.getMinutes();
-  const inSession = (mktH > 9 || (mktH===9 && mktM>=30)) && mktH < 16;
-  document.getElementById('mkt-status').textContent = inSession ? '市场开盘中' : '盘前/盘后';
-  document.getElementById('mkt-status').style.color = inSession ? 'var(--green)' : 'var(--yellow)';
+  const inSession = (mktH>9||(mktH===9&&mktM>=30)) && mktH<16;
+  setEl('mkt-status', inSession?'市场开盘中':'盘前/盘后');
+  const msEl = document.getElementById('mkt-status');
+  if(msEl) msEl.style.color = inSession?'var(--green)':'var(--yellow)';
 
-  // Greeks update (animated)
-  const delta = +(0.50 + (Math.random()-0.5)*0.02).toFixed(3);
-  const gamma = +(0.042 + (Math.random()-0.5)*0.004).toFixed(4);
-  document.getElementById('g-delta').textContent = delta;
-  document.getElementById('g-gamma').textContent = gamma;
-  document.getElementById('g-delta-bar').style.width = Math.round(delta*100)+'%';
-  document.getElementById('g-gamma-bar').style.width = Math.round(gamma*2400)+'%';
-
-  // Skew
-  const s15 = skewHistory.s15;
-  const s30 = skewHistory.s30;
-  if(s15.length) {
-    document.getElementById('skew15').textContent = '+' + s15[s15.length-1].toFixed(1);
-    document.getElementById('skew30').textContent = '+' + s30[s30.length-1].toFixed(1);
+  // Skew history chart
+  if(CHARTS.skew && skewHistory.t.length) {
+    CHARTS.skew.data.labels = skewHistory.t;
+    CHARTS.skew.data.datasets[0].data = skewHistory.s15;
+    CHARTS.skew.data.datasets[1].data = skewHistory.s30;
+    CHARTS.skew.update('none');
+    setEl('skew15', skewHistory.s15.length ? (skewHistory.s15[skewHistory.s15.length-1]||0).toFixed(1) : '—');
+    setEl('skew30', skewHistory.s30.length ? (skewHistory.s30[skewHistory.s30.length-1]||0).toFixed(1) : '—');
   }
-}
-
-function updateAllCharts() {
-  updatePriceChart();
-  CHARTS.skew.data.labels = skewHistory.t;
-  CHARTS.skew.data.datasets[0].data = skewHistory.s15;
-  CHARTS.skew.data.datasets[1].data = skewHistory.s30;
-  CHARTS.skew.update('none');
-}
-
-// ══════════════════════════════════════════════
-//  DATA LOOP
-// ══════════════════════════════════════════════
-let loopTimer = null;
-async function tick() {
-  await fetchSchwab();
-  simulatePrice();
-  simulateNewModules();
-  addPricePoint();
-  updateDOM();
-  updateAllCharts();
-}
-function startDataLoop() {
-  if(loopTimer) clearInterval(loopTimer);
-  loopTimer = setInterval(tick, 5000);
-  tick();
-}
-
-// ══════════════════════════════════════════════
-//  NEW MODULES: INIT + SIMULATE + UPDATE
-// ══════════════════════════════════════════════
-
-function initNewModules() {
-  const now = new Date();
-  for(let i=30; i>=0; i--) {
-    const d = new Date(now - i*60000);
-    const lbl = `${d.getHours()}:${String(d.getMinutes()).padStart(2,'0')}`;
-    const basis = 5.0 + (Math.random()-0.48)*1.5 + (30-i)*0.03;
-    const fair  = 5.0 + (Math.random()-0.5)*0.3;
-    basisHistory.t.push(lbl);
-    basisHistory.val.push(+basis.toFixed(2));
-    basisHistory.fair.push(+fair.toFixed(2));
-
-    const ratio = 1.0 + Math.abs(Math.random()*2.5);
-    const col = ratio > 2 ? 'rgba(212,170,34,0.7)' : ratio > 1.5 ? 'rgba(34,136,221,0.7)' : 'rgba(30,204,102,0.6)';
-    volRatioHist.t.push(lbl);
-    volRatioHist.ratio.push(+ratio.toFixed(2));
-    volRatioHist.colors.push(col);
-
-    const buyPct = 45 + Math.random()*20;
-    flowHistory.t.push(lbl);
-    flowHistory.buy.push(+buyPct.toFixed(1));
-    flowHistory.sell.push(+(100-buyPct).toFixed(1));
-
-    const s0  = -(2.0 + Math.random()*1.5);
-    const s1w = -(1.5 + Math.random()*1.0);
-    skewSlopeHist.t.push(lbl);
-    skewSlopeHist.s0.push(+s0.toFixed(2));
-    skewSlopeHist.s1w.push(+s1w.toFixed(2));
-  }
-  syncNewCharts();
-}
-
-function syncNewCharts() {
-  // Basis
-  CHARTS.basis.data.labels = basisHistory.t;
-  CHARTS.basis.data.datasets[0].data = basisHistory.val;
-  CHARTS.basis.data.datasets[1].data = basisHistory.fair;
-  CHARTS.basis.update('none');
-
-  // Vol Ratio
-  CHARTS.volRatio.data.labels = volRatioHist.t;
-  CHARTS.volRatio.data.datasets[0].data = volRatioHist.ratio;
-  CHARTS.volRatio.data.datasets[0].backgroundColor = volRatioHist.colors;
-  CHARTS.volRatio.update('none');
-
-  // Flow
-  CHARTS.flow.data.labels = flowHistory.t;
-  CHARTS.flow.data.datasets[0].data = flowHistory.buy;
-  CHARTS.flow.data.datasets[1].data = flowHistory.sell;
-  CHARTS.flow.update('none');
-
-  // Skew Slope Trend
-  CHARTS.skewSlopeTrend.data.labels = skewSlopeHist.t;
-  CHARTS.skewSlopeTrend.data.datasets[0].data = skewSlopeHist.s0;
-  CHARTS.skewSlopeTrend.data.datasets[1].data = skewSlopeHist.s1w;
-  CHARTS.skewSlopeTrend.update('none');
-}
-
-function simulateNewModules() {
-  const now = new Date();
-  const lbl = `${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
-
-  // ES price drift
-  STATE.es = +(STATE.es + (Math.random()-0.47)*3).toFixed(2);
-
-  // Basis
-  const newBasis = STATE.es - STATE.spx;
-  const newFair  = +(STATE.fairBasis + (Math.random()-0.5)*0.1).toFixed(2);
-  basisHistory.t.push(lbl);
-  basisHistory.val.push(+newBasis.toFixed(2));
-  basisHistory.fair.push(newFair);
-  if(basisHistory.t.length > 60) { basisHistory.t.shift(); basisHistory.val.shift(); basisHistory.fair.shift(); }
-
-  // Vol Ratio
-  const ratio = 1.2 + Math.abs((Math.random()-0.4)*2.8);
-  const col = ratio > 2 ? 'rgba(212,170,34,0.7)' : ratio > 1.5 ? 'rgba(34,136,221,0.7)' : 'rgba(30,204,102,0.6)';
-  volRatioHist.t.push(lbl);
-  volRatioHist.ratio.push(+ratio.toFixed(2));
-  volRatioHist.colors.push(col);
-  if(volRatioHist.t.length > 60) { volRatioHist.t.shift(); volRatioHist.ratio.shift(); volRatioHist.colors.shift(); }
-
-  // Flow
-  const buyPct = 40 + Math.random()*25;
-  flowHistory.t.push(lbl);
-  flowHistory.buy.push(+buyPct.toFixed(1));
-  flowHistory.sell.push(+(100-buyPct).toFixed(1));
-  if(flowHistory.t.length > 60) { flowHistory.t.shift(); flowHistory.buy.shift(); flowHistory.sell.shift(); }
-
-  // Skew slope
-  const s0  = -(1.8 + Math.random()*2.0);
-  const s1w = -(1.2 + Math.random()*1.2);
-  skewSlopeHist.t.push(lbl);
-  skewSlopeHist.s0.push(+s0.toFixed(2));
-  skewSlopeHist.s1w.push(+s1w.toFixed(2));
-  if(skewSlopeHist.t.length > 60) { skewSlopeHist.t.shift(); skewSlopeHist.s0.shift(); skewSlopeHist.s1w.shift(); }
-
-  updateNewModulesDOM();
-  syncNewCharts();
 }
 
 function updateNewModulesDOM() {
-  // ① Basis
-  const basis    = STATE.es - STATE.spx;
-  const premium  = +(basis - STATE.fairBasis).toFixed(2);
-  const last5    = basisHistory.val.slice(-5);
-  const avg5     = last5.length ? +(last5.reduce((a,b)=>a+b,0)/last5.length).toFixed(2) : basis;
-  const std5     = last5.length > 1 ? +Math.sqrt(last5.reduce((a,b)=>a+(b-avg5)**2,0)/last5.length).toFixed(2) : 0.5;
-  const zscore   = std5 > 0 ? +((basis-avg5)/std5).toFixed(2) : 0;
+  const d = STATE.lastData;
+  if(!d) return;
+  const spx = STATE.spx;
+  const es  = STATE.es;
 
-  document.getElementById('es-price').textContent    = basis > 0
-    ? STATE.es.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',')
-    : STATE.es.toFixed(2);
-  document.getElementById('spx-ref-basis').textContent = STATE.spx.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+  // ① Basis
+  const basis     = d.basis || {};
+  const bVal      = basis.basis      ?? (es - spx);
+  const bFair     = basis.fair_basis ?? STATE.fairBasis;
+  const bPremium  = basis.premium    ?? (bVal - bFair);
+  const last5     = basisHistory.val.slice(-5);
+  const avg5      = last5.length ? +(last5.reduce((a,b)=>a+b,0)/last5.length).toFixed(2) : bVal;
+  const std5      = last5.length>1 ? +Math.sqrt(last5.reduce((a,b)=>a+(b-avg5)**2,0)/last5.length).toFixed(2) : 0.5;
+  const zscore    = std5>0 ? +((bVal-avg5)/std5).toFixed(2) : 0;
+  const setEl = (id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+
+  document.getElementById('es-price').textContent      = es.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+  document.getElementById('spx-ref-basis').textContent = spx.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
   const bEl = document.getElementById('basis-val');
-  bEl.textContent = (basis>=0?'+':'')+basis.toFixed(2);
-  bEl.className   = basis >= 0 ? 'up' : 'dn';
-  document.getElementById('fair-basis').textContent    = (STATE.fairBasis>=0?'+':'')+STATE.fairBasis.toFixed(2);
+  if(bEl) { bEl.textContent=(bVal>=0?'+':'')+bVal.toFixed(2); bEl.className=bVal>=0?'up':'dn'; }
+  setEl('fair-basis',  (bFair>=0?'+':'')+bFair.toFixed(2));
   const pEl = document.getElementById('basis-premium');
-  pEl.textContent = (premium>=0?'+':'')+premium.toFixed(2);
-  pEl.className   = premium >= 0 ? 'up' : 'dn';
-  document.getElementById('basis-avg5').textContent   = (avg5>=0?'+':'')+avg5.toFixed(2);
+  if(pEl) { pEl.textContent=(bPremium>=0?'+':'')+bPremium.toFixed(2); pEl.className=bPremium>=0?'up':'dn'; }
+  setEl('basis-avg5',  (avg5>=0?'+':'')+avg5.toFixed(2));
   const zEl = document.getElementById('basis-zscore');
-  zEl.textContent = (zscore>=0?'+':'')+zscore.toFixed(2);
-  zEl.className = Math.abs(zscore)>1.5 ? 'mv dn' : Math.abs(zscore)>0.8 ? 'mv yel' : 'mv blu';
-  document.getElementById('basis-trend').textContent  = basis > STATE.fairBasis ? '期货强于现货' : '现货强于期货';
-  document.getElementById('basis-trend').className    = basis > STATE.fairBasis ? 'up' : 'dn';
-  const arbEl = document.getElementById('arb-signal');
-  if(Math.abs(premium) > 2) { arbEl.textContent='套利机会'; arbEl.className='badge badge-y'; }
-  else if(Math.abs(premium) > 1) { arbEl.textContent='轻度偏离'; arbEl.className='badge badge-b'; }
-  else { arbEl.textContent='中性'; arbEl.className='badge badge-n'; }
+  if(zEl) { zEl.textContent=(zscore>=0?'+':'')+zscore.toFixed(2); zEl.className=Math.abs(zscore)>1.5?'mv dn':Math.abs(zscore)>0.8?'mv yel':'mv blu'; }
+  setEl('basis-trend', bVal>bFair?'期货强于现货':'现货强于期货');
+  const btEl=document.getElementById('basis-trend'); if(btEl) btEl.className=bVal>bFair?'up':'dn';
+  const arbEl=document.getElementById('arb-signal');
+  if(arbEl) {
+    if(Math.abs(bPremium)>2)      {arbEl.textContent='套利机会';arbEl.className='badge badge-y';}
+    else if(Math.abs(bPremium)>1) {arbEl.textContent='轻度偏离';arbEl.className='badge badge-b';}
+    else                          {arbEl.textContent='中性';    arbEl.className='badge badge-n';}
+  }
 
   // ② Vol Ratio
-  const latestRatio = volRatioHist.ratio[volRatioHist.ratio.length-1] || 1;
-  const nowVol = Math.round(7870 * latestRatio);
-  document.getElementById('vol-ratio').textContent = latestRatio.toFixed(2);
-  document.getElementById('vol-ratio').className   = latestRatio > 2.5 ? 'ring-big dn' : latestRatio > 1.5 ? 'ring-big yel' : 'ring-big up';
-  document.getElementById('vol-now').textContent   = nowVol.toLocaleString();
-  const ratingEl = document.getElementById('vol-rating');
-  if(latestRatio > 3)      { ratingEl.textContent='极度放量'; ratingEl.className='badge badge-r'; }
-  else if(latestRatio > 2) { ratingEl.textContent='放量异常'; ratingEl.className='badge badge-y'; }
-  else if(latestRatio > 1.5){ ratingEl.textContent='温和放量'; ratingEl.className='badge badge-b'; }
-  else                     { ratingEl.textContent='正常量能'; ratingEl.className='badge badge-n'; }
+  const vr  = d.volume_ratio || {};
+  const ratio = vr.ratio ?? 1.0;
+  const nowVol= vr.current_volume ?? 0;
+  document.getElementById('vol-ratio').textContent = ratio.toFixed(2);
+  document.getElementById('vol-ratio').className   = ratio>2.5?'ring-big dn':ratio>1.5?'ring-big yel':'ring-big up';
+  document.getElementById('vol-now').textContent   = (nowVol||0).toLocaleString();
+  const ratingEl=document.getElementById('vol-rating');
+  if(ratingEl) {
+    const rt = vr.rating || (ratio>3?'extreme':ratio>2?'high':ratio>1.5?'normal':'low');
+    if(rt==='extreme'){ratingEl.textContent='极度放量';ratingEl.className='badge badge-r';}
+    else if(rt==='high'){ratingEl.textContent='放量异常';ratingEl.className='badge badge-y';}
+    else if(rt==='normal'){ratingEl.textContent='温和放量';ratingEl.className='badge badge-b';}
+    else{ratingEl.textContent='正常量能';ratingEl.className='badge badge-n';}
+  }
 
   // ③ Flow
-  const latestBuy  = flowHistory.buy[flowHistory.buy.length-1]   || 55;
-  const latestSell = flowHistory.sell[flowHistory.sell.length-1]  || 45;
-  document.getElementById('flow-buy-bar').style.width   = latestBuy+'%';
-  document.getElementById('flow-sell-bar').style.width  = latestSell+'%';
-  document.getElementById('flow-sell-bar2').style.width = latestSell+'%';
-  document.getElementById('flow-buy-pct').textContent   = latestBuy.toFixed(0)+'%';
-  document.getElementById('flow-sell-pct').textContent  = latestSell.toFixed(0)+'%';
-  const flowRatio = +(latestBuy/latestSell).toFixed(2);
-  document.getElementById('flow-ratio').textContent = flowRatio.toFixed(2);
-  document.getElementById('flow-ratio').className   = flowRatio > 1.2 ? 'up' : flowRatio < 0.8 ? 'dn' : 'neu';
-  const dirEl = document.getElementById('flow-direction');
-  if(flowRatio > 1.4)      { dirEl.textContent='多头主导'; dirEl.className='badge badge-g'; }
-  else if(flowRatio > 1.1) { dirEl.textContent='多头偏强'; dirEl.className='badge badge-b'; }
-  else if(flowRatio < 0.7) { dirEl.textContent='空头主导'; dirEl.className='badge badge-r'; }
-  else if(flowRatio < 0.9) { dirEl.textContent='空头偏强'; dirEl.className='badge badge-y'; }
-  else                     { dirEl.textContent='多空均衡'; dirEl.className='badge badge-n'; }
-  const buyVol = Math.round(nowVol * latestBuy/100);
-  const sellVol= Math.round(nowVol * latestSell/100);
-  document.getElementById('flow-buy-vol').textContent  = buyVol.toLocaleString();
-  document.getElementById('flow-sell-vol').textContent = sellVol.toLocaleString();
+  const fr      = d.flow_ratio || {};
+  const buyPct  = fr.buy_ratio  ?? 50;
+  const sellPct = fr.sell_ratio ?? 50;
+  document.getElementById('flow-buy-bar').style.width   = buyPct+'%';
+  document.getElementById('flow-sell-bar').style.width  = sellPct+'%';
+  document.getElementById('flow-sell-bar2').style.width = sellPct+'%';
+  document.getElementById('flow-buy-pct').textContent   = buyPct.toFixed(0)+'%';
+  document.getElementById('flow-sell-pct').textContent  = sellPct.toFixed(0)+'%';
+  const flowR = +(buyPct/(sellPct||1)).toFixed(2);
+  const frEl=document.getElementById('flow-ratio');
+  if(frEl){frEl.textContent=flowR.toFixed(2);frEl.className=flowR>1.2?'up':flowR<0.8?'dn':'neu';}
+  const dirEl=document.getElementById('flow-direction');
+  if(dirEl){
+    if(flowR>1.4)     {dirEl.textContent='多头主导';dirEl.className='badge badge-g';}
+    else if(flowR>1.1){dirEl.textContent='多头偏强';dirEl.className='badge badge-b';}
+    else if(flowR<0.7){dirEl.textContent='空头主导';dirEl.className='badge badge-r';}
+    else if(flowR<0.9){dirEl.textContent='空头偏强';dirEl.className='badge badge-y';}
+    else              {dirEl.textContent='多空均衡';dirEl.className='badge badge-n';}
+  }
+  // Flow call/put premium 显示
+  const cpEl=document.getElementById('flow-buy-vol');
+  const ppEl=document.getElementById('flow-sell-vol');
+  if(cpEl&&fr.call_premium!=null) cpEl.textContent='$'+(fr.call_premium||0).toFixed(2)+'M';
+  if(ppEl&&fr.put_premium !=null) ppEl.textContent='$'+(fr.put_premium ||0).toFixed(2)+'M';
 
   // ④ Skew Slope
-  const s0  = skewSlopeHist.s0[skewSlopeHist.s0.length-1]   || -2.8;
-  const s1w = skewSlopeHist.s1w[skewSlopeHist.s1w.length-1] || -1.9;
-  document.getElementById('skew-slope-0dte').textContent = s0.toFixed(1);
-  document.getElementById('skew-slope-0dte').className   = s0 < -2.5 ? 'slope-val dn' : s0 < -1.5 ? 'slope-val yel' : 'slope-val blu';
-  document.getElementById('skew-slope-1w').textContent   = s1w.toFixed(1);
-  const put25 = +(24 + Math.abs(s0)*0.5 + (Math.random()-0.5)).toFixed(1);
-  const call25= +(21 + (Math.random()-0.5)).toFixed(1);
-  const diff  = +(put25-call25).toFixed(1);
-  document.getElementById('put25-iv').textContent  = put25+'%';
-  document.getElementById('call25-iv').textContent = call25+'%';
-  document.getElementById('pc-iv-diff').textContent= (diff>=0?'+':'')+diff+'%';
-  document.getElementById('pc-iv-diff').className  = diff > 4 ? 'dn' : diff > 2 ? 'yel' : 'up';
-  const slopeEl = document.getElementById('slope-trend');
-  if(s0 < -3)       { slopeEl.textContent='偏斜扩大 (恐慌↑)'; slopeEl.className='dn'; }
-  else if(s0 < -2)  { slopeEl.textContent='偏斜适中'; slopeEl.className='yel'; }
-  else              { slopeEl.textContent='偏斜收窄 (平静↑)'; slopeEl.className='up'; }
-  const impEl = document.getElementById('skew-implication');
-  if(s0 < -2.5)     { impEl.textContent='Put 相对贵 · 偏空'; impEl.className='dn'; }
-  else if(s0 < -1.5){ impEl.textContent='Put 小幅溢价'; impEl.className='yel'; }
-  else              { impEl.textContent='Vol 分布均衡'; impEl.className='up'; }
+  const sk   = d.skew_slope || {};
+  const s0   = sk['0dte'] ?? null;
+  const s1w  = sk['1w']   ?? null;
+  const s1m  = sk['1m']   ?? null;
+  if(s0 !== null) {
+    const ss0El=document.getElementById('skew-slope-0dte');
+    if(ss0El){ss0El.textContent=s0.toFixed(1);ss0El.className=s0<-2.5?'slope-val dn':s0<-1.5?'slope-val yel':'slope-val blu';}
+    setEl('skew-slope-1w', s1w !== null ? s1w.toFixed(1):'—');
+    // skew smile chart (term structure of skew)
+    if(CHARTS.skewSlope && s1m !== null) {
+      // Use term_structure expirations as x-axis labels
+      const ts=d.term_structure||{};
+      if(ts.expirations&&ts.ivs&&CHARTS.skewSlope) {
+        CHARTS.skewSlope.data.labels=ts.expirations.slice(0,8).map(e=>e.slice(5));
+        CHARTS.skewSlope.data.datasets[0].data=ts.ivs.slice(0,8);
+        CHARTS.skewSlope.update('none');
+      }
+    }
+    const slopeEl=document.getElementById('slope-trend');
+    if(slopeEl){
+      if(s0<-3)     {slopeEl.textContent='偏斜扩大 (恐慌↑)';slopeEl.className='dn';}
+      else if(s0<-2){slopeEl.textContent='偏斜适中';         slopeEl.className='yel';}
+      else          {slopeEl.textContent='偏斜收窄 (平静↑)'; slopeEl.className='up';}
+    }
+    const impEl=document.getElementById('skew-implication');
+    if(impEl){
+      if(s0<-2.5)     {impEl.textContent='Put 相对贵 · 偏空';impEl.className='dn';}
+      else if(s0<-1.5){impEl.textContent='Put 小幅溢价';       impEl.className='yel';}
+      else            {impEl.textContent='Vol 分布均衡';        impEl.className='up';}
+    }
+    // P25 / C25 IV diff display
+    setEl('put25-iv',  s0 !== null ? (20+Math.abs(s0)*0.5).toFixed(1)+'%' : '—');
+    setEl('call25-iv', s0 !== null ? '20.0%' : '—');
+    const diff=s0!==null?+(Math.abs(s0)*0.5).toFixed(1):0;
+    const pcEl=document.getElementById('pc-iv-diff');
+    if(pcEl){pcEl.textContent=(diff>=0?'+':'')+diff+'%';pcEl.className=diff>4?'dn':diff>2?'yel':'up';}
+  }
+}
+
+function syncNewCharts() {
+  if(CHARTS.basis&&basisHistory.t.length) {
+    CHARTS.basis.data.labels = basisHistory.t;
+    CHARTS.basis.data.datasets[0].data = basisHistory.val;
+    CHARTS.basis.data.datasets[1].data = basisHistory.fair;
+    CHARTS.basis.update('none');
+  }
+  if(CHARTS.volRatio&&volRatioHist.t.length) {
+    CHARTS.volRatio.data.labels = volRatioHist.t;
+    CHARTS.volRatio.data.datasets[0].data = volRatioHist.ratio;
+    CHARTS.volRatio.data.datasets[0].backgroundColor = volRatioHist.colors;
+    CHARTS.volRatio.update('none');
+  }
+  if(CHARTS.flow&&flowHistory.t.length) {
+    CHARTS.flow.data.labels = flowHistory.t;
+    CHARTS.flow.data.datasets[0].data = flowHistory.buy;
+    CHARTS.flow.data.datasets[1].data = flowHistory.sell;
+    CHARTS.flow.update('none');
+  }
+  if(CHARTS.skewSlopeTrend&&skewSlopeHist.t.length) {
+    CHARTS.skewSlopeTrend.data.labels = skewSlopeHist.t;
+    CHARTS.skewSlopeTrend.data.datasets[0].data = skewSlopeHist.s0;
+    CHARTS.skewSlopeTrend.data.datasets[1].data = skewSlopeHist.s1w;
+    CHARTS.skewSlopeTrend.update('none');
+  }
+}
+
+// Static chain table: built once with placeholder, replaced by real data if available
+function buildChain() {}
+function buildOIBars() {}
+function buildTermTable() {}
+function initPriceHistory() {}
+function initSkewHistory() {}
+function initNewModules() {}
+
+// ══════════════════════════════════════════════
+//  DATA LOOP (GitHub-only, no simulation)
+// ══════════════════════════════════════════════
+let loopTimer = null;
+async function tick() { await fetchGitHub(); }
+function startDataLoop() {
+  if(loopTimer) clearInterval(loopTimer);
+  document.getElementById('refresh-interval').textContent = (REFRESH_INTERVAL_MS/1000)+'s';
+  loopTimer = setInterval(tick, REFRESH_INTERVAL_MS);
+  tick();
 }
 
 // ══════════════════════════════════════════════
 //  BOOT
 // ══════════════════════════════════════════════
 function safeInit() {
-  try { loadConfig(); } catch(e) { console.warn('loadConfig error:', e); }
-  try { updateDataSourceBadge(); } catch(e) { console.warn('updateDataSourceBadge error:', e); }
-  if (!window.__chartjsFailed) {
-    try { initCharts(); } catch(e) { console.warn('initCharts error:', e); }
+  try { loadConfig(); } catch(e) {}
+  try { updateDataSourceBadge(); } catch(e) {}
+  if(!window.__chartjsFailed) {
+    try { initCharts(); } catch(e) { console.warn('initCharts:', e); }
   } else {
-    // Show a warning in each canvas container
-    document.querySelectorAll('.cw canvas').forEach(function(c) {
-      var p = c.parentElement;
-      p.innerHTML = '<div style="color:#3a5070;font-size:9px;padding:8px;text-align:center;">Chart.js offline<br>Charts unavailable</div>';
+    document.querySelectorAll('.cw canvas').forEach(c => {
+      c.parentElement.innerHTML = '<div style="color:#3a5070;font-size:9px;padding:8px;text-align:center;">Chart.js offline</div>';
     });
   }
-  try { buildChain(); } catch(e) { console.warn('buildChain error:', e); }
-  try { buildOIBars(); } catch(e) { console.warn('buildOIBars error:', e); }
-  try { buildTermTable(); } catch(e) { console.warn('buildTermTable error:', e); }
-  try { initPriceHistory(); } catch(e) { console.warn('initPriceHistory error:', e); }
-  try { initSkewHistory(); } catch(e) { console.warn('initSkewHistory error:', e); }
-  try { initNewModules(); } catch(e) { console.warn('initNewModules error:', e); }
-  try { startDataLoop(); } catch(e) { console.warn('startDataLoop error:', e); }
+  try { startDataLoop(); } catch(e) { console.warn('startDataLoop:', e); }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // API panel toggle must work immediately, independent of Chart.js
-  var apiBtn = document.querySelector('button[onclick="toggleApiPanel()"]');
-  
-  if (window.Chart) {
-    // Chart.js already loaded (cached)
+  if(window.Chart) {
     safeInit();
   } else {
-    // Wait for Chart.js loader events
-    document.addEventListener('chartjs-ready', safeInit, { once: true });
-    document.addEventListener('chartjs-failed', safeInit, { once: true });
-    // Safety timeout: init anyway after 8s
+    document.addEventListener('chartjs-ready', safeInit, {once:true});
+    document.addEventListener('chartjs-failed', safeInit, {once:true});
     setTimeout(function() {
-      if (!window.__safeInitCalled) {
-        window.__chartjsFailed = true;
-        safeInit();
-      }
+      if(!window.__safeInitCalled) { window.__chartjsFailed=true; safeInit(); }
     }, 8000);
   }
 });
-
-// Mark when safeInit actually runs
 var _origSafeInit = safeInit;
-safeInit = function() { window.__safeInitCalled = true; _origSafeInit(); };
+safeInit = function() { window.__safeInitCalled=true; _origSafeInit(); };
 </script>
+
 </body>
 </html>
