@@ -108,7 +108,7 @@ body {
 /* ── MAIN GRID ── */
 .main {
   display: grid;
-  grid-template-columns: 195px 1fr 1fr 230px;
+  grid-template-columns: 230px 1fr 1fr 260px;
   gap: 6px;
   padding: 6px;
   min-height: calc(100vh - 41px);
@@ -127,7 +127,7 @@ body {
   background: var(--bg1);
   border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   flex-shrink: 0;
 }
 .panel-title {
@@ -202,11 +202,12 @@ body {
 /* ── BADGE ── */
 .badge {
   display: inline-block;
-  padding: 1px 7px;
+  padding: 1px 5px;
   border-radius: 2px;
-  font-size: 9px;
+  font-size: 8px;
   font-weight: bold;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 .badge-g { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-dim); }
 .badge-r { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-dim); }
@@ -219,10 +220,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 6px;
+  padding: 3px 5px;
   border-radius: 3px;
-  margin: 2px 0;
+  margin: 1px 0;
   font-size: 10px;
+  gap: 4px;
 }
 .level-item.current {
   background: #111c2a;
@@ -296,11 +298,11 @@ body {
   font-size: 10px;
 }
 .term-row:last-child { border-bottom: none; }
-.term-exp { width: 40px; color: var(--text3); }
+.term-exp { width: 46px; color: var(--text3); }
 .term-bar { flex: 1; height: 4px; background: var(--bg0); border-radius: 2px; overflow: hidden; }
 .term-fill { height: 100%; border-radius: 2px; background: var(--blue); }
-.term-iv  { width: 36px; text-align: right; color: var(--blue); }
-.term-chg { width: 34px; text-align: right; font-size: 9px; }
+.term-iv  { width: 40px; text-align: right; color: var(--blue); }
+.term-chg { width: 36px; text-align: right; font-size: 9px; }
 
 /* ── API CONFIG PANEL ── */
 .api-panel {
@@ -367,10 +369,10 @@ body {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1500px) {
-  .main { grid-template-columns: 185px 1fr 1fr 215px; gap: 5px; }
+  .main { grid-template-columns: 215px 1fr 1fr 245px; gap: 5px; }
 }
 @media (max-width: 1300px) {
-  .main { grid-template-columns: 175px 1fr 1fr 200px; gap: 4px; padding: 4px; }
+  .main { grid-template-columns: 200px 1fr 1fr 230px; gap: 4px; padding: 4px; }
 }
 @media (max-width: 1100px) {
   .main { grid-template-columns: 1fr 1fr; }
@@ -526,7 +528,7 @@ body {
         <div class="ms">最近到期</div>
       </div>
       <div class="mbox y">
-        <div class="ml">0DTE 跨式</div>
+        <div class="ml">STRADDLE</div>
         <div class="mv yel" id="straddle">$28.40</div>
         <div class="ms" id="straddle-bps">40 bps</div>
       </div>
@@ -593,7 +595,7 @@ body {
         <span style="color:var(--blue)">─ 价格</span>
         <span style="margin-left:8px;color:var(--yellow)">─ 均衡</span>
         <span style="margin-left:8px;color:var(--green)">─ Gamma Flip</span>
-        <span style="margin-left:8px;color:var(--red)">─ 跨式界</span>
+        <span style="margin-left:8px;color:var(--red)">─ Straddle</span>
       </span>
     </div>
     <div class="cw"><canvas id="priceChart" height="185"></canvas></div>
@@ -868,9 +870,9 @@ body {
   <!-- Key Levels -->
   <div class="panel">
     <div class="panel-title">关键价位框架 <span class="pt-right" id="levels-source" style="color:var(--yellow)">实时计算</span></div>
-    <div class="level-item"><span class="up">↑ <span id="lvl-call-wall">7200</span></span><span class="badge badge-n">跨式上界外</span></div>
+    <div class="level-item"><span class="up">↑ <span id="lvl-call-wall">7200</span></span><span class="badge badge-n">S+Boundary</span></div>
     <div class="level-item"><span class="up">↑ <span id="lvl-flip">7175</span></span><span class="badge badge-g">GAMMA FLIP 硬顶</span></div>
-    <div class="level-item"><span class="up">↑ <span id="lvl-strad-hi">7163</span></span><span class="badge badge-n">跨式上界</span></div>
+    <div class="level-item"><span class="up">↑ <span id="lvl-strad-hi">7163</span></span><span class="badge badge-n">Strad Hi</span></div>
     <div class="level-item"><span class="up">↑ <span id="lvl-uptest">7150</span></span><span class="badge badge-b">上行测试</span></div>
     <div class="level-item"><span class="yel">→ <span id="lvl-balance">7130</span></span><span class="badge badge-y">均衡 / 枢轴</span></div>
     <div class="level-item current">
@@ -878,7 +880,7 @@ body {
       <span class="badge badge-b">当前价格</span>
     </div>
     <div class="level-item"><span class="yel">→ <span id="lvl-charm">7110</span></span><span class="badge badge-r">CHARM 目标</span></div>
-    <div class="level-item"><span class="dn">↓ <span id="lvl-strad-lo">7107</span></span><span class="badge badge-n">跨式下界</span></div>
+    <div class="level-item"><span class="dn">↓ <span id="lvl-strad-lo">7107</span></span><span class="badge badge-n">Strad Lo</span></div>
     <div class="level-item"><span class="dn">↓ <span id="lvl-weak">7090</span></span><span class="badge badge-r">弱支撑</span></div>
     <div class="level-item"><span class="dn">↓ <span id="lvl-deep">7050</span></span><span class="badge badge-r">深度测试</span></div>
   </div>
