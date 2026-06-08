@@ -108,7 +108,7 @@ body {
 /* ── MAIN GRID ── */
 .main {
   display: grid;
-  grid-template-columns: 200px 1fr 1fr 220px;
+  grid-template-columns: 195px 1fr 1fr 230px;
   gap: 6px;
   padding: 6px;
   min-height: calc(100vh - 41px);
@@ -367,10 +367,10 @@ body {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1500px) {
-  .main { grid-template-columns: 190px 1fr 1fr 200px; gap: 5px; }
+  .main { grid-template-columns: 185px 1fr 1fr 215px; gap: 5px; }
 }
 @media (max-width: 1300px) {
-  .main { grid-template-columns: 180px 1fr 1fr 185px; gap: 4px; padding: 4px; }
+  .main { grid-template-columns: 175px 1fr 1fr 200px; gap: 4px; padding: 4px; }
 }
 @media (max-width: 1100px) {
   .main { grid-template-columns: 1fr 1fr; }
@@ -717,6 +717,32 @@ body {
 
   </div><!-- /sub2 量比+内外盘 -->
 
+
+  <!-- 0DTE Strategy (moved from col4) -->
+  <div class="panel">
+    <div class="panel-title">0DTE 策略参考</div>
+    <div class="sub2">
+      <div>
+        <div class="sep-row"><span class="left">当前环境</span><span class="yel">震荡 / 受压制</span></div>
+        <div class="sep-row"><span class="left">推荐策略</span><span class="up">铁鹰 Iron Condor</span></div>
+        <div class="sep-row"><span class="left">次选策略</span><span class="blu">看涨价差 (突破时)</span></div>
+        <div class="sep-row"><span class="left">规避</span><span class="dn">裸方向性仓位</span></div>
+      </div>
+      <div class="strat-box" style="margin-top:0;">
+        <div class="strat-title">建议铁鹰范围 (今日)</div>
+        <div class="strat-wings">
+          <span class="dn">7075P / 7050P</span>
+          <span class="neu">|</span>
+          <span class="up">7175C / 7200C</span>
+        </div>
+        <div style="font-size:9px;color:var(--text3);margin-top:5px;">
+          预收权利金 ~$8–12 · 盈利概率 ~70%<br>
+          止损: 突破 7175 上方或 7075 下方
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div><!-- /col2 -->
 
 <!-- ══════════════════ COL 3: 期权链 + IV微笑 + VIX期限 + Skew Slope ══════════════════ -->
@@ -816,6 +842,24 @@ body {
     </div>
   </div>
 
+
+  <!-- Vol Regime (moved from col4) -->
+  <div class="panel">
+    <div class="panel-title">Vol 制度监控</div>
+    <div class="sub2">
+      <div>
+        <div class="sep-row"><span class="left">Fixed-Strike Vol</span><span class="up">+0.8pt (被买入)</span></div>
+        <div class="sep-row"><span class="left">Spot-Vol 相关性</span><span class="up">正相关 (异常)</span></div>
+        <div class="sep-row"><span class="left">Vanna 敞口</span><span class="neu">接近中性</span></div>
+      </div>
+      <div>
+        <div class="sep-row"><span class="left">期限结构形态</span><span class="yel">平坦 → 陡化</span></div>
+        <div class="sep-row"><span class="left">期权定价</span><span class="up">偏低 (便宜)</span></div>
+        <div class="sep-row"><span class="left">操作建议</span><span class="up">偏向做多 Vol</span></div>
+      </div>
+    </div>
+  </div>
+
 </div><!-- /col3 -->
 
 <!-- ══════════════════ COL 4: 关键价位 + Greeks + 策略 + Vol制度 ══════════════════ -->
@@ -872,38 +916,6 @@ body {
   <div class="panel">
     <div class="panel-title">各到期日 IV 一览</div>
     <div id="term-table"></div>
-  </div>
-
-  <!-- Strategy -->
-  <div class="panel">
-    <div class="panel-title">0DTE 策略参考</div>
-    <div class="sep-row"><span class="left">当前环境</span><span class="yel">震荡 / 受压制</span></div>
-    <div class="sep-row"><span class="left">推荐策略</span><span class="up">铁鹰 Iron Condor</span></div>
-    <div class="sep-row"><span class="left">次选策略</span><span class="blu">看涨价差 (突破时)</span></div>
-    <div class="sep-row"><span class="left">规避</span><span class="dn">裸方向性仓位</span></div>
-    <div class="strat-box">
-      <div class="strat-title">建议铁鹰范围 (今日)</div>
-      <div class="strat-wings">
-        <span class="dn">7075P / 7050P</span>
-        <span class="neu">|</span>
-        <span class="up">7175C / 7200C</span>
-      </div>
-      <div style="font-size:9px;color:var(--text3);margin-top:5px;">
-        预收权利金 ~$8–12 · 盈利概率 ~70%<br>
-        止损: 突破 7175 上方或 7075 下方
-      </div>
-    </div>
-  </div>
-
-  <!-- Vol Regime -->
-  <div class="panel">
-    <div class="panel-title">Vol 制度监控</div>
-    <div class="sep-row"><span class="left">Fixed-Strike Vol</span><span class="up">+0.8pt (被买入)</span></div>
-    <div class="sep-row"><span class="left">Spot-Vol 相关性</span><span class="up">正相关 (异常)</span></div>
-    <div class="sep-row"><span class="left">Vanna 敞口</span><span class="neu">接近中性</span></div>
-    <div class="sep-row"><span class="left">期限结构形态</span><span class="yel">平坦 → 陡化</span></div>
-    <div class="sep-row"><span class="left">期权定价</span><span class="up">偏低 (便宜)</span></div>
-    <div class="sep-row"><span class="left">操作建议</span><span class="up">偏向做多 Vol</span></div>
   </div>
 
 </div><!-- /col4 -->
