@@ -108,9 +108,9 @@ body {
 /* ── MAIN GRID ── */
 .main {
   display: grid;
-  grid-template-columns: 230px 1fr 1fr 260px;
-  gap: 6px;
-  padding: 6px;
+  grid-template-columns: 300px 420px 420px 300px;
+  gap: 4px;
+  padding: 4px;
   min-height: calc(100vh - 41px);
   box-sizing: border-box;
   width: 100%;
@@ -119,8 +119,8 @@ body {
 .col { display: flex; flex-direction: column; gap: 8px; }
 
 /* ── 2-panel sub-grid inside a col ── */
-.sub2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.sub3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.sub2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.sub3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
 
 /* ── PANEL ── */
 .panel {
@@ -369,10 +369,10 @@ body {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1500px) {
-  .main { grid-template-columns: 215px 1fr 1fr 245px; gap: 5px; }
+  .main { grid-template-columns: 270px 380px 380px 270px; gap: 4px; }
 }
 @media (max-width: 1300px) {
-  .main { grid-template-columns: 200px 1fr 1fr 230px; gap: 4px; padding: 4px; }
+  .main { grid-template-columns: 240px 340px 340px 240px; gap: 3px; padding: 3px; }
 }
 @media (max-width: 1100px) {
   .main { grid-template-columns: 1fr 1fr; }
