@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-09T14:00:16.030273",
-  "timestamp_et": "2026-06-09 14:00 ET",
+  "generated": "2026-06-09T14:20:12.634470",
+  "timestamp_et": "2026-06-09 14:20 ET",
   "spx_price": 7334.98,
   "window_minutes": 5,
   "window": {
@@ -184,6 +184,27 @@
       "market_dir": "看跌 🔴",
       "trade_label": "📈 LONG PUT → 看跌 🔴",
       "dist_pct": 2.688226140149439
+    },
+    {
+      "ts": "13:37:48",
+      "exp_date": "2026-06-09",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7400.0,
+      "volume": 57207,
+      "bid": 67.2,
+      "ask": 67.9,
+      "mid": 67.55000000000001,
+      "iv": 38.706,
+      "delta": -0.906,
+      "open_int": 3501,
+      "est_premium": 386433285.00000006,
+      "spx_price": 7334.98,
+      "position": "SHORT",
+      "market_dir": "看涨(卖Put) 🟢",
+      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
+      "dist_pct": 0.886437318165836
     },
     {
       "ts": "12:39:17",
@@ -415,35 +436,14 @@
       "market_dir": "看涨(卖Put) 🟢",
       "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
       "dist_pct": 1.6217015745885466
-    },
-    {
-      "ts": "12:06:04",
-      "exp_date": "2026-06-09",
-      "is_0dte": true,
-      "direction": "BEAR",
-      "opt_type": "PUT",
-      "strike": 7450.0,
-      "volume": 20683,
-      "bid": 146.5,
-      "ask": 147.7,
-      "mid": 147.1,
-      "iv": 41.377,
-      "delta": -0.986,
-      "open_int": 2320,
-      "est_premium": 304246930.0,
-      "spx_price": 7301.59,
-      "position": "SHORT",
-      "market_dir": "看涨(卖Put) 🟢",
-      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
-      "dist_pct": 2.0325709879628935
     }
   ],
   "today_0dte_summary": {
-    "total_count": 1297,
+    "total_count": 1377,
     "bull_count": 580,
-    "bear_count": 717,
+    "bear_count": 797,
     "bull_prem": 2948254605.0,
-    "bear_prem": 29819711787.5,
-    "net_prem": -26871457182.5
+    "bear_prem": 34747804522.5,
+    "net_prem": -31799549917.5
   }
 }
