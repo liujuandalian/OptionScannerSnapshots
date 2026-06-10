@@ -908,16 +908,42 @@ async function loadEarnings() {
 // 原有功能：SPX 数据 & 期权流 & OI
 // ═══════════════════════════════════════════════════════════════════
 async function loadLatest() {
-  const data = await fetchJSON(`${RAW}/data/latest.json`);
-  if (!data) return null;
-  latestData = data;
-  document.getElementById('last-update').textContent = '最后更新：' + (data._updated || '—') + ' ET';
-  return data;
+  // 直接读 spx_0dte_latest.json 作为主数据源，不依赖 latest.json 索引
+  const dte = await fetchJSON(`${RAW}/data/spx_0dte_latest.json`);
+  if (!dte) return null;
+  latestData = dte;
+  const updatedStr = dte.timestamp_et || dte.generated || '—';
+  document.getElementById('last-update').textContent = '最后更新：' + updatedStr;
+  // 返回一个兼容对象，让下游函数直接使用
+  return { _dte: dte, _updated: updatedStr };
 }
 
 async function loadSPXEod(data) {
-  if (!data || !data.spx_eod) return;
-  const eod = await fetchJSON(`${RAW}/${data.spx_eod.github_path}`);
+  // 直接使用 loadLatest 里已加载的 spx_0dte_latest.json
+  const eod = data?._dte;
+  if (!eod) return;
+  // 补充非0DTE数据（可选）
+  const ndteRaw = await fetchJSON(`${RAW}/data/spx_ndte_latest.json`).catch(()=>null);
+  // eod 字段兼容：spx_0dte_latest.json 顶层有 signals、count、type 等
+  // 构造兼容 eod 对象
+  const signals = eod.signals || [];
+  const bullSigs = signals.filter(s => s.direction === 'BULL' || s.direction === 'BULLISH');
+  const bearSigs = signals.filter(s => s.direction === 'BEAR' || s.direction === 'BEARISH');
+  const bullPrem = bullSigs.reduce((sum,s) => sum + (s.est_premium||0), 0);
+  const bearPrem = bearSigs.reduce((sum,s) => sum + (s.est_premium||0), 0);
+  const netPrem = bullPrem - bearPrem;
+  // 兼容原有字段名（原代码读 eod['0dte'] 子对象）
+  eod['0dte'] = {
+    signals,
+    bull_prem: bullPrem,
+    bear_prem: bearPrem,
+    net_prem: netPrem,
+    bull_count: bullSigs.length,
+    bear_count: bearSigs.length,
+    net_dir: netPrem > 0 ? 'BULL' : netPrem < 0 ? 'BEAR' : 'NONE',
+  };
+  eod.spx_close = eod.spx_close || (signals[0]?.spx_price) || 0;
+  eod.date = eod.date || (eod.timestamp_et || '').slice(0,10);
   if (!eod) return;
   const close = eod.spx_close || 0;
   document.getElementById('spx-price').textContent = close ? `$${close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}` : '—';
@@ -1081,13 +1107,20 @@ function buildComprehensive(sigs, eod) {
 }
 
 async function loadFlow(data) {
-  if (!data || !data.alerts_full) {
-    document.getElementById('flow-card').innerHTML='<div class="loading">暂无期权流数据</div>';
+  // 从已加载的 spx_0dte_latest.json signals 构建期权流
+  const dte = data?._dte;
+  const alerts = dte?.signals || [];
+  if (!alerts.length) {
+    document.getElementById('flow-card').innerHTML='<div class="loading">暂无期权流数据（0DTE信号为空）</div>';
     return;
   }
-  const alerts = await fetchJSON(`${RAW}/${data.alerts_full.github_path}`);
-  if (!alerts || !Array.isArray(alerts)) return;
-  const bp = alerts.filter(x=>x.signal_type==='BIG_PREMIUM');
+  // 兼容原有逻辑：把所有信号当作 BIG_PREMIUM 处理
+  const bp = alerts.map(s => ({
+    ...s,
+    signal_type: 'BIG_PREMIUM',
+    direction: s.direction === 'BULL' ? 'BULLISH' : 'BEARISH',
+    ticker: s.ticker || 'SPX',
+  }));
   const flow = {};
   bp.forEach(a => {
     const t = a.ticker; if(!t) return;
@@ -1125,18 +1158,31 @@ async function loadFlow(data) {
 }
 
 async function loadOI(data) {
-  if (data?.oi_pre_mkt) {
-    document.getElementById('oi-pre-tickers').textContent = data.oi_pre_mkt.summary?.tickers || '—';
-    document.getElementById('oi-pre-time').textContent = '更新：' + (data.oi_pre_mkt.upload_time||'—');
-  }
-  if (data?.oi_core72) {
-    document.getElementById('oi-core-tickers').textContent = data.oi_core72.summary?.tickers || '—';
-    document.getElementById('oi-core-time').textContent = '更新：' + (data.oi_core72.upload_time||'—');
-  }
-  if (data?.oi_report) {
-    document.getElementById('oi-surging').textContent = data.oi_report.summary?.surging || '—';
-    document.getElementById('oi-shrinking').textContent = data.oi_report.summary?.shrinking || '—';
-    document.getElementById('oi-report-time').textContent = '更新：' + (data.oi_report.upload_time||'—');
+  // OI 数据从独立文件读取（oi_snapshots 目录由 schwabriskcontrol.py 推送）
+  // 若文件不存在则优雅降级显示"暂无"
+  try {
+    const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
+    const preMkt = await fetchJSON(`${RAW}/oi_snapshots/oi_pre_mkt_${today}.json`).catch(()=>null);
+    if (preMkt) {
+      const tickers = preMkt.tickers ? preMkt.tickers.length : (preMkt.summary?.tickers || '—');
+      document.getElementById('oi-pre-tickers').textContent = typeof tickers === 'number' ? tickers : tickers;
+      document.getElementById('oi-pre-time').textContent = '更新：' + (preMkt.generated || preMkt.upload_time || '盘前');
+    }
+    const core72 = await fetchJSON(`${RAW}/oi_snapshots/oi_core72_${today}.json`).catch(()=>null);
+    if (core72) {
+      const tickers72 = core72.tickers ? core72.tickers.length : (core72.summary?.tickers || '—');
+      document.getElementById('oi-core-tickers').textContent = tickers72;
+      document.getElementById('oi-core-time').textContent = '更新：' + (core72.generated || core72.upload_time || '盘后');
+    }
+    // OI 变化报告
+    const oiReport = await fetchJSON(`${RAW}/oi_snapshots/oi_report_${today}.json`).catch(()=>null);
+    if (oiReport) {
+      document.getElementById('oi-surging').textContent = oiReport.summary?.surging || oiReport.surging_count || '—';
+      document.getElementById('oi-shrinking').textContent = oiReport.summary?.shrinking || oiReport.shrinking_count || '—';
+      document.getElementById('oi-report-time').textContent = '更新：' + (oiReport.generated || '—');
+    }
+  } catch(e) {
+    console.warn('OI 数据加载失败（正常，若未运行OI扫描）:', e);
   }
 }
 
