@@ -321,12 +321,22 @@ function toggleV4() {
   </div>
 </div>
 
-<!-- 关键价位（已移到 Gamma 墙之前） -->
+<!-- 关键价位 + 信号摘要 + 综合判断（3列紧凑） -->
 <div class="section-title">🎯 关键价位 &amp; 操作建议</div>
-<div class="grid">
-  <div class="card" id="key-levels-card">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;padding:0 20px 18px;">
+  <div class="card" id="key-levels-card" style="margin:0;max-height:300px;overflow-y:auto;">
     <div class="card-title"><span class="dot dot-orange"></span>Gamma引力区间</div>
     <div id="key-levels"><div class="loading">加载中...</div></div>
+  </div>
+  <div class="card" style="margin:0;max-height:300px;overflow-y:auto;">
+    <div class="card-title"><span class="dot dot-blue"></span>今日信号摘要</div>
+    <div id="signal-summary"><div class="loading">加载中...</div></div>
+  </div>
+  <div class="card" style="margin:0;max-height:300px;overflow-y:auto;">
+    <div class="card-title"><span class="dot dot-green"></span>综合判断（含情绪指标）</div>
+    <div id="ai-analysis" style="font-size:.83rem;line-height:1.6;"><div class="loading">加载中...</div></div>
+  </div>
+</div>
 <!-- Gamma墙 -->
 <div class="section-title">🧲 Gamma墙（行权价集中度）</div>
 <div class="grid">
@@ -377,25 +387,24 @@ function toggleV4() {
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px;">
 
-  <!-- ── 左栏：SPX 0DTE + NDTE 滚动播报 ─────────────────────── -->
-  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
-    <div style="padding:10px 14px 6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+  <!-- ── 左列：SPX 0DTE + NDTE 滚动播报 ─────────────────────── -->
+  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;margin:0;">
+    <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
       <span style="font-weight:700;font-size:.88rem;">⚡ SPX 期权流（0DTE · NDTE）</span>
       <span style="font-size:.72rem;color:#8b949e;" id="spx-feed-ts">—</span>
     </div>
-    <!-- 滚动容器 -->
-    <div id="spx-feed-scroll" style="flex:1;overflow-y:auto;max-height:480px;padding:6px 10px;">
+    <div id="spx-feed-scroll" style="flex:1;overflow-y:auto;max-height:640px;padding:10px 14px;">
       <div class="loading">加载中...</div>
     </div>
   </div>
 
-  <!-- ── 右栏：个股 MAG7 + 暴涨暴跌 ──────────────────────────── -->
-  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
-    <div style="padding:10px 14px 6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+  <!-- ── 右列：个股 MAG7 + 暴涨暴跌 ──────────────────────────── -->
+  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;margin:0;">
+    <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
       <span style="font-weight:700;font-size:.88rem;">🏦 个股期权大单 MAG7 & 暴涨暴跌</span>
       <span style="font-size:.72rem;color:#8b949e;" id="stock-feed-ts">—</span>
     </div>
-    <div id="stock-feed-scroll" style="flex:1;overflow-y:auto;max-height:480px;padding:6px 10px;">
+    <div id="stock-feed-scroll" style="flex:1;overflow-y:auto;max-height:640px;padding:10px 14px;">
       <div class="loading">加载中...</div>
     </div>
   </div>
@@ -429,16 +438,7 @@ function toggleV4() {
   </div>
 </div>
 
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>今日信号摘要</div>
-    <div id="signal-summary"><div class="loading">加载中...</div></div>
-  </div>
-  <div class="card">
-    <div class="card-title"><span class="dot dot-green"></span>综合判断（含情绪指标）</div>
-    <div id="ai-analysis" style="font-size:.83rem;line-height:1.6;"><div class="loading">加载中...</div></div>
-  </div>
-</div>
+
 
 <div style="text-align:center;padding:20px;color:#8b949e;font-size:.75rem;">
   数据来源：Schwab Options Scanner · CNN F&amp;G · NAAIM · Yahoo Finance VIX · SqueezeMetrics DIX · Alpha Vantage<br>
