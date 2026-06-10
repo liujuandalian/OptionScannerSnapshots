@@ -1,0 +1,37 @@
+{
+  "label": "0DTE · 10:25 ET",
+  "count": 1,
+  "bull_count": 0,
+  "bear_count": 1,
+  "call_premium": 0.0,
+  "put_premium": 1.084,
+  "total_premium": 1.084,
+  "pc_ratio": 0,
+  "cp_ratio": 0.0,
+  "top10": [
+    {
+      "ts": "10:15:31",
+      "exp_date": "2026-06-09",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7600.0,
+      "volume": 64,
+      "bid": 168.5,
+      "ask": 170.4,
+      "mid": 169.45,
+      "iv": 32.644,
+      "delta": -0.996,
+      "open_int": 579,
+      "est_premium": 1084480.0,
+      "spx_price": 7429.17,
+      "position": "SHORT",
+      "market_dir": "看涨(卖Put) 🟢",
+      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
+      "dist_pct": 2.2994493328326033
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "generated": "2026-06-09T10:25:32.415796"
+}

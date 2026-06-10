@@ -1,0 +1,50 @@
+{
+  "generated": "2026-06-09T15:33:25.058087",
+  "timestamp_et": "2026-06-09 15:33 ET",
+  "type": "0DTE",
+  "count": 2,
+  "signals": [
+    {
+      "ts": "15:33:20",
+      "exp_date": "2026-06-09",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7185.0,
+      "volume": 71,
+      "bid": 174.2,
+      "ask": 175.4,
+      "mid": 174.8,
+      "iv": 91.394,
+      "delta": 0.998,
+      "open_int": 0,
+      "est_premium": 1241080.0,
+      "spx_price": 7360.38,
+      "position": "UNKNOWN",
+      "market_dir": "—",
+      "trade_label": "❓ UNKNOWN CALL → —",
+      "dist_pct": -2.3827574119814483
+    },
+    {
+      "ts": "15:33:20",
+      "exp_date": "2026-06-09",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7195.0,
+      "volume": 95,
+      "bid": 164.2,
+      "ask": 165.4,
+      "mid": 164.8,
+      "iv": 92.339,
+      "delta": 0.997,
+      "open_int": 3,
+      "est_premium": 1565600.0000000002,
+      "spx_price": 7360.38,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -2.2468948614066138
+    }
+  ]
+}
