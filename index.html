@@ -368,13 +368,42 @@ function toggleV4() {
   </div>
 </div>
 
-<!-- 期权流 TOP10 -->
-<div class="section-title">🔥 今日期权流 TOP10（净多空方向）</div>
-<div class="grid">
-  <div class="card wide" id="flow-card">
-    <div class="loading">加载中...</div>
-  </div>
+<!-- ══════════════════════════════════════════════════════════
+     双栏实时播报：左=SPX 0DTE/NDTE 滚动 · 右=个股TOP10
+     ══════════════════════════════════════════════════════════ -->
+<div class="section-title">
+  📡 实时期权流播报
+  <span class="section-actions" id="feed-update-time">—</span>
 </div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px;">
+
+  <!-- ── 左栏：SPX 0DTE + NDTE 滚动播报 ─────────────────────── -->
+  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="padding:10px 14px 6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-weight:700;font-size:.88rem;">⚡ SPX 期权流（0DTE · NDTE）</span>
+      <span style="font-size:.72rem;color:#8b949e;" id="spx-feed-ts">—</span>
+    </div>
+    <!-- 滚动容器 -->
+    <div id="spx-feed-scroll" style="flex:1;overflow-y:auto;max-height:480px;padding:6px 10px;">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <!-- ── 右栏：个股 MAG7 + 暴涨暴跌 ──────────────────────────── -->
+  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+    <div style="padding:10px 14px 6px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-weight:700;font-size:.88rem;">🏦 个股期权大单 MAG7 & 暴涨暴跌</span>
+      <span style="font-size:.72rem;color:#8b949e;" id="stock-feed-ts">—</span>
+    </div>
+    <div id="stock-feed-scroll" style="flex:1;overflow-y:auto;max-height:480px;padding:6px 10px;">
+      <div class="loading">加载中...</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 保留原 flow-card 供旧代码引用（隐藏） -->
+<div id="flow-card" style="display:none;"></div>
 
 <!-- 经济事件 (新增 - 放在财报日历之前) -->
 <div class="section-title">
@@ -908,42 +937,16 @@ async function loadEarnings() {
 // 原有功能：SPX 数据 & 期权流 & OI
 // ═══════════════════════════════════════════════════════════════════
 async function loadLatest() {
-  // 直接读 spx_0dte_latest.json 作为主数据源，不依赖 latest.json 索引
-  const dte = await fetchJSON(`${RAW}/data/spx_0dte_latest.json`);
-  if (!dte) return null;
-  latestData = dte;
-  const updatedStr = dte.timestamp_et || dte.generated || '—';
-  document.getElementById('last-update').textContent = '最后更新：' + updatedStr;
-  // 返回一个兼容对象，让下游函数直接使用
-  return { _dte: dte, _updated: updatedStr };
+  const data = await fetchJSON(`${RAW}/data/latest.json`);
+  if (!data) return null;
+  latestData = data;
+  document.getElementById('last-update').textContent = '最后更新：' + (data._updated || '—') + ' ET';
+  return data;
 }
 
 async function loadSPXEod(data) {
-  // 直接使用 loadLatest 里已加载的 spx_0dte_latest.json
-  const eod = data?._dte;
-  if (!eod) return;
-  // 补充非0DTE数据（可选）
-  const ndteRaw = await fetchJSON(`${RAW}/data/spx_ndte_latest.json`).catch(()=>null);
-  // eod 字段兼容：spx_0dte_latest.json 顶层有 signals、count、type 等
-  // 构造兼容 eod 对象
-  const signals = eod.signals || [];
-  const bullSigs = signals.filter(s => s.direction === 'BULL' || s.direction === 'BULLISH');
-  const bearSigs = signals.filter(s => s.direction === 'BEAR' || s.direction === 'BEARISH');
-  const bullPrem = bullSigs.reduce((sum,s) => sum + (s.est_premium||0), 0);
-  const bearPrem = bearSigs.reduce((sum,s) => sum + (s.est_premium||0), 0);
-  const netPrem = bullPrem - bearPrem;
-  // 兼容原有字段名（原代码读 eod['0dte'] 子对象）
-  eod['0dte'] = {
-    signals,
-    bull_prem: bullPrem,
-    bear_prem: bearPrem,
-    net_prem: netPrem,
-    bull_count: bullSigs.length,
-    bear_count: bearSigs.length,
-    net_dir: netPrem > 0 ? 'BULL' : netPrem < 0 ? 'BEAR' : 'NONE',
-  };
-  eod.spx_close = eod.spx_close || (signals[0]?.spx_price) || 0;
-  eod.date = eod.date || (eod.timestamp_et || '').slice(0,10);
+  if (!data || !data.spx_eod) return;
+  const eod = await fetchJSON(`${RAW}/${data.spx_eod.github_path}`);
   if (!eod) return;
   const close = eod.spx_close || 0;
   document.getElementById('spx-price').textContent = close ? `$${close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}` : '—';
@@ -1107,20 +1110,13 @@ function buildComprehensive(sigs, eod) {
 }
 
 async function loadFlow(data) {
-  // 从已加载的 spx_0dte_latest.json signals 构建期权流
-  const dte = data?._dte;
-  const alerts = dte?.signals || [];
-  if (!alerts.length) {
-    document.getElementById('flow-card').innerHTML='<div class="loading">暂无期权流数据（0DTE信号为空）</div>';
+  if (!data || !data.alerts_full) {
+    document.getElementById('flow-card').innerHTML='<div class="loading">暂无期权流数据</div>';
     return;
   }
-  // 兼容原有逻辑：把所有信号当作 BIG_PREMIUM 处理
-  const bp = alerts.map(s => ({
-    ...s,
-    signal_type: 'BIG_PREMIUM',
-    direction: s.direction === 'BULL' ? 'BULLISH' : 'BEARISH',
-    ticker: s.ticker || 'SPX',
-  }));
+  const alerts = await fetchJSON(`${RAW}/${data.alerts_full.github_path}`);
+  if (!alerts || !Array.isArray(alerts)) return;
+  const bp = alerts.filter(x=>x.signal_type==='BIG_PREMIUM');
   const flow = {};
   bp.forEach(a => {
     const t = a.ticker; if(!t) return;
@@ -1158,31 +1154,18 @@ async function loadFlow(data) {
 }
 
 async function loadOI(data) {
-  // OI 数据从独立文件读取（oi_snapshots 目录由 schwabriskcontrol.py 推送）
-  // 若文件不存在则优雅降级显示"暂无"
-  try {
-    const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
-    const preMkt = await fetchJSON(`${RAW}/oi_snapshots/oi_pre_mkt_${today}.json`).catch(()=>null);
-    if (preMkt) {
-      const tickers = preMkt.tickers ? preMkt.tickers.length : (preMkt.summary?.tickers || '—');
-      document.getElementById('oi-pre-tickers').textContent = typeof tickers === 'number' ? tickers : tickers;
-      document.getElementById('oi-pre-time').textContent = '更新：' + (preMkt.generated || preMkt.upload_time || '盘前');
-    }
-    const core72 = await fetchJSON(`${RAW}/oi_snapshots/oi_core72_${today}.json`).catch(()=>null);
-    if (core72) {
-      const tickers72 = core72.tickers ? core72.tickers.length : (core72.summary?.tickers || '—');
-      document.getElementById('oi-core-tickers').textContent = tickers72;
-      document.getElementById('oi-core-time').textContent = '更新：' + (core72.generated || core72.upload_time || '盘后');
-    }
-    // OI 变化报告
-    const oiReport = await fetchJSON(`${RAW}/oi_snapshots/oi_report_${today}.json`).catch(()=>null);
-    if (oiReport) {
-      document.getElementById('oi-surging').textContent = oiReport.summary?.surging || oiReport.surging_count || '—';
-      document.getElementById('oi-shrinking').textContent = oiReport.summary?.shrinking || oiReport.shrinking_count || '—';
-      document.getElementById('oi-report-time').textContent = '更新：' + (oiReport.generated || '—');
-    }
-  } catch(e) {
-    console.warn('OI 数据加载失败（正常，若未运行OI扫描）:', e);
+  if (data?.oi_pre_mkt) {
+    document.getElementById('oi-pre-tickers').textContent = data.oi_pre_mkt.summary?.tickers || '—';
+    document.getElementById('oi-pre-time').textContent = '更新：' + (data.oi_pre_mkt.upload_time||'—');
+  }
+  if (data?.oi_core72) {
+    document.getElementById('oi-core-tickers').textContent = data.oi_core72.summary?.tickers || '—';
+    document.getElementById('oi-core-time').textContent = '更新：' + (data.oi_core72.upload_time||'—');
+  }
+  if (data?.oi_report) {
+    document.getElementById('oi-surging').textContent = data.oi_report.summary?.surging || '—';
+    document.getElementById('oi-shrinking').textContent = data.oi_report.summary?.shrinking || '—';
+    document.getElementById('oi-report-time').textContent = '更新：' + (data.oi_report.upload_time||'—');
   }
 }
 
@@ -1217,10 +1200,14 @@ async function loadAll() {
     return;
   }
   await Promise.all([loadSPXEod(latest), loadFlow(latest), loadOI(latest)]);
+
+  // 双栏实时播报
+  await loadDualFeed();
 }
 
 loadAll();
-setInterval(loadAll, 5 * 60 * 1000); // 每5分钟自动刷新
+setInterval(loadAll, 5 * 60 * 1000);
+setInterval(loadDualFeed, 120000); // 双栏每2分钟刷新 // 每5分钟自动刷新
 
 // 周三特殊提醒（页面打开 3 秒后弹出）
 setTimeout(() => {
@@ -1235,6 +1222,264 @@ setTimeout(() => {
     }
   }
 }, 3000);
+
+// ═══════════════════════════════════════════════════════════════════
+// 双栏实时播报
+// ═══════════════════════════════════════════════════════════════════
+
+function fmtPrem(v) {
+  if (!v) return '$0';
+  if (Math.abs(v) >= 1e6) return '$' + (v/1e6).toFixed(2) + 'M';
+  if (Math.abs(v) >= 1e3) return '$' + (v/1e3).toFixed(0) + 'K';
+  return '$' + v.toFixed(0);
+}
+
+function dirBadge(dir) {
+  const isBull = dir === 'BULL' || dir === 'BULLISH';
+  return `<span style="display:inline-block;padding:1px 6px;border-radius:3px;font-size:.7rem;font-weight:700;background:${isBull?'#1a3a2a':'#3a1a1a'};color:${isBull?'#3fb950':'#f85149'};">${isBull?'🟢看涨':'🔴看跌'}</span>`;
+}
+
+function renderSpxFeed(dte0, ndte) {
+  const el = document.getElementById('spx-feed-scroll');
+  const tsEl = document.getElementById('spx-feed-ts');
+  const rows = [];
+
+  // ── 0DTE 汇总头 ────────────────────────────────────────────────
+  if (dte0) {
+    const sigs = dte0.signals || [];
+    const bullP = sigs.filter(s=>s.direction==='BULL'||s.direction==='BULLISH').reduce((a,s)=>a+(s.est_premium||0),0);
+    const bearP = sigs.filter(s=>s.direction==='BEAR'||s.direction==='BEARISH').reduce((a,s)=>a+(s.est_premium||0),0);
+    const pcRatio = bullP > 0 ? (bearP/bullP).toFixed(2) : '∞';
+    const netDir = bearP > bullP ? '🔴偏空' : '🟢偏多';
+    const ts = dte0.timestamp_et || dte0.generated || '';
+
+    rows.push(`<div style="background:#0d1117;border-radius:6px;padding:10px 12px;margin-bottom:8px;border-left:3px solid #f85149;">
+      <div style="font-size:.8rem;font-weight:700;color:#e6edf3;margin-bottom:6px;">
+        【0DTE】信号播报 · ${ts.slice(11,16)||''} ET
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:.75rem;margin-bottom:6px;">
+        <div>CALL: <span style="color:#3fb950;font-weight:700;">${fmtPrem(bullP)}</span></div>
+        <div>PUT: <span style="color:#f85149;font-weight:700;">${fmtPrem(bearP)}</span></div>
+        <div>P/C: <span style="font-weight:700;color:${parseFloat(pcRatio)>1.2?'#f85149':'#3fb950'}">${pcRatio} ${netDir}</span></div>
+      </div>
+      <div style="font-size:.73rem;color:#8b949e;">信号数: ${sigs.length} 条</div>
+    </div>`);
+
+    // 0DTE Top5 大单
+    const top5 = [...sigs].sort((a,b)=>(b.est_premium||0)-(a.est_premium||0)).slice(0,5);
+    top5.forEach((s,i) => {
+      const isBull = s.direction==='BULL'||s.direction==='BULLISH';
+      const voi = s.open_int>0 ? (s.volume/s.open_int).toFixed(1)+'x' : 'N/A';
+      const mid = s.mid ? ` @$${s.mid.toFixed(2)}` : '';
+      const lbl = (s.trade_label||'').replace(/📈|📉/g,'').replace('→ 看涨 🟢','').replace('→ 看跌 🔴','').trim();
+      rows.push(`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 8px;background:#161b22;border-radius:5px;margin-bottom:4px;border-left:2px solid ${isBull?'#3fb950':'#f85149'};">
+        <span style="font-size:.7rem;color:#8b949e;min-width:16px;">${i+1}</span>
+        <div style="flex:1;font-size:.75rem;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            ${dirBadge(s.direction)}
+            <span style="font-weight:700;color:#e6edf3;">$${(s.strike||0).toLocaleString()}</span>
+            <span style="color:#8b949e;">${s.opt_type||''} exp:${(s.exp_date||'').slice(5)}</span>
+          </div>
+          <div style="margin-top:3px;display:flex;gap:10px;flex-wrap:wrap;">
+            <span style="color:${isBull?'#3fb950':'#f85149'};font-weight:700;">${fmtPrem(s.est_premium||0)}</span>
+            <span style="color:#8b949e;">Vol:${(s.volume||0).toLocaleString()}(${voi})</span>
+            <span style="color:#8b949e;">IV:${(s.iv||0).toFixed(1)}%${mid}</span>
+          </div>
+          <div style="margin-top:2px;font-size:.7rem;color:#6e7681;">${lbl}</div>
+        </div>
+        <span style="font-size:.68rem;color:#6e7681;min-width:40px;text-align:right;">${(s.ts||'').slice(0,5)}</span>
+      </div>`);
+    });
+  }
+
+  // ── NDTE 汇总头 ────────────────────────────────────────────────
+  if (ndte) {
+    const sigs = ndte.signals || [];
+    const bullP = sigs.filter(s=>s.direction==='BULL'||s.direction==='BULLISH').reduce((a,s)=>a+(s.est_premium||0),0);
+    const bearP = sigs.filter(s=>s.direction==='BEAR'||s.direction==='BEARISH').reduce((a,s)=>a+(s.est_premium||0),0);
+    const pcRatio = bullP > 0 ? (bearP/bullP).toFixed(2) : '∞';
+    const ts = ndte.timestamp_et || ndte.generated || '';
+
+    rows.push(`<div style="background:#0d1117;border-radius:6px;padding:10px 12px;margin:12px 0 8px;border-left:3px solid #d18616;">
+      <div style="font-size:.8rem;font-weight:700;color:#e6edf3;margin-bottom:6px;">
+        【非0DTE】信号播报 · ${ts.slice(11,16)||''} ET
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:.75rem;margin-bottom:6px;">
+        <div>CALL: <span style="color:#3fb950;font-weight:700;">${fmtPrem(bullP)}</span></div>
+        <div>PUT: <span style="color:#f85149;font-weight:700;">${fmtPrem(bearP)}</span></div>
+        <div>P/C: <span style="font-weight:700;color:${parseFloat(pcRatio)>1.2?'#f85149':'#3fb950'}">${pcRatio}</span></div>
+      </div>
+      <div style="font-size:.73rem;color:#8b949e;">信号数: ${sigs.length} 条</div>
+    </div>`);
+
+    const top5n = [...sigs].sort((a,b)=>(b.est_premium||0)-(a.est_premium||0)).slice(0,5);
+    top5n.forEach((s,i) => {
+      const isBull = s.direction==='BULL'||s.direction==='BULLISH';
+      const voi = s.open_int>0 ? (s.volume/s.open_int).toFixed(1)+'x' : 'N/A';
+      const mid = s.mid ? ` @$${s.mid.toFixed(2)}` : '';
+      rows.push(`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 8px;background:#161b22;border-radius:5px;margin-bottom:4px;border-left:2px solid ${isBull?'#3fb950':'#d18616'};">
+        <span style="font-size:.7rem;color:#8b949e;min-width:16px;">${i+1}</span>
+        <div style="flex:1;font-size:.75rem;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+            ${dirBadge(s.direction)}
+            <span style="font-weight:700;color:#e6edf3;">$${(s.strike||0).toLocaleString()}</span>
+            <span style="color:#8b949e;">${s.opt_type||''} exp:${(s.exp_date||'').slice(5)}</span>
+          </div>
+          <div style="margin-top:3px;display:flex;gap:10px;flex-wrap:wrap;">
+            <span style="color:${isBull?'#3fb950':'#f85149'};font-weight:700;">${fmtPrem(s.est_premium||0)}</span>
+            <span style="color:#8b949e;">Vol:${(s.volume||0).toLocaleString()}(${voi})</span>
+            <span style="color:#8b949e;">IV:${(s.iv||0).toFixed(1)}%${mid}</span>
+          </div>
+        </div>
+        <span style="font-size:.68rem;color:#6e7681;min-width:40px;text-align:right;">${(s.ts||'').slice(0,5)}</span>
+      </div>`);
+    });
+  }
+
+  if (!rows.length) {
+    el.innerHTML = '<div class="loading">暂无数据</div>';
+  } else {
+    el.innerHTML = rows.join('');
+    tsEl.textContent = new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'}) + ' 更新';
+  }
+}
+
+function renderStockFeed(rpt) {
+  const el = document.getElementById('stock-feed-scroll');
+  const tsEl = document.getElementById('stock-feed-ts');
+  if (!rpt) { el.innerHTML = '<div class="loading">暂无个股数据（stock_flow_reporter未运行）</div>'; return; }
+
+  const rows = [];
+  const ts = rpt.generated || '';
+
+  // ── MAG7 ──────────────────────────────────────────────────────
+  rows.push(`<div style="font-size:.8rem;font-weight:700;color:#79c0ff;padding:4px 0 6px;border-bottom:1px solid #21262d;margin-bottom:6px;">
+    🏦 MAG7 期权大单
+  </div>`);
+
+  const mag7 = rpt.mag7 || [];
+  if (!mag7.length) {
+    rows.push('<div style="font-size:.75rem;color:#6e7681;padding:4px 0;">本窗口无MAG7信号</div>');
+  } else {
+    mag7.slice(0,7).forEach(([tk, ts_]) => {
+      const net = ts_.net_prem || 0;
+      const isBull = net > 0;
+      const price = ts_.ticker_price ? ` $${ts_.ticker_price.toFixed(2)}` : '';
+      // top signal details
+      const topS = (ts_.signals||[]).sort((a,b)=>(b.est_premium||0)-(a.est_premium||0))[0];
+      const voi = topS && topS.open_int > 0 ? (topS.volume/topS.open_int).toFixed(1)+'x' : '';
+      const iv = topS ? topS.iv||0 : 0;
+      const lbl = topS ? (topS.trade_label||'').replace(/📈|📉/g,'').split('→')[1]||'' : '';
+      rows.push(`<div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:#161b22;border-radius:5px;margin-bottom:3px;border-left:2px solid ${isBull?'#3fb950':'#f85149'};">
+        <span style="font-weight:700;font-size:.82rem;min-width:44px;color:#e6edf3;">${tk}</span>
+        <span style="font-size:.72rem;color:#8b949e;min-width:56px;">${price}</span>
+        <div style="flex:1;font-size:.72rem;">
+          <span style="color:${isBull?'#3fb950':'#f85149'};font-weight:700;">${isBull?'↑':'↓'} ${fmtPrem(Math.abs(net))}</span>
+          <span style="color:#6e7681;margin-left:6px;">总${fmtPrem(ts_.total_prem||0)}</span>
+        </div>
+        <span style="font-size:.68rem;color:#8b949e;">${voi?'V/OI:'+voi:''} ${iv?'IV:'+iv.toFixed(0)+'%':''}</span>
+      </div>`);
+    });
+  }
+
+  // ── 非MAG7 暴涨 ───────────────────────────────────────────────
+  rows.push(`<div style="font-size:.8rem;font-weight:700;color:#3fb950;padding:10px 0 6px;border-bottom:1px solid #21262d;margin-bottom:6px;">
+    🚀 非MAG7 净看涨 Top3
+  </div>`);
+  const topBull = rpt.top_bull || [];
+  if (!topBull.length) {
+    rows.push('<div style="font-size:.75rem;color:#6e7681;padding:4px 0;">无</div>');
+  } else {
+    topBull.forEach(([tk, ts_]) => {
+      const topS = (ts_.signals||[]).sort((a,b)=>(b.est_premium||0)-(a.est_premium||0))[0];
+      const price = ts_.ticker_price ? ` $${ts_.ticker_price.toFixed(2)}` : '';
+      const voi = topS && topS.open_int > 0 ? (topS.volume/topS.open_int).toFixed(1)+'x' : '';
+      const iv = topS ? topS.iv||0 : 0;
+      const lbl = topS ? (topS.trade_label||'').replace(/📈|📉/g,'').split('→')[0]||'' : '';
+      rows.push(`<div style="display:flex;align-items:center;gap:8px;padding:7px 8px;background:#0d1f14;border-radius:5px;margin-bottom:3px;border-left:2px solid #3fb950;">
+        <span style="font-weight:700;font-size:.85rem;min-width:50px;color:#3fb950;">${tk}</span>
+        <span style="font-size:.72rem;color:#8b949e;">${price}</span>
+        <div style="flex:1;font-size:.75rem;">
+          <span style="color:#3fb950;font-weight:700;">净↑ ${fmtPrem(ts_.net_prem||0)}</span>
+          <span style="color:#6e7681;margin-left:6px;">总${fmtPrem(ts_.total_prem||0)}</span>
+        </div>
+        <span style="font-size:.68rem;color:#8b949e;">${voi?'V/OI:'+voi:''} ${iv?'IV:'+iv.toFixed(0)+'%':''}</span>
+      </div>`);
+    });
+  }
+
+  // ── 非MAG7 暴跌 ───────────────────────────────────────────────
+  rows.push(`<div style="font-size:.8rem;font-weight:700;color:#f85149;padding:10px 0 6px;border-bottom:1px solid #21262d;margin-bottom:6px;">
+    📉 非MAG7 净看跌 Top3
+  </div>`);
+  const topBear = rpt.top_bear || [];
+  if (!topBear.length) {
+    rows.push('<div style="font-size:.75rem;color:#6e7681;padding:4px 0;">无</div>');
+  } else {
+    topBear.forEach(([tk, ts_]) => {
+      const topS = (ts_.signals||[]).sort((a,b)=>(b.est_premium||0)-(a.est_premium||0))[0];
+      const price = ts_.ticker_price ? ` $${ts_.ticker_price.toFixed(2)}` : '';
+      const voi = topS && topS.open_int > 0 ? (topS.volume/topS.open_int).toFixed(1)+'x' : '';
+      const iv = topS ? topS.iv||0 : 0;
+      rows.push(`<div style="display:flex;align-items:center;gap:8px;padding:7px 8px;background:#1f0d0d;border-radius:5px;margin-bottom:3px;border-left:2px solid #f85149;">
+        <span style="font-weight:700;font-size:.85rem;min-width:50px;color:#f85149;">${tk}</span>
+        <span style="font-size:.72rem;color:#8b949e;">${price}</span>
+        <div style="flex:1;font-size:.75rem;">
+          <span style="color:#f85149;font-weight:700;">净↓ ${fmtPrem(Math.abs(ts_.net_prem||0))}</span>
+          <span style="color:#6e7681;margin-left:6px;">总${fmtPrem(ts_.total_prem||0)}</span>
+        </div>
+        <span style="font-size:.68rem;color:#8b949e;">${voi?'V/OI:'+voi:''} ${iv?'IV:'+iv.toFixed(0)+'%':''}</span>
+      </div>`);
+    });
+  }
+
+  // ── Top10 大单 ────────────────────────────────────────────────
+  rows.push(`<div style="font-size:.8rem;font-weight:700;color:#e6edf3;padding:10px 0 6px;border-bottom:1px solid #21262d;margin-bottom:6px;">
+    🏆 全市场 Top10 大单
+  </div>`);
+  const top10 = rpt.top10 || [];
+  top10.forEach((s,i) => {
+    const isBull = s.direction==='BULL'||s.direction==='BULLISH';
+    const voi = s.open_int>0 ? (s.volume/s.open_int).toFixed(1)+'x' : '';
+    const mid = s.mid ? ` @$${s.mid.toFixed(2)}` : '';
+    rows.push(`<div style="display:flex;align-items:flex-start;gap:8px;padding:6px 8px;background:#161b22;border-radius:5px;margin-bottom:3px;border-left:2px solid ${isBull?'#3fb950':'#f85149'};">
+      <span style="font-size:.7rem;color:#8b949e;min-width:16px;">${i+1}</span>
+      <div style="flex:1;font-size:.75rem;">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+          ${dirBadge(s.direction)}
+          <span style="font-weight:700;color:#e6edf3;">${s.ticker||'?'}</span>
+          <span style="color:#8b949e;">$${(s.strike||0).toLocaleString()} ${s.option_type||s.opt_type||''}</span>
+          <span style="color:#8b949e;font-size:.7rem;">exp:${(s.expiry||s.exp_date||'').slice(5)}</span>
+        </div>
+        <div style="margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="color:${isBull?'#3fb950':'#f85149'};font-weight:700;">${fmtPrem(s.est_premium||0)}</span>
+          <span style="color:#8b949e;">V/OI:${voi}</span>
+          <span style="color:#8b949e;">IV:${(s.iv||0).toFixed(0)}%${mid}</span>
+        </div>
+      </div>
+    </div>`);
+  });
+
+  el.innerHTML = rows.join('');
+  tsEl.textContent = (rpt.generated||ts||'').slice(11,16) + ' ET';
+}
+
+async function loadDualFeed() {
+  try {
+    const [dte0, ndte, stockRpt] = await Promise.all([
+      fetchJSON(`${RAW}/data/spx_0dte_latest.json`).catch(()=>null),
+      fetchJSON(`${RAW}/data/spx_ndte_latest.json`).catch(()=>null),
+      fetchJSON(`${RAW}/data/spx_stock_flow_latest.json`).catch(()=>null),
+    ]);
+    renderSpxFeed(dte0, ndte);
+    renderStockFeed(stockRpt);
+    document.getElementById('feed-update-time').textContent =
+      new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'}) + ' 自动刷新';
+  } catch(e) {
+    console.error('DualFeed error:', e);
+  }
+}
+
 </script>
 </body>
 </html>
