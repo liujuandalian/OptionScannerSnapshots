@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `spx_0dte_latest.json` | SPX 0DTE信号 | 2026-06-12 14:32 | [下载](SPXalerts/20260612/spx_0dte_latest.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
 | `spx_0dte_report_latest.json` | SPX 0DTE信号 | 2026-06-12 14:30 | [下载](SPXalerts/20260612/spx_0dte_report_latest.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
 | `alerts_20260612_full.json` | 期权流全天快照 | 2026-06-12 14:30 | [下载](alerts/20260612/alerts_20260612_full.json) | {"total": 1636, "big_premium": 990, "bull_bear": "多372/空244", "time_range": "14: |
 
