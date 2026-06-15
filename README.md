@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `alerts_20260615_full.json` | 期权流全天快照 | 2026-06-15 10:00 | [下载](alerts/20260615/alerts_20260615_full.json) | {"total": 2819, "big_premium": 1428, "bull_bear": "多911/空166", "time_range": "09 |
 | `alerts_20260615_1000.json` | 期权流增量快照 | 2026-06-15 10:00 | [下载](alerts/20260615/alerts_20260615_1000.json) | {} |
 | `spx_intraday_20260615_1000.json` | SPX盘中5分钟快报 | 2026-06-15 10:00 | [下载](SPXalerts/20260615/spx_intraday_20260615_1000.json) | {} |
 | `spx_intraday_20260615_0955.json` | SPX盘中5分钟快报 | 2026-06-15 09:55 | [下载](SPXalerts/20260615/spx_intraday_20260615_0955.json) | {} |
