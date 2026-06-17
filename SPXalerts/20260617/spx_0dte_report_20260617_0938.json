@@ -1,0 +1,233 @@
+{
+  "label": "0DTE · 09:38 ET",
+  "count": 5,
+  "bull_count": 1,
+  "bear_count": 4,
+  "call_premium": 1.029,
+  "put_premium": 7.712,
+  "total_premium": 8.741,
+  "net_premium": -6.682,
+  "pc_ratio": 7.491,
+  "cp_ratio": 0.133,
+  "pcv_ratio": 13.167,
+  "sp_premium": 0.0,
+  "lp_premium": 3.569,
+  "sc_premium": 0.0,
+  "lc_premium": 1.029,
+  "short_put_cnt": 0,
+  "long_put_cnt": 2,
+  "short_call_cnt": 0,
+  "long_call_cnt": 1,
+  "direction": "极度偏空 🔴🔴",
+  "true_dir": "实际偏空 🔴",
+  "top10": [
+    {
+      "ts": "09:35:56",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7520.0,
+      "volume": 1068,
+      "bid": 23.4,
+      "ask": 23.6,
+      "mid": 23.5,
+      "iv": 28.043,
+      "delta": -0.497,
+      "open_int": 1582,
+      "est_premium": 2509800.0,
+      "spx_price": 7519.26,
+      "position": "LONG",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📈 LONG PUT → 看跌 🔴",
+      "dist_pct": 0.00984139396695661,
+      "straddle_str": "$46.35  (C$22.85+P$23.50)",
+      "sd1_str": "±$132.0  [7,387.3 ~ 7,651.2]",
+      "sd1_low": 7387.28,
+      "sd1_high": 7651.24,
+      "sd1": 131.98,
+      "atm_iv": 28.04
+    },
+    {
+      "ts": "09:35:56",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7510.0,
+      "volume": 1088,
+      "bid": 19.1,
+      "ask": 19.3,
+      "mid": 19.200000000000003,
+      "iv": 28.489,
+      "delta": -0.43,
+      "open_int": 1379,
+      "est_premium": 2088960.0000000002,
+      "spx_price": 7519.26,
+      "position": "UNKNOWN",
+      "market_dir": "—",
+      "trade_label": "❓ UNKNOWN PUT → —",
+      "dist_pct": -0.12315041639736114,
+      "straddle_str": "$46.35  (C$22.85+P$23.50)",
+      "sd1_str": "±$132.0  [7,387.3 ~ 7,651.2]",
+      "sd1_low": 7387.28,
+      "sd1_high": 7651.24,
+      "sd1": 131.98,
+      "atm_iv": 28.04
+    },
+    {
+      "ts": "09:35:56",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7500.0,
+      "volume": 1325,
+      "bid": 15.4,
+      "ask": 15.6,
+      "mid": 15.5,
+      "iv": 28.941,
+      "delta": -0.367,
+      "open_int": 3587,
+      "est_premium": 2053750.0,
+      "spx_price": 7519.26,
+      "position": "UNKNOWN",
+      "market_dir": "—",
+      "trade_label": "❓ UNKNOWN PUT → —",
+      "dist_pct": -0.2561422267616789,
+      "straddle_str": "$46.35  (C$22.85+P$23.50)",
+      "sd1_str": "±$132.0  [7,387.3 ~ 7,651.2]",
+      "sd1_low": 7387.28,
+      "sd1_high": 7651.24,
+      "sd1": 131.98,
+      "atm_iv": 28.04
+    },
+    {
+      "ts": "09:35:56",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7505.0,
+      "volume": 614,
+      "bid": 17.2,
+      "ask": 17.3,
+      "mid": 17.25,
+      "iv": 28.718,
+      "delta": -0.398,
+      "open_int": 1291,
+      "est_premium": 1059150.0,
+      "spx_price": 7519.26,
+      "position": "LONG",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📈 LONG PUT → 看跌 🔴",
+      "dist_pct": -0.18964632157952002,
+      "straddle_str": "$46.35  (C$22.85+P$23.50)",
+      "sd1_str": "±$132.0  [7,387.3 ~ 7,651.2]",
+      "sd1_low": 7387.28,
+      "sd1_high": 7651.24,
+      "sd1": 131.98,
+      "atm_iv": 28.04
+    },
+    {
+      "ts": "09:38:27",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7500.0,
+      "volume": 311,
+      "bid": 33.0,
+      "ask": 33.2,
+      "mid": 33.1,
+      "iv": 28.576,
+      "delta": 0.614,
+      "open_int": 3122,
+      "est_premium": 1029410.0,
+      "spx_price": 7516.84,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -0.22403031060924733,
+      "straddle_str": "$46.15  (C$24.10+P$22.05)",
+      "sd1_str": "±$130.4  [7,386.5 ~ 7,647.2]",
+      "sd1_low": 7386.48,
+      "sd1_high": 7647.2,
+      "sd1": 130.36,
+      "atm_iv": 27.82
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [
+    [
+      7520.0,
+      2509800.0
+    ],
+    [
+      7510.0,
+      2088960.0000000002
+    ],
+    [
+      7500.0,
+      2053750.0
+    ],
+    [
+      7505.0,
+      1059150.0
+    ]
+  ],
+  "generated": "2026-06-17T09:38:27.919692",
+  "daily": {
+    "daily_count": 23,
+    "daily_call_prem": 18.486,
+    "daily_put_prem": 12.243,
+    "daily_sp_prem": 3.146,
+    "daily_lp_prem": 4.955,
+    "daily_sc_prem": 3.077,
+    "daily_lc_prem": 14.174,
+    "daily_true_bull": 17.32,
+    "daily_true_bear": 8.032,
+    "daily_true_dir": "实际偏多 🟢",
+    "daily_call_walls": [
+      [
+        7520.0,
+        4302000.0
+      ],
+      [
+        7515.0,
+        3563600.0
+      ],
+      [
+        7525.0,
+        2662145.0
+      ],
+      [
+        7530.0,
+        1473695.0
+      ],
+      [
+        7545.0,
+        1359909.9999999998
+      ]
+    ],
+    "daily_put_walls": [
+      [
+        7520.0,
+        3895360.0
+      ],
+      [
+        7510.0,
+        3659955.0
+      ],
+      [
+        7500.0,
+        3628950.0
+      ],
+      [
+        7505.0,
+        1059150.0
+      ]
+    ]
+  }
+}
