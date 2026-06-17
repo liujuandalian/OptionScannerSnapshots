@@ -1,0 +1,207 @@
+{
+  "label": "0DTE · 11:25 ET",
+  "count": 3,
+  "bull_count": 0,
+  "bear_count": 3,
+  "call_premium": 0.0,
+  "put_premium": 10.978,
+  "total_premium": 10.978,
+  "net_premium": -10.978,
+  "pc_ratio": 0,
+  "cp_ratio": 0.0,
+  "pcv_ratio": 0,
+  "sp_premium": 0.0,
+  "lp_premium": 10.978,
+  "sc_premium": 0.0,
+  "lc_premium": 0.0,
+  "short_put_cnt": 0,
+  "long_put_cnt": 3,
+  "short_call_cnt": 0,
+  "long_call_cnt": 0,
+  "direction": "纯空 🔴🔴（无CALL信号）",
+  "true_dir": "实际偏空 🔴",
+  "top10": [
+    {
+      "ts": "11:14:54",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7570.0,
+      "volume": 957,
+      "bid": 64.9,
+      "ask": 65.5,
+      "mid": 65.2,
+      "iv": 29.487,
+      "delta": -0.879,
+      "open_int": 251,
+      "est_premium": 6239640.0,
+      "spx_price": 7508.16,
+      "position": "LONG",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📈 LONG PUT → 看跌 🔴",
+      "dist_pct": 0.8236372160422812,
+      "straddle_str": "$44.75  (C$21.40+P$23.35)",
+      "sd1_str": "±$127.4  [7,380.7 ~ 7,635.6]",
+      "sd1_low": 7380.73,
+      "sd1_high": 7635.59,
+      "sd1": 127.43,
+      "atm_iv": 31.46
+    },
+    {
+      "ts": "11:14:54",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7565.0,
+      "volume": 435,
+      "bid": 60.6,
+      "ask": 61.1,
+      "mid": 60.85,
+      "iv": 29.741,
+      "delta": -0.857,
+      "open_int": 657,
+      "est_premium": 2646975.0,
+      "spx_price": 7508.16,
+      "position": "LONG",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📈 LONG PUT → 看跌 🔴",
+      "dist_pct": 0.7570430038784489,
+      "straddle_str": "$44.75  (C$21.40+P$23.35)",
+      "sd1_str": "±$127.4  [7,380.7 ~ 7,635.6]",
+      "sd1_low": 7380.73,
+      "sd1_high": 7635.59,
+      "sd1": 127.43,
+      "atm_iv": 31.46
+    },
+    {
+      "ts": "11:14:54",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7580.0,
+      "volume": 282,
+      "bid": 73.9,
+      "ask": 74.4,
+      "mid": 74.15,
+      "iv": 29.484,
+      "delta": -0.913,
+      "open_int": 235,
+      "est_premium": 2091030.0000000002,
+      "spx_price": 7508.16,
+      "position": "LONG",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📈 LONG PUT → 看跌 🔴",
+      "dist_pct": 0.9568256403699462,
+      "straddle_str": "$44.75  (C$21.40+P$23.35)",
+      "sd1_str": "±$127.4  [7,380.7 ~ 7,635.6]",
+      "sd1_low": 7380.73,
+      "sd1_high": 7635.59,
+      "sd1": 127.43,
+      "atm_iv": 31.46
+    }
+  ],
+  "vol_oi_alerts": [
+    {
+      "ts": "11:14:54",
+      "exp_date": "2026-06-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 7570.0,
+      "volume": 957,
+      "bid": 64.9,
+      "ask": 65.5,
+      "mid": 65.2,
+      "iv": 29.487,
+      "delta": -0.879,
+      "open_int": 251,
+      "est_premium": 6239640.0,
+      "spx_price": 7508.16,
+      "position": "LONG",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📈 LONG PUT → 看跌 🔴",
+      "dist_pct": 0.8236372160422812,
+      "straddle_str": "$44.75  (C$21.40+P$23.35)",
+      "sd1_str": "±$127.4  [7,380.7 ~ 7,635.6]",
+      "sd1_low": 7380.73,
+      "sd1_high": 7635.59,
+      "sd1": 127.43,
+      "atm_iv": 31.46
+    }
+  ],
+  "dup_volume_groups": {},
+  "top_put_strikes": [
+    [
+      7570.0,
+      6239640.0
+    ],
+    [
+      7565.0,
+      2646975.0
+    ],
+    [
+      7580.0,
+      2091030.0000000002
+    ]
+  ],
+  "generated": "2026-06-17T11:25:23.729564",
+  "daily": {
+    "daily_count": 869,
+    "daily_call_prem": 1894.582,
+    "daily_put_prem": 1460.834,
+    "daily_sp_prem": 346.579,
+    "daily_lp_prem": 1080.034,
+    "daily_sc_prem": 749.023,
+    "daily_lc_prem": 1108.271,
+    "daily_true_bull": 1454.849,
+    "daily_true_bear": 1829.057,
+    "daily_true_dir": "实际偏空 🔴",
+    "daily_call_walls": [
+      [
+        7520.0,
+        212922110.0
+      ],
+      [
+        7525.0,
+        194654165.0
+      ],
+      [
+        7515.0,
+        174669300.0
+      ],
+      [
+        7530.0,
+        170100925.0
+      ],
+      [
+        7510.0,
+        127242360.0
+      ]
+    ],
+    "daily_put_walls": [
+      [
+        7510.0,
+        196871185.0
+      ],
+      [
+        7515.0,
+        146662220.0
+      ],
+      [
+        7500.0,
+        117749590.0
+      ],
+      [
+        7520.0,
+        111026840.0
+      ],
+      [
+        7505.0,
+        102825190.0
+      ]
+    ]
+  }
+}
