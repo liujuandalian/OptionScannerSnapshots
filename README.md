@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `spx_0dte_20260617_1254.json` | SPX 0DTE信号 | 2026-06-17 12:54 | [下载](SPXalerts/20260617/spx_0dte_20260617_1254.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
 | `spx_0dte_20260617_1245.json` | SPX 0DTE信号 | 2026-06-17 12:45 | [下载](SPXalerts/20260617/spx_0dte_20260617_1245.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
 | `spx_0dte_report_20260617_1241.json` | SPX 0DTE信号 | 2026-06-17 12:41 | [下载](SPXalerts/20260617/spx_0dte_report_20260617_1241.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
 | `spx_0dte_20260617_1239.json` | SPX 0DTE信号 | 2026-06-17 12:39 | [下载](SPXalerts/20260617/spx_0dte_20260617_1239.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
