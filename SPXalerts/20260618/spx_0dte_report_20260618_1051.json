@@ -1,0 +1,112 @@
+{
+  "label": "0DTE · 10:51 ET",
+  "count": 1,
+  "bull_count": 1,
+  "bear_count": 0,
+  "call_premium": 9.202,
+  "put_premium": 0.0,
+  "total_premium": 9.202,
+  "net_premium": 9.202,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.0,
+  "lc_premium": 9.202,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 0,
+  "long_call_cnt": 1,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏多 🟢",
+  "top10": [
+    {
+      "ts": "10:51:45",
+      "exp_date": "2026-06-18",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7300.0,
+      "volume": 472,
+      "bid": 194.3,
+      "ask": 195.6,
+      "mid": 194.95,
+      "iv": 45.577,
+      "delta": 0.99,
+      "open_int": 2603,
+      "est_premium": 9201640.0,
+      "spx_price": 7495.5,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -2.6082316056300447,
+      "straddle_str": "$30.95  (C$15.35+P$15.60)",
+      "sd1_str": "±$86.7  [7,408.8 ~ 7,582.2]",
+      "sd1_low": 7408.77,
+      "sd1_high": 7582.23,
+      "sd1": 86.73,
+      "atm_iv": 20.64
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "generated": "2026-06-18T10:51:47.003410",
+  "daily": {
+    "daily_count": 923,
+    "daily_call_prem": 1953.262,
+    "daily_put_prem": 990.555,
+    "daily_sp_prem": 271.431,
+    "daily_lp_prem": 670.153,
+    "daily_sc_prem": 848.754,
+    "daily_lc_prem": 1020.639,
+    "daily_true_bull": 1292.07,
+    "daily_true_bear": 1518.907,
+    "daily_true_dir": "实际偏空 🔴",
+    "daily_call_walls": [
+      [
+        7500.0,
+        193880855.0
+      ],
+      [
+        7480.0,
+        161075455.0
+      ],
+      [
+        7475.0,
+        150347410.0
+      ],
+      [
+        7490.0,
+        143879440.0
+      ],
+      [
+        7485.0,
+        136184390.0
+      ]
+    ],
+    "daily_put_walls": [
+      [
+        7485.0,
+        96432950.0
+      ],
+      [
+        7475.0,
+        83519305.0
+      ],
+      [
+        7480.0,
+        67511745.0
+      ],
+      [
+        7470.0,
+        65114535.0
+      ],
+      [
+        7500.0,
+        57831610.0
+      ]
+    ]
+  }
+}
