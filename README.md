@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `spx_intraday_20260618_1045.json` | SPX盘中5分钟快报 | 2026-06-18 10:45 | [下载](SPXalerts/20260618/spx_intraday_20260618_1045.json) | {} |
 | `alerts_20260618_1045.json` | 期权流增量快照 | 2026-06-18 10:45 | [下载](alerts/20260618/alerts_20260618_1045.json) | {} |
 | `spx_0dte_report_20260618_1037.json` | SPX 0DTE信号 | 2026-06-18 10:37 | [下载](SPXalerts/20260618/spx_0dte_report_20260618_1037.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
 | `spx_0dte_report_20260618_1032.json` | SPX 0DTE信号 | 2026-06-18 10:33 | [下载](SPXalerts/20260618/spx_0dte_report_20260618_1032.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
