@@ -1,0 +1,97 @@
+{
+  "label": "0DTE · 12:43 ET",
+  "count": 1,
+  "bull_count": 1,
+  "bear_count": 0,
+  "call_premium": 1.051,
+  "put_premium": 0.0,
+  "total_premium": 1.051,
+  "net_premium": 1.051,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.0,
+  "lc_premium": 1.051,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 0,
+  "long_call_cnt": 1,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏多 🟢",
+  "top10": [
+    {
+      "ts": "12:42:29",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7375.0,
+      "volume": 107,
+      "bid": 97.9,
+      "ask": 98.5,
+      "mid": 98.2,
+      "iv": 31.373,
+      "delta": 0.982,
+      "open_int": 1124,
+      "est_premium": 1050740.0,
+      "spx_price": 7472.59,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -1.3059728956091547,
+      "straddle_str": "$20.05  (C$8.95+P$11.10)",
+      "sd1_str": "±$55.5  [7,417.1 ~ 7,528.1]",
+      "sd1_low": 7417.09,
+      "sd1_high": 7528.09,
+      "sd1": 55.5,
+      "atm_iv": 16.55
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "top_call_strikes": [
+    [
+      7375.0,
+      1050740.0
+    ]
+  ],
+  "generated": "2026-06-22T12:43:38.937480",
+  "daily": {
+    "daily_count": 123,
+    "daily_call_prem": 110.745,
+    "daily_put_prem": 0.0,
+    "daily_sp_prem": 0.0,
+    "daily_lp_prem": 0.0,
+    "daily_sc_prem": 43.735,
+    "daily_lc_prem": 63.948,
+    "daily_true_bull": 63.948,
+    "daily_true_bear": 43.735,
+    "daily_true_dir": "实际偏多 🟢",
+    "daily_call_walls": [
+      [
+        7375.0,
+        52408055.0
+      ],
+      [
+        7385.0,
+        45316635.0
+      ],
+      [
+        7420.0,
+        8466575.0
+      ],
+      [
+        7400.0,
+        2445540.0
+      ],
+      [
+        7500.0,
+        1580420.0
+      ]
+    ],
+    "daily_put_walls": []
+  }
+}
