@@ -1,12 +1,12 @@
 {
-  "label": "0DTE · 15:56 ET",
+  "label": "0DTE · 16:02 ET",
   "count": 1,
   "bull_count": 1,
   "bear_count": 0,
-  "call_premium": 0.253,
+  "call_premium": 0.258,
   "put_premium": 0.0,
-  "total_premium": 0.253,
-  "net_premium": 0.253,
+  "total_premium": 0.258,
+  "net_premium": 0.258,
   "pc_ratio": 0.0,
   "cp_ratio": 0,
   "pcv_ratio": 0.0,
@@ -22,31 +22,31 @@
   "true_dir": "实际偏空 🔴",
   "top10": [
     {
-      "ts": "15:55:18",
+      "ts": "16:01:37",
       "exp_date": "2026-06-22",
       "is_0dte": true,
       "direction": "BULL",
       "opt_type": "CALL",
       "strike": 7280.0,
       "volume": 13,
-      "bid": 192.8,
-      "ask": 195.7,
-      "mid": 194.25,
-      "iv": 116.88,
+      "bid": 183.3,
+      "ask": 214.1,
+      "mid": 198.7,
+      "iv": 116.233,
       "delta": 0.999,
       "open_int": 16,
-      "est_premium": 252525.0,
-      "spx_price": 7473.93,
+      "est_premium": 258310.0,
+      "spx_price": 7473.03,
       "position": "UNKNOWN",
       "market_dir": "—",
       "trade_label": "❓ UNKNOWN CALL → —",
-      "dist_pct": -2.5947526936966265,
-      "straddle_str": "$3.88  (C$1.60+P$2.28)",
-      "sd1_str": "±$4.8  [7,469.1 ~ 7,478.7]",
-      "sd1_low": 7469.13,
-      "sd1_high": 7478.73,
-      "sd1": 4.8,
-      "atm_iv": 9.0
+      "dist_pct": -2.58302188001386,
+      "straddle_str": "$1.68  (C$0.38+P$1.30)",
+      "sd1_str": "±$0.0  [7,473.0 ~ 7,473.0]",
+      "sd1_low": 7473.03,
+      "sd1_high": 7473.03,
+      "sd1": 0.0,
+      "atm_iv": 3.35
     }
   ],
   "vol_oi_alerts": [],
@@ -55,29 +55,29 @@
   "top_call_strikes": [
     [
       7280.0,
-      252525.0
+      258310.0
     ]
   ],
-  "generated": "2026-06-22T15:56:17.573339",
+  "generated": "2026-06-22T16:02:58.710803",
   "daily": {
-    "daily_count": 63,
-    "daily_call_prem": 11.744,
+    "daily_count": 67,
+    "daily_call_prem": 12.663,
     "daily_put_prem": 0.0,
     "daily_sp_prem": 0.0,
     "daily_lp_prem": 0.0,
     "daily_sc_prem": 3.273,
-    "daily_lc_prem": 7.966,
-    "daily_true_bull": 7.966,
+    "daily_lc_prem": 8.126,
+    "daily_true_bull": 8.126,
     "daily_true_bear": 3.273,
     "daily_true_dir": "实际偏多 🟢",
     "daily_call_walls": [
       [
         7270.0,
-        5499480.0
+        5659360.0
       ],
       [
         7280.0,
-        4245380.0
+        5004710.0
       ],
       [
         7285.0,
