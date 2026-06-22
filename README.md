@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `ndx_ndte_20260622_1431.json` | NDX 非0DTE信号 | 2026-06-22 14:31 | [下载](NDXalerts/20260622/ndx_ndte_20260622_1431.json) | {} |
 | `spx_stock_flow_latest.json` | 快照 | 2026-06-22 14:31 | [下载](misc/20260622/spx_stock_flow_latest.json) | {} |
 | `alerts_20260622_full.json` | 期权流全天快照 | 2026-06-22 14:30 | [下载](alerts/20260622/alerts_20260622_full.json) | {"total": 7937, "big_premium": 4143, "bull_bear": "多1751/空1034", "time_range": " |
 | `spx_0dte_report_20260622_1428.json` | SPX 0DTE信号 | 2026-06-22 14:28 | [下载](SPXalerts/20260622/spx_0dte_report_20260622_1428.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
