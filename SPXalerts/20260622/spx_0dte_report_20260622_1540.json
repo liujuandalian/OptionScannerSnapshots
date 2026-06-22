@@ -1,0 +1,93 @@
+{
+  "label": "0DTE · 15:40 ET",
+  "count": 1,
+  "bull_count": 1,
+  "bear_count": 0,
+  "call_premium": 0.156,
+  "put_premium": 0.0,
+  "total_premium": 0.156,
+  "net_premium": 0.156,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.0,
+  "lc_premium": 0.156,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 0,
+  "long_call_cnt": 1,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏多 🟢",
+  "top10": [
+    {
+      "ts": "15:39:21",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7270.0,
+      "volume": 8,
+      "bid": 193.9,
+      "ask": 195.8,
+      "mid": 194.85000000000002,
+      "iv": 108.518,
+      "delta": 0.999,
+      "open_int": 16,
+      "est_premium": 155880.00000000003,
+      "spx_price": 7463.82,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -2.596793598988182,
+      "straddle_str": "$6.80  (C$3.35+P$3.45)",
+      "sd1_str": "±$15.9  [7,448.0 ~ 7,479.7]",
+      "sd1_low": 7447.95,
+      "sd1_high": 7479.69,
+      "sd1": 15.87,
+      "atm_iv": 14.54
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "top_call_strikes": [
+    [
+      7270.0,
+      155880.00000000003
+    ]
+  ],
+  "generated": "2026-06-22T15:40:45.543367",
+  "daily": {
+    "daily_count": 53,
+    "daily_call_prem": 9.9,
+    "daily_put_prem": 0.0,
+    "daily_sp_prem": 0.0,
+    "daily_lp_prem": 0.0,
+    "daily_sc_prem": 3.019,
+    "daily_lc_prem": 6.881,
+    "daily_true_bull": 6.881,
+    "daily_true_bear": 3.019,
+    "daily_true_dir": "实际偏多 🟢",
+    "daily_call_walls": [
+      [
+        7270.0,
+        4414720.0
+      ],
+      [
+        7280.0,
+        3487025.0
+      ],
+      [
+        7285.0,
+        1421840.0
+      ],
+      [
+        7300.0,
+        576910.0
+      ]
+    ],
+    "daily_put_walls": []
+  }
+}
