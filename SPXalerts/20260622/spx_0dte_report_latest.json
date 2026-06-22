@@ -1,5 +1,5 @@
 {
-  "label": "0DTE · 13:20 ET",
+  "label": "0DTE · 13:24 ET",
   "count": 1,
   "bull_count": 0,
   "bear_count": 1,
@@ -22,7 +22,7 @@
   "true_dir": "实际偏空 🔴",
   "top10": [
     {
-      "ts": "13:19:14",
+      "ts": "13:23:54",
       "exp_date": "2026-06-22",
       "is_0dte": true,
       "direction": "BEAR",
@@ -30,23 +30,23 @@
       "strike": 7305.0,
       "volume": 13,
       "bid": 173.0,
-      "ask": 174.2,
-      "mid": 173.6,
-      "iv": 48.111,
+      "ask": 174.3,
+      "mid": 173.65,
+      "iv": 48.745,
       "delta": 0.996,
       "open_int": 47,
-      "est_premium": 225679.99999999997,
-      "spx_price": 7477.93,
+      "est_premium": 225745.00000000003,
+      "spx_price": 7477.75,
       "position": "SHORT",
       "market_dir": "看跌 🔴",
       "trade_label": "📉 SHORT CALL → 看跌 🔴",
-      "dist_pct": -2.312538362889199,
-      "straddle_str": "$16.30  (C$7.35+P$8.95)",
-      "sd1_str": "±$45.4  [7,432.5 ~ 7,523.4]",
-      "sd1_low": 7432.5,
-      "sd1_high": 7523.36,
-      "sd1": 45.43,
-      "atm_iv": 15.01
+      "dist_pct": -2.3101868877670424,
+      "straddle_str": "$15.90  (C$7.25+P$8.65)",
+      "sd1_str": "±$44.3  [7,433.4 ~ 7,522.1]",
+      "sd1_low": 7433.44,
+      "sd1_high": 7522.06,
+      "sd1": 44.31,
+      "atm_iv": 14.83
     }
   ],
   "vol_oi_alerts": [],
@@ -55,25 +55,25 @@
   "top_call_strikes": [
     [
       7305.0,
-      225679.99999999997
+      225745.00000000003
     ]
   ],
-  "generated": "2026-06-22T13:20:40.169209",
+  "generated": "2026-06-22T13:24:53.477901",
   "daily": {
-    "daily_count": 4,
-    "daily_call_prem": 0.894,
+    "daily_count": 7,
+    "daily_call_prem": 1.573,
     "daily_put_prem": 0.0,
     "daily_sp_prem": 0.0,
     "daily_lp_prem": 0.0,
-    "daily_sc_prem": 0.452,
+    "daily_sc_prem": 1.132,
     "daily_lc_prem": 0.442,
     "daily_true_bull": 0.442,
-    "daily_true_bear": 0.452,
+    "daily_true_bear": 1.132,
     "daily_true_dir": "实际偏空 🔴",
     "daily_call_walls": [
       [
         7305.0,
-        893620.0
+        1573325.0
       ]
     ],
     "daily_put_walls": []
