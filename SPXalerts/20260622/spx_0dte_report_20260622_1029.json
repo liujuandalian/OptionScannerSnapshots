@@ -1,0 +1,124 @@
+{
+  "label": "0DTE · 10:29 ET",
+  "count": 2,
+  "bull_count": 2,
+  "bear_count": 0,
+  "call_premium": 2.327,
+  "put_premium": 0.0,
+  "total_premium": 2.327,
+  "net_premium": 2.327,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.0,
+  "lc_premium": 2.327,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 0,
+  "long_call_cnt": 2,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏多 🟢",
+  "top10": [
+    {
+      "ts": "10:27:10",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7385.0,
+      "volume": 98,
+      "bid": 119.7,
+      "ask": 120.8,
+      "mid": 120.25,
+      "iv": 31.764,
+      "delta": 0.976,
+      "open_int": 249,
+      "est_premium": 1178450.0,
+      "spx_price": 7504.67,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -1.5946070913178072,
+      "straddle_str": "$29.00  (C$14.20+P$14.80)",
+      "sd1_str": "±$81.7  [7,422.9 ~ 7,586.4]",
+      "sd1_low": 7422.94,
+      "sd1_high": 7586.4,
+      "sd1": 81.73,
+      "atm_iv": 18.71
+    },
+    {
+      "ts": "10:28:45",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7385.0,
+      "volume": 99,
+      "bid": 115.6,
+      "ask": 116.4,
+      "mid": 116.0,
+      "iv": 31.377,
+      "delta": 0.973,
+      "open_int": 249,
+      "est_premium": 1148400.0,
+      "spx_price": 7500.54,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -1.5404224229188828,
+      "straddle_str": "$31.10  (C$15.65+P$15.45)",
+      "sd1_str": "±$87.3  [7,413.3 ~ 7,587.8]",
+      "sd1_low": 7413.29,
+      "sd1_high": 7587.79,
+      "sd1": 87.25,
+      "atm_iv": 20.02
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "top_call_strikes": [
+    [
+      7385.0,
+      2326850.0
+    ]
+  ],
+  "generated": "2026-06-22T10:29:11.636878",
+  "daily": {
+    "daily_count": 37,
+    "daily_call_prem": 37.393,
+    "daily_put_prem": 0.0,
+    "daily_sp_prem": 0.0,
+    "daily_lp_prem": 0.0,
+    "daily_sc_prem": 11.419,
+    "daily_lc_prem": 24.692,
+    "daily_true_bull": 24.692,
+    "daily_true_bear": 11.419,
+    "daily_true_dir": "实际偏多 🟢",
+    "daily_call_walls": [
+      [
+        7385.0,
+        24373055.0
+      ],
+      [
+        7420.0,
+        8466575.0
+      ],
+      [
+        7400.0,
+        2445540.0
+      ],
+      [
+        7500.0,
+        1580420.0
+      ],
+      [
+        7495.0,
+        527670.0
+      ]
+    ],
+    "daily_put_walls": []
+  }
+}
