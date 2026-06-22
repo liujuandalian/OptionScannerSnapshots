@@ -1,52 +1,52 @@
 {
-  "label": "0DTE · 13:48 ET",
+  "label": "0DTE · 13:53 ET",
   "count": 1,
   "bull_count": 1,
   "bear_count": 0,
-  "call_premium": 0.152,
+  "call_premium": 0.154,
   "put_premium": 0.0,
-  "total_premium": 0.152,
-  "net_premium": 0.152,
+  "total_premium": 0.154,
+  "net_premium": 0.154,
   "pc_ratio": 0.0,
   "cp_ratio": 0,
   "pcv_ratio": 0.0,
   "sp_premium": 0.0,
   "lp_premium": 0.0,
   "sc_premium": 0.0,
-  "lc_premium": 0.152,
+  "lc_premium": 0.0,
   "short_put_cnt": 0,
   "long_put_cnt": 0,
   "short_call_cnt": 0,
-  "long_call_cnt": 1,
+  "long_call_cnt": 0,
   "direction": "极度偏多 🟢🟢",
-  "true_dir": "实际偏多 🟢",
+  "true_dir": "实际偏空 🔴",
   "top10": [
     {
-      "ts": "13:47:52",
+      "ts": "13:52:32",
       "exp_date": "2026-06-22",
       "is_0dte": true,
       "direction": "BULL",
       "opt_type": "CALL",
       "strike": 7285.0,
       "volume": 8,
-      "bid": 189.4,
-      "ask": 190.5,
-      "mid": 189.95,
-      "iv": 57.104,
+      "bid": 192.4,
+      "ask": 193.6,
+      "mid": 193.0,
+      "iv": 58.804,
       "delta": 0.997,
       "open_int": 18,
-      "est_premium": 151960.0,
-      "spx_price": 7474.12,
-      "position": "LONG",
-      "market_dir": "看涨 🟢",
-      "trade_label": "📈 LONG CALL → 看涨 🟢",
-      "dist_pct": -2.530331329975969,
-      "straddle_str": "$14.40  (C$7.05+P$7.35)",
-      "sd1_str": "±$39.2  [7,434.9 ~ 7,513.3]",
-      "sd1_low": 7434.9,
-      "sd1_high": 7513.34,
-      "sd1": 39.22,
-      "atm_iv": 14.26
+      "est_premium": 154400.0,
+      "spx_price": 7477.21,
+      "position": "UNKNOWN",
+      "market_dir": "—",
+      "trade_label": "❓ UNKNOWN CALL → —",
+      "dist_pct": -2.5706112306595648,
+      "straddle_str": "$13.90  (C$8.35+P$5.55)",
+      "sd1_str": "±$37.6  [7,439.6 ~ 7,514.8]",
+      "sd1_low": 7439.63,
+      "sd1_high": 7514.79,
+      "sd1": 37.58,
+      "atm_iv": 13.93
     }
   ],
   "vol_oi_alerts": [],
@@ -55,13 +55,13 @@
   "top_call_strikes": [
     [
       7285.0,
-      151960.0
+      154400.0
     ]
   ],
-  "generated": "2026-06-22T13:48:51.620708",
+  "generated": "2026-06-22T13:53:01.432289",
   "daily": {
-    "daily_count": 3,
-    "daily_call_prem": 0.453,
+    "daily_count": 6,
+    "daily_call_prem": 0.916,
     "daily_put_prem": 0.0,
     "daily_sp_prem": 0.0,
     "daily_lp_prem": 0.0,
@@ -73,7 +73,7 @@
     "daily_call_walls": [
       [
         7285.0,
-        453280.0
+        916360.0
       ]
     ],
     "daily_put_walls": []
