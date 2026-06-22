@@ -1,0 +1,81 @@
+{
+  "label": "0DTE · 13:26 ET",
+  "count": 1,
+  "bull_count": 1,
+  "bear_count": 0,
+  "call_premium": 0.224,
+  "put_premium": 0.0,
+  "total_premium": 0.224,
+  "net_premium": 0.224,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.0,
+  "lc_premium": 0.0,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 0,
+  "long_call_cnt": 0,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏空 🔴",
+  "top10": [
+    {
+      "ts": "13:25:30",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7305.0,
+      "volume": 13,
+      "bid": 171.9,
+      "ask": 173.1,
+      "mid": 172.5,
+      "iv": 48.646,
+      "delta": 0.996,
+      "open_int": 47,
+      "est_premium": 224250.0,
+      "spx_price": 7476.96,
+      "position": "UNKNOWN",
+      "market_dir": "—",
+      "trade_label": "❓ UNKNOWN CALL → —",
+      "dist_pct": -2.2998651858509347,
+      "straddle_str": "$15.95  (C$9.25+P$6.70)",
+      "sd1_str": "±$43.8  [7,433.2 ~ 7,520.7]",
+      "sd1_low": 7433.18,
+      "sd1_high": 7520.74,
+      "sd1": 43.78,
+      "atm_iv": 14.74
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "top_call_strikes": [
+    [
+      7305.0,
+      224250.0
+    ]
+  ],
+  "generated": "2026-06-22T13:26:59.332140",
+  "daily": {
+    "daily_count": 8,
+    "daily_call_prem": 1.798,
+    "daily_put_prem": 0.0,
+    "daily_sp_prem": 0.0,
+    "daily_lp_prem": 0.0,
+    "daily_sc_prem": 1.132,
+    "daily_lc_prem": 0.442,
+    "daily_true_bull": 0.442,
+    "daily_true_bear": 1.132,
+    "daily_true_dir": "实际偏空 🔴",
+    "daily_call_walls": [
+      [
+        7305.0,
+        1797575.0
+      ]
+    ],
+    "daily_put_walls": []
+  }
+}
