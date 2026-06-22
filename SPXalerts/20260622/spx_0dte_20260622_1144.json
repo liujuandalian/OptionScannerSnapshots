@@ -1,0 +1,35 @@
+{
+  "generated": "2026-06-22T11:44:51.837998",
+  "timestamp_et": "2026-06-22 11:44 ET",
+  "type": "0DTE",
+  "count": 1,
+  "signals": [
+    {
+      "ts": "11:43:37",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 7375.0,
+      "volume": 66,
+      "bid": 114.2,
+      "ask": 115.0,
+      "mid": 114.6,
+      "iv": 31.014,
+      "delta": 0.985,
+      "open_int": 1124,
+      "est_premium": 756360.0,
+      "spx_price": 7489.0,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -1.5222326078248096,
+      "straddle_str": "$23.40  (C$11.35+P$12.05)",
+      "sd1_str": "±$66.4  [7,422.6 ~ 7,555.4]",
+      "sd1_low": 7422.61,
+      "sd1_high": 7555.39,
+      "sd1": 66.39,
+      "atm_iv": 17.34
+    }
+  ]
+}
