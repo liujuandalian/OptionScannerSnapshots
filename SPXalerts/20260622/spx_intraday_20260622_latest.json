@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-22T13:20:05.527646",
-  "timestamp_et": "2026-06-22 13:20 ET",
-  "spx_price": 7477.93,
+  "generated": "2026-06-22T13:25:07.903313",
+  "timestamp_et": "2026-06-22 13:25 ET",
+  "spx_price": 7477.75,
   "window_minutes": 5,
   "window": {
     "count": 0,
@@ -17,6 +17,33 @@
     }
   },
   "today_0dte_top20": [
+    {
+      "ts": "13:20:47",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 7305.0,
+      "volume": 13,
+      "bid": 175.4,
+      "ask": 176.5,
+      "mid": 175.95,
+      "iv": 48.914,
+      "delta": 0.996,
+      "open_int": 47,
+      "est_premium": 228735.0,
+      "spx_price": 7480.28,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -2.3432277936120007,
+      "straddle_str": "$16.45  (C$8.60+P$7.85)",
+      "sd1_str": "±$45.0  [7,435.3 ~ 7,525.3]",
+      "sd1_low": 7435.29,
+      "sd1_high": 7525.27,
+      "sd1": 44.99,
+      "atm_iv": 14.91
+    },
     {
       "ts": "13:16:04",
       "exp_date": "2026-06-22",
@@ -45,6 +72,33 @@
       "atm_iv": 15.1
     },
     {
+      "ts": "13:23:54",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 7305.0,
+      "volume": 13,
+      "bid": 173.0,
+      "ask": 174.3,
+      "mid": 173.65,
+      "iv": 48.745,
+      "delta": 0.996,
+      "open_int": 47,
+      "est_premium": 225745.00000000003,
+      "spx_price": 7477.75,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -2.3101868877670424,
+      "straddle_str": "$15.90  (C$7.25+P$8.65)",
+      "sd1_str": "±$44.3  [7,433.4 ~ 7,522.1]",
+      "sd1_low": 7433.44,
+      "sd1_high": 7522.06,
+      "sd1": 44.31,
+      "atm_iv": 14.83
+    },
+    {
       "ts": "13:19:14",
       "exp_date": "2026-06-22",
       "is_0dte": true,
@@ -70,6 +124,33 @@
       "sd1_high": 7523.36,
       "sd1": 45.43,
       "atm_iv": 15.01
+    },
+    {
+      "ts": "13:22:19",
+      "exp_date": "2026-06-22",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 7305.0,
+      "volume": 13,
+      "bid": 172.7,
+      "ask": 173.8,
+      "mid": 173.25,
+      "iv": 48.492,
+      "delta": 0.996,
+      "open_int": 47,
+      "est_premium": 225225.0,
+      "spx_price": 7478.06,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -2.3142365800755864,
+      "straddle_str": "$16.15  (C$7.15+P$9.00)",
+      "sd1_str": "±$44.9  [7,433.1 ~ 7,523.0]",
+      "sd1_low": 7433.11,
+      "sd1_high": 7523.01,
+      "sd1": 44.95,
+      "atm_iv": 14.99
     },
     {
       "ts": "13:17:38",
@@ -127,11 +208,11 @@
     }
   ],
   "today_0dte_summary": {
-    "total_count": 4,
+    "total_count": 7,
     "bull_count": 2,
-    "bear_count": 2,
+    "bear_count": 5,
     "bull_prem": 441805.0,
-    "bear_prem": 451815.0,
-    "net_prem": -10010.0
+    "bear_prem": 1131520.0,
+    "net_prem": -689715.0
   }
 }
