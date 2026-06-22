@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `alerts_20260622_full.json` | 期权流全天快照 | 2026-06-22 14:15 | [下载](alerts/20260622/alerts_20260622_full.json) | {"total": 15585, "big_premium": 8178, "bull_bear": "多3421/空2094", "time_range":  |
 | `alerts_20260622_1415.json` | 期权流增量快照 | 2026-06-22 14:15 | [下载](alerts/20260622/alerts_20260622_1415.json) | {} |
 | `ndx_0dte_report_20260622_1414.json` | NDX 0DTE信号 | 2026-06-22 14:14 | [下载](NDXalerts/20260622/ndx_0dte_report_20260622_1414.json) | {} |
 | `ndx_0dte_report_20260622_1412.json` | NDX 0DTE信号 | 2026-06-22 14:12 | [下载](NDXalerts/20260622/ndx_0dte_report_20260622_1412.json) | {} |
