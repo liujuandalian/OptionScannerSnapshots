@@ -1,0 +1,85 @@
+{
+  "label": "0DTE · 09:47 ET",
+  "count": 1,
+  "bull_count": 0,
+  "bear_count": 1,
+  "call_premium": 0.235,
+  "put_premium": 0.0,
+  "total_premium": 0.235,
+  "net_premium": 0.235,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.235,
+  "lc_premium": 0.0,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 1,
+  "long_call_cnt": 0,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏空 🔴",
+  "top10": [
+    {
+      "ts": "09:45:58",
+      "exp_date": "2026-06-23",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 7200.0,
+      "volume": 13,
+      "bid": 180.1,
+      "ask": 181.9,
+      "mid": 181.0,
+      "iv": 43.987,
+      "delta": 0.981,
+      "open_int": 14,
+      "est_premium": 235300.0,
+      "spx_price": 7378.53,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -2.4195876414407715,
+      "straddle_str": "$45.95  (C$23.20+P$22.75)",
+      "sd1_str": "±$129.9  [7,248.6 ~ 7,508.5]",
+      "sd1_low": 7248.6,
+      "sd1_high": 7508.46,
+      "sd1": 129.93,
+      "atm_iv": 28.51
+    }
+  ],
+  "vol_oi_alerts": [],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "top_call_strikes": [
+    [
+      7200.0,
+      235300.0
+    ]
+  ],
+  "generated": "2026-06-23T09:47:24.158453",
+  "daily": {
+    "daily_count": 4,
+    "daily_call_prem": 1.018,
+    "daily_put_prem": 0.0,
+    "daily_sp_prem": 0.0,
+    "daily_lp_prem": 0.0,
+    "daily_sc_prem": 0.235,
+    "daily_lc_prem": 0.316,
+    "daily_true_bull": 0.316,
+    "daily_true_bear": 0.235,
+    "daily_true_dir": "实际偏多 🟢",
+    "daily_call_walls": [
+      [
+        7200.0,
+        701805.0
+      ],
+      [
+        7225.0,
+        315735.00000000006
+      ]
+    ],
+    "daily_put_walls": []
+  }
+}
