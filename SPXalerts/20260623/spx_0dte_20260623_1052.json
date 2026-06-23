@@ -1,0 +1,35 @@
+{
+  "generated": "2026-06-23T10:52:29.736806",
+  "timestamp_et": "2026-06-23 10:52 ET",
+  "type": "0DTE",
+  "count": 1,
+  "signals": [
+    {
+      "ts": "10:51:49",
+      "exp_date": "2026-06-23",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7225.0,
+      "volume": 33,
+      "bid": 180.5,
+      "ask": 181.8,
+      "mid": 181.15,
+      "iv": 43.035,
+      "delta": 0.99,
+      "open_int": 3,
+      "est_premium": 597795.0,
+      "spx_price": 7405.42,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -2.436323665639492,
+      "straddle_str": "$36.85  (C$19.00+P$17.85)",
+      "sd1_str": "±$103.3  [7,302.1 ~ 7,508.7]",
+      "sd1_low": 7302.1,
+      "sd1_high": 7508.74,
+      "sd1": 103.32,
+      "atm_iv": 24.88
+    }
+  ]
+}
