@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-23T11:10:11.300570",
-  "timestamp_et": "2026-06-23 11:10 ET",
-  "spx_price": 7384.84,
+  "generated": "2026-06-23T11:15:14.637670",
+  "timestamp_et": "2026-06-23 11:15 ET",
+  "spx_price": 7388.71,
   "window_minutes": 5,
   "window": {
     "count": 0,
@@ -531,39 +531,39 @@
       "atm_iv": 24.72
     },
     {
-      "ts": "11:07:13",
+      "ts": "11:15:04",
       "exp_date": "2026-06-23",
       "is_0dte": true,
       "direction": "BULL",
       "opt_type": "CALL",
       "strike": 7200.0,
       "volume": 30,
-      "bid": 181.9,
-      "ask": 192.5,
-      "mid": 187.2,
-      "iv": 44.034,
+      "bid": 190.1,
+      "ask": 190.9,
+      "mid": 190.5,
+      "iv": 45.623,
       "delta": 0.992,
       "open_int": 14,
-      "est_premium": 561600.0,
-      "spx_price": 7385.55,
+      "est_premium": 571500.0,
+      "spx_price": 7388.71,
       "position": "LONG",
       "market_dir": "看涨 🟢",
       "trade_label": "📈 LONG CALL → 看涨 🟢",
-      "dist_pct": -2.512338282186163,
-      "straddle_str": "$36.60  (C$18.85+P$17.75)",
-      "sd1_str": "±$102.5  [7,283.0 ~ 7,488.1]",
-      "sd1_low": 7283.01,
-      "sd1_high": 7488.09,
-      "sd1": 102.54,
-      "atm_iv": 25.43
+      "dist_pct": -2.5540317592651496,
+      "straddle_str": "$34.90  (C$17.60+P$17.30)",
+      "sd1_str": "±$99.2  [7,289.5 ~ 7,487.9]",
+      "sd1_low": 7289.52,
+      "sd1_high": 7487.9,
+      "sd1": 99.19,
+      "atm_iv": 24.93
     }
   ],
   "today_0dte_summary": {
-    "total_count": 21,
-    "bull_count": 21,
+    "total_count": 25,
+    "bull_count": 25,
     "bear_count": 0,
-    "bull_prem": 12477330.0,
+    "bull_prem": 14749380.0,
     "bear_prem": 0,
-    "net_prem": 12477330.0
+    "net_prem": 14749380.0
   }
 }
