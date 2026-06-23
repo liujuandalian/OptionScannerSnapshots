@@ -1,5 +1,5 @@
 {
-  "label": "0DTE · 10:41 ET",
+  "label": "0DTE · 10:44 ET",
   "count": 1,
   "bull_count": 1,
   "bear_count": 0,
@@ -22,60 +22,60 @@
   "true_dir": "实际偏多 🟢",
   "top10": [
     {
-      "ts": "10:40:55",
+      "ts": "10:42:27",
       "exp_date": "2026-06-23",
       "is_0dte": true,
       "direction": "BULL",
       "opt_type": "CALL",
       "strike": 7225.0,
       "volume": 33,
-      "bid": 178.0,
-      "ask": 179.3,
-      "mid": 178.65,
-      "iv": 43.379,
+      "bid": 178.3,
+      "ask": 179.5,
+      "mid": 178.9,
+      "iv": 43.782,
       "delta": 0.987,
       "open_int": 3,
-      "est_premium": 589545.0,
-      "spx_price": 7402.42,
+      "est_premium": 590370.0,
+      "spx_price": 7402.14,
       "position": "LONG",
       "market_dir": "看涨 🟢",
       "trade_label": "📈 LONG CALL → 看涨 🟢",
-      "dist_pct": -2.396783754501907,
-      "straddle_str": "$39.00  (C$21.20+P$17.80)",
-      "sd1_str": "±$109.5  [7,292.9 ~ 7,512.0]",
-      "sd1_low": 7292.87,
-      "sd1_high": 7511.97,
-      "sd1": 109.55,
-      "atm_iv": 25.93
+      "dist_pct": -2.393091727527449,
+      "straddle_str": "$38.85  (C$21.25+P$17.60)",
+      "sd1_str": "±$110.2  [7,291.9 ~ 7,512.4]",
+      "sd1_low": 7291.93,
+      "sd1_high": 7512.35,
+      "sd1": 110.21,
+      "atm_iv": 26.18
     }
   ],
   "vol_oi_alerts": [
     {
-      "ts": "10:40:55",
+      "ts": "10:42:27",
       "exp_date": "2026-06-23",
       "is_0dte": true,
       "direction": "BULL",
       "opt_type": "CALL",
       "strike": 7225.0,
       "volume": 33,
-      "bid": 178.0,
-      "ask": 179.3,
-      "mid": 178.65,
-      "iv": 43.379,
+      "bid": 178.3,
+      "ask": 179.5,
+      "mid": 178.9,
+      "iv": 43.782,
       "delta": 0.987,
       "open_int": 3,
-      "est_premium": 589545.0,
-      "spx_price": 7402.42,
+      "est_premium": 590370.0,
+      "spx_price": 7402.14,
       "position": "LONG",
       "market_dir": "看涨 🟢",
       "trade_label": "📈 LONG CALL → 看涨 🟢",
-      "dist_pct": -2.396783754501907,
-      "straddle_str": "$39.00  (C$21.20+P$17.80)",
-      "sd1_str": "±$109.5  [7,292.9 ~ 7,512.0]",
-      "sd1_low": 7292.87,
-      "sd1_high": 7511.97,
-      "sd1": 109.55,
-      "atm_iv": 25.93
+      "dist_pct": -2.393091727527449,
+      "straddle_str": "$38.85  (C$21.25+P$17.60)",
+      "sd1_str": "±$110.2  [7,291.9 ~ 7,512.4]",
+      "sd1_low": 7291.93,
+      "sd1_high": 7512.35,
+      "sd1": 110.21,
+      "atm_iv": 26.18
     }
   ],
   "dup_volume_groups": {},
@@ -83,25 +83,25 @@
   "top_call_strikes": [
     [
       7225.0,
-      589545.0
+      590370.0
     ]
   ],
-  "generated": "2026-06-23T10:41:47.772945",
+  "generated": "2026-06-23T10:44:06.172689",
   "daily": {
-    "daily_count": 3,
-    "daily_call_prem": 1.82,
+    "daily_count": 4,
+    "daily_call_prem": 2.41,
     "daily_put_prem": 0.0,
     "daily_sp_prem": 0.0,
     "daily_lp_prem": 0.0,
     "daily_sc_prem": 0.0,
-    "daily_lc_prem": 1.82,
-    "daily_true_bull": 1.82,
+    "daily_lc_prem": 2.41,
+    "daily_true_bull": 2.41,
     "daily_true_bear": 0.0,
     "daily_true_dir": "实际偏多 🟢",
     "daily_call_walls": [
       [
         7225.0,
-        1819950.0
+        2410320.0
       ]
     ],
     "daily_put_walls": []
