@@ -15,68 +15,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 ## 🗂️ 目录结构
 
 | 目录 | 内容 | 生成方式 |
-|---
-## 📅 2026-06-24
-
-| 文件 | 类型 | 上传时间 | 链接 | 摘要 |
-|---|---|---|---|---|
-| `spx_0dte_report_20260624_1042.json` | SPX 0DTE信号 | 2026-06-24 10:42 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_1042.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_0dte_report_20260624_1042.json` | NDX 0DTE信号 | 2026-06-24 10:42 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_1042.json) | {} |
-| `spx_ndte_20260624_1042.json` | SPX 非0DTE信号 | 2026-06-24 10:42 | [下载](SPXalerts/20260624/spx_ndte_20260624_1042.json) | {} |
-| `spx_0dte_report_20260624_1038.json` | SPX 0DTE信号 | 2026-06-24 10:38 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_1038.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_0dte_20260624_1038.json` | NDX 0DTE信号 | 2026-06-24 10:38 | [下载](NDXalerts/20260624/ndx_0dte_20260624_1038.json) | {} |
-| `ndx_ndte_20260624_1037.json` | NDX 非0DTE信号 | 2026-06-24 10:37 | [下载](NDXalerts/20260624/ndx_ndte_20260624_1037.json) | {} |
-| `ndx_0dte_20260624_1035.json` | NDX 0DTE信号 | 2026-06-24 10:35 | [下载](NDXalerts/20260624/ndx_0dte_20260624_1035.json) | {} |
-| `spx_intraday_20260624_1035.json` | SPX盘中5分钟快报 | 2026-06-24 10:35 | [下载](SPXalerts/20260624/spx_intraday_20260624_1035.json) | {} |
-| `spx_0dte_report_20260624_1034.json` | SPX 0DTE信号 | 2026-06-24 10:34 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_1034.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_ndte_report_20260624_1032.json` | NDX 非0DTE信号 | 2026-06-24 10:32 | [下载](NDXalerts/20260624/ndx_ndte_report_20260624_1032.json) | {} |
-| `ndx_ndte_20260624_1032.json` | NDX 非0DTE信号 | 2026-06-24 10:32 | [下载](NDXalerts/20260624/ndx_ndte_20260624_1032.json) | {} |
-| `spx_0dte_report_20260624_1032.json` | SPX 0DTE信号 | 2026-06-24 10:32 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_1032.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_ndte_20260624_1031.json` | SPX 非0DTE信号 | 2026-06-24 10:31 | [下载](SPXalerts/20260624/spx_ndte_20260624_1031.json) | {} |
-| `alerts_20260624_1030.json` | 期权流增量快照 | 2026-06-24 10:30 | [下载](alerts/20260624/alerts_20260624_1030.json) | {} |
-| `ndx_0dte_20260624_1029.json` | NDX 0DTE信号 | 2026-06-24 10:29 | [下载](NDXalerts/20260624/ndx_0dte_20260624_1029.json) | {} |
-| `ndx_0dte_report_20260624_1027.json` | NDX 0DTE信号 | 2026-06-24 10:27 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_1027.json) | {} |
-| `ndx_ndte_20260624_1027.json` | NDX 非0DTE信号 | 2026-06-24 10:27 | [下载](NDXalerts/20260624/ndx_ndte_20260624_1027.json) | {} |
-| `ndx_0dte_20260624_1025.json` | NDX 0DTE信号 | 2026-06-24 10:25 | [下载](NDXalerts/20260624/ndx_0dte_20260624_1025.json) | {} |
-| `ndx_0dte_report_20260624_1023.json` | NDX 0DTE信号 | 2026-06-24 10:23 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_1023.json) | {} |
-| `alerts_20260624_full.json` | 期权流全天快照 | 2026-06-24 10:15 | [下载](alerts/20260624/alerts_20260624_full.json) | {"total": 2715, "big_premium": 1285, "bull_bear": "多652/空341", "time_range": "09 |
-| `alerts_20260624_1015.json` | 期权流增量快照 | 2026-06-24 10:15 | [下载](alerts/20260624/alerts_20260624_1015.json) | {} |
-| `ndx_0dte_20260624_1014.json` | NDX 0DTE信号 | 2026-06-24 10:14 | [下载](NDXalerts/20260624/ndx_0dte_20260624_1014.json) | {} |
-| `spx_0dte_20260624_1014.json` | SPX 0DTE信号 | 2026-06-24 10:14 | [下载](SPXalerts/20260624/spx_0dte_20260624_1014.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_0dte_20260624_1012.json` | NDX 0DTE信号 | 2026-06-24 10:12 | [下载](NDXalerts/20260624/ndx_0dte_20260624_1012.json) | {} |
-| `spx_0dte_20260624_1012.json` | SPX 0DTE信号 | 2026-06-24 10:12 | [下载](SPXalerts/20260624/spx_0dte_20260624_1012.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_ndte_20260624_1011.json` | SPX 非0DTE信号 | 2026-06-24 10:11 | [下载](SPXalerts/20260624/spx_ndte_20260624_1011.json) | {} |
-| `ndx_0dte_report_20260624_1010.json` | NDX 0DTE信号 | 2026-06-24 10:10 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_1010.json) | {} |
-| `spx_0dte_20260624_1008.json` | SPX 0DTE信号 | 2026-06-24 10:08 | [下载](SPXalerts/20260624/spx_0dte_20260624_1008.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_0dte_report_20260624_1006.json` | NDX 0DTE信号 | 2026-06-24 10:06 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_1006.json) | {} |
-| `spx_0dte_report_20260624_1005.json` | SPX 0DTE信号 | 2026-06-24 10:05 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_1005.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_intraday_20260624_1005.json` | SPX盘中5分钟快报 | 2026-06-24 10:05 | [下载](SPXalerts/20260624/spx_intraday_20260624_1005.json) | {} |
-| `spx_0dte_report_20260624_1003.json` | SPX 0DTE信号 | 2026-06-24 10:03 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_1003.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_0dte_20260624_1001.json` | SPX 0DTE信号 | 2026-06-24 10:01 | [下载](SPXalerts/20260624/spx_0dte_20260624_1001.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_ndte_report_20260624_1000.json` | SPX 非0DTE信号 | 2026-06-24 10:00 | [下载](SPXalerts/20260624/spx_ndte_report_20260624_1000.json) | {} |
-| `alerts_20260624_1000.json` | 期权流增量快照 | 2026-06-24 10:00 | [下载](alerts/20260624/alerts_20260624_1000.json) | {} |
-| `ndx_0dte_20260624_0959.json` | NDX 0DTE信号 | 2026-06-24 09:59 | [下载](NDXalerts/20260624/ndx_0dte_20260624_0959.json) | {} |
-| `spx_0dte_report_20260624_0956.json` | SPX 0DTE信号 | 2026-06-24 09:56 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_0956.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_intraday_20260624_0955.json` | SPX盘中5分钟快报 | 2026-06-24 09:55 | [下载](SPXalerts/20260624/spx_intraday_20260624_0955.json) | {} |
-| `spx_0dte_report_20260624_0952.json` | SPX 0DTE信号 | 2026-06-24 09:52 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_0952.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_0dte_report_20260624_0951.json` | NDX 0DTE信号 | 2026-06-24 09:51 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_0951.json) | {} |
-| `spx_ndte_20260624_0950.json` | SPX 非0DTE信号 | 2026-06-24 09:50 | [下载](SPXalerts/20260624/spx_ndte_20260624_0950.json) | {} |
-| `spx_0dte_report_20260624_0949.json` | SPX 0DTE信号 | 2026-06-24 09:49 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_0949.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_0dte_20260624_0948.json` | NDX 0DTE信号 | 2026-06-24 09:48 | [下载](NDXalerts/20260624/ndx_0dte_20260624_0948.json) | {} |
-| `ndx_ndte_20260624_0945.json` | NDX 非0DTE信号 | 2026-06-24 09:45 | [下载](NDXalerts/20260624/ndx_ndte_20260624_0945.json) | {} |
-| `alerts_20260624_0945.json` | 期权流增量快照 | 2026-06-24 09:45 | [下载](alerts/20260624/alerts_20260624_0945.json) | {} |
-| `ndx_0dte_report_20260624_0942.json` | NDX 0DTE信号 | 2026-06-24 09:42 | [下载](NDXalerts/20260624/ndx_0dte_report_20260624_0942.json) | {} |
-| `spx_0dte_report_20260624_0940.json` | SPX 0DTE信号 | 2026-06-24 09:41 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_0940.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `ndx_ndte_20260624_0940.json` | NDX 非0DTE信号 | 2026-06-24 09:40 | [下载](NDXalerts/20260624/ndx_ndte_20260624_0940.json) | {} |
-| `spx_0dte_report_20260624_0938.json` | SPX 0DTE信号 | 2026-06-24 09:38 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_0938.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_0dte_report_20260624_0936.json` | SPX 0DTE信号 | 2026-06-24 09:36 | [下载](SPXalerts/20260624/spx_0dte_report_20260624_0936.json) | {"date": null, "signals": 0, "spx_close": 0, "0dte_dir": "N/A", "0dte_net": "$0. |
-| `spx_stock_flow_latest.json` | 个股期权流量报告 | 2026-06-24 09:35 | [下载](SPXalerts/20260624/spx_stock_flow_latest.json) | {} |
-| `spx_intraday_20260624_0935.json` | SPX盘中5分钟快报 | 2026-06-24 09:35 | [下载](SPXalerts/20260624/spx_intraday_20260624_0935.json) | {} |
-| `spx_ndte_report_20260624_0930.json` | SPX 非0DTE信号 | 2026-06-24 09:30 | [下载](SPXalerts/20260624/spx_ndte_report_20260624_0930.json) | {} |
-| `alerts_20260624_0930.json` | 期权流增量快照 | 2026-06-24 09:30 | [下载](alerts/20260624/alerts_20260624_0930.json) | {} |
-| `alerts_20260624_0915.json` | 期权流增量快照 | 2026-06-24 09:15 | [下载](alerts/20260624/alerts_20260624_0915.json) | {} |
-
----|------|---------|
+|------|------|---------|
 | `alerts/YYYYMMDD/` | 期权流快照（Append模式，持续追加） | main.py 每15分钟 |
 | `oi_snapshots/YYYYMMDD/` | OI盘前/盘后快照 | 盘前自动 + 盘后手动 |
 | `SPXalerts/YYYYMMDD/` | SPX EOD报告 + 盘中快报 | 16:15自动 + 每5分钟 |
