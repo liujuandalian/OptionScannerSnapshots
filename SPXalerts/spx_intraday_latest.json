@@ -1,24 +1,19 @@
 {
-  "generated": "2026-06-26T15:30:18.444773",
-  "timestamp_et": "2026-06-26 15:30 ET",
-  "spx_price": 7353.87,
+  "generated": "2026-06-26T15:40:19.148553",
+  "timestamp_et": "2026-06-26 15:40 ET",
+  "spx_price": 7352.59,
   "window_minutes": 5,
   "window": {
-    "count": 1,
-    "net_delta": 72.72,
-    "short_call_pct": 0.0,
-    "long_put_pct": 0.0,
-    "avg_iv": 14.528,
-    "direction": "⬜ 中性",
-    "top_strikes": [
-      {
-        "strike": 7225.0,
-        "volume": 808
-      }
-    ],
+    "count": 0,
+    "net_delta": 0,
+    "short_call_pct": 0,
+    "long_put_pct": 0,
+    "avg_iv": 0,
+    "direction": "N/A",
+    "top_strikes": [],
     "be_range": {
-      "low": 7220.9,
-      "high": 7220.9
+      "low": 0,
+      "high": 0
     }
   },
   "today_0dte_top20": [
@@ -374,6 +369,33 @@
       "atm_iv": 25.83
     },
     {
+      "ts": "15:32:50",
+      "exp_date": "2026-06-26",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "PUT",
+      "strike": 7370.0,
+      "volume": 62078,
+      "bid": 21.0,
+      "ask": 21.1,
+      "mid": 21.05,
+      "iv": 20.453,
+      "delta": -0.936,
+      "open_int": 1196,
+      "est_premium": 130674190.00000001,
+      "spx_price": 7349.15,
+      "position": "SHORT",
+      "market_dir": "看涨(卖Put) 🟢",
+      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
+      "dist_pct": 0.28370627895743544,
+      "straddle_str": "$10.65  (C$5.00+P$5.65)",
+      "sd1_str": "±$25.5  [7,323.7 ~ 7,374.6]",
+      "sd1_low": 7323.67,
+      "sd1_high": 7374.63,
+      "sd1": 25.48,
+      "atm_iv": 20.54
+    },
+    {
       "ts": "11:44:04",
       "exp_date": "2026-06-26",
       "is_0dte": true,
@@ -534,41 +556,14 @@
       "sd1_high": 7392.13,
       "sd1": 47.17,
       "atm_iv": 24.06
-    },
-    {
-      "ts": "14:50:25",
-      "exp_date": "2026-06-26",
-      "is_0dte": true,
-      "direction": "BEAR",
-      "opt_type": "PUT",
-      "strike": 7365.0,
-      "volume": 58432,
-      "bid": 20.9,
-      "ask": 21.0,
-      "mid": 20.95,
-      "iv": 22.262,
-      "delta": -0.816,
-      "open_int": 994,
-      "est_premium": 122415039.99999999,
-      "spx_price": 7344.96,
-      "position": "LONG",
-      "market_dir": "看跌 🔴",
-      "trade_label": "📈 LONG PUT → 看跌 🔴",
-      "dist_pct": 0.2728401516141676,
-      "straddle_str": "$18.05  (C$9.60+P$8.45)",
-      "sd1_str": "±$47.2  [7,297.8 ~ 7,392.1]",
-      "sd1_low": 7297.79,
-      "sd1_high": 7392.13,
-      "sd1": 47.17,
-      "atm_iv": 24.06
     }
   ],
   "today_0dte_summary": {
-    "total_count": 20622,
-    "bull_count": 11031,
-    "bear_count": 9591,
-    "bull_prem": 95266942982.5,
-    "bear_prem": 85445983220.0,
-    "net_prem": 9820959762.5
+    "total_count": 21031,
+    "bull_count": 11253,
+    "bear_count": 9778,
+    "bull_prem": 97130946145.0,
+    "bear_prem": 86840511167.5,
+    "net_prem": 10290434977.5
   }
 }
