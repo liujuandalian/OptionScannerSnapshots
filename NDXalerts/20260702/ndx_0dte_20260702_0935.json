@@ -1,0 +1,38 @@
+{
+  "generated": "2026-07-02T09:35:26.228468",
+  "timestamp_et": "2026-07-02 09:35 ET",
+  "type": "0DTE",
+  "symbol": "NDX",
+  "count": 1,
+  "signals": [
+    {
+      "ts": "09:34:37",
+      "exp_date": "2026-07-02",
+      "expiry": "2026-07-02",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 29770.0,
+      "volume": 18,
+      "bid": 165.8,
+      "ask": 185.8,
+      "mid": 175.8,
+      "iv": 37.21,
+      "delta": 0.645,
+      "open_int": 15,
+      "est_premium": 316440.0,
+      "ndx_price": 29874.08,
+      "spx_price": 29874.08,
+      "position": "SHORT",
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -0.34839566607574773,
+      "straddle_str": "$233.00  (C$115.60+P$117.40)",
+      "sd1_str": "±$672.1  [29,201.9 ~ 30,546.2]",
+      "sd1_low": 29201.94,
+      "sd1_high": 30546.22,
+      "sd1": 672.14,
+      "atm_iv": 35.9
+    }
+  ]
+}
