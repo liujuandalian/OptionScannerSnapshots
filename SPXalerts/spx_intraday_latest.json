@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-07T14:10:08.620969",
-  "timestamp_et": "2026-07-07 14:10 ET",
-  "spx_price": 7516.36,
+  "generated": "2026-07-07T14:15:18.017564",
+  "timestamp_et": "2026-07-07 14:15 ET",
+  "spx_price": 7517.61,
   "window_minutes": 5,
   "window": {
     "count": 0,
@@ -423,6 +423,33 @@
       "atm_iv": 12.95
     },
     {
+      "ts": "14:13:54",
+      "exp_date": "2026-07-07",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7500.0,
+      "volume": 67903,
+      "bid": 18.5,
+      "ask": 18.7,
+      "mid": 18.6,
+      "iv": 14.318,
+      "delta": 0.854,
+      "open_int": 1756,
+      "est_premium": 126299580.0,
+      "spx_price": 7517.61,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -0.23424998104450315,
+      "straddle_str": "$11.15  (C$4.30+P$6.85)",
+      "sd1_str": "±$30.2  [7,487.4 ~ 7,547.8]",
+      "sd1_low": 7487.38,
+      "sd1_high": 7547.84,
+      "sd1": 30.23,
+      "atm_iv": 12.19
+    },
+    {
       "ts": "13:01:20",
       "exp_date": "2026-07-07",
       "is_0dte": true,
@@ -529,41 +556,14 @@
       "sd1_high": 7552.57,
       "sd1": 34.77,
       "atm_iv": 12.48
-    },
-    {
-      "ts": "12:50:30",
-      "exp_date": "2026-07-07",
-      "is_0dte": true,
-      "direction": "BEAR",
-      "opt_type": "CALL",
-      "strike": 7500.0,
-      "volume": 64187,
-      "bid": 19.4,
-      "ask": 19.5,
-      "mid": 19.45,
-      "iv": 14.618,
-      "delta": 0.793,
-      "open_int": 1756,
-      "est_premium": 124843714.99999999,
-      "spx_price": 7517.54,
-      "position": "SHORT",
-      "market_dir": "看跌 🔴",
-      "trade_label": "📉 SHORT CALL → 看跌 🔴",
-      "dist_pct": -0.2333210066058839,
-      "straddle_str": "$16.40  (C$6.55+P$9.85)",
-      "sd1_str": "±$45.5  [7,472.0 ~ 7,563.1]",
-      "sd1_low": 7472.02,
-      "sd1_high": 7563.06,
-      "sd1": 45.52,
-      "atm_iv": 13.77
     }
   ],
   "today_0dte_summary": {
-    "total_count": 18499,
-    "bull_count": 9825,
-    "bear_count": 8674,
-    "bull_prem": 50974011575.0,
-    "bear_prem": 52841592297.5,
-    "net_prem": -1867580722.4999998
+    "total_count": 18847,
+    "bull_count": 10030,
+    "bear_count": 8817,
+    "bull_prem": 52827051037.5,
+    "bear_prem": 53815503080.0,
+    "net_prem": -988452042.4999998
   }
 }
