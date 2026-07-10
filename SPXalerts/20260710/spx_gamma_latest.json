@@ -1,10 +1,10 @@
 {
-  "ts": "13:28",
-  "ts_full": "2026-07-10T13:28:05.497542-04:00",
+  "ts": "13:29",
+  "ts_full": "2026-07-10T13:29:26.264830-04:00",
   "symbol": "SPX",
-  "spot": 7565.59,
-  "net_gex": 440014123.0,
-  "net_gex_b": 0.44,
+  "spot": 7566.49,
+  "net_gex": 446357119.0,
+  "net_gex_b": 0.4464,
   "zero_gamma": 7521.7,
   "gamma_wall_call": 7575.0,
   "gamma_wall_put": 7550.0,
@@ -12,41 +12,41 @@
     {
       "rank": 1,
       "strike": 7575.0,
-      "gex": 84317196.0,
+      "gex": 90109222.0,
       "side": "CALL"
     },
     {
       "rank": 2,
       "strike": 7550.0,
-      "gex": 58898916.0,
+      "gex": 55162652.0,
       "side": "CALL"
     },
     {
       "rank": 3,
       "strike": 7560.0,
-      "gex": 53383804.0,
+      "gex": 51943011.0,
       "side": "CALL"
     },
     {
       "rank": 4,
       "strike": 7570.0,
-      "gex": 46066021.0,
+      "gex": 47276138.0,
       "side": "CALL"
     },
     {
       "rank": 5,
       "strike": 7565.0,
-      "gex": 43738981.0,
+      "gex": 43333332.0,
       "side": "CALL"
     }
   ],
   "migration": {
-    "migrated": true,
-    "direction": "UP",
-    "old_rank1": 7550.0,
+    "migrated": false,
+    "direction": "FLAT",
+    "old_rank1": 7575.0,
     "new_rank1": 7575.0,
-    "moved_pts": 25.0,
+    "moved_pts": 0.0,
     "stable": true
   },
-  "dte_days": 0.1055
+  "dte_days": 0.1046
 }
