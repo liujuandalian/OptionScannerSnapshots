@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `ndx_gamma_latest.json` | NDX GammaTracker快照 | 2026-07-10 10:08 | [下载](NDXalerts/20260710/ndx_gamma_latest.json) | {"ts": "10:08", "ts_full": "2026-07-10T10:08:31.633071-04:00", "symbol": "NDX",  |
 | `claude_analysis_100757.json` | Claude深度分析 | 2026-07-10 10:07 | [下载](ClaudeAnalysis/20260710/claude_analysis_100757.json) | {"generated_at": "2026-07-10T10:07:57.221142-04:00", "generated_at_display": "20 |
 | `spx_gamma_latest.json` | SPX GammaTracker快照 | 2026-07-10 10:07 | [下载](SPXalerts/20260710/spx_gamma_latest.json) | {"ts": "10:07", "ts_full": "2026-07-10T10:07:19.274121-04:00", "symbol": "SPX",  |
 
