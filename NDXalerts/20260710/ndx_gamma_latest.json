@@ -1,52 +1,52 @@
 {
-  "ts": "10:46",
-  "ts_full": "2026-07-10T10:46:39.472986-04:00",
+  "ts": "10:48",
+  "ts_full": "2026-07-10T10:48:07.747575-04:00",
   "symbol": "NDX",
-  "spot": 29672.52,
-  "net_gex": 2030806.0,
+  "spot": 29663.96,
+  "net_gex": 1952941.0,
   "net_gex_b": 0.002,
-  "zero_gamma": 29457.4,
+  "zero_gamma": 29428.3,
   "gamma_wall_call": 29850.0,
   "gamma_wall_put": 29500.0,
   "ranked": [
     {
       "rank": 1,
       "strike": 29850.0,
-      "gex": 726871.0,
+      "gex": 694131.0,
       "side": "CALL"
     },
     {
       "rank": 2,
       "strike": 29700.0,
-      "gex": 527049.0,
+      "gex": 532339.0,
       "side": "CALL"
     },
     {
       "rank": 3,
       "strike": 29800.0,
-      "gex": 207024.0,
+      "gex": 201738.0,
       "side": "CALL"
     },
     {
       "rank": 4,
       "strike": 29490.0,
-      "gex": -159014.0,
+      "gex": -164545.0,
       "side": "PUT"
     },
     {
       "rank": 5,
       "strike": 29900.0,
-      "gex": 153529.0,
+      "gex": 144642.0,
       "side": "CALL"
     }
   ],
   "migration": {
-    "migrated": true,
-    "direction": "UP",
-    "old_rank1": 29700.0,
+    "migrated": false,
+    "direction": "FLAT",
+    "old_rank1": 29850.0,
     "new_rank1": 29850.0,
-    "moved_pts": 150.0,
+    "moved_pts": 0.0,
     "stable": true
   },
-  "dte_days": 0.2176
+  "dte_days": 0.2166
 }
