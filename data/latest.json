@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-10 14:04",
+  "_updated": "2026-07-10 14:05",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -59,16 +59,14 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_ndte_report_20260710_1358.json"
   },
   "ndx_0dte": {
-    "filename": "ndx_0dte_report_20260710_1404.json",
-    "github_path": "NDXalerts/20260710/ndx_0dte_report_20260710_1404.json",
-    "upload_time": "2026-07-10 14:04",
+    "filename": "ndx_0dte_20260710_1400.json",
+    "github_path": "NDXalerts/20260710/ndx_0dte_20260710_1400.json",
+    "upload_time": "2026-07-10 14:00",
     "summary": {
-      "label": "0DTE · 14:04 ET",
-      "signals": 104,
-      "direction": "极度偏多 🟢🟢",
-      "net_premium_M": 149.9
+      "signals": 109,
+      "timestamp_et": "2026-07-10 14:00 ET"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_0dte_report_20260710_1404.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_0dte_20260710_1400.json"
   },
   "stock_flow": {
     "filename": "spx_stock_flow_latest.json",
@@ -117,18 +115,18 @@
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260710/ndx_gamma_latest.json",
-    "upload_time": "2026-07-10 14:03",
+    "upload_time": "2026-07-10 14:05",
     "summary": {
-      "ts": "14:03",
-      "ts_full": "2026-07-10T14:03:45.619524-04:00",
+      "ts": "14:05",
+      "ts_full": "2026-07-10T14:05:08.764202-04:00",
       "symbol": "NDX",
-      "spot": 29840.18,
-      "net_gex": 7567784.0,
-      "net_gex_b": 0.0076,
-      "zero_gamma": 29625.8,
+      "spot": 29835.43,
+      "net_gex": 7428756.0,
+      "net_gex_b": 0.0074,
+      "zero_gamma": 29592.7,
       "gamma_wall_call": 29850.0,
       "gamma_wall_put": 29800.0,
-      "dte_days": 0.0807
+      "dte_days": 0.0798
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_gamma_latest.json"
   },
