@@ -1,10 +1,10 @@
 {
-  "ts": "13:23",
-  "ts_full": "2026-07-10T13:23:09.100786-04:00",
+  "ts": "13:24",
+  "ts_full": "2026-07-10T13:24:30.487097-04:00",
   "symbol": "NDX",
-  "spot": 29812.63,
-  "net_gex": 6453826.0,
-  "net_gex_b": 0.0065,
+  "spot": 29815.87,
+  "net_gex": 6594383.0,
+  "net_gex_b": 0.0066,
   "zero_gamma": 29592.7,
   "gamma_wall_call": 29850.0,
   "gamma_wall_put": 29800.0,
@@ -12,31 +12,31 @@
     {
       "rank": 1,
       "strike": 29850.0,
-      "gex": 2407827.0,
+      "gex": 2466154.0,
       "side": "CALL"
     },
     {
       "rank": 2,
       "strike": 29800.0,
-      "gex": 573380.0,
+      "gex": 572387.0,
       "side": "CALL"
     },
     {
       "rank": 3,
       "strike": 29700.0,
-      "gex": 568932.0,
+      "gex": 549738.0,
       "side": "CALL"
     },
     {
       "rank": 4,
       "strike": 29900.0,
-      "gex": 419609.0,
+      "gex": 438692.0,
       "side": "CALL"
     },
     {
       "rank": 5,
-      "strike": 29780.0,
-      "gex": 342292.0,
+      "strike": 30000.0,
+      "gex": 341626.0,
       "side": "CALL"
     }
   ],
@@ -48,5 +48,5 @@
     "moved_pts": 0.0,
     "stable": true
   },
-  "dte_days": 0.1089
+  "dte_days": 0.108
 }
