@@ -1,42 +1,42 @@
 {
-  "ts": "13:36",
-  "ts_full": "2026-07-10T13:36:08.038953-04:00",
+  "ts": "13:38",
+  "ts_full": "2026-07-10T13:38:49.420462-04:00",
   "symbol": "SPX",
-  "spot": 7567.94,
-  "net_gex": 463685538.0,
-  "net_gex_b": 0.4637,
-  "zero_gamma": 7521.7,
+  "spot": 7569.47,
+  "net_gex": 489765440.0,
+  "net_gex_b": 0.4898,
+  "zero_gamma": 7521.8,
   "gamma_wall_call": 7575.0,
   "gamma_wall_put": 7550.0,
   "ranked": [
     {
       "rank": 1,
       "strike": 7575.0,
-      "gex": 100788888.0,
+      "gex": 107156247.0,
       "side": "CALL"
     },
     {
       "rank": 2,
       "strike": 7570.0,
-      "gex": 52075705.0,
+      "gex": 50362338.0,
       "side": "CALL"
     },
     {
       "rank": 3,
-      "strike": 7550.0,
-      "gex": 49290629.0,
+      "strike": 7560.0,
+      "gex": 45092438.0,
       "side": "CALL"
     },
     {
       "rank": 4,
-      "strike": 7560.0,
-      "gex": 48848842.0,
+      "strike": 7550.0,
+      "gex": 43400824.0,
       "side": "CALL"
     },
     {
       "rank": 5,
       "strike": 7565.0,
-      "gex": 41804317.0,
+      "gex": 40579560.0,
       "side": "CALL"
     }
   ],
@@ -48,5 +48,5 @@
     "moved_pts": 0.0,
     "stable": true
   },
-  "dte_days": 0.0999
+  "dte_days": 0.098
 }
