@@ -94,36 +94,36 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260710/spx_gamma_latest.json",
-    "upload_time": "2026-07-10 09:42",
+    "upload_time": "2026-07-10 09:41",
     "summary": {
-      "ts": "09:42",
-      "ts_full": "2026-07-10T09:42:00.963119-04:00",
+      "ts": "09:41",
+      "ts_full": "2026-07-10T09:41:00.301509-04:00",
       "symbol": "SPX",
-      "spot": 7545.12,
-      "net_gex": 225969715.0,
-      "net_gex_b": 0.226,
+      "spot": 7544.48,
+      "net_gex": 213290715.0,
+      "net_gex_b": 0.2133,
       "zero_gamma": 7521.9,
       "gamma_wall_call": 7550.0,
       "gamma_wall_put": 7550.0,
-      "dte_days": 0.2625
+      "dte_days": 0.2632
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_gamma_latest.json"
   },
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260710/ndx_gamma_latest.json",
-    "upload_time": "2026-07-10 09:41",
+    "upload_time": "2026-07-10 09:42",
     "summary": {
-      "ts": "09:41",
-      "ts_full": "2026-07-10T09:41:06.474071-04:00",
+      "ts": "09:42",
+      "ts_full": "2026-07-10T09:42:04.382179-04:00",
       "symbol": "NDX",
-      "spot": 29606.15,
-      "net_gex": 975641.0,
-      "net_gex_b": 0.001,
+      "spot": 29617.8,
+      "net_gex": 1073585.0,
+      "net_gex_b": 0.0011,
       "zero_gamma": 29399.5,
       "gamma_wall_call": 29850.0,
       "gamma_wall_put": 29500.0,
-      "dte_days": 0.2631
+      "dte_days": 0.2625
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_gamma_latest.json"
   }
