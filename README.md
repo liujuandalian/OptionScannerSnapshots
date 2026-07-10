@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `oi_report_pre_mkt_20260710.json` | OI变化对比报告 | 2026-07-10 08:47 | [下载](oi_snapshots/20260710/oi_report_pre_mkt_20260710.json) | {"date": "2026-07-10", "surging": 100, "shrinking": 100} |
 | `oi_pre_mkt_20260710.json` | 盘前OI快照 | 2026-07-10 08:47 | [下载](oi_snapshots/20260710/oi_pre_mkt_20260710.json) | {"tickers": 263} |
 
 ---|------|---------|
