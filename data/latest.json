@@ -129,20 +129,20 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_101035.json",
-    "github_path": "ClaudeAnalysis/20260710/claude_analysis_101035.json",
-    "upload_time": "2026-07-10 10:10",
+    "filename": "claude_analysis_102046.json",
+    "github_path": "ClaudeAnalysis/20260710/claude_analysis_102046.json",
+    "upload_time": "2026-07-10 10:20",
     "summary": {
-      "generated_at": "2026-07-10T10:10:35.428133-04:00",
-      "generated_at_display": "2026-07-10 10:10:35 ET",
+      "generated_at": "2026-07-10T10:20:46.541861-04:00",
+      "generated_at_display": "2026-07-10 10:20:46 ET",
       "category": "daily",
-      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,555–$7,570（CALL海量买入+SHORT PUT护盘$7540，上方SHORT CALL压制$7575）\nNDX预测：$29,750–$29,850（0DTE全是LONG CALL，GEX#1磁吸$29,850）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,560 / 下方$7,555；NDX上方无 / 下方$29,500\nVS预测收盘：SPX $7,560（上下绿BAR极度夹紧，磁吸中间）；NDX $29,750（无上方绿BAR，依赖GEX）\n\n【GEX排名法】\nSPX：#1=$7,550 #2=$7,575 → 加权 $7,550×60%+$7,575×40% = **$7,560**\nNDX：#1=$29,850 #2=$29,700 → 加权 $29,850×60%+$29,700×40% = **$29,790**\n\n【综合拟定】（GEX 50%+VS3D 30%+原始 20%）\nSPX综合拟定：**$7,560**\nNDX综合拟定：**$29,790**\n\n⑥【专业建议】\n\n**波动判断：不宜做卖方。** SPX Straddle $23还没有充分收缩，而且10:06–10:08刚爆发了一波$200M+的CALL主动买入，方向性资金还在快速进场，卖方被轧的概率极高。\n\n**买方机会：** SPX $7,565 CALL值得关注——现价$7,557，距离仅$8，LONG CALL $7565 V/OI 7-12x已有机构主动买入，向上到$7,575 GEX顶盖有$10空间，风险/收益比合理。如果SPX在11:00前站稳$7,560，可短期持有。NDX方向更清晰，$29,850 CALL已有420张活跃成交，配合GEX#1磁吸，是今天NDX最干净的做多单腿。\n\n**仓位提醒（针对你的真实持仓）：**\n- NVDA有大量SHORT CALL仓位（$1.31/$2.36/$3.45/$6.15/$14.35），今天科技板块跟随NDX强势，NVDA SHORT方向压力大，建议**在下午1:00前**对深度价内的SHORT仓位（$14.35/$6.15）做止损评估，不要等尾盘。\n- MU SHORT CALL 2张均价$41.41，这是最危险仓位，MU在DRAM周期上行背景下涨势猛，建议**今天内**检查是否有必要平掉或转仓。\n- CRWV SHORT PUT均价$13.70，目前市场偏多，有护盘但波动率高，建议**下午2点前**确认安全边际。\n- BABA、AMZN、QCOM的CALL spread组合看起来方向一致（均多头保护），风险可控，继续持有观察即可。\n\n①【关键磁铁】\n\nSPX：\n- $7,560：客户SHORT CALL 18K张 → 绿BAR磁吸（今日最强磁铁）\n- $7,555：客户SHORT PUT 9K张 → 绿BAR磁吸",
+      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,555–$7,565（LONG CALL海量涌入+SHORT PUT护盘，多方主导但$7,555顶盖压制）\nNDX预测：$29,720–$29,800（量/张数全面看多，GEX#1=$29,850磁吸方向向上）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,555(20K) / 下方$7,555(非0DTE$7,555绿BAR)\n　　　　　　NDX上方$29,740 / 下方$29,660\nVS预测收盘：SPX $7,555（上下绿BAR夹住，磁吸至$7,555附近）\n　　　　　　NDX $29,740（上方$29,740最近绿BAR磁吸，方向偏多）\n\n【GEX排名法】\nSPX：#1=$7,550(-2pt) #2=$7,575(+23pt) → 加权：$7,550×60%+$7,575×40% = **$7,560**\nNDX：#1=$29,850 #2=$29,700 → 加权：$29,850×60%+$29,700×40% = **$29,790**\n\n【综合拟定】（GEX 50%+VS3D 30%+原始 20%）\nSPX综合拟定：**$7,558**\nNDX综合拟定：**$29,768**\n\n⑥【专业建议】\n\n波动判断：**暂不宜做卖方**。Straddle $22.15未见明显收缩，非0DTE CALL海量涌入仍在进行中，方向性买方主导明显，单边波动风险大于Theta收益。\n\n买方机会：**SPX 0DTE CALL $7,560值得关注**——V/OI 8.4x+成交量24,866张排名第一，短期方向性押注最集中位置，现价$8.15，突破$7,555顶盖后动能方向；若SPX稳站$7,555上方可考虑少量买入。NDX方向：**NDX 0DTE CALL $29,740**（V/OI 17.5x，磁吸绿BAR位置重合，风险回报较好）。\n\n仓位提醒：\n- **SPX SHORT CALL 2张（均价$6.33）**：目前市场CALL端买盘极重，建议**11:30前**观察是否突破$7,555，若价格向上突破须立刻平仓，不要扛。\n- **SPX LONG CALL（均价$2.11/$14.10）**：方向对，跑赢卖方仓，可以继续持有但设好止盈。\n- 其余个股仓位（NVDA/CRWV/MU/BABA等）均为CALL Spread结构，今日市场多头强势对持仓有利，SHORT CALL端注意上行突破风险，**建议下午2点前检查各SHORT CALL是否被穿透，提前处理而非等最后30分钟**。\n\n①【关键磁铁】\n\nSPX：\n- $7,555（客户SHORT CALL 20K张，绿BAR磁吸，同时是ATM级别顶盖）\n- $7,560（非0DTE客户SHORT CALL 5K，绿BAR+🧢压顶）\n- $7,500（客户SHORT PUT 3.6K，",
       "meta": {
-        "spx": 7556.54,
-        "ndx": 29725.12,
-        "ts": "10:10 ET"
+        "spx": 7554.44,
+        "ndx": 29734.04,
+        "ts": "10:20 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260710/claude_analysis_101035.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260710/claude_analysis_102046.json"
   }
 }
