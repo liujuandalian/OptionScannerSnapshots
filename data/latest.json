@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-10 13:03",
+  "_updated": "2026-07-10 13:04",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -99,18 +99,18 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260710/spx_gamma_latest.json",
-    "upload_time": "2026-07-10 13:03",
+    "upload_time": "2026-07-10 13:04",
     "summary": {
-      "ts": "13:02",
-      "ts_full": "2026-07-10T13:02:55.586813-04:00",
+      "ts": "13:04",
+      "ts_full": "2026-07-10T13:04:29.627765-04:00",
       "symbol": "SPX",
-      "spot": 7564.17,
-      "net_gex": 434163276.0,
-      "net_gex_b": 0.4342,
+      "spot": 7562.58,
+      "net_gex": 420785775.0,
+      "net_gex_b": 0.4208,
       "zero_gamma": 7521.7,
       "gamma_wall_call": 7550.0,
       "gamma_wall_put": 7550.0,
-      "dte_days": 0.123
+      "dte_days": 0.1219
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_gamma_latest.json"
   },
