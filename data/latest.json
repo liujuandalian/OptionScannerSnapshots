@@ -28,14 +28,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_intraday_20260710_1300.json"
   },
   "spx_0dte": {
-    "filename": "spx_0dte_20260710_1300.json",
-    "github_path": "SPXalerts/20260710/spx_0dte_20260710_1300.json",
-    "upload_time": "2026-07-10 13:00",
+    "filename": "spx_0dte_report_20260710_1304.json",
+    "github_path": "SPXalerts/20260710/spx_0dte_report_20260710_1304.json",
+    "upload_time": "2026-07-10 13:04",
     "summary": {
-      "signals": 237,
-      "timestamp_et": "2026-07-10 13:00 ET"
+      "label": "0DTE · 13:04 ET",
+      "signals": 134,
+      "direction": "极度偏多 🟢🟢",
+      "net_premium_M": 631.7
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_0dte_20260710_1300.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_0dte_report_20260710_1304.json"
   },
   "unknown": {
     "filename": "spx_stock_flow_latest.json",
@@ -99,18 +101,18 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260710/spx_gamma_latest.json",
-    "upload_time": "2026-07-10 13:04",
+    "upload_time": "2026-07-10 13:03",
     "summary": {
-      "ts": "13:04",
-      "ts_full": "2026-07-10T13:04:29.627765-04:00",
+      "ts": "13:02",
+      "ts_full": "2026-07-10T13:02:55.586813-04:00",
       "symbol": "SPX",
-      "spot": 7562.58,
-      "net_gex": 420785775.0,
-      "net_gex_b": 0.4208,
+      "spot": 7564.17,
+      "net_gex": 434163276.0,
+      "net_gex_b": 0.4342,
       "zero_gamma": 7521.7,
       "gamma_wall_call": 7550.0,
       "gamma_wall_put": 7550.0,
-      "dte_days": 0.1219
+      "dte_days": 0.123
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_gamma_latest.json"
   },
