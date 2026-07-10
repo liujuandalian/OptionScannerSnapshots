@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-10 15:02",
+  "_updated": "2026-07-10 15:03",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -115,18 +115,18 @@
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260710/ndx_gamma_latest.json",
-    "upload_time": "2026-07-10 15:01",
+    "upload_time": "2026-07-10 15:03",
     "summary": {
-      "ts": "15:01",
-      "ts_full": "2026-07-10T15:01:42.343854-04:00",
+      "ts": "15:03",
+      "ts_full": "2026-07-10T15:03:09.039541-04:00",
       "symbol": "NDX",
-      "spot": 29831.89,
-      "net_gex": 8110183.0,
-      "net_gex_b": 0.0081,
-      "zero_gamma": 29592.8,
+      "spot": 29834.36,
+      "net_gex": 8385531.0,
+      "net_gex_b": 0.0084,
+      "zero_gamma": 29593.2,
       "gamma_wall_call": 29850.0,
       "gamma_wall_put": 29800.0,
-      "dte_days": 0.0405
+      "dte_days": 0.0395
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260710/ndx_gamma_latest.json"
   },
