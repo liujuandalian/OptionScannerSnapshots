@@ -116,53 +116,6 @@ canvas{max-height:180px;}
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 0: SPX Options Monitor V4 (VolSignals 风格完整仪表板)         -->
-<!-- 嵌入独立 HTML 文件，完全隔离样式与 JS 作用域                          -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<div style="background:#070b10;padding:0;margin:0;border-bottom:3px solid #1F3864;">
-  <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 20px;background:linear-gradient(135deg,#0d1520,#162030);border-bottom:1px solid #1e2d40;">
-    <div style="display:flex;align-items:baseline;gap:14px;">
-      <span style="font-size:1rem;font-weight:700;color:#2288dd;letter-spacing:.5px;">▼ SPX Options Monitor V4</span>
-      <span style="font-size:.72rem;color:#7a90a8;">VolSignals Style · Gamma / Charm / RTM / 期权链 / 量比 / Skew</span>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <button onclick="document.getElementById('spx-v4-iframe').src=document.getElementById('spx-v4-iframe').src"
-              style="background:#162030;border:1px solid #243648;color:#d0dae8;padding:4px 12px;font-size:.72rem;border-radius:4px;cursor:pointer;">🔄 重载 V4</button>
-      <button onclick="toggleV4()"
-              id="v4-toggle-btn"
-              style="background:#162030;border:1px solid #243648;color:#d0dae8;padding:4px 12px;font-size:.72rem;border-radius:4px;cursor:pointer;">▲ 收起</button>
-      <a href="spx_monitor_v4.html" target="_blank"
-         style="color:#7a90a8;font-size:.72rem;text-decoration:none;">↗ 全屏</a>
-    </div>
-  </div>
-  <div id="v4-wrapper" style="height:1100px;overflow:hidden;background:#070b10;">
-    <iframe id="spx-v4-iframe"
-            src="spx_monitor_v4.html"
-            style="width:100%;height:1100px;border:none;display:block;background:#070b10;"
-            title="SPX Options Monitor V4"
-            loading="lazy"></iframe>
-  </div>
-</div>
-
-<script>
-function toggleV4() {
-  const w = document.getElementById('v4-wrapper');
-  const btn = document.getElementById('v4-toggle-btn');
-  if (w.style.height === '0px') {
-    w.style.height = '1100px';
-    btn.innerHTML = '▲ 收起';
-  } else {
-    w.style.height = '0px';
-    btn.innerHTML = '▼ 展开';
-  }
-}
-</script>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!-- SECTION 1 onward: 原 Options Scanner Dashboard                       -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-
 <header>
   <div>
     <h1>📊 Options Scanner <span>实时期权流仪表盘 · 含市场情绪指标</span></h1>
@@ -282,6 +235,19 @@ function toggleV4() {
 </div>
 
 <!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 1.5: Claude 深度分析 (新增)          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section-title">
+  🧠 Claude 深度分析
+  <span class="section-actions" id="claude-analysis-ts" style="color:#8b949e;">未同步</span>
+</div>
+<div class="grid">
+  <div class="card wide" id="claude-analysis-card">
+    <div class="loading">加载中...</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- SECTION 2: SPX 盘中指标                      -->
 <!-- ═══════════════════════════════════════════ -->
 <div class="section-title">📈 SPX 盘中指标</div>
@@ -321,59 +287,56 @@ function toggleV4() {
   </div>
 </div>
 
-<!-- ══ 关键价位 & 实时播报 (2列大布局) ══════════════════════════════════════ -->
+<!-- ══ 关键价位 & 操作建议 (三列，2026-07按6月10日修改需求补做) ══════════════ -->
 <div class="section-title">
-  🎯 关键价位 &amp; 实时期权流播报
+  🎯 关键价位 &amp; 操作建议
   <span class="section-actions" id="feed-update-time">—</span>
 </div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px;">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;padding:0 20px 18px;">
 
-  <!-- ══ 左列 ══════════════════════════════════════════════════════ -->
-  <div style="display:flex;flex-direction:column;gap:12px;">
-
-    <!-- 左上：Gamma引力区间 + 今日信号摘要（紧凑） -->
-    <div class="card" id="key-levels-card" style="margin:0;max-height:260px;overflow-y:auto;">
-      <div class="card-title"><span class="dot dot-orange"></span>Gamma引力区间 &amp; 今日信号摘要</div>
-      <div id="key-levels"><div class="loading">加载中...</div></div>
-      <div style="border-top:1px solid var(--border);margin-top:10px;padding-top:10px;">
-        <div style="font-size:.75rem;font-weight:600;color:#8b949e;margin-bottom:6px;">今日信号摘要</div>
-        <div id="signal-summary"><div class="loading">加载中...</div></div>
-      </div>
-    </div>
-
-    <!-- 左下：SPX 期权流滚动播报 -->
-    <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;margin:0;flex:1;">
-      <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-weight:700;font-size:.88rem;">⚡ SPX 期权流（0DTE · NDTE）</span>
-        <span style="font-size:.72rem;color:#8b949e;" id="spx-feed-ts">—</span>
-      </div>
-      <div id="spx-feed-scroll" style="overflow-y:auto;max-height:560px;padding:10px 14px;">
-        <div class="loading">加载中...</div>
-      </div>
-    </div>
-
+  <!-- 左：GAMMA引力区间 -->
+  <div class="card" id="key-levels-card" style="margin:0;max-height:340px;overflow-y:auto;">
+    <div class="card-title"><span class="dot dot-orange"></span>GAMMA引力区间</div>
+    <div id="key-levels"><div class="loading">加载中...</div></div>
   </div>
 
-  <!-- ══ 右列 ══════════════════════════════════════════════════════ -->
-  <div style="display:flex;flex-direction:column;gap:12px;">
+  <!-- 中：今日信号摘要 -->
+  <div class="card" style="margin:0;max-height:340px;overflow-y:auto;">
+    <div class="card-title"><span class="dot dot-blue"></span>今日信号摘要</div>
+    <div id="signal-summary"><div class="loading">加载中...</div></div>
+  </div>
 
-    <!-- 右上：综合判断（紧凑） -->
-    <div class="card" style="margin:0;max-height:260px;overflow-y:auto;">
-      <div class="card-title"><span class="dot dot-green"></span>综合判断（含情绪指标）</div>
-      <div id="ai-analysis" style="font-size:.83rem;line-height:1.6;"><div class="loading">加载中...</div></div>
+  <!-- 右：综合判断（含情绪指标） -->
+  <div class="card" style="margin:0;max-height:340px;overflow-y:auto;">
+    <div class="card-title"><span class="dot dot-green"></span>综合判断（含情绪指标）</div>
+    <div id="ai-analysis" style="font-size:.83rem;line-height:1.6;"><div class="loading">加载中...</div></div>
+  </div>
+
+</div>
+
+<!-- ══ 实时期权流播报 (两列) ══════════════════════════════════════ -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px;">
+
+  <!-- 左：SPX 期权流滚动播报 -->
+  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;margin:0;">
+    <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-weight:700;font-size:.88rem;">⚡ SPX 期权流（0DTE · NDTE）</span>
+      <span style="font-size:.72rem;color:#8b949e;" id="spx-feed-ts">—</span>
     </div>
-
-    <!-- 右下：个股 MAG7 + 暴涨暴跌播报 -->
-    <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;margin:0;flex:1;">
-      <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
-        <span style="font-weight:700;font-size:.88rem;">🏦 个股期权大单 MAG7 &amp; 暴涨暴跌</span>
-        <span style="font-size:.72rem;color:#8b949e;" id="stock-feed-ts">—</span>
-      </div>
-      <div id="stock-feed-scroll" style="overflow-y:auto;max-height:560px;padding:10px 14px;">
-        <div class="loading">加载中...</div>
-      </div>
+    <div id="spx-feed-scroll" style="overflow-y:auto;max-height:400px;padding:10px 14px;">
+      <div class="loading">加载中...</div>
     </div>
+  </div>
 
+  <!-- 右：个股 MAG7 + 暴涨暴跌播报 -->
+  <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;margin:0;">
+    <div style="padding:10px 14px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-weight:700;font-size:.88rem;">🏦 个股期权大单 MAG7 &amp; 暴涨暴跌</span>
+      <span style="font-size:.72rem;color:#8b949e;" id="stock-feed-ts">—</span>
+    </div>
+    <div id="stock-feed-scroll" style="overflow-y:auto;max-height:400px;padding:10px 14px;">
+      <div class="loading">加载中...</div>
+    </div>
   </div>
 
 </div>
@@ -382,6 +345,17 @@ function toggleV4() {
 <div class="section-title">🧲 Gamma墙（行权价集中度）</div>
 <div class="grid">
   <div class="card wide" id="gamma-wall-card">
+    <div class="loading">加载中...</div>
+  </div>
+</div>
+
+<!-- GammaTracker 真实快照（做市商GEX，区别于上面基于成交量的Gamma墙）-->
+<div class="section-title">
+  🎯 GammaTracker 真实快照 <span style="font-weight:400;font-size:.78rem;color:#8b949e;">做市商GEX持仓</span>
+  <span class="section-actions" id="gt-real-ts" style="color:#8b949e;">未同步</span>
+</div>
+<div class="grid">
+  <div class="card wide" id="gt-real-card">
     <div class="loading">加载中...</div>
   </div>
 </div>
@@ -1170,6 +1144,79 @@ async function loadOI(data) {
 }
 
 // ═══════════════════════════════════════════════════════════════════
+// Claude 深度分析（github_sync.py: sync_json_object(..., subdir="ClaudeAnalysis")
+// 会自动把 github_path 注册进 data/latest.json，这里直接跟着读，跟其它板块同一套机制）
+// ═══════════════════════════════════════════════════════════════════
+async function loadClaudeAnalysisPanel(data) {
+  const card = document.getElementById('claude-analysis-card');
+  const ts   = document.getElementById('claude-analysis-ts');
+  if (!data?.claude_analysis) {
+    card.innerHTML = '<div class="loading">暂无数据 — 等待 claude_market_analyst.py 推送</div>';
+    return;
+  }
+  ts.textContent = '更新：' + (data.claude_analysis.upload_time || '—');
+  const full = await fetchJSON(`${RAW}/${data.claude_analysis.github_path}`);
+  if (!full || !full.text) {
+    card.innerHTML = '<div class="loading">暂无数据</div>';
+    return;
+  }
+  const catLabel = full.category === 'deep' ? '📊 深度对比分析' : '🤖 常规市场分析';
+  card.innerHTML = `
+    <div class="card-title"><span class="dot dot-green"></span>${catLabel}
+      <span style="margin-left:auto;font-size:.72rem;color:#8b949e;">${full.generated_at_display||''}</span>
+    </div>
+    <div style="font-size:.85rem;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;color:#c9d1d9;">${
+      full.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    }</div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// GammaTracker 真实快照（spx_gamma_tracker.py: 做市商GEX/Zero Gamma/Gamma Wall，
+// 区别于上面"Gamma墙"卡片——那个是alerts成交量集中度，这个是真实dealer持仓GEX）
+// ═══════════════════════════════════════════════════════════════════
+let gtRealChart = null;
+async function loadGammaTrackerPanel(data) {
+  const card = document.getElementById('gt-real-card');
+  const ts   = document.getElementById('gt-real-ts');
+  if (!data?.spx_gamma) {
+    card.innerHTML = '<div class="loading">暂无数据 — 等待 spx_gamma_tracker.py 推送</div>';
+    return;
+  }
+  ts.textContent = '更新：' + (data.spx_gamma.upload_time || '—');
+  const full = await fetchJSON(`${RAW}/${data.spx_gamma.github_path}`);
+  if (!full || !full.ranked || !full.ranked.length) {
+    card.innerHTML = '<div class="loading">暂无数据</div>';
+    return;
+  }
+  card.innerHTML = `
+    <div class="card-title"><span class="dot dot-orange"></span>SPX GammaTracker
+      <span style="margin-left:auto;font-size:.72rem;color:#8b949e;">${full.ts_full ? full.ts_full.slice(11,19)+' ET' : ''}</span>
+    </div>
+    <div style="display:flex;gap:24px;margin:8px 0 14px;flex-wrap:wrap;">
+      <div><div class="stat-sub">Spot</div><div class="stat-big" style="font-size:1.2rem;">${(full.spot||0).toLocaleString()}</div></div>
+      <div><div class="stat-sub">Zero Gamma</div><div class="stat-big" style="font-size:1.2rem;">${(full.zero_gamma||0).toFixed(0)}</div></div>
+      <div><div class="stat-sub">Gamma Wall Call</div><div class="stat-big" style="font-size:1.2rem;color:#3fb950;">${(full.gamma_wall_call||0).toFixed(0)}</div></div>
+      <div><div class="stat-sub">Gamma Wall Put</div><div class="stat-big" style="font-size:1.2rem;color:#f85149;">${(full.gamma_wall_put||0).toFixed(0)}</div></div>
+      <div><div class="stat-sub">Net GEX</div><div class="stat-big" style="font-size:1.2rem;">${full.net_gex_b>=0?'+':''}${(full.net_gex_b||0).toFixed(3)}B</div></div>
+    </div>
+    <canvas id="gt-real-chart" style="max-height:220px;"></canvas>`;
+  const ranked = [...full.ranked].sort((a,b) => a.strike - b.strike);
+  const labels = ranked.map(r => r.strike.toFixed(0) + (r.side==='CALL'?'C':'P'));
+  const vals   = ranked.map(r => r.gex);
+  const colors = ranked.map(r => r.side==='CALL' ? 'rgba(63,185,80,0.7)' : 'rgba(248,81,73,0.7)');
+  if (gtRealChart) gtRealChart.destroy();
+  gtRealChart = new Chart(document.getElementById('gt-real-chart').getContext('2d'), {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'GEX (Top5)', data: vals, backgroundColor: colors }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      scales: { x: { ticks: { color: '#8b949e' } },
+                y: { ticks: { color: '#8b949e', callback: v => (v/1e6).toFixed(0)+'M' } } },
+      plugins: { legend: { display: false },
+                 tooltip: { callbacks: { label: c => 'GEX: $' + (c.raw/1e6).toFixed(1) + 'M' } } } }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
 // 主加载
 // ═══════════════════════════════════════════════════════════════════
 async function loadAll() {
@@ -1199,7 +1246,8 @@ async function loadAll() {
     document.getElementById('last-update').textContent = '❌ 无法加载数据，请检查网络或仓库设置';
     return;
   }
-  await Promise.all([loadSPXEod(latest), loadFlow(latest), loadOI(latest)]);
+  await Promise.all([loadSPXEod(latest), loadFlow(latest), loadOI(latest),
+                     loadClaudeAnalysisPanel(latest), loadGammaTrackerPanel(latest)]);
 
   // 双栏实时播报
   await loadDualFeed();
