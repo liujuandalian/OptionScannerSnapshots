@@ -253,9 +253,15 @@ canvas{max-height:180px;}
 <div class="section-title">📈 SPX 盘中指标</div>
 <div class="grid">
   <div class="card">
-    <div class="card-title"><span class="dot dot-blue"></span>SPX 收盘价</div>
+    <div class="card-title"><span class="dot dot-blue"></span>SPX 价格</div>
     <div id="spx-price" class="stat-big">—</div>
     <div class="stat-sub" id="spx-date">—</div>
+    <div style="margin-top:8px;font-size:.78rem;line-height:1.9;color:#c9d1d9;">
+      <div>昨收：<b id="spx-prev-close">—</b></div>
+      <div>今日最高：<b id="spx-day-high" class="bull">—</b>　最低：<b id="spx-day-low" class="bear">—</b></div>
+      <div>OVWAP：<b id="spx-vwap">—</b> <span style="font-size:.68rem;color:#8b949e;">(期权量加权行权价，非标的VWAP)</span></div>
+      <div style="font-size:.72rem;color:#8b949e;">OVWAP高：<b id="spx-ovwap-high" class="bull">—</b>　低：<b id="spx-ovwap-low" class="bear">—</b></div>
+    </div>
   </div>
   <div class="card">
     <div class="card-title"><span class="dot dot-blue"></span>净Delta敞口</div>
@@ -287,6 +293,52 @@ canvas{max-height:180px;}
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════ -->
+<!-- SECTION 2b: NDX 盘中指标（2026-07-11新增，镜像SPX那套）              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section-title">📈 NDX 盘中指标</div>
+<div class="grid">
+  <div class="card">
+    <div class="card-title"><span class="dot dot-blue"></span>NDX 价格</div>
+    <div id="ndx-price" class="stat-big">—</div>
+    <div class="stat-sub" id="ndx-date">—</div>
+    <div style="margin-top:8px;font-size:.78rem;line-height:1.9;color:#c9d1d9;">
+      <div>昨收：<b id="ndx-prev-close">—</b></div>
+      <div>今日最高：<b id="ndx-day-high" class="bull">—</b>　最低：<b id="ndx-day-low" class="bear">—</b></div>
+      <div>OVWAP：<b id="ndx-vwap">—</b> <span style="font-size:.68rem;color:#8b949e;">(期权量加权行权价，非标的VWAP)</span></div>
+      <div style="font-size:.72rem;color:#8b949e;">OVWAP高：<b id="ndx-ovwap-high" class="bull">—</b>　低：<b id="ndx-ovwap-low" class="bear">—</b></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot dot-blue"></span>净Delta敞口</div>
+    <div class="stat-big" id="ndx-net-delta">—</div>
+    <div class="stat-sub" id="ndx-delta-dir">—</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot dot-orange"></span>0DTE 信号方向</div>
+    <div class="stat-big" id="ndx-dte-dir">—</div>
+    <div class="stat-sub" id="ndx-dte-prem">—</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot dot-orange"></span>SHORT CALL 占比</div>
+    <div class="stat-big" id="ndx-short-call-pct">—</div>
+    <div class="stat-sub">⚠️ &gt;40% 为偏空警戒</div>
+    <div class="bar-container" style="margin-top:8px;">
+      <div class="bar-fill bar-bear" id="ndx-short-call-bar" style="width:0%"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot dot-blue"></span>0DTE CALL 权利金</div>
+    <div class="stat-big bull" id="ndx-call-prem">—</div>
+    <div class="stat-sub" id="ndx-call-count">—</div>
+  </div>
+  <div class="card">
+    <div class="card-title"><span class="dot dot-red"></span>0DTE PUT 权利金</div>
+    <div class="stat-big bear" id="ndx-put-prem">—</div>
+    <div class="stat-sub" id="ndx-put-count">—</div>
+  </div>
+</div>
+
 <!-- ══ 关键价位 & 操作建议 (三列，2026-07按6月10日修改需求补做) ══════════════ -->
 <div class="section-title">
   🎯 关键价位 &amp; 操作建议
@@ -296,7 +348,7 @@ canvas{max-height:180px;}
 
   <!-- 左：GAMMA引力区间 -->
   <div class="card" id="key-levels-card" style="margin:0;max-height:340px;overflow-y:auto;">
-    <div class="card-title"><span class="dot dot-orange"></span>GAMMA引力区间</div>
+    <div class="card-title"><span class="dot dot-orange"></span>VS3D原理磁吸位</div>
     <div id="key-levels"><div class="loading">加载中...</div></div>
   </div>
 
@@ -341,23 +393,49 @@ canvas{max-height:180px;}
 
 </div>
 
-<!-- Gamma墙 -->
-<div class="section-title">🧲 Gamma墙（行权价集中度）</div>
-<div class="grid">
-  <div class="card wide" id="gamma-wall-card">
-    <div class="loading">加载中...</div>
-  </div>
-</div>
-
-<!-- GammaTracker 真实快照（做市商GEX，区别于上面基于成交量的Gamma墙）-->
+<!-- GammaTracker 真实快照（2026-07-11重做：去掉Gamma墙，只留GammaTracker；
+     SPX/NDX左右两栏，各自左边Top1-5 GEX排名、右边全天Gamma图(跟Discord推送同一张PNG) -->
 <div class="section-title">
-  🎯 GammaTracker 真实快照 <span style="font-weight:400;font-size:.78rem;color:#8b949e;">做市商GEX持仓</span>
-  <span class="section-actions" id="gt-real-ts" style="color:#8b949e;">未同步</span>
+  🎯 GammaTracker 真实快照 <span style="font-weight:400;font-size:.78rem;color:#8b949e;">做市商GEX持仓 · 与Discord同步的全天图</span>
 </div>
-<div class="grid">
-  <div class="card wide" id="gt-real-card">
-    <div class="loading">加载中...</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 18px;">
+
+  <!-- 左：SPX -->
+  <div class="card" style="margin:0;">
+    <div class="card-title">
+      <span class="dot dot-blue"></span>SPX GammaTracker
+      <span class="section-actions" id="gt-spx-ts" style="color:#8b949e;">未同步</span>
+    </div>
+    <div style="display:grid;grid-template-columns:130px 1fr;gap:10px;">
+      <div id="gt-spx-ranked" style="font-size:.76rem;line-height:1.7;">
+        <div class="loading">加载中...</div>
+      </div>
+      <div>
+        <img id="gt-spx-chart-img" src="" alt="SPX全天Gamma图"
+             style="width:100%;border-radius:6px;display:none;background:#0d1117;">
+        <div id="gt-spx-chart-empty" class="loading">暂无图表</div>
+      </div>
+    </div>
   </div>
+
+  <!-- 右：NDX -->
+  <div class="card" style="margin:0;">
+    <div class="card-title">
+      <span class="dot dot-orange"></span>NDX GammaTracker
+      <span class="section-actions" id="gt-ndx-ts" style="color:#8b949e;">未同步</span>
+    </div>
+    <div style="display:grid;grid-template-columns:130px 1fr;gap:10px;">
+      <div id="gt-ndx-ranked" style="font-size:.76rem;line-height:1.7;">
+        <div class="loading">加载中...</div>
+      </div>
+      <div>
+        <img id="gt-ndx-chart-img" src="" alt="NDX全天Gamma图"
+             style="width:100%;border-radius:6px;display:none;background:#0d1117;">
+        <div id="gt-ndx-chart-empty" class="loading">暂无图表</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- 最新SPX大单 -->
@@ -918,6 +996,25 @@ async function loadLatest() {
   return data;
 }
 
+// 2026-07-11新增：找"上一个交易日"的EOD收盘价。data/latest.json只登记【最新】那份，
+// 不能直接查历史，所以按真实文件命名规律(SPXalerts/{YYYYMMDD}/spx_eod_{YYYYMMDD}.json)
+// 从昨天开始逐天往前试，跳过没有数据的日子(周末/假日/当天还没生成)，最多找5天。
+async function fetchPrevClose(todayDateStr, symbol = 'spx') {
+  // 2026-07-11泛化：加symbol参数支持NDX复用同一个函数。注意：ndx_scanner.py的EOD报告里
+  // 收盘价字段历史上一直叫"spx_close"(复制spx_scanner.py时的残留，两边都读这个字段名)。
+  const dirPrefix = symbol === 'ndx' ? 'NDXalerts' : 'SPXalerts';
+  const today = new Date(todayDateStr + 'T12:00:00');
+  for (let back = 1; back <= 5; back++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - back);
+    const ymd = `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;
+    const path = `${dirPrefix}/${ymd}/${symbol}_eod_${ymd}.json`;
+    const prev = await fetchJSON(`${RAW}/${path}`).catch(()=>null);
+    if (prev && prev.spx_close) return { close: prev.spx_close, date: prev.date || ymd };
+  }
+  return null;
+}
+
 async function loadSPXEod(data) {
   if (!data || !data.spx_eod) return;
   const eod = await fetchJSON(`${RAW}/${data.spx_eod.github_path}`);
@@ -932,14 +1029,88 @@ async function loadSPXEod(data) {
   dirEl.textContent = dir0 === 'BULL' ? '🟢 净多头' : dir0 === 'BEAR' ? '🔴 净空头' : '⬜ 中性';
   dirEl.className = 'stat-big ' + (dir0==='BULL'?'bull':dir0==='BEAR'?'bear':'neutral');
   document.getElementById('dte-prem').textContent = fmtM(Math.abs(net0));
-  document.getElementById('call-prem').textContent = fmtM(d0.bull_prem || 0);
-  document.getElementById('call-count').textContent = `${d0.bull_count || 0} 条CALL信号`;
-  document.getElementById('put-prem').textContent = fmtM(d0.bear_prem || 0);
-  document.getElementById('put-count').textContent = `${d0.bear_count || 0} 条PUT信号`;
   const sigs = d0.signals || [];
+  // 今日观测最高/最低：从信号触发时刻采样的spx_price取值——不是逐笔tick数据，
+  // 只反映"有信号触发那一刻"的价格，可能不是当天真正的盘中极值，仅供参考
+  const pricePoints = sigs.map(s=>s.spx_price).filter(p=>p>0);
+  if (pricePoints.length) {
+    document.getElementById('spx-day-high').textContent = '$'+Math.max(...pricePoints).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById('spx-day-low').textContent  = '$'+Math.min(...pricePoints).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  // VWAP：现有数据源没有标的逐笔成交量，算不出真正的VWAP，暂不显示假数据
+  document.getElementById('spx-vwap').textContent = '暂无数据源';
+  // 昨收：单独异步拉取，不阻塞其它指标先显示
+  fetchPrevClose(eod.date).then(prev => {
+    document.getElementById('spx-prev-close').textContent =
+      prev ? '$'+prev.close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+  });
+  const bullVol = sigs.filter(s=>s.direction==='BULL').reduce((a,s)=>a+(s.volume||0),0);
+  const bearVol = sigs.filter(s=>s.direction==='BEAR').reduce((a,s)=>a+(s.volume||0),0);
+  document.getElementById('call-prem').textContent = fmtM(d0.bull_prem || 0);
+  document.getElementById('call-count').textContent = `${d0.bull_count || 0} 条CALL信号 · 量${bullVol.toLocaleString()}张`;
+  document.getElementById('put-prem').textContent = fmtM(d0.bear_prem || 0);
+  document.getElementById('put-count').textContent = `${d0.bear_count || 0} 条PUT信号 · 量${bearVol.toLocaleString()}张`;
   loadSignals(sigs);
-  buildGammaWall(sigs);
+  buildVS3DMagnets(sigs, close);
   buildSignalSummary(sigs, eod);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// NDX 盘中指标（2026-07-11新增，镜像loadSPXEod——只做核心5卡指标，
+// 不做VS3D磁吸位/Gamma墙/信号列表这些SPX专属的深度子面板）
+// ═══════════════════════════════════════════════════════════════════
+async function loadNDXEod(data) {
+  if (!data || !data.ndx_eod) return;
+  const eod = await fetchJSON(`${RAW}/${data.ndx_eod.github_path}`);
+  if (!eod) return;
+  // 注意：ndx_scanner.py的EOD报告里收盘价字段历史上一直叫"spx_close"(复制残留)
+  const close = eod.spx_close || 0;
+  document.getElementById('ndx-price').textContent = close ? `$${close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}` : '—';
+  document.getElementById('ndx-date').textContent = eod.date || '—';
+  const d0 = eod['0dte'] || {};
+  const net0 = d0.net_prem || 0;
+  const dir0 = d0.net_dir || 'NONE';
+  const dirEl = document.getElementById('ndx-dte-dir');
+  dirEl.textContent = dir0 === 'BULL' ? '🟢 净多头' : dir0 === 'BEAR' ? '🔴 净空头' : '⬜ 中性';
+  dirEl.className = 'stat-big ' + (dir0==='BULL'?'bull':dir0==='BEAR'?'bear':'neutral');
+  document.getElementById('ndx-dte-prem').textContent = fmtM(Math.abs(net0));
+  const sigs = d0.signals || [];
+  const pricePoints = sigs.map(s=>s.spx_price).filter(p=>p>0);
+  if (pricePoints.length) {
+    document.getElementById('ndx-day-high').textContent = '$'+Math.max(...pricePoints).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById('ndx-day-low').textContent  = '$'+Math.min(...pricePoints).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  document.getElementById('ndx-vwap').textContent = '暂无数据源';
+  fetchPrevClose(eod.date, 'ndx').then(prev => {
+    document.getElementById('ndx-prev-close').textContent =
+      prev ? '$'+prev.close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2}) : '—';
+  });
+  const bullVol = sigs.filter(s=>s.direction==='BULL').reduce((a,s)=>a+(s.volume||0),0);
+  const bearVol = sigs.filter(s=>s.direction==='BEAR').reduce((a,s)=>a+(s.volume||0),0);
+  document.getElementById('ndx-call-prem').textContent = fmtM(d0.bull_prem || 0);
+  document.getElementById('ndx-call-count').textContent = `${d0.bull_count || 0} 条CALL信号 · 量${bullVol.toLocaleString()}张`;
+  document.getElementById('ndx-put-prem').textContent = fmtM(d0.bear_prem || 0);
+  document.getElementById('ndx-put-count').textContent = `${d0.bear_count || 0} 条PUT信号 · 量${bearVol.toLocaleString()}张`;
+  loadNDXSignals(sigs);
+}
+
+function loadNDXSignals(sigs) {
+  let netDelta = 0, shortCallVol = 0, totalVol = 0;
+  sigs.forEach(s => {
+    const posSign = s.position === 'SHORT' ? -1 : 1;
+    const optSign = s.opt_type === 'CALL' ? 1 : -1;
+    netDelta += s.volume * Math.abs(s.delta || 0) * posSign * optSign;
+    totalVol += s.volume;
+    if (s.position === 'SHORT' && s.opt_type === 'CALL') shortCallVol += s.volume;
+  });
+  const deltaEl = document.getElementById('ndx-net-delta');
+  deltaEl.textContent = fmtN(Math.round(netDelta));
+  deltaEl.className = 'stat-big ' + (netDelta > 0 ? 'bull' : 'bear');
+  document.getElementById('ndx-delta-dir').textContent = netDelta > 0 ? '偏多头方向' : '偏空头方向';
+  const scPct = totalVol > 0 ? shortCallVol / totalVol * 100 : 0;
+  document.getElementById('ndx-short-call-pct').textContent = scPct.toFixed(1) + '%';
+  document.getElementById('ndx-short-call-pct').className = 'stat-big ' + (scPct > 40 ? 'bear' : 'neutral');
+  document.getElementById('ndx-short-call-bar').style.width = Math.min(scPct, 100) + '%';
 }
 
 function loadSignals(sigs) {
@@ -980,66 +1151,114 @@ function loadSignals(sigs) {
   }).join('');
 }
 
-function buildGammaWall(sigs) {
-  const strikeVol = {};
-  const strikeShortCall = {};
+// ═══════════════════════════════════════════════════════════════════
+// VS3D原理磁吸位（2026-07-11新增，替换原"GAMMA引力区间"）
+// 逻辑：客户SHORT某腿 = MM(做市商)那一腿是LONG（绿BAR/支撑-磁吸）；
+//      客户LONG某腿 = MM那一腿是SHORT（红BAR/阻力）。
+// 第1行：现价上方最近的CALL磁吸位——分别找最近的绿BAR(MM LONG CALL)和红BAR(MM SHORT CALL)
+// 第2行：现价下方最近的PUT磁吸位——分别找最近的绿BAR(MM LONG PUT)和红BAR(MM SHORT PUT)
+// 每个strike的颜色取"客户SHORT量"vs"客户LONG量"哪边大（净方向），量标该净方向的volume。
+// ═══════════════════════════════════════════════════════════════════
+function buildVS3DMagnets(sigs, spot) {
+  const kl = document.getElementById('key-levels');
+  if (!spot) { kl.innerHTML = '<div class="loading">暂无现价数据</div>'; return; }
+
+  const callShort = {}, callLong = {}, putShort = {}, putLong = {};
   sigs.forEach(s => {
     const k = s.strike;
-    strikeVol[k] = (strikeVol[k]||0) + s.volume;
-    if (s.position==='SHORT' && s.opt_type==='CALL')
-      strikeShortCall[k] = (strikeShortCall[k]||0) + s.volume;
+    const v = s.volume || 0;
+    if (s.opt_type === 'CALL') {
+      if (s.position === 'SHORT') callShort[k] = (callShort[k]||0) + v;
+      else if (s.position === 'LONG') callLong[k] = (callLong[k]||0) + v;
+    } else if (s.opt_type === 'PUT') {
+      if (s.position === 'SHORT') putShort[k] = (putShort[k]||0) + v;
+      else if (s.position === 'LONG') putLong[k] = (putLong[k]||0) + v;
+    }
   });
-  const sorted = Object.entries(strikeVol).sort((a,b)=>b[1]-a[1]).slice(0,10);
-  const maxVol = sorted[0]?.[1] || 1;
-  const card = document.getElementById('gamma-wall-card');
-  if (!sorted.length) { card.innerHTML='<div class="loading">暂无Gamma墙数据</div>'; return; }
-  card.innerHTML = sorted.map(([strike, vol]) => {
-    const pct = vol / maxVol * 100;
-    const scVol = strikeShortCall[strike] || 0;
-    const scPct = vol > 0 ? scVol/vol*100 : 0;
-    const color = scPct > 50 ? '#f85149' : scPct > 30 ? '#d18616' : '#3fb950';
-    return `<div class="gamma-wall">
-      <span class="gamma-strike">$${parseFloat(strike).toLocaleString()}</span>
-      <div class="gamma-bar-bg">
-        <div class="gamma-bar-fill" style="width:${pct}%;background:${color};">
-          ${scPct>30?'SHORT CALL '+(scPct.toFixed(0))+'%':''}
-        </div>
-      </div>
-      <span class="gamma-vol">${vol.toLocaleString()}张</span>
-    </div>`;
-  }).join('') + `<div style="font-size:.73rem;color:#8b949e;margin-top:8px;">
-    🔴红色=SHORT CALL占比&gt;50%（强阻力）·🟡橙色=30-50%·🟢绿色=LONG CALL为主（支撑）
-  </div>`;
-  const kl = document.getElementById('key-levels');
-  const top3 = sorted.slice(0,3);
-  kl.innerHTML = top3.map(([strike, vol], i) => {
-    const sc = strikeShortCall[strike] || 0;
-    const scP = vol>0?sc/vol*100:0;
-    const label = scP>50 ? '强阻力（大量SHORT CALL）' : i===0 ? 'Gamma墙最强磁铁' : 'Gamma引力区';
-    const cls = scP>50?'bear':i===0?'neutral':'bull';
-    return `<div class="key-level">
+
+  // 每个strike按客户SHORT/LONG量哪边大定颜色：SHORT占优→绿(MM LONG)；LONG占优→红(MM SHORT)
+  function splitColors(shortMap, longMap) {
+    const strikes = new Set([...Object.keys(shortMap), ...Object.keys(longMap)]);
+    const green = {}, red = {};
+    strikes.forEach(k => {
+      const sv = shortMap[k] || 0, lv = longMap[k] || 0;
+      if (sv >= lv && sv > 0) green[k] = sv;
+      else if (lv > 0) red[k] = lv;
+    });
+    return { green, red };
+  }
+  function nearestAbove(map) {
+    let best = null;
+    Object.entries(map).forEach(([k, v]) => {
+      const strike = parseFloat(k);
+      if (strike > spot && (!best || strike < best.strike)) best = { strike, vol: v };
+    });
+    return best;
+  }
+  function nearestBelow(map) {
+    let best = null;
+    Object.entries(map).forEach(([k, v]) => {
+      const strike = parseFloat(k);
+      if (strike < spot && (!best || strike > best.strike)) best = { strike, vol: v };
+    });
+    return best;
+  }
+
+  const callDom = splitColors(callShort, callLong);
+  const putDom  = splitColors(putShort, putLong);
+  const upGreen   = nearestAbove(callDom.green);   // 上方磁吸：MM LONG CALL(绿)
+  const upRed     = nearestAbove(callDom.red);     // 上方磁吸：MM SHORT CALL(红)
+  const downGreen = nearestBelow(putDom.green);    // 下方磁吸：MM LONG PUT(绿)
+  const downRed   = nearestBelow(putDom.red);      // 下方磁吸：MM SHORT PUT(红)
+
+  const fmt = v => v ? v.vol.toLocaleString()+'张' : '—';
+  const strikeOrDash = v => v ? '$'+v.strike.toLocaleString() : '—';
+
+  kl.innerHTML = `
+    <div class="key-level">
       <div>
-        <div class="key-level-price ${cls}">$${parseFloat(strike).toLocaleString()}</div>
-        <div class="key-level-label">${label}</div>
+        <div class="key-level-price bull">${strikeOrDash(upGreen)} <span style="font-size:.7rem;color:#3fb950;">绿</span>
+             / ${strikeOrDash(upRed)} <span style="font-size:.7rem;color:#f85149;">红</span></div>
+        <div class="key-level-label">上方磁吸位（CALL）</div>
       </div>
-      <div style="text-align:right;">
-        <div style="font-size:.82rem;">${vol.toLocaleString()}张</div>
-        <div style="font-size:.72rem;color:#8b949e;">SHORT CALL ${scP.toFixed(0)}%</div>
+      <div style="text-align:right;font-size:.75rem;">
+        <div style="color:#3fb950;">MM LONG ${fmt(upGreen)}</div>
+        <div style="color:#f85149;">MM SHORT ${fmt(upRed)}</div>
       </div>
+    </div>
+    <div class="key-level">
+      <div>
+        <div class="key-level-price bear">${strikeOrDash(downGreen)} <span style="font-size:.7rem;color:#3fb950;">绿</span>
+             / ${strikeOrDash(downRed)} <span style="font-size:.7rem;color:#f85149;">红</span></div>
+        <div class="key-level-label">下方磁吸位（PUT）</div>
+      </div>
+      <div style="text-align:right;font-size:.75rem;">
+        <div style="color:#3fb950;">MM LONG ${fmt(downGreen)}</div>
+        <div style="color:#f85149;">MM SHORT ${fmt(downRed)}</div>
+      </div>
+    </div>
+    <div style="font-size:.7rem;color:#8b949e;margin-top:6px;">
+      绿=客户SHORT该腿→MM(做市商)LONG（磁吸/支撑）；红=客户LONG该腿→MM SHORT（阻力）
     </div>`;
-  }).join('');
 }
 
 function buildSignalSummary(sigs, eod) {
   const el = document.getElementById('signal-summary');
-  const total = sigs.length;
-  const bull = sigs.filter(s=>s.direction==='BULL').length;
-  const bear = total - bull;
+  const d0 = eod['0dte'] || {};
+  // 2026-07-11修复：total/bull/bear不能再用sigs.length算——后端为了控制文件大小
+  // (原来176879条信号全塞进JSON导致文件272MB、GitHub推不上去)，现在sigs数组只
+  // 嵌入权利金最大的前300条。总数/多空计数改用后端已按完整数据算好的准确值。
+  const total = d0.count || 0;
+  const bull  = d0.bull_count || 0;
+  const bear  = d0.bear_count || 0;
+  // SHORT CALL/LONG PUT沿用sigs(Top300)统计——本来就是挑权利金最大的批次里找预警信号，
+  // 用Top300反而比全量原始计数更聚焦"值得关注的大单"，百分比分母改用准确的total
   const shortCall = sigs.filter(s=>s.position==='SHORT'&&s.opt_type==='CALL').length;
   const longPut = sigs.filter(s=>s.position==='LONG'&&s.opt_type==='PUT').length;
   const bullPct = total>0?bull/total*100:0;
   const scPct = total>0?shortCall/total*100:0;
   const warn = scPct>40||longPut>0;
+  const truncNote = d0.signals_truncated ? `<div style="font-size:.7rem;color:#8b949e;margin-top:4px;">（SHORT CALL/LONG PUT统计基于权利金Top${sigs.length}，非全量）</div>` : '';
   el.innerHTML = `
     <div style="font-size:.83rem;line-height:2;">
       <div>总信号数：<b>${total}</b></div>
@@ -1048,6 +1267,7 @@ function buildSignalSummary(sigs, eod) {
       <div>SHORT CALL：<b class="${scPct>40?'bear':'neutral'}">${shortCall}（${scPct.toFixed(0)}%）${scPct>40?'⚠️':''}</b></div>
       <div>LONG PUT：<b class="${longPut>0?'bear':'neutral'}">${longPut}${longPut>0?'  🚨早盘空头信号！':''}</b></div>
     </div>
+    ${truncNote}
     ${warn?`<div class="alert-box bear" style="margin-top:10px;">⚠️ 早盘预警：SHORT CALL${scPct>40?'占比'+scPct.toFixed(0)+'%（>40%警戒线）':''}${longPut>0?'，出现LONG PUT信号':''}，方向偏空</div>`:''}`;
   // 综合判断（情绪+期权）
   buildComprehensive(sigs, eod);
@@ -1171,50 +1391,73 @@ async function loadClaudeAnalysisPanel(data) {
 }
 
 // ═══════════════════════════════════════════════════════════════════
-// GammaTracker 真实快照（spx_gamma_tracker.py: 做市商GEX/Zero Gamma/Gamma Wall，
-// 区别于上面"Gamma墙"卡片——那个是alerts成交量集中度，这个是真实dealer持仓GEX）
+// GammaTracker 真实快照（2026-07-11重做）：SPX/NDX统一走这一个函数。
+// ① Top1-5 GEX渲染成文字排名列表（不再用Chart.js简化柱状图）
+// ② 全天Gamma图直接<img>指向GitHub上的PNG——跟推送Discord的是同一张图
+//   (spx_gamma_tracker.py的sync_chart_to_github()用sync_file_to_path()推的固定路径，
+//   不走data/latest.json索引，所以这里直接拼固定路径，不用查github_path)
+// ③ 顺便沿用之前的逻辑，用spx_gamma/ndx_gamma里的真实高低点/昨收/OVWAP覆盖价格卡片
 // ═══════════════════════════════════════════════════════════════════
-let gtRealChart = null;
-async function loadGammaTrackerPanel(data) {
-  const card = document.getElementById('gt-real-card');
-  const ts   = document.getElementById('gt-real-ts');
-  if (!data?.spx_gamma) {
-    card.innerHTML = '<div class="loading">暂无数据 — 等待 spx_gamma_tracker.py 推送</div>';
+async function loadGammaTrackerPanel(data, symbol = 'spx') {
+  const key = symbol === 'ndx' ? 'ndx_gamma' : 'spx_gamma';
+  const rankedEl = document.getElementById(`gt-${symbol}-ranked`);
+  const tsEl     = document.getElementById(`gt-${symbol}-ts`);
+  const imgEl    = document.getElementById(`gt-${symbol}-chart-img`);
+  const emptyEl  = document.getElementById(`gt-${symbol}-chart-empty`);
+
+  // 图表：跟JSON数据源独立，固定路径，直接拼URL+时间戳防缓存
+  const dirPrefix = symbol === 'ndx' ? 'NDXalerts' : 'SPXalerts';
+  imgEl.src = `${RAW}/${dirPrefix}/${symbol}_gamma_chart_latest.png?t=${Date.now()}`;
+  imgEl.onload  = () => { imgEl.style.display = 'block'; emptyEl.style.display = 'none'; };
+  imgEl.onerror = () => { imgEl.style.display = 'none';  emptyEl.style.display = 'block'; emptyEl.textContent = '暂无图表（等待推送）'; };
+
+  if (!data?.[key]) {
+    rankedEl.innerHTML = '<div class="loading">暂无数据</div>';
     return;
   }
-  ts.textContent = '更新：' + (data.spx_gamma.upload_time || '—');
-  const full = await fetchJSON(`${RAW}/${data.spx_gamma.github_path}`);
-  if (!full || !full.ranked || !full.ranked.length) {
-    card.innerHTML = '<div class="loading">暂无数据</div>';
+  tsEl.textContent = '更新：' + (data[key].upload_time || '—');
+  const full = await fetchJSON(`${RAW}/${data[key].github_path}`).catch(()=>null);
+  if (!full) {
+    rankedEl.innerHTML = '<div class="loading">暂无数据</div>';
     return;
   }
-  card.innerHTML = `
-    <div class="card-title"><span class="dot dot-orange"></span>SPX GammaTracker
-      <span style="margin-left:auto;font-size:.72rem;color:#8b949e;">${full.ts_full ? full.ts_full.slice(11,19)+' ET' : ''}</span>
-    </div>
-    <div style="display:flex;gap:24px;margin:8px 0 14px;flex-wrap:wrap;">
-      <div><div class="stat-sub">Spot</div><div class="stat-big" style="font-size:1.2rem;">${(full.spot||0).toLocaleString()}</div></div>
-      <div><div class="stat-sub">Zero Gamma</div><div class="stat-big" style="font-size:1.2rem;">${(full.zero_gamma||0).toFixed(0)}</div></div>
-      <div><div class="stat-sub">Gamma Wall Call</div><div class="stat-big" style="font-size:1.2rem;color:#3fb950;">${(full.gamma_wall_call||0).toFixed(0)}</div></div>
-      <div><div class="stat-sub">Gamma Wall Put</div><div class="stat-big" style="font-size:1.2rem;color:#f85149;">${(full.gamma_wall_put||0).toFixed(0)}</div></div>
-      <div><div class="stat-sub">Net GEX</div><div class="stat-big" style="font-size:1.2rem;">${full.net_gex_b>=0?'+':''}${(full.net_gex_b||0).toFixed(3)}B</div></div>
-    </div>
-    <canvas id="gt-real-chart" style="max-height:220px;"></canvas>`;
-  const ranked = [...full.ranked].sort((a,b) => a.strike - b.strike);
-  const labels = ranked.map(r => r.strike.toFixed(0) + (r.side==='CALL'?'C':'P'));
-  const vals   = ranked.map(r => r.gex);
-  const colors = ranked.map(r => r.side==='CALL' ? 'rgba(63,185,80,0.7)' : 'rgba(248,81,73,0.7)');
-  if (gtRealChart) gtRealChart.destroy();
-  gtRealChart = new Chart(document.getElementById('gt-real-chart').getContext('2d'), {
-    type: 'bar',
-    data: { labels, datasets: [{ label: 'GEX (Top5)', data: vals, backgroundColor: colors }] },
-    options: { responsive: true, maintainAspectRatio: false,
-      scales: { x: { ticks: { color: '#8b949e' } },
-                y: { ticks: { color: '#8b949e', callback: v => (v/1e6).toFixed(0)+'M' } } },
-      plugins: { legend: { display: false },
-                 tooltip: { callbacks: { label: c => 'GEX: $' + (c.raw/1e6).toFixed(1) + 'M' } } } }
-  });
+
+  // 用真实高低点/昨收/OVWAP覆盖对应标的的价格卡片
+  const P = symbol; // 'spx' 或 'ndx'
+  if (full.day_high) document.getElementById(`${P}-day-high`).textContent =
+    '$'+full.day_high.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if (full.day_low) document.getElementById(`${P}-day-low`).textContent =
+    '$'+full.day_low.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if (full.prev_close) document.getElementById(`${P}-prev-close`).textContent =
+    '$'+full.prev_close.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if (full.ovwap) document.getElementById(`${P}-vwap`).textContent =
+    '$'+full.ovwap.toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if (full.ovwap_day_high) document.getElementById(`${P}-ovwap-high`).textContent =
+    `$${full.ovwap_day_high.toLocaleString('en',{maximumFractionDigits:2})}`
+    + (full.ovwap_day_high_spot ? ` (现价$${full.ovwap_day_high_spot.toLocaleString('en',{maximumFractionDigits:2})})` : '');
+  if (full.ovwap_day_low) document.getElementById(`${P}-ovwap-low`).textContent =
+    `$${full.ovwap_day_low.toLocaleString('en',{maximumFractionDigits:2})}`
+    + (full.ovwap_day_low_spot ? ` (现价$${full.ovwap_day_low_spot.toLocaleString('en',{maximumFractionDigits:2})})` : '');
+
+  if (!full.ranked || !full.ranked.length) {
+    rankedEl.innerHTML = '<div class="loading">暂无排名数据</div>';
+    return;
+  }
+  // Top1-5，按rank从上到下
+  const top5 = [...full.ranked].sort((a,b) => a.rank - b.rank).slice(0, 5);
+  rankedEl.innerHTML = `
+    <div style="font-size:.7rem;color:#8b949e;margin-bottom:4px;">Spot ${(full.spot||0).toLocaleString()}</div>
+    ` + top5.map(r => `
+    <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #21262d;">
+      <span style="color:${r.side==='CALL'?'#3fb950':'#f85149'};font-weight:600;">#${r.rank} ${r.strike.toFixed(0)}${r.side==='CALL'?'C':'P'}</span>
+      <span style="color:#8b949e;">${(Math.abs(r.gex)/1e6).toFixed(1)}M</span>
+    </div>`).join('') + `
+    <div style="margin-top:6px;font-size:.68rem;color:#8b949e;">
+      Zero Gamma ${(full.zero_gamma||0).toFixed(0)}<br>
+      Net GEX ${full.net_gex_b>=0?'+':''}${(full.net_gex_b||0).toFixed(2)}B
+    </div>`;
 }
+
 
 // ═══════════════════════════════════════════════════════════════════
 // 主加载
@@ -1246,8 +1489,12 @@ async function loadAll() {
     document.getElementById('last-update').textContent = '❌ 无法加载数据，请检查网络或仓库设置';
     return;
   }
-  await Promise.all([loadSPXEod(latest), loadFlow(latest), loadOI(latest),
-                     loadClaudeAnalysisPanel(latest), loadGammaTrackerPanel(latest)]);
+  // 2026-07-11：loadSPXEod/loadNDXEod先跑完(近似值兜底)，loadGammaTrackerPanel/
+  // loadNDXPriceExtras再跑(broker真实高低点/昨收/OVWAP覆盖兜底值)——顺序不能反，
+  // 否则并行时网络时序不确定，真实值有可能先写入、被兜底值盖掉。
+  await Promise.all([loadSPXEod(latest), loadNDXEod(latest)]);
+  await Promise.all([loadFlow(latest), loadOI(latest), loadClaudeAnalysisPanel(latest),
+                     loadGammaTrackerPanel(latest, 'spx'), loadGammaTrackerPanel(latest, 'ndx')]);
 
   // 双栏实时播报
   await loadDualFeed();
@@ -1514,10 +1761,18 @@ function renderStockFeed(rpt) {
 
 async function loadDualFeed() {
   try {
+    // 2026-07-11修复：原来这里写死 `${RAW}/data/spx_0dte_latest.json` 这种固定路径，
+    // 但 github_sync.py 的 sync_file() 实际会把文件按类型放进 SPXalerts/{今天}/ 这种
+    // 带日期的文件夹（不是 data/ 目录下的固定文件名）——路径从一开始就没对上，导致
+    // "SPX期权流播报"和"个股期权大单"这两个板块一直显示"暂无数据"。改成跟其它面板
+    // 一样，先读 data/latest.json 这个中心索引，再用它登记的真实github_path去取数据。
+    const data = await loadLatest();
+    if (!data) return;
+
     const [dte0, ndte, stockRpt] = await Promise.all([
-      fetchJSON(`${RAW}/data/spx_0dte_latest.json`).catch(()=>null),
-      fetchJSON(`${RAW}/data/spx_ndte_latest.json`).catch(()=>null),
-      fetchJSON(`${RAW}/data/spx_stock_flow_latest.json`).catch(()=>null),
+      data.spx_0dte    ? fetchJSON(`${RAW}/${data.spx_0dte.github_path}`).catch(()=>null)    : null,
+      data.spx_ndte     ? fetchJSON(`${RAW}/${data.spx_ndte.github_path}`).catch(()=>null)    : null,
+      data.stock_flow  ? fetchJSON(`${RAW}/${data.stock_flow.github_path}`).catch(()=>null) : null,
     ]);
     renderSpxFeed(dte0, ndte);
     renderStockFeed(stockRpt);
