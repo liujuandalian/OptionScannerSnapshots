@@ -1385,7 +1385,9 @@ async function loadClaudeAnalysisPanel(data) {
     <div class="card-title"><span class="dot dot-green"></span>${catLabel}
       <span style="margin-left:auto;font-size:.72rem;color:#8b949e;">${full.generated_at_display||''}</span>
     </div>
-    <div style="font-size:.85rem;line-height:1.7;white-space:pre-wrap;max-height:420px;overflow-y:auto;color:#c9d1d9;">${
+    <div style="font-size:.85rem;line-height:1.7;white-space:pre-wrap;color:#c9d1d9;
+                max-height:900px;overflow-y:auto;
+                columns:2;column-gap:28px;column-rule:1px solid #21262d;">${
       full.text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     }</div>`;
 }
