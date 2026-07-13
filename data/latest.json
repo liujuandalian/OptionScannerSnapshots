@@ -94,21 +94,31 @@
   },
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
-    "github_path": "SPXalerts/20260710/spx_gamma_latest.json",
-    "upload_time": "2026-07-10 15:32",
+    "github_path": "SPXalerts/20260713/spx_gamma_latest.json",
+    "upload_time": "2026-07-13 09:30",
     "summary": {
-      "ts": "15:32",
-      "ts_full": "2026-07-10T15:32:22.587997-04:00",
+      "ts": "09:30",
+      "ts_full": "2026-07-13T09:30:18.513645-04:00",
       "symbol": "SPX",
-      "spot": 7576.59,
-      "net_gex": 534072433.0,
-      "net_gex_b": 0.5341,
-      "zero_gamma": 7521.8,
-      "gamma_wall_call": 7575.0,
-      "gamma_wall_put": 7580.0,
-      "dte_days": 0.0192
+      "spot": 7552.17,
+      "day_high": 7554.88,
+      "day_low": 7547.53,
+      "day_open": 7547.53,
+      "prev_close": null,
+      "total_volume": 2353275223,
+      "ovwap": 7569.86,
+      "ovwap_day_high": 7569.86,
+      "ovwap_day_high_spot": 7552.17,
+      "ovwap_day_low": 7569.86,
+      "ovwap_day_low_spot": 7552.17,
+      "net_gex": -14352142.0,
+      "net_gex_b": -0.0144,
+      "zero_gamma": 7527.5,
+      "gamma_wall_call": 7545.0,
+      "gamma_wall_put": 7550.0,
+      "dte_days": 0.2706
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260710/spx_gamma_latest.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260713/spx_gamma_latest.json"
   },
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
