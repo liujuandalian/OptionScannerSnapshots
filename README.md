@@ -15,16 +15,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 ## 🗂️ 目录结构
 
 | 目录 | 内容 | 生成方式 |
-|---
-## 📅 2026-07-14
-
-| 文件 | 类型 | 上传时间 | 链接 | 摘要 |
-|---|---|---|---|---|
-| `oi_report_pre_mkt_20260714.json` | OI变化对比报告 | 2026-07-14 00:33 | [下载](oi_snapshots/20260714/oi_report_pre_mkt_20260714.json) | {"date": "2026-07-14", "surging": 0, "shrinking": 0} |
-| `spx_gamma_latest.json` | SPX GammaTracker快照 | 2026-07-14 00:30 | [下载](SPXalerts/20260714/spx_gamma_latest.json) | {"ts": "12:30", "ts_full": "2026-07-13T12:30:44.945310-04:00", "symbol": "SPX",  |
-| `ndx_gamma_latest.json` | NDX GammaTracker快照 | 2026-07-14 00:29 | [下载](NDXalerts/20260714/ndx_gamma_latest.json) | {"ts": "12:29", "ts_full": "2026-07-13T12:29:39.361683-04:00", "symbol": "NDX",  |
-
----|------|---------|
+|------|------|---------|
 | `alerts/YYYYMMDD/` | 期权流快照（Append模式，持续追加） | main.py 每15分钟 |
 | `oi_snapshots/YYYYMMDD/` | OI盘前/盘后快照 | 盘前自动 + 盘后手动 |
 | `SPXalerts/YYYYMMDD/` | SPX EOD报告 + 盘中快报 | 16:15自动 + 每5分钟 |
