@@ -20,8 +20,8 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
-| `spx_ndte_20260713_1011.json` | SPX 非0DTE信号 | 2026-07-13 10:11 | [下载](SPXalerts/20260713/spx_ndte_20260713_1011.json) | {"signals": 2351, "timestamp_et": "2026-07-13 10:11 ET"} |
-| `spx_0dte_report_20260713_1011.json` | SPX 0DTE信号 | 2026-07-13 10:11 | [下载](SPXalerts/20260713/spx_0dte_report_20260713_1011.json) | {"label": "0DTE · 10:11 ET", "signals": 196, "direction": "极度偏多 🟢🟢", "net_premiu |
+| `ndx_0dte_report_20260713_1011.json` | NDX 0DTE信号 | 2026-07-13 10:11 | [下载](NDXalerts/20260713/ndx_0dte_report_20260713_1011.json) | {"label": "0DTE · 10:11 ET", "signals": 36, "direction": "偏多 🟢", "net_premium_M" |
+| `spx_ndte_report_20260713_1011.json` | SPX 非0DTE信号 | 2026-07-13 10:11 | [下载](SPXalerts/20260713/spx_ndte_report_20260713_1011.json) | {"label": "非0DTE · 10:11 ET", "signals": 2351, "direction": "极度偏多 🟢🟢", "net_prem |
 | `claude_analysis_101102.json` | Claude深度分析 | 2026-07-13 10:11 | [下载](ClaudeAnalysis/20260713/claude_analysis_101102.json) | {"generated_at": "2026-07-13T10:11:02.730887-04:00", "generated_at_display": "20 |
 | `spx_intraday_20260713_1010.json` | SPX盘中5分钟快报 | 2026-07-13 10:10 | [下载](SPXalerts/20260713/spx_intraday_20260713_1010.json) | {} |
 | `spx_0dte_report_20260713_1008.json` | SPX 0DTE信号 | 2026-07-13 10:08 | [下载](SPXalerts/20260713/spx_0dte_report_20260713_1008.json) | {"label": "0DTE · 10:08 ET", "signals": 84, "direction": "极度偏多 🟢🟢", "net_premium |
