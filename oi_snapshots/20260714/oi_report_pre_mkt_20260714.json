@@ -1,10 +1,10 @@
 {
   "date": "2026-07-14",
   "mode": "intraday",
-  "generated": "2026-07-14T07:00:07.172340",
+  "generated": "2026-07-14T08:47:01.401165",
   "vs_dates": [
     "2026-07-13",
-    "2026-07-12"
+    "2026-07-10"
   ],
   "surging": [
     {
@@ -59,13 +59,13 @@
       "strike": 7.0,
       "type": "PUT",
       "oi_today": 47917,
-      "oi_hist": 589,
-      "delta_abs": 47328,
-      "delta_pct": 8035.3,
+      "oi_hist": 574,
+      "delta_abs": 47343,
+      "delta_pct": 8247.9,
       "iv_today": 50.82,
       "bid": 0.1,
       "ask": 0.15,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "WEN",
@@ -74,13 +74,43 @@
       "strike": 8.0,
       "type": "PUT",
       "oi_today": 47273,
-      "oi_hist": 756,
-      "delta_abs": 46517,
-      "delta_pct": 6153.0,
+      "oi_hist": 672,
+      "delta_abs": 46601,
+      "delta_pct": 6934.7,
       "iv_today": 63.23,
       "bid": 0.6,
       "ask": 0.7,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-17:215.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 215.0,
+      "type": "CALL",
+      "oi_today": 96507,
+      "oi_hist": 56369,
+      "delta_abs": 40138,
+      "delta_pct": 71.2,
+      "iv_today": 43.6,
+      "bid": 0.51,
+      "ask": 0.53,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "WULF",
+      "key": "2026-07-17:12.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 12.0,
+      "type": "PUT",
+      "oi_today": 36121,
+      "oi_hist": 0,
+      "delta_abs": 36121,
+      "delta_pct": Infinity,
+      "iv_today": 235.12,
+      "bid": 0.01,
+      "ask": 0.02,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "WEN",
@@ -113,6 +143,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "INTC",
+      "key": "2026-07-17:100.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 100.0,
+      "type": "PUT",
+      "oi_today": 32376,
+      "oi_hist": 0,
+      "delta_abs": 32376,
+      "delta_pct": Infinity,
+      "iv_today": 96.23,
+      "bid": 2.58,
+      "ask": 2.71,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "DRAM",
       "key": "2026-08-21:50.0:PUT",
       "expiry": "2026-08-21",
@@ -143,6 +188,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "TLT",
+      "key": "2026-07-17:84.5:CALL",
+      "expiry": "2026-07-17",
+      "strike": 84.5,
+      "type": "CALL",
+      "oi_today": 29256,
+      "oi_hist": 889,
+      "delta_abs": 28367,
+      "delta_pct": 3190.9,
+      "iv_today": 12.56,
+      "bid": 0.21,
+      "ask": 0.22,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "NVDA",
       "key": "2026-07-17:185.0:PUT",
       "expiry": "2026-07-17",
@@ -156,6 +216,21 @@
       "bid": 0.23,
       "ask": 0.24,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-08-21:230.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 230.0,
+      "type": "CALL",
+      "oi_today": 66791,
+      "oi_hist": 38839,
+      "delta_abs": 27952,
+      "delta_pct": 72.0,
+      "iv_today": 40.08,
+      "bid": 2.67,
+      "ask": 2.7,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "IGV",
@@ -203,6 +278,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "MSFT",
+      "key": "2026-07-17:410.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 410.0,
+      "type": "CALL",
+      "oi_today": 22746,
+      "oi_hist": 0,
+      "delta_abs": 22746,
+      "delta_pct": Infinity,
+      "iv_today": 41.51,
+      "bid": 1.15,
+      "ask": 1.26,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "META",
+      "key": "2026-08-21:700.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 700.0,
+      "type": "CALL",
+      "oi_today": 22302,
+      "oi_hist": 0,
+      "delta_abs": 22302,
+      "delta_pct": Infinity,
+      "iv_today": 54.57,
+      "bid": 29.5,
+      "ask": 30.05,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "NOW",
       "key": "2026-07-17:120.0:CALL",
       "expiry": "2026-07-17",
@@ -216,6 +321,21 @@
       "bid": 0.61,
       "ask": 0.65,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-17:210.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 210.0,
+      "type": "CALL",
+      "oi_today": 87454,
+      "oi_hist": 67013,
+      "delta_abs": 20441,
+      "delta_pct": 30.5,
+      "iv_today": 42.92,
+      "bid": 1.3,
+      "ask": 1.33,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "NVDA",
@@ -233,6 +353,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "JD",
+      "key": "2026-07-17:29.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 29.0,
+      "type": "CALL",
+      "oi_today": 22090,
+      "oi_hist": 3611,
+      "delta_abs": 18479,
+      "delta_pct": 511.7,
+      "iv_today": 42.87,
+      "bid": 0.42,
+      "ask": 0.47,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NFLX",
+      "key": "2026-07-31:65.0:PUT",
+      "expiry": "2026-07-31",
+      "strike": 65.0,
+      "type": "PUT",
+      "oi_today": 18171,
+      "oi_hist": 0,
+      "delta_abs": 18171,
+      "delta_pct": Infinity,
+      "iv_today": 54.71,
+      "bid": 0.62,
+      "ask": 0.65,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "ARKK",
       "key": "2026-09-18:70.0:PUT",
       "expiry": "2026-09-18",
@@ -246,6 +396,21 @@
       "bid": 2.12,
       "ask": 2.34,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "IGV",
+      "key": "2026-09-18:85.0:PUT",
+      "expiry": "2026-09-18",
+      "strike": 85.0,
+      "type": "PUT",
+      "oi_today": 38448,
+      "oi_hist": 21084,
+      "delta_abs": 17364,
+      "delta_pct": 82.4,
+      "iv_today": 33.67,
+      "bid": 1.9,
+      "ask": 2.65,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "CRWV",
@@ -263,6 +428,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "PYPL",
+      "key": "2026-07-17:50.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 50.0,
+      "type": "CALL",
+      "oi_today": 42535,
+      "oi_hist": 25243,
+      "delta_abs": 17292,
+      "delta_pct": 68.5,
+      "iv_today": 55.89,
+      "bid": 0.31,
+      "ask": 0.35,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "NVDA",
       "key": "2026-07-24:180.0:PUT",
       "expiry": "2026-07-24",
@@ -278,6 +458,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "TLT",
+      "key": "2026-07-17:85.5:CALL",
+      "expiry": "2026-07-17",
+      "strike": 85.5,
+      "type": "CALL",
+      "oi_today": 30526,
+      "oi_hist": 13518,
+      "delta_abs": 17008,
+      "delta_pct": 125.8,
+      "iv_today": 12.97,
+      "bid": 0.04,
+      "ask": 0.05,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "CVNA",
       "key": "2026-07-17:60.0:PUT",
       "expiry": "2026-07-17",
@@ -291,6 +486,21 @@
       "bid": 0.3,
       "ask": 0.4,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "NFLX",
+      "key": "2026-07-17:75.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 75.0,
+      "type": "PUT",
+      "oi_today": 74255,
+      "oi_hist": 57496,
+      "delta_abs": 16759,
+      "delta_pct": 29.1,
+      "iv_today": 99.31,
+      "bid": 3.55,
+      "ask": 3.65,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "NVDA",
@@ -309,6 +519,21 @@
     },
     {
       "ticker": "NVDA",
+      "key": "2026-07-17:212.5:CALL",
+      "expiry": "2026-07-17",
+      "strike": 212.5,
+      "type": "CALL",
+      "oi_today": 25986,
+      "oi_hist": 9957,
+      "delta_abs": 16029,
+      "delta_pct": 161.0,
+      "iv_today": 42.98,
+      "bid": 0.81,
+      "ask": 0.84,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
       "key": "2026-07-17:180.0:CALL",
       "expiry": "2026-07-17",
       "strike": 180.0,
@@ -321,6 +546,36 @@
       "bid": 23.35,
       "ask": 25.45,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-17:217.5:CALL",
+      "expiry": "2026-07-17",
+      "strike": 217.5,
+      "type": "CALL",
+      "oi_today": 27037,
+      "oi_hist": 11164,
+      "delta_abs": 15873,
+      "delta_pct": 142.2,
+      "iv_today": 44.55,
+      "bid": 0.32,
+      "ask": 0.34,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "INTC",
+      "key": "2026-09-18:80.0:PUT",
+      "expiry": "2026-09-18",
+      "strike": 80.0,
+      "type": "PUT",
+      "oi_today": 15653,
+      "oi_hist": 0,
+      "delta_abs": 15653,
+      "delta_pct": Infinity,
+      "iv_today": 87.23,
+      "bid": 4.8,
+      "ask": 5.05,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "HOOD",
@@ -353,19 +608,34 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "NFLX",
-      "key": "2026-07-17:75.0:PUT",
+      "ticker": "NVDA",
+      "key": "2026-07-15:210.0:CALL",
+      "expiry": "2026-07-15",
+      "strike": 210.0,
+      "type": "CALL",
+      "oi_today": 18699,
+      "oi_hist": 3399,
+      "delta_abs": 15300,
+      "delta_pct": 450.1,
+      "iv_today": 42.49,
+      "bid": 0.5,
+      "ask": 0.52,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "SQQQ",
+      "key": "2026-07-17:40.0:CALL",
       "expiry": "2026-07-17",
-      "strike": 75.0,
-      "type": "PUT",
-      "oi_today": 74255,
-      "oi_hist": 59042,
-      "delta_abs": 15213,
-      "delta_pct": 25.8,
-      "iv_today": 99.31,
-      "bid": 3.55,
-      "ask": 3.65,
-      "label": "vs 2026-07-13"
+      "strike": 40.0,
+      "type": "CALL",
+      "oi_today": 24131,
+      "oi_hist": 9013,
+      "delta_abs": 15118,
+      "delta_pct": 167.7,
+      "iv_today": 80.31,
+      "bid": 1.25,
+      "ask": 1.28,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "MU",
@@ -398,21 +668,6 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "PYPL",
-      "key": "2026-07-17:50.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 50.0,
-      "type": "CALL",
-      "oi_today": 42535,
-      "oi_hist": 27950,
-      "delta_abs": 14585,
-      "delta_pct": 52.2,
-      "iv_today": 55.89,
-      "bid": 0.31,
-      "ask": 0.35,
-      "label": "vs 2026-07-13"
-    },
-    {
       "ticker": "TQQQ",
       "key": "2026-07-17:65.0:PUT",
       "expiry": "2026-07-17",
@@ -426,6 +681,21 @@
       "bid": 0.49,
       "ask": 0.56,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "ONDS",
+      "key": "2026-07-17:6.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 6.0,
+      "type": "PUT",
+      "oi_today": 20533,
+      "oi_hist": 6381,
+      "delta_abs": 14152,
+      "delta_pct": 221.8,
+      "iv_today": 102.76,
+      "bid": 0.02,
+      "ask": 0.03,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "LRCX",
@@ -458,6 +728,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "TLT",
+      "key": "2026-07-15:84.5:CALL",
+      "expiry": "2026-07-15",
+      "strike": 84.5,
+      "type": "CALL",
+      "oi_today": 13997,
+      "oi_hist": 685,
+      "delta_abs": 13312,
+      "delta_pct": 1943.4,
+      "iv_today": 14.24,
+      "bid": 0.13,
+      "ask": 0.14,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "TLT",
+      "key": "2026-07-15:84.0:PUT",
+      "expiry": "2026-07-15",
+      "strike": 84.0,
+      "type": "PUT",
+      "oi_today": 15129,
+      "oi_hist": 1987,
+      "delta_abs": 13142,
+      "delta_pct": 661.4,
+      "iv_today": 14.27,
+      "bid": 0.36,
+      "ask": 0.37,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "MSFT",
       "key": "2026-09-18:440.0:CALL",
       "expiry": "2026-09-18",
@@ -471,6 +771,66 @@
       "bid": 10.2,
       "ask": 11.05,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "PLTR",
+      "key": "2026-07-17:131.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 131.0,
+      "type": "CALL",
+      "oi_today": 13807,
+      "oi_hist": 961,
+      "delta_abs": 12846,
+      "delta_pct": 1336.7,
+      "iv_today": 58.96,
+      "bid": 2.73,
+      "ask": 2.77,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "PG",
+      "key": "2026-09-18:160.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 160.0,
+      "type": "CALL",
+      "oi_today": 16057,
+      "oi_hist": 3396,
+      "delta_abs": 12661,
+      "delta_pct": 372.8,
+      "iv_today": 24.54,
+      "bid": 1.83,
+      "ask": 2.17,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "MRNA",
+      "key": "2026-07-17:75.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 75.0,
+      "type": "CALL",
+      "oi_today": 17200,
+      "oi_hist": 4654,
+      "delta_abs": 12546,
+      "delta_pct": 269.6,
+      "iv_today": 93.72,
+      "bid": 0.39,
+      "ask": 0.45,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "DRAM",
+      "key": "2026-08-21:65.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 65.0,
+      "type": "CALL",
+      "oi_today": 16902,
+      "oi_hist": 4382,
+      "delta_abs": 12520,
+      "delta_pct": 285.7,
+      "iv_today": 97.71,
+      "bid": 4.4,
+      "ask": 4.6,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "NVDA",
@@ -503,19 +863,19 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "TLT",
-      "key": "2026-07-15:84.5:CALL",
-      "expiry": "2026-07-15",
-      "strike": 84.5,
+      "ticker": "ARM",
+      "key": "2026-09-18:310.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 310.0,
       "type": "CALL",
-      "oi_today": 13997,
-      "oi_hist": 1901,
-      "delta_abs": 12096,
-      "delta_pct": 636.3,
-      "iv_today": 14.24,
-      "bid": 0.13,
-      "ask": 0.14,
-      "label": "vs 2026-07-13"
+      "oi_today": 12416,
+      "oi_hist": 168,
+      "delta_abs": 12248,
+      "delta_pct": 7290.5,
+      "iv_today": 102.67,
+      "bid": 45.95,
+      "ask": 49.0,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "FIG",
@@ -533,6 +893,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "NVDA",
+      "key": "2026-07-15:207.5:CALL",
+      "expiry": "2026-07-15",
+      "strike": 207.5,
+      "type": "CALL",
+      "oi_today": 13993,
+      "oi_hist": 2022,
+      "delta_abs": 11971,
+      "delta_pct": 592.0,
+      "iv_today": 42.31,
+      "bid": 0.99,
+      "ask": 1.02,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "ADBE",
       "key": "2026-07-17:250.0:CALL",
       "expiry": "2026-07-17",
@@ -545,21 +920,6 @@
       "iv_today": 55.84,
       "bid": 0.48,
       "ask": 0.57,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "DRAM",
-      "key": "2026-08-21:65.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 65.0,
-      "type": "CALL",
-      "oi_today": 16902,
-      "oi_hist": 5110,
-      "delta_abs": 11792,
-      "delta_pct": 230.8,
-      "iv_today": 97.71,
-      "bid": 4.4,
-      "ask": 4.6,
       "label": "vs 2026-07-13"
     },
     {
@@ -599,28 +959,43 @@
       "strike": 135.0,
       "type": "CALL",
       "oi_today": 24477,
-      "oi_hist": 13025,
-      "delta_abs": 11452,
-      "delta_pct": 87.9,
+      "oi_hist": 12717,
+      "delta_abs": 11760,
+      "delta_pct": 92.5,
       "iv_today": 58.46,
       "bid": 1.32,
       "ask": 1.34,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
     },
     {
-      "ticker": "NVDA",
-      "key": "2026-07-15:210.0:CALL",
-      "expiry": "2026-07-15",
-      "strike": 210.0,
-      "type": "CALL",
-      "oi_today": 18699,
-      "oi_hist": 7324,
-      "delta_abs": 11375,
-      "delta_pct": 155.3,
-      "iv_today": 42.49,
-      "bid": 0.5,
-      "ask": 0.52,
-      "label": "vs 2026-07-13"
+      "ticker": "INTC",
+      "key": "2026-08-21:80.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 80.0,
+      "type": "PUT",
+      "oi_today": 11702,
+      "oi_hist": 0,
+      "delta_abs": 11702,
+      "delta_pct": Infinity,
+      "iv_today": 92.82,
+      "bid": 2.94,
+      "ask": 3.15,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "CVNA",
+      "key": "2026-08-21:50.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 50.0,
+      "type": "PUT",
+      "oi_today": 11334,
+      "oi_hist": 0,
+      "delta_abs": 11334,
+      "delta_pct": Infinity,
+      "iv_today": 88.17,
+      "bid": 1.5,
+      "ask": 1.7,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "DRAM",
@@ -698,6 +1073,51 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "PLTR",
+      "key": "2026-07-17:128.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 128.0,
+      "type": "CALL",
+      "oi_today": 12487,
+      "oi_hist": 1577,
+      "delta_abs": 10910,
+      "delta_pct": 691.8,
+      "iv_today": 59.43,
+      "bid": 4.3,
+      "ask": 4.4,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "KO",
+      "key": "2026-09-18:87.5:CALL",
+      "expiry": "2026-09-18",
+      "strike": 87.5,
+      "type": "CALL",
+      "oi_today": 14275,
+      "oi_hist": 3408,
+      "delta_abs": 10867,
+      "delta_pct": 318.9,
+      "iv_today": 22.61,
+      "bid": 1.75,
+      "ask": 1.93,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NOK",
+      "key": "2026-07-17:12.5:CALL",
+      "expiry": "2026-07-17",
+      "strike": 12.5,
+      "type": "CALL",
+      "oi_today": 13687,
+      "oi_hist": 3000,
+      "delta_abs": 10687,
+      "delta_pct": 356.2,
+      "iv_today": 86.03,
+      "bid": 0.13,
+      "ask": 0.14,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "MSFT",
       "key": "2026-08-21:440.0:CALL",
       "expiry": "2026-08-21",
@@ -711,6 +1131,21 @@
       "bid": 6.75,
       "ask": 7.25,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "HOOD",
+      "key": "2026-07-17:105.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 105.0,
+      "type": "CALL",
+      "oi_today": 10619,
+      "oi_hist": 0,
+      "delta_abs": 10619,
+      "delta_pct": Infinity,
+      "iv_today": 77.74,
+      "bid": 6.4,
+      "ask": 6.55,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "TSLA",
@@ -743,6 +1178,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "NVTS",
+      "key": "2026-07-31:17.0:CALL",
+      "expiry": "2026-07-31",
+      "strike": 17.0,
+      "type": "CALL",
+      "oi_today": 10941,
+      "oi_hist": 630,
+      "delta_abs": 10311,
+      "delta_pct": 1636.7,
+      "iv_today": 136.85,
+      "bid": 0.37,
+      "ask": 0.5,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "AVGO",
+      "key": "2026-09-18:300.0:PUT",
+      "expiry": "2026-09-18",
+      "strike": 300.0,
+      "type": "PUT",
+      "oi_today": 10113,
+      "oi_hist": 0,
+      "delta_abs": 10113,
+      "delta_pct": Infinity,
+      "iv_today": 55.43,
+      "bid": 5.8,
+      "ask": 6.5,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "TQQQ",
       "key": "2026-07-17:68.0:PUT",
       "expiry": "2026-07-17",
@@ -758,34 +1223,19 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "KO",
-      "key": "2026-09-18:87.5:CALL",
-      "expiry": "2026-09-18",
-      "strike": 87.5,
-      "type": "CALL",
-      "oi_today": 14275,
-      "oi_hist": 4250,
-      "delta_abs": 10025,
-      "delta_pct": 235.9,
-      "iv_today": 22.61,
-      "bid": 1.75,
-      "ask": 1.93,
-      "label": "vs 2026-07-13"
-    },
-    {
       "ticker": "WOLF",
       "key": "2026-08-14:30.0:PUT",
       "expiry": "2026-08-14",
       "strike": 30.0,
       "type": "PUT",
       "oi_today": 10008,
-      "oi_hist": 8,
-      "delta_abs": 10000,
-      "delta_pct": 125000.0,
+      "oi_hist": 7,
+      "delta_abs": 10001,
+      "delta_pct": 142871.4,
       "iv_today": 121.51,
       "bid": 2.75,
       "ask": 3.1,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "ARKK",
@@ -818,6 +1268,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "WULF",
+      "key": "2026-07-17:23.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 23.0,
+      "type": "CALL",
+      "oi_today": 54537,
+      "oi_hist": 44812,
+      "delta_abs": 9725,
+      "delta_pct": 21.7,
+      "iv_today": 118.47,
+      "bid": 0.32,
+      "ask": 0.34,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "AVGO",
       "key": "2026-07-17:360.0:PUT",
       "expiry": "2026-07-17",
@@ -833,6 +1298,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "AI",
+      "key": "2026-07-17:9.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 9.0,
+      "type": "CALL",
+      "oi_today": 18772,
+      "oi_hist": 9205,
+      "delta_abs": 9567,
+      "delta_pct": 103.9,
+      "iv_today": 78.68,
+      "bid": 0.38,
+      "ask": 0.43,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "NVDA",
       "key": "2026-09-18:160.0:CALL",
       "expiry": "2026-09-18",
@@ -845,21 +1325,6 @@
       "iv_today": 47.52,
       "bid": 46.65,
       "ask": 47.75,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "WULF",
-      "key": "2026-07-17:23.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 23.0,
-      "type": "CALL",
-      "oi_today": 54537,
-      "oi_hist": 45038,
-      "delta_abs": 9499,
-      "delta_pct": 21.1,
-      "iv_today": 118.47,
-      "bid": 0.32,
-      "ask": 0.34,
       "label": "vs 2026-07-13"
     },
     {
@@ -938,6 +1403,21 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "NOK",
+      "key": "2026-07-17:7.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 7.0,
+      "type": "PUT",
+      "oi_today": 9123,
+      "oi_hist": 0,
+      "delta_abs": 9123,
+      "delta_pct": Infinity,
+      "iv_today": 204.39,
+      "bid": 0.01,
+      "ask": 0.06,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "ARKK",
       "key": "2026-07-24:74.0:PUT",
       "expiry": "2026-07-24",
@@ -951,6 +1431,36 @@
       "bid": 0.68,
       "ask": 0.8,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-08-21:180.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 180.0,
+      "type": "PUT",
+      "oi_today": 46459,
+      "oi_hist": 37375,
+      "delta_abs": 9084,
+      "delta_pct": 24.3,
+      "iv_today": 41.93,
+      "bid": 2.6,
+      "ask": 2.64,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "MSTR",
+      "key": "2026-07-17:97.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 97.0,
+      "type": "CALL",
+      "oi_today": 11395,
+      "oi_hist": 2343,
+      "delta_abs": 9052,
+      "delta_pct": 386.3,
+      "iv_today": 97.47,
+      "bid": 1.82,
+      "ask": 1.9,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "TSLA",
@@ -983,532 +1493,97 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "NVDA",
-      "key": "2026-08-21:180.0:PUT",
-      "expiry": "2026-08-21",
-      "strike": 180.0,
-      "type": "PUT",
-      "oi_today": 46459,
-      "oi_hist": 37753,
-      "delta_abs": 8706,
-      "delta_pct": 23.1,
-      "iv_today": 41.93,
-      "bid": 2.6,
-      "ask": 2.64,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-07-24:180.0:CALL",
-      "expiry": "2026-07-24",
-      "strike": 180.0,
-      "type": "CALL",
-      "oi_today": 8563,
-      "oi_hist": 0,
-      "delta_abs": 8563,
-      "delta_pct": Infinity,
-      "iv_today": 47.72,
-      "bid": 23.95,
-      "ask": 24.75,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "PYPL",
-      "key": "2026-07-17:60.0:CALL",
+      "ticker": "AI",
+      "key": "2026-07-17:10.5:CALL",
       "expiry": "2026-07-17",
-      "strike": 60.0,
+      "strike": 10.5,
       "type": "CALL",
-      "oi_today": 8488,
-      "oi_hist": 0,
-      "delta_abs": 8488,
-      "delta_pct": Infinity,
-      "iv_today": 104.42,
-      "bid": 0.03,
-      "ask": 0.04,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "PLTR",
-      "key": "2026-08-21:180.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 180.0,
-      "type": "CALL",
-      "oi_today": 8466,
-      "oi_hist": 0,
-      "delta_abs": 8466,
-      "delta_pct": Infinity,
-      "iv_today": 67.0,
-      "bid": 0.97,
-      "ask": 1.06,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "GOOGL",
-      "key": "2026-07-17:330.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 330.0,
-      "type": "PUT",
-      "oi_today": 8412,
-      "oi_hist": 0,
-      "delta_abs": 8412,
-      "delta_pct": Infinity,
-      "iv_today": 37.93,
-      "bid": 0.2,
-      "ask": 0.3,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "DRAM",
-      "key": "2026-08-21:60.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 60.0,
-      "type": "CALL",
-      "oi_today": 12907,
-      "oi_hist": 4525,
-      "delta_abs": 8382,
-      "delta_pct": 185.2,
-      "iv_today": 99.1,
-      "bid": 6.2,
-      "ask": 6.35,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "TQQQ",
-      "key": "2026-07-17:67.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 67.0,
-      "type": "PUT",
-      "oi_today": 8321,
-      "oi_hist": 0,
-      "delta_abs": 8321,
-      "delta_pct": Infinity,
-      "iv_today": 95.22,
-      "bid": 0.76,
-      "ask": 0.82,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "AVGO",
-      "key": "2026-07-17:370.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 370.0,
-      "type": "PUT",
-      "oi_today": 8247,
-      "oi_hist": 0,
-      "delta_abs": 8247,
-      "delta_pct": Infinity,
-      "iv_today": 57.82,
-      "bid": 3.45,
-      "ask": 4.0,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ORCL",
-      "key": "2026-08-21:90.0:PUT",
-      "expiry": "2026-08-21",
-      "strike": 90.0,
-      "type": "PUT",
-      "oi_today": 8215,
-      "oi_hist": 0,
-      "delta_abs": 8215,
-      "delta_pct": Infinity,
-      "iv_today": 73.03,
-      "bid": 0.28,
-      "ask": 0.9,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "FIG",
-      "key": "2026-07-17:40.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 40.0,
-      "type": "CALL",
-      "oi_today": 8166,
-      "oi_hist": 0,
-      "delta_abs": 8166,
-      "delta_pct": Infinity,
-      "iv_today": 241.67,
+      "oi_today": 18761,
+      "oi_hist": 9822,
+      "delta_abs": 8939,
+      "delta_pct": 91.0,
+      "iv_today": 85.27,
       "bid": 0.01,
-      "ask": 0.03,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ORCL",
-      "key": "2026-07-17:130.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 130.0,
-      "type": "PUT",
-      "oi_today": 8141,
-      "oi_hist": 0,
-      "delta_abs": 8141,
-      "delta_pct": Infinity,
-      "iv_today": 66.94,
-      "bid": 2.75,
-      "ask": 2.88,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "DRAM",
-      "key": "2026-07-17:60.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 60.0,
-      "type": "CALL",
-      "oi_today": 12928,
-      "oi_hist": 4822,
-      "delta_abs": 8106,
-      "delta_pct": 168.1,
-      "iv_today": 113.04,
-      "bid": 1.56,
-      "ask": 1.6,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "CSCO",
-      "key": "2026-09-18:85.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 85.0,
-      "type": "CALL",
-      "oi_today": 8056,
-      "oi_hist": 0,
-      "delta_abs": 8056,
-      "delta_pct": Infinity,
-      "iv_today": 53.72,
-      "bid": 34.25,
-      "ask": 36.1,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "INTC",
-      "key": "2026-07-15:110.0:CALL",
-      "expiry": "2026-07-15",
-      "strike": 110.0,
-      "type": "CALL",
-      "oi_today": 9376,
-      "oi_hist": 1346,
-      "delta_abs": 8030,
-      "delta_pct": 596.6,
-      "iv_today": 95.22,
-      "bid": 0.68,
-      "ask": 0.71,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "FIG",
-      "key": "2026-07-17:35.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 35.0,
-      "type": "CALL",
-      "oi_today": 8022,
-      "oi_hist": 0,
-      "delta_abs": 8022,
-      "delta_pct": Infinity,
-      "iv_today": 210.39,
-      "bid": 0.08,
-      "ask": 0.1,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ARKK",
-      "key": "2026-07-17:75.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 75.0,
-      "type": "PUT",
-      "oi_today": 7958,
-      "oi_hist": 0,
-      "delta_abs": 7958,
-      "delta_pct": Infinity,
-      "iv_today": 49.2,
-      "bid": 0.32,
-      "ask": 0.54,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "WULF",
-      "key": "2026-07-24:25.0:CALL",
-      "expiry": "2026-07-24",
-      "strike": 25.0,
-      "type": "CALL",
-      "oi_today": 8097,
-      "oi_hist": 378,
-      "delta_abs": 7719,
-      "delta_pct": 2042.1,
-      "iv_today": 108.16,
-      "bid": 0.34,
-      "ask": 0.43,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "TSLA",
-      "key": "2026-07-17:370.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 370.0,
-      "type": "PUT",
-      "oi_today": 7697,
-      "oi_hist": 0,
-      "delta_abs": 7697,
-      "delta_pct": Infinity,
-      "iv_today": 51.77,
-      "bid": 1.1,
-      "ask": 1.14,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "PLTR",
-      "key": "2026-09-18:180.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 180.0,
-      "type": "CALL",
-      "oi_today": 7682,
-      "oi_hist": 0,
-      "delta_abs": 7682,
-      "delta_pct": Infinity,
-      "iv_today": 61.68,
-      "bid": 2.04,
-      "ask": 2.19,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "MSTR",
-      "key": "2026-07-17:86.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 86.0,
-      "type": "PUT",
-      "oi_today": 7640,
-      "oi_hist": 0,
-      "delta_abs": 7640,
-      "delta_pct": Infinity,
-      "iv_today": 98.78,
-      "bid": 1.32,
-      "ask": 1.4,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ORCL",
-      "key": "2026-07-17:140.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 140.0,
-      "type": "CALL",
-      "oi_today": 12048,
-      "oi_hist": 4557,
-      "delta_abs": 7491,
-      "delta_pct": 164.4,
-      "iv_today": 71.34,
-      "bid": 1.14,
-      "ask": 1.18,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-07-31:180.0:PUT",
-      "expiry": "2026-07-31",
-      "strike": 180.0,
-      "type": "PUT",
-      "oi_today": 7484,
-      "oi_hist": 0,
-      "delta_abs": 7484,
-      "delta_pct": Infinity,
-      "iv_today": 45.45,
-      "bid": 1.0,
-      "ask": 1.04,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "TLT",
-      "key": "2026-07-31:82.5:PUT",
-      "expiry": "2026-07-31",
-      "strike": 82.5,
-      "type": "PUT",
-      "oi_today": 19865,
-      "oi_hist": 12660,
-      "delta_abs": 7205,
-      "delta_pct": 56.9,
-      "iv_today": 11.06,
-      "bid": 0.28,
-      "ask": 0.29,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "FIG",
-      "key": "2026-07-17:26.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 26.0,
-      "type": "CALL",
-      "oi_today": 8316,
-      "oi_hist": 1118,
-      "delta_abs": 7198,
-      "delta_pct": 643.8,
-      "iv_today": 136.42,
-      "bid": 0.5,
-      "ask": 0.56,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-07-17:195.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 195.0,
-      "type": "PUT",
-      "oi_today": 40106,
-      "oi_hist": 33018,
-      "delta_abs": 7088,
-      "delta_pct": 21.5,
-      "iv_today": 46.84,
-      "bid": 0.98,
-      "ask": 1.01,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "TLT",
-      "key": "2026-08-14:87.5:CALL",
-      "expiry": "2026-08-14",
-      "strike": 87.5,
-      "type": "CALL",
-      "oi_today": 7480,
-      "oi_hist": 451,
-      "delta_abs": 7029,
-      "delta_pct": 1558.5,
-      "iv_today": 11.21,
-      "bid": 0.11,
-      "ask": 0.12,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-07-17:202.5:CALL",
-      "expiry": "2026-07-17",
-      "strike": 202.5,
-      "type": "CALL",
-      "oi_today": 19551,
-      "oi_hist": 12529,
-      "delta_abs": 7022,
-      "delta_pct": 56.0,
-      "iv_today": 43.62,
-      "bid": 4.25,
-      "ask": 4.35,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-08-21:230.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 230.0,
-      "type": "CALL",
-      "oi_today": 66791,
-      "oi_hist": 59792,
-      "delta_abs": 6999,
-      "delta_pct": 11.7,
-      "iv_today": 40.08,
-      "bid": 2.67,
-      "ask": 2.7,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-07-15:207.5:CALL",
-      "expiry": "2026-07-15",
-      "strike": 207.5,
-      "type": "CALL",
-      "oi_today": 13993,
-      "oi_hist": 7195,
-      "delta_abs": 6798,
-      "delta_pct": 94.5,
-      "iv_today": 42.31,
-      "bid": 0.99,
-      "ask": 1.02,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NOK",
-      "key": "2026-07-17:12.5:CALL",
-      "expiry": "2026-07-17",
-      "strike": 12.5,
-      "type": "CALL",
-      "oi_today": 13687,
-      "oi_hist": 6908,
-      "delta_abs": 6779,
-      "delta_pct": 98.1,
-      "iv_today": 86.03,
-      "bid": 0.13,
-      "ask": 0.14,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "JPM",
-      "key": "2026-07-17:310.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 310.0,
-      "type": "PUT",
-      "oi_today": 6637,
-      "oi_hist": 0,
-      "delta_abs": 6637,
-      "delta_pct": Infinity,
-      "iv_today": 44.33,
-      "bid": 0.28,
-      "ask": 0.31,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "HOOD",
-      "key": "2026-07-17:100.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 100.0,
-      "type": "PUT",
-      "oi_today": 6627,
-      "oi_hist": 0,
-      "delta_abs": 6627,
-      "delta_pct": Infinity,
-      "iv_today": 81.17,
-      "bid": 0.56,
-      "ask": 0.6,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "LRCX",
-      "key": "2026-08-21:250.0:PUT",
-      "expiry": "2026-08-21",
-      "strike": 250.0,
-      "type": "PUT",
-      "oi_today": 6570,
-      "oi_hist": 0,
-      "delta_abs": 6570,
-      "delta_pct": Infinity,
-      "iv_today": 95.72,
-      "bid": 7.65,
-      "ask": 10.4,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ARKK",
-      "key": "2026-09-18:70.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 70.0,
-      "type": "CALL",
-      "oi_today": 6503,
-      "oi_hist": 0,
-      "delta_abs": 6503,
-      "delta_pct": Infinity,
-      "iv_today": 42.59,
-      "bid": 10.35,
-      "ask": 11.3,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "V",
-      "key": "2026-09-18:400.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 400.0,
-      "type": "CALL",
-      "oi_today": 6477,
-      "oi_hist": 0,
-      "delta_abs": 6477,
-      "delta_pct": Infinity,
-      "iv_today": 25.84,
-      "bid": 2.9,
-      "ask": 3.6,
-      "label": "vs 2026-07-13"
+      "ask": 0.04,
+      "label": "vs 2026-07-10"
     }
   ],
   "shrinking": [
+    {
+      "ticker": "META",
+      "key": "2026-07-17:650.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 650.0,
+      "type": "CALL",
+      "oi_today": 14963,
+      "oi_hist": 29785,
+      "delta_abs": -14822,
+      "delta_pct": -49.8,
+      "iv_today": 51.66,
+      "bid": 17.8,
+      "ask": 18.5,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "IGV",
+      "key": "2026-08-21:80.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 80.0,
+      "type": "PUT",
+      "oi_today": 57677,
+      "oi_hist": 69658,
+      "delta_abs": -11981,
+      "delta_pct": -17.2,
+      "iv_today": 39.16,
+      "bid": 0.6,
+      "ask": 0.75,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "WULF",
+      "key": "2026-07-17:21.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 21.0,
+      "type": "PUT",
+      "oi_today": 12898,
+      "oi_hist": 24245,
+      "delta_abs": -11347,
+      "delta_pct": -46.8,
+      "iv_today": 118.81,
+      "bid": 1.03,
+      "ask": 1.13,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "WMT",
+      "key": "2026-07-24:115.0:CALL",
+      "expiry": "2026-07-24",
+      "strike": 115.0,
+      "type": "CALL",
+      "oi_today": 10813,
+      "oi_hist": 21799,
+      "delta_abs": -10986,
+      "delta_pct": -50.4,
+      "iv_today": 25.23,
+      "bid": 1.86,
+      "ask": 1.96,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "T",
+      "key": "2026-07-17:24.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 24.0,
+      "type": "PUT",
+      "oi_today": 14821,
+      "oi_hist": 24342,
+      "delta_abs": -9521,
+      "delta_pct": -39.1,
+      "iv_today": 46.77,
+      "bid": 2.38,
+      "ask": 2.59,
+      "label": "vs 2026-07-10"
+    },
     {
       "ticker": "IONQ",
       "key": "2026-08-21:55.0:CALL",
@@ -1540,6 +1615,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "ARM",
+      "key": "2026-08-21:270.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 270.0,
+      "type": "CALL",
+      "oi_today": 1875,
+      "oi_hist": 10062,
+      "delta_abs": -8187,
+      "delta_pct": -81.4,
+      "iv_today": 105.57,
+      "bid": 54.2,
+      "ask": 57.65,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-17:200.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 200.0,
+      "type": "CALL",
+      "oi_today": 81040,
+      "oi_hist": 88571,
+      "delta_abs": -7531,
+      "delta_pct": -8.5,
+      "iv_today": 44.42,
+      "bid": 5.75,
+      "ask": 5.9,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "NVDA",
       "key": "2026-07-17:220.0:CALL",
       "expiry": "2026-07-17",
@@ -1556,18 +1661,63 @@
     },
     {
       "ticker": "WULF",
-      "key": "2026-07-17:13.0:CALL",
+      "key": "2026-07-17:21.0:CALL",
       "expiry": "2026-07-17",
-      "strike": 13.0,
+      "strike": 21.0,
       "type": "CALL",
-      "oi_today": 5689,
-      "oi_hist": 11304,
-      "delta_abs": -5615,
-      "delta_pct": -49.7,
-      "iv_today": 178.49,
-      "bid": 7.75,
-      "ask": 8.1,
-      "label": "vs 2026-07-13"
+      "oi_today": 49285,
+      "oi_hist": 55884,
+      "delta_abs": -6599,
+      "delta_pct": -11.8,
+      "iv_today": 118.81,
+      "bid": 0.95,
+      "ask": 0.99,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "IGV",
+      "key": "2026-08-21:90.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 90.0,
+      "type": "PUT",
+      "oi_today": 101448,
+      "oi_hist": 107978,
+      "delta_abs": -6530,
+      "delta_pct": -6.0,
+      "iv_today": 36.42,
+      "bid": 2.9,
+      "ask": 3.3,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-08-21:220.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 220.0,
+      "type": "CALL",
+      "oi_today": 50650,
+      "oi_hist": 57049,
+      "delta_abs": -6399,
+      "delta_pct": -11.2,
+      "iv_today": 40.35,
+      "bid": 4.75,
+      "ask": 4.85,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-09-18:235.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 235.0,
+      "type": "CALL",
+      "oi_today": 12535,
+      "oi_hist": 18248,
+      "delta_abs": -5713,
+      "delta_pct": -31.3,
+      "iv_today": 43.37,
+      "bid": 5.05,
+      "ask": 5.2,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "WULF",
@@ -1585,19 +1735,34 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "WULF",
-      "key": "2026-07-17:21.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 21.0,
+      "ticker": "INTC",
+      "key": "2026-08-21:130.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 130.0,
       "type": "CALL",
-      "oi_today": 49285,
-      "oi_hist": 54712,
-      "delta_abs": -5427,
-      "delta_pct": -9.9,
-      "iv_today": 118.81,
-      "bid": 0.95,
-      "ask": 0.99,
-      "label": "vs 2026-07-13"
+      "oi_today": 9538,
+      "oi_hist": 15001,
+      "delta_abs": -5463,
+      "delta_pct": -36.4,
+      "iv_today": 93.47,
+      "bid": 4.45,
+      "ask": 4.7,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "TLT",
+      "key": "2026-07-17:87.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 87.0,
+      "type": "PUT",
+      "oi_today": 14708,
+      "oi_hist": 20152,
+      "delta_abs": -5444,
+      "delta_pct": -27.0,
+      "iv_today": 15.05,
+      "bid": 3.0,
+      "ask": 3.1,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "MRVL",
@@ -1615,19 +1780,94 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "INTC",
-      "key": "2026-08-21:130.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 130.0,
+      "ticker": "PG",
+      "key": "2026-07-31:157.5:CALL",
+      "expiry": "2026-07-31",
+      "strike": 157.5,
       "type": "CALL",
-      "oi_today": 9538,
-      "oi_hist": 14463,
-      "delta_abs": -4925,
-      "delta_pct": -34.1,
-      "iv_today": 93.47,
-      "bid": 4.45,
-      "ask": 4.7,
-      "label": "vs 2026-07-13"
+      "oi_today": 11659,
+      "oi_hist": 16594,
+      "delta_abs": -4935,
+      "delta_pct": -29.7,
+      "iv_today": 28.72,
+      "bid": 0.59,
+      "ask": 0.84,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-09-18:200.0:PUT",
+      "expiry": "2026-09-18",
+      "strike": 200.0,
+      "type": "PUT",
+      "oi_today": 39472,
+      "oi_hist": 44197,
+      "delta_abs": -4725,
+      "delta_pct": -10.7,
+      "iv_today": 41.72,
+      "bid": 12.5,
+      "ask": 12.7,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "ARM",
+      "key": "2026-08-21:300.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 300.0,
+      "type": "CALL",
+      "oi_today": 5598,
+      "oi_hist": 10229,
+      "delta_abs": -4631,
+      "delta_pct": -45.3,
+      "iv_today": 104.19,
+      "bid": 40.85,
+      "ask": 41.95,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "T",
+      "key": "2026-07-17:25.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 25.0,
+      "type": "PUT",
+      "oi_today": 2341,
+      "oi_hist": 6964,
+      "delta_abs": -4623,
+      "delta_pct": -66.4,
+      "iv_today": 61.65,
+      "bid": 3.3,
+      "ask": 3.6,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-08-21:200.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 200.0,
+      "type": "PUT",
+      "oi_today": 40835,
+      "oi_hist": 45359,
+      "delta_abs": -4524,
+      "delta_pct": -10.0,
+      "iv_today": 38.91,
+      "bid": 8.45,
+      "ask": 8.55,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "TLT",
+      "key": "2026-08-21:87.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 87.0,
+      "type": "CALL",
+      "oi_today": 23814,
+      "oi_hist": 28147,
+      "delta_abs": -4333,
+      "delta_pct": -15.4,
+      "iv_today": 11.05,
+      "bid": 0.21,
+      "ask": 0.22,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "PFE",
@@ -1705,19 +1945,49 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "AAPL",
-      "key": "2026-07-15:320.0:CALL",
-      "expiry": "2026-07-15",
-      "strike": 320.0,
+      "ticker": "NFLX",
+      "key": "2026-07-31:79.0:CALL",
+      "expiry": "2026-07-31",
+      "strike": 79.0,
       "type": "CALL",
-      "oi_today": 8575,
-      "oi_hist": 12371,
-      "delta_abs": -3796,
-      "delta_pct": -30.7,
-      "iv_today": 28.67,
-      "bid": 1.53,
-      "ask": 1.58,
-      "label": "vs 2026-07-13"
+      "oi_today": 3392,
+      "oi_hist": 7268,
+      "delta_abs": -3876,
+      "delta_pct": -53.3,
+      "iv_today": 58.1,
+      "bid": 1.84,
+      "ask": 1.88,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-31:200.0:CALL",
+      "expiry": "2026-07-31",
+      "strike": 200.0,
+      "type": "CALL",
+      "oi_today": 52272,
+      "oi_hist": 56084,
+      "delta_abs": -3812,
+      "delta_pct": -6.8,
+      "iv_today": 40.33,
+      "bid": 9.4,
+      "ask": 9.65,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NBIS",
+      "key": "2026-07-17:220.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 220.0,
+      "type": "CALL",
+      "oi_today": 19491,
+      "oi_hist": 23012,
+      "delta_abs": -3521,
+      "delta_pct": -15.3,
+      "iv_today": 135.59,
+      "bid": 7.8,
+      "ask": 8.2,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "AAPL",
@@ -1732,21 +2002,6 @@
       "iv_today": 34.01,
       "bid": 17.65,
       "ask": 18.05,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NBIS",
-      "key": "2026-07-17:220.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 220.0,
-      "type": "CALL",
-      "oi_today": 19491,
-      "oi_hist": 22933,
-      "delta_abs": -3442,
-      "delta_pct": -15.0,
-      "iv_today": 135.59,
-      "bid": 7.8,
-      "ask": 8.2,
       "label": "vs 2026-07-13"
     },
     {
@@ -1795,21 +2050,6 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "NVDA",
-      "key": "2026-07-17:210.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 210.0,
-      "type": "CALL",
-      "oi_today": 87454,
-      "oi_hist": 90733,
-      "delta_abs": -3279,
-      "delta_pct": -3.6,
-      "iv_today": 42.92,
-      "bid": 1.3,
-      "ask": 1.33,
-      "label": "vs 2026-07-13"
-    },
-    {
       "ticker": "WULF",
       "key": "2026-07-17:26.0:CALL",
       "expiry": "2026-07-17",
@@ -1823,6 +2063,36 @@
       "bid": 0.05,
       "ask": 0.09,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "NOK",
+      "key": "2026-09-18:14.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 14.0,
+      "type": "CALL",
+      "oi_today": 18513,
+      "oi_hist": 21718,
+      "delta_abs": -3205,
+      "delta_pct": -14.8,
+      "iv_today": 77.73,
+      "bid": 0.75,
+      "ask": 0.79,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-09-18:205.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 205.0,
+      "type": "CALL",
+      "oi_today": 19949,
+      "oi_hist": 23132,
+      "delta_abs": -3183,
+      "delta_pct": -13.8,
+      "iv_today": 41.11,
+      "bid": 14.95,
+      "ask": 15.15,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "ARKK",
@@ -1840,34 +2110,19 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "NVDA",
-      "key": "2026-08-21:220.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 220.0,
+      "ticker": "QSR",
+      "key": "2026-07-17:75.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 75.0,
       "type": "CALL",
-      "oi_today": 50650,
-      "oi_hist": 53736,
+      "oi_today": 11645,
+      "oi_hist": 14731,
       "delta_abs": -3086,
-      "delta_pct": -5.7,
-      "iv_today": 40.35,
-      "bid": 4.75,
-      "ask": 4.85,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NOK",
-      "key": "2026-09-18:14.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 14.0,
-      "type": "CALL",
-      "oi_today": 18513,
-      "oi_hist": 21571,
-      "delta_abs": -3058,
-      "delta_pct": -14.2,
-      "iv_today": 77.73,
-      "bid": 0.75,
-      "ask": 0.79,
-      "label": "vs 2026-07-13"
+      "delta_pct": -20.9,
+      "iv_today": 29.12,
+      "bid": 1.05,
+      "ask": 1.3,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "RKLB",
@@ -1882,21 +2137,6 @@
       "iv_today": 97.16,
       "bid": 2.16,
       "ask": 2.28,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-07-17:225.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 225.0,
-      "type": "CALL",
-      "oi_today": 49111,
-      "oi_hist": 51933,
-      "delta_abs": -2822,
-      "delta_pct": -5.4,
-      "iv_today": 49.43,
-      "bid": 0.1,
-      "ask": 0.11,
       "label": "vs 2026-07-13"
     },
     {
@@ -1936,13 +2176,28 @@
       "strike": 13.0,
       "type": "CALL",
       "oi_today": 8748,
-      "oi_hist": 11434,
-      "delta_abs": -2686,
+      "oi_hist": 11437,
+      "delta_abs": -2689,
       "delta_pct": -23.5,
       "iv_today": 123.89,
       "bid": 0.2,
       "ask": 0.24,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "T",
+      "key": "2026-07-17:27.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 27.0,
+      "type": "PUT",
+      "oi_today": 3640,
+      "oi_hist": 6318,
+      "delta_abs": -2678,
+      "delta_pct": -42.4,
+      "iv_today": 88.51,
+      "bid": 5.35,
+      "ask": 5.55,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "TLT",
@@ -1975,21 +2230,6 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "TLT",
-      "key": "2026-08-21:87.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 87.0,
-      "type": "CALL",
-      "oi_today": 23814,
-      "oi_hist": 26410,
-      "delta_abs": -2596,
-      "delta_pct": -9.8,
-      "iv_today": 11.05,
-      "bid": 0.21,
-      "ask": 0.22,
-      "label": "vs 2026-07-13"
-    },
-    {
       "ticker": "ROST",
       "key": "2026-08-07:190.0:PUT",
       "expiry": "2026-08-07",
@@ -2005,6 +2245,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "ONDS",
+      "key": "2026-07-17:11.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 11.0,
+      "type": "PUT",
+      "oi_today": 11670,
+      "oi_hist": 14135,
+      "delta_abs": -2465,
+      "delta_pct": -17.4,
+      "iv_today": 235.31,
+      "bid": 3.9,
+      "ask": 4.15,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-31:205.0:CALL",
+      "expiry": "2026-07-31",
+      "strike": 205.0,
+      "type": "CALL",
+      "oi_today": 11011,
+      "oi_hist": 13466,
+      "delta_abs": -2455,
+      "delta_pct": -18.2,
+      "iv_today": 41.22,
+      "bid": 6.75,
+      "ask": 6.85,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "AAPL",
       "key": "2026-07-31:305.0:CALL",
       "expiry": "2026-07-31",
@@ -2018,6 +2288,21 @@
       "bid": 16.45,
       "ask": 17.3,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "PFE",
+      "key": "2026-07-31:23.0:PUT",
+      "expiry": "2026-07-31",
+      "strike": 23.0,
+      "type": "PUT",
+      "oi_today": 6711,
+      "oi_hist": 9135,
+      "delta_abs": -2424,
+      "delta_pct": -26.5,
+      "iv_today": 24.36,
+      "bid": 0.11,
+      "ask": 0.15,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "AAPL",
@@ -2080,6 +2365,36 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "META",
+      "key": "2026-08-21:650.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 650.0,
+      "type": "CALL",
+      "oi_today": 6846,
+      "oi_hist": 8968,
+      "delta_abs": -2122,
+      "delta_pct": -23.7,
+      "iv_today": 51.18,
+      "bid": 49.6,
+      "ask": 50.3,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NFLX",
+      "key": "2026-07-24:82.0:CALL",
+      "expiry": "2026-07-24",
+      "strike": 82.0,
+      "type": "CALL",
+      "oi_today": 2356,
+      "oi_hist": 4465,
+      "delta_abs": -2109,
+      "delta_pct": -47.2,
+      "iv_today": 67.51,
+      "bid": 0.9,
+      "ask": 0.93,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "TLT",
       "key": "2026-07-17:85.5:PUT",
       "expiry": "2026-07-17",
@@ -2092,36 +2407,6 @@
       "iv_today": 12.97,
       "bid": 1.54,
       "ask": 1.6,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ONDS",
-      "key": "2026-07-17:11.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 11.0,
-      "type": "PUT",
-      "oi_today": 11670,
-      "oi_hist": 13717,
-      "delta_abs": -2047,
-      "delta_pct": -14.9,
-      "iv_today": 235.31,
-      "bid": 3.9,
-      "ask": 4.15,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-09-18:205.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 205.0,
-      "type": "CALL",
-      "oi_today": 19949,
-      "oi_hist": 21995,
-      "delta_abs": -2046,
-      "delta_pct": -9.3,
-      "iv_today": 41.11,
-      "bid": 14.95,
-      "ask": 15.15,
       "label": "vs 2026-07-13"
     },
     {
@@ -2155,34 +2440,64 @@
       "label": "vs 2026-07-13"
     },
     {
+      "ticker": "WULF",
+      "key": "2026-07-17:23.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 23.0,
+      "type": "PUT",
+      "oi_today": 28113,
+      "oi_hist": 30087,
+      "delta_abs": -1974,
+      "delta_pct": -6.6,
+      "iv_today": 118.47,
+      "bid": 2.34,
+      "ask": 2.58,
+      "label": "vs 2026-07-10"
+    },
+    {
       "ticker": "ONDS",
       "key": "2026-07-17:9.0:PUT",
       "expiry": "2026-07-17",
       "strike": 9.0,
       "type": "PUT",
       "oi_today": 10157,
-      "oi_hist": 12112,
-      "delta_abs": -1955,
-      "delta_pct": -16.1,
+      "oi_hist": 12118,
+      "delta_abs": -1961,
+      "delta_pct": -16.2,
       "iv_today": 135.7,
       "bid": 2.0,
       "ask": 2.11,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NKE",
+      "key": "2026-07-17:40.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 40.0,
+      "type": "PUT",
+      "oi_today": 10987,
+      "oi_hist": 12932,
+      "delta_abs": -1945,
+      "delta_pct": -15.0,
+      "iv_today": 43.33,
+      "bid": 0.01,
+      "ask": 0.02,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "NVDA",
-      "key": "2026-07-17:200.0:CALL",
-      "expiry": "2026-07-17",
+      "key": "2026-08-21:200.0:CALL",
+      "expiry": "2026-08-21",
       "strike": 200.0,
       "type": "CALL",
-      "oi_today": 81040,
-      "oi_hist": 82991,
-      "delta_abs": -1951,
-      "delta_pct": -2.4,
-      "iv_today": 44.42,
-      "bid": 5.75,
-      "ask": 5.9,
-      "label": "vs 2026-07-13"
+      "oi_today": 28284,
+      "oi_hist": 30183,
+      "delta_abs": -1899,
+      "delta_pct": -6.3,
+      "iv_today": 38.91,
+      "bid": 12.9,
+      "ask": 13.05,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "PFE",
@@ -2213,6 +2528,36 @@
       "bid": 6.3,
       "ask": 6.5,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "INTC",
+      "key": "2026-08-21:150.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 150.0,
+      "type": "CALL",
+      "oi_today": 20115,
+      "oi_hist": 21938,
+      "delta_abs": -1823,
+      "delta_pct": -8.3,
+      "iv_today": 94.89,
+      "bid": 2.1,
+      "ask": 2.15,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVO",
+      "key": "2026-07-17:50.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 50.0,
+      "type": "CALL",
+      "oi_today": 22951,
+      "oi_hist": 24755,
+      "delta_abs": -1804,
+      "delta_pct": -7.3,
+      "iv_today": 40.77,
+      "bid": 0.5,
+      "ask": 0.54,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "MRVL",
@@ -2251,28 +2596,43 @@
       "strike": 13.0,
       "type": "PUT",
       "oi_today": 2247,
-      "oi_hist": 4009,
-      "delta_abs": -1762,
-      "delta_pct": -44.0,
+      "oi_hist": 4036,
+      "delta_abs": -1789,
+      "delta_pct": -44.3,
       "iv_today": 222.58,
       "bid": 4.85,
       "ask": 5.35,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
     },
     {
-      "ticker": "NVO",
-      "key": "2026-07-17:50.0:CALL",
-      "expiry": "2026-07-17",
+      "ticker": "NKE",
+      "key": "2026-08-21:50.0:CALL",
+      "expiry": "2026-08-21",
       "strike": 50.0,
       "type": "CALL",
-      "oi_today": 22951,
-      "oi_hist": 24668,
-      "delta_abs": -1717,
-      "delta_pct": -7.0,
-      "iv_today": 40.77,
-      "bid": 0.5,
-      "ask": 0.54,
-      "label": "vs 2026-07-13"
+      "oi_today": 27158,
+      "oi_hist": 28926,
+      "delta_abs": -1768,
+      "delta_pct": -6.1,
+      "iv_today": 36.95,
+      "bid": 0.37,
+      "ask": 0.41,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "KO",
+      "key": "2026-07-17:83.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 83.0,
+      "type": "CALL",
+      "oi_today": 11526,
+      "oi_hist": 13289,
+      "delta_abs": -1763,
+      "delta_pct": -13.3,
+      "iv_today": 22.26,
+      "bid": 1.51,
+      "ask": 1.65,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "TLT",
@@ -2288,6 +2648,21 @@
       "bid": 1.73,
       "ask": 1.75,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "MRVL",
+      "key": "2026-09-18:230.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 230.0,
+      "type": "CALL",
+      "oi_today": 1526,
+      "oi_hist": 3221,
+      "delta_abs": -1695,
+      "delta_pct": -52.6,
+      "iv_today": 97.46,
+      "bid": 30.45,
+      "ask": 32.85,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "AAPL",
@@ -2320,34 +2695,154 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "INTC",
-      "key": "2026-08-21:150.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 150.0,
-      "type": "CALL",
-      "oi_today": 20115,
-      "oi_hist": 21719,
-      "delta_abs": -1604,
-      "delta_pct": -7.4,
-      "iv_today": 94.89,
-      "bid": 2.1,
-      "ask": 2.15,
-      "label": "vs 2026-07-13"
-    },
-    {
       "ticker": "POET",
       "key": "2026-07-31:9.5:CALL",
       "expiry": "2026-07-31",
       "strike": 9.5,
       "type": "CALL",
       "oi_today": 7130,
-      "oi_hist": 8730,
-      "delta_abs": -1600,
-      "delta_pct": -18.3,
+      "oi_hist": 8735,
+      "delta_abs": -1605,
+      "delta_pct": -18.4,
       "iv_today": 111.56,
       "bid": 0.25,
       "ask": 0.33,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NOK",
+      "key": "2026-09-18:18.0:CALL",
+      "expiry": "2026-09-18",
+      "strike": 18.0,
+      "type": "CALL",
+      "oi_today": 34393,
+      "oi_hist": 35989,
+      "delta_abs": -1596,
+      "delta_pct": -4.4,
+      "iv_today": 82.38,
+      "bid": 0.25,
+      "ask": 0.28,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "T",
+      "key": "2026-07-17:26.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 26.0,
+      "type": "PUT",
+      "oi_today": 1523,
+      "oi_hist": 3105,
+      "delta_abs": -1582,
+      "delta_pct": -51.0,
+      "iv_today": 75.5,
+      "bid": 4.3,
+      "ask": 4.7,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-17:210.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 210.0,
+      "type": "PUT",
+      "oi_today": 26270,
+      "oi_hist": 27830,
+      "delta_abs": -1560,
+      "delta_pct": -5.6,
+      "iv_today": 42.92,
+      "bid": 7.35,
+      "ask": 7.75,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "AAP",
+      "key": "2026-07-17:55.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 55.0,
+      "type": "CALL",
+      "oi_today": 16361,
+      "oi_hist": 17915,
+      "delta_abs": -1554,
+      "delta_pct": -8.7,
+      "iv_today": 67.76,
+      "bid": 1.6,
+      "ask": 1.9,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "TLT",
+      "key": "2026-07-17:87.5:PUT",
+      "expiry": "2026-07-17",
+      "strike": 87.5,
+      "type": "PUT",
+      "oi_today": 401,
+      "oi_hist": 1951,
+      "delta_abs": -1550,
+      "delta_pct": -79.4,
+      "iv_today": 17.13,
+      "bid": 3.5,
+      "ask": 3.65,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-07-17:190.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 190.0,
+      "type": "CALL",
+      "oi_today": 26419,
+      "oi_hist": 27960,
+      "delta_abs": -1541,
+      "delta_pct": -5.5,
+      "iv_today": 50.79,
+      "bid": 14.0,
+      "ask": 14.2,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "CRCL",
+      "key": "2026-07-31:70.0:CALL",
+      "expiry": "2026-07-31",
+      "strike": 70.0,
+      "type": "CALL",
+      "oi_today": 2635,
+      "oi_hist": 4155,
+      "delta_abs": -1520,
+      "delta_pct": -36.6,
+      "iv_today": 96.34,
+      "bid": 2.62,
+      "ask": 3.05,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "NVDA",
+      "key": "2026-08-21:195.0:PUT",
+      "expiry": "2026-08-21",
+      "strike": 195.0,
+      "type": "PUT",
+      "oi_today": 20514,
+      "oi_hist": 22007,
+      "delta_abs": -1493,
+      "delta_pct": -6.8,
+      "iv_today": 39.51,
+      "bid": 6.45,
+      "ask": 6.55,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "PYPL",
+      "key": "2026-07-17:45.0:CALL",
+      "expiry": "2026-07-17",
+      "strike": 45.0,
+      "type": "CALL",
+      "oi_today": 9884,
+      "oi_hist": 11321,
+      "delta_abs": -1437,
+      "delta_pct": -12.7,
+      "iv_today": 46.66,
+      "bid": 2.66,
+      "ask": 2.85,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "NOW",
@@ -2381,6 +2876,36 @@
     },
     {
       "ticker": "ONDS",
+      "key": "2026-07-17:12.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 12.0,
+      "type": "PUT",
+      "oi_today": 4415,
+      "oi_hist": 5802,
+      "delta_abs": -1387,
+      "delta_pct": -23.9,
+      "iv_today": 215.67,
+      "bid": 4.8,
+      "ask": 5.4,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "ONDS",
+      "key": "2026-07-17:8.0:PUT",
+      "expiry": "2026-07-17",
+      "strike": 8.0,
+      "type": "PUT",
+      "oi_today": 11540,
+      "oi_hist": 12924,
+      "delta_abs": -1384,
+      "delta_pct": -10.7,
+      "iv_today": 101.79,
+      "bid": 1.04,
+      "ask": 1.1,
+      "label": "vs 2026-07-10"
+    },
+    {
+      "ticker": "ONDS",
       "key": "2026-07-31:9.0:PUT",
       "expiry": "2026-07-31",
       "strike": 9.0,
@@ -2393,6 +2918,21 @@
       "bid": 2.07,
       "ask": 2.17,
       "label": "vs 2026-07-13"
+    },
+    {
+      "ticker": "S",
+      "key": "2026-08-21:20.0:CALL",
+      "expiry": "2026-08-21",
+      "strike": 20.0,
+      "type": "CALL",
+      "oi_today": 2587,
+      "oi_hist": 3903,
+      "delta_abs": -1316,
+      "delta_pct": -33.7,
+      "iv_today": 60.65,
+      "bid": 0.8,
+      "ask": 0.95,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "IONQ",
@@ -2425,394 +2965,34 @@
       "label": "vs 2026-07-13"
     },
     {
-      "ticker": "NVDA",
-      "key": "2026-07-17:210.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 210.0,
-      "type": "PUT",
-      "oi_today": 26270,
-      "oi_hist": 27499,
-      "delta_abs": -1229,
-      "delta_pct": -4.5,
-      "iv_today": 42.92,
-      "bid": 7.35,
-      "ask": 7.75,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NKE",
-      "key": "2026-08-21:50.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 50.0,
-      "type": "CALL",
-      "oi_today": 27158,
-      "oi_hist": 28386,
-      "delta_abs": -1228,
-      "delta_pct": -4.3,
-      "iv_today": 36.95,
-      "bid": 0.37,
-      "ask": 0.41,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "SQQQ",
-      "key": "2026-07-17:40.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 40.0,
-      "type": "CALL",
-      "oi_today": 24131,
-      "oi_hist": 25314,
-      "delta_abs": -1183,
-      "delta_pct": -4.7,
-      "iv_today": 80.31,
-      "bid": 1.25,
-      "ask": 1.28,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "MP",
-      "key": "2026-07-17:55.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 55.0,
-      "type": "PUT",
-      "oi_today": 3836,
-      "oi_hist": 4995,
-      "delta_abs": -1159,
-      "delta_pct": -23.2,
-      "iv_today": 77.83,
-      "bid": 5.3,
-      "ask": 6.1,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NVDA",
-      "key": "2026-08-14:215.0:CALL",
-      "expiry": "2026-08-14",
-      "strike": 215.0,
-      "type": "CALL",
-      "oi_today": 1803,
-      "oi_hist": 2959,
-      "delta_abs": -1156,
-      "delta_pct": -39.1,
-      "iv_today": 40.29,
-      "bid": 5.25,
-      "ask": 5.35,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "MRVL",
-      "key": "2026-08-21:260.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 260.0,
-      "type": "CALL",
-      "oi_today": 6200,
-      "oi_hist": 7352,
-      "delta_abs": -1152,
-      "delta_pct": -15.7,
-      "iv_today": 92.22,
-      "bid": 11.9,
-      "ask": 12.7,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "T",
-      "key": "2026-09-18:23.0:PUT",
-      "expiry": "2026-09-18",
-      "strike": 23.0,
-      "type": "PUT",
-      "oi_today": 14133,
-      "oi_hist": 15243,
-      "delta_abs": -1110,
-      "delta_pct": -7.3,
-      "iv_today": 31.8,
-      "bid": 1.87,
-      "ask": 1.97,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "WEN",
-      "key": "2026-07-17:8.5:CALL",
-      "expiry": "2026-07-17",
-      "strike": 8.5,
-      "type": "CALL",
-      "oi_today": 5024,
-      "oi_hist": 6127,
-      "delta_abs": -1103,
-      "delta_pct": -18.0,
-      "iv_today": 85.57,
-      "bid": 0.05,
-      "ask": 0.1,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ONDS",
-      "key": "2026-07-17:10.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 10.0,
-      "type": "PUT",
-      "oi_today": 7122,
-      "oi_hist": 8198,
-      "delta_abs": -1076,
-      "delta_pct": -13.1,
-      "iv_today": 179.03,
-      "bid": 2.97,
-      "ask": 3.15,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "QSR",
-      "key": "2026-07-17:75.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 75.0,
-      "type": "CALL",
-      "oi_today": 11645,
-      "oi_hist": 12706,
-      "delta_abs": -1061,
-      "delta_pct": -8.4,
-      "iv_today": 29.12,
-      "bid": 1.05,
-      "ask": 1.3,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "AAPL",
-      "key": "2026-07-17:305.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 305.0,
-      "type": "CALL",
-      "oi_today": 20570,
-      "oi_hist": 21619,
-      "delta_abs": -1049,
-      "delta_pct": -4.9,
-      "iv_today": 31.0,
-      "bid": 12.85,
-      "ask": 13.4,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "JD",
-      "key": "2026-07-17:28.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 28.0,
-      "type": "CALL",
-      "oi_today": 11792,
-      "oi_hist": 12841,
-      "delta_abs": -1049,
-      "delta_pct": -8.2,
-      "iv_today": 42.21,
-      "bid": 1.05,
-      "ask": 1.14,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "RKLB",
+      "ticker": "WFC",
       "key": "2026-09-18:80.0:PUT",
       "expiry": "2026-09-18",
       "strike": 80.0,
       "type": "PUT",
-      "oi_today": 1280,
-      "oi_hist": 2328,
-      "delta_abs": -1048,
-      "delta_pct": -45.0,
-      "iv_today": 94.29,
-      "bid": 13.6,
-      "ask": 14.1,
-      "label": "vs 2026-07-13"
+      "oi_today": 4298,
+      "oi_hist": 5565,
+      "delta_abs": -1267,
+      "delta_pct": -22.8,
+      "iv_today": 29.31,
+      "bid": 1.49,
+      "ask": 1.62,
+      "label": "vs 2026-07-10"
     },
     {
-      "ticker": "JD",
-      "key": "2026-09-18:22.0:CALL",
-      "expiry": "2026-09-18",
-      "strike": 22.0,
-      "type": "CALL",
-      "oi_today": 1075,
-      "oi_hist": 2106,
-      "delta_abs": -1031,
-      "delta_pct": -49.0,
-      "iv_today": 48.61,
-      "bid": 6.15,
-      "ask": 8.45,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "AMZN",
-      "key": "2026-08-21:270.0:CALL",
+      "ticker": "NIO",
+      "key": "2026-08-21:4.0:CALL",
       "expiry": "2026-08-21",
-      "strike": 270.0,
+      "strike": 4.0,
       "type": "CALL",
-      "oi_today": 60065,
-      "oi_hist": 61093,
-      "delta_abs": -1028,
-      "delta_pct": -1.7,
-      "iv_today": 42.68,
-      "bid": 5.75,
-      "ask": 5.9,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "UBER",
-      "key": "2026-07-17:67.5:PUT",
-      "expiry": "2026-07-17",
-      "strike": 67.5,
-      "type": "PUT",
-      "oi_today": 10482,
-      "oi_hist": 11508,
-      "delta_abs": -1026,
-      "delta_pct": -8.9,
-      "iv_today": 48.89,
-      "bid": 0.03,
-      "ask": 0.05,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "AS",
-      "key": "2026-07-17:35.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 35.0,
-      "type": "CALL",
-      "oi_today": 7727,
-      "oi_hist": 8752,
-      "delta_abs": -1025,
-      "delta_pct": -11.7,
-      "iv_today": 54.11,
-      "bid": 0.35,
-      "ask": 0.5,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "OKLO",
-      "key": "2026-07-17:53.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 53.0,
-      "type": "CALL",
-      "oi_today": 2092,
-      "oi_hist": 3116,
-      "delta_abs": -1024,
-      "delta_pct": -32.9,
-      "iv_today": 108.22,
-      "bid": 0.23,
-      "ask": 0.28,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NOK",
-      "key": "2026-08-21:15.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 15.0,
-      "type": "CALL",
-      "oi_today": 50564,
-      "oi_hist": 51585,
-      "delta_abs": -1021,
-      "delta_pct": -2.0,
-      "iv_today": 84.24,
-      "bid": 0.34,
-      "ask": 0.36,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "SEDG",
-      "key": "2026-07-17:55.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 55.0,
-      "type": "PUT",
-      "oi_today": 3560,
-      "oi_hist": 4570,
-      "delta_abs": -1010,
-      "delta_pct": -22.1,
-      "iv_today": 115.8,
-      "bid": 3.95,
-      "ask": 4.3,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "MSFT",
-      "key": "2026-09-18:410.0:PUT",
-      "expiry": "2026-09-18",
-      "strike": 410.0,
-      "type": "PUT",
-      "oi_today": 5598,
-      "oi_hist": 6591,
-      "delta_abs": -993,
-      "delta_pct": -15.1,
-      "iv_today": 40.78,
-      "bid": 35.35,
-      "ask": 36.5,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "AAPL",
-      "key": "2026-08-21:315.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 315.0,
-      "type": "CALL",
-      "oi_today": 11042,
-      "oi_hist": 12027,
-      "delta_abs": -985,
-      "delta_pct": -8.2,
-      "iv_today": 26.37,
-      "bid": 13.1,
-      "ask": 13.5,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "SQQQ",
-      "key": "2026-07-17:38.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 38.0,
-      "type": "CALL",
-      "oi_today": 11660,
-      "oi_hist": 12644,
-      "delta_abs": -984,
-      "delta_pct": -7.8,
-      "iv_today": 71.68,
-      "bid": 2.27,
-      "ask": 2.48,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ONDS",
-      "key": "2026-07-17:7.5:PUT",
-      "expiry": "2026-07-17",
-      "strike": 7.5,
-      "type": "PUT",
-      "oi_today": 6729,
-      "oi_hist": 7700,
-      "delta_abs": -971,
-      "delta_pct": -12.6,
-      "iv_today": 95.7,
-      "bid": 0.61,
-      "ask": 0.66,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NFLX",
-      "key": "2026-07-31:79.0:CALL",
-      "expiry": "2026-07-31",
-      "strike": 79.0,
-      "type": "CALL",
-      "oi_today": 3392,
-      "oi_hist": 4353,
-      "delta_abs": -961,
-      "delta_pct": -22.1,
-      "iv_today": 58.1,
-      "bid": 1.84,
-      "ask": 1.88,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "FLEX",
-      "key": "2026-07-17:140.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 140.0,
-      "type": "PUT",
-      "oi_today": 3002,
-      "oi_hist": 3961,
-      "delta_abs": -959,
-      "delta_pct": -24.2,
-      "iv_today": 86.25,
-      "bid": 11.0,
-      "ask": 12.5,
-      "label": "vs 2026-07-13"
+      "oi_today": 47559,
+      "oi_hist": 48793,
+      "delta_abs": -1234,
+      "delta_pct": -2.5,
+      "iv_today": 60.7,
+      "bid": 0.74,
+      "ask": 1.03,
+      "label": "vs 2026-07-10"
     },
     {
       "ticker": "AMZN",
@@ -2821,225 +3001,45 @@
       "strike": 240.0,
       "type": "CALL",
       "oi_today": 14429,
-      "oi_hist": 15386,
-      "delta_abs": -957,
-      "delta_pct": -6.2,
+      "oi_hist": 15645,
+      "delta_abs": -1216,
+      "delta_pct": -7.8,
       "iv_today": 40.07,
       "bid": 8.65,
       "ask": 9.0,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "HTZ",
-      "key": "2026-07-17:5.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 5.0,
-      "type": "PUT",
-      "oi_today": 20639,
-      "oi_hist": 21569,
-      "delta_abs": -930,
-      "delta_pct": -4.3,
-      "iv_today": 493.85,
-      "bid": 3.05,
-      "ask": 3.25,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "BABA",
-      "key": "2026-07-17:108.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 108.0,
-      "type": "PUT",
-      "oi_today": 1003,
-      "oi_hist": 1929,
-      "delta_abs": -926,
-      "delta_pct": -48.0,
-      "iv_today": 53.03,
-      "bid": 0.8,
-      "ask": 0.85,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NOW",
-      "key": "2026-08-21:120.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 120.0,
-      "type": "CALL",
-      "oi_today": 12709,
-      "oi_hist": 13635,
-      "delta_abs": -926,
-      "delta_pct": -6.8,
-      "iv_today": 71.57,
-      "bid": 6.8,
-      "ask": 7.25,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ANET",
-      "key": "2026-08-07:200.0:CALL",
-      "expiry": "2026-08-07",
-      "strike": 200.0,
-      "type": "CALL",
-      "oi_today": 2585,
-      "oi_hist": 3510,
-      "delta_abs": -925,
-      "delta_pct": -26.4,
-      "iv_today": 77.82,
-      "bid": 7.05,
-      "ask": 8.7,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "PFE",
-      "key": "2026-08-21:24.0:CALL",
-      "expiry": "2026-08-21",
-      "strike": 24.0,
-      "type": "CALL",
-      "oi_today": 10939,
-      "oi_hist": 11861,
-      "delta_abs": -922,
-      "delta_pct": -7.8,
-      "iv_today": 22.75,
-      "bid": 0.83,
-      "ask": 0.87,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "TLT",
-      "key": "2026-07-17:87.5:PUT",
-      "expiry": "2026-07-17",
-      "strike": 87.5,
-      "type": "PUT",
-      "oi_today": 401,
-      "oi_hist": 1307,
-      "delta_abs": -906,
-      "delta_pct": -69.3,
-      "iv_today": 17.13,
-      "bid": 3.5,
-      "ask": 3.65,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "ONDS",
-      "key": "2026-07-17:8.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 8.0,
-      "type": "PUT",
-      "oi_today": 11540,
-      "oi_hist": 12445,
-      "delta_abs": -905,
-      "delta_pct": -7.3,
-      "iv_today": 101.79,
-      "bid": 1.04,
-      "ask": 1.1,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "WULF",
-      "key": "2026-07-17:21.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 21.0,
-      "type": "PUT",
-      "oi_today": 12898,
-      "oi_hist": 13797,
-      "delta_abs": -899,
-      "delta_pct": -6.5,
-      "iv_today": 118.81,
-      "bid": 1.03,
-      "ask": 1.13,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "JD",
-      "key": "2026-07-17:27.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 27.0,
-      "type": "CALL",
-      "oi_today": 2630,
-      "oi_hist": 3498,
-      "delta_abs": -868,
-      "delta_pct": -24.8,
-      "iv_today": 46.26,
-      "bid": 1.65,
-      "ask": 2.5,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "NFLX",
-      "key": "2026-07-17:70.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 70.0,
-      "type": "CALL",
-      "oi_today": 5477,
-      "oi_hist": 6339,
-      "delta_abs": -862,
-      "delta_pct": -13.6,
-      "iv_today": 93.69,
-      "bid": 5.1,
-      "ask": 5.25,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "WOLF",
-      "key": "2026-07-17:40.0:PUT",
-      "expiry": "2026-07-17",
-      "strike": 40.0,
-      "type": "PUT",
-      "oi_today": 4453,
-      "oi_hist": 5275,
-      "delta_abs": -822,
-      "delta_pct": -15.6,
-      "iv_today": 147.44,
-      "bid": 5.7,
-      "ask": 7.55,
-      "label": "vs 2026-07-13"
-    },
-    {
-      "ticker": "AMZN",
-      "key": "2026-07-17:245.0:CALL",
-      "expiry": "2026-07-17",
-      "strike": 245.0,
-      "type": "CALL",
-      "oi_today": 27824,
-      "oi_hist": 28642,
-      "delta_abs": -818,
-      "delta_pct": -2.9,
-      "iv_today": 38.97,
-      "bid": 5.3,
-      "ask": 5.45,
-      "label": "vs 2026-07-13"
+      "label": "vs 2026-07-10"
     }
   ],
   "summary": {
     "MULL": {
-      "call_add": 4744,
-      "put_add": 1588,
+      "call_add": 6060,
+      "put_add": 2409,
       "call_sub": 0,
       "put_sub": 0
     },
     "MU": {
-      "call_add": 25995,
-      "put_add": 54241,
+      "call_add": 35249,
+      "put_add": 63218,
       "call_sub": 0,
       "put_sub": 0
     },
     "AAOI": {
-      "call_add": 1396,
-      "put_add": 2507,
+      "call_add": 3145,
+      "put_add": 5020,
       "call_sub": 0,
-      "put_sub": -403
+      "put_sub": -256
     },
     "AAP": {
-      "call_add": 11559,
-      "put_add": 1105,
-      "call_sub": -2649,
+      "call_add": 28507,
+      "put_add": 1106,
+      "call_sub": -4203,
       "put_sub": 0
     },
     "AAPL": {
-      "call_add": 61638,
-      "put_add": 48750,
-      "call_sub": -19685,
-      "put_sub": 0
+      "call_add": 110708,
+      "put_add": 76158,
+      "call_sub": -16504,
+      "put_sub": -1101
     },
     "ABR": {
       "call_add": 220,
@@ -3048,20 +3048,20 @@
       "put_sub": 0
     },
     "ADBE": {
-      "call_add": 22330,
-      "put_add": 9673,
-      "call_sub": -677,
+      "call_add": 25782,
+      "put_add": 12409,
+      "call_sub": -681,
       "put_sub": 0
     },
     "ADI": {
-      "call_add": 0,
-      "put_add": 2478,
+      "call_add": 816,
+      "put_add": 3281,
       "call_sub": 0,
       "put_sub": 0
     },
     "ADSK": {
-      "call_add": 299,
-      "put_add": 64,
+      "call_add": 935,
+      "put_add": 806,
       "call_sub": 0,
       "put_sub": 0
     },
@@ -3072,184 +3072,184 @@
       "put_sub": 0
     },
     "AI": {
-      "call_add": 3337,
-      "put_add": 173,
+      "call_add": 22882,
+      "put_add": 992,
       "call_sub": 0,
-      "put_sub": -395
+      "put_sub": -400
     },
     "AIRS": {
       "call_add": 0,
-      "put_add": 198,
+      "put_add": 1540,
       "call_sub": 0,
       "put_sub": 0
     },
     "AKAM": {
-      "call_add": 0,
-      "put_add": 229,
+      "call_add": 136,
+      "put_add": 299,
       "call_sub": 0,
       "put_sub": 0
     },
     "ALB": {
-      "call_add": 103,
+      "call_add": 176,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "AMAT": {
-      "call_add": 3706,
-      "put_add": 6135,
+      "call_add": 3799,
+      "put_add": 6717,
       "call_sub": 0,
       "put_sub": -276
     },
     "AMBA": {
-      "call_add": 0,
+      "call_add": 313,
       "put_add": 224,
       "call_sub": 0,
       "put_sub": 0
     },
     "AMC": {
-      "call_add": 5955,
-      "put_add": 1326,
-      "call_sub": 0,
+      "call_add": 16256,
+      "put_add": 2054,
+      "call_sub": -648,
       "put_sub": -521
     },
     "AMD": {
-      "call_add": 28062,
-      "put_add": 43871,
+      "call_add": 33551,
+      "put_add": 46465,
       "call_sub": 0,
       "put_sub": 0
     },
     "AMZN": {
-      "call_add": 36869,
-      "put_add": 9962,
-      "call_sub": -8736,
-      "put_sub": 0
+      "call_add": 83996,
+      "put_add": 24983,
+      "call_sub": -10639,
+      "put_sub": -698
     },
     "ANET": {
-      "call_add": 2380,
-      "put_add": 4512,
-      "call_sub": -925,
+      "call_add": 4073,
+      "put_add": 5650,
+      "call_sub": -1039,
       "put_sub": 0
     },
     "APP": {
-      "call_add": 2698,
-      "put_add": 10368,
+      "call_add": 3175,
+      "put_add": 11030,
       "call_sub": 0,
       "put_sub": 0
     },
     "ARKK": {
-      "call_add": 11899,
-      "put_add": 52639,
+      "call_add": 31280,
+      "put_add": 56227,
       "call_sub": 0,
       "put_sub": -3390
     },
     "ARM": {
-      "call_add": 6011,
-      "put_add": 19460,
-      "call_sub": 0,
+      "call_add": 29752,
+      "put_add": 23998,
+      "call_sub": -12818,
       "put_sub": 0
     },
     "AS": {
-      "call_add": 2842,
-      "put_add": 0,
+      "call_add": 3110,
+      "put_add": 599,
       "call_sub": -1025,
       "put_sub": 0
     },
     "ASML": {
-      "call_add": 614,
-      "put_add": 2659,
+      "call_add": 2336,
+      "put_add": 8107,
       "call_sub": 0,
       "put_sub": 0
     },
     "ASTS": {
-      "call_add": 7694,
-      "put_add": 12634,
-      "call_sub": -338,
-      "put_sub": -982
+      "call_add": 14304,
+      "put_add": 19600,
+      "call_sub": -341,
+      "put_sub": -988
     },
     "AVGO": {
-      "call_add": 25221,
-      "put_add": 44121,
+      "call_add": 31364,
+      "put_add": 70731,
       "call_sub": 0,
       "put_sub": 0
     },
     "AXTI": {
-      "call_add": 6948,
-      "put_add": 1620,
+      "call_add": 8340,
+      "put_add": 2691,
       "call_sub": 0,
       "put_sub": -100
     },
     "BA": {
-      "call_add": 9928,
-      "put_add": 14516,
-      "call_sub": -798,
-      "put_sub": -190
+      "call_add": 14038,
+      "put_add": 21029,
+      "call_sub": -1058,
+      "put_sub": -193
     },
     "BABA": {
-      "call_add": 8220,
-      "put_add": 3863,
-      "call_sub": -1854,
+      "call_add": 21513,
+      "put_add": 6622,
+      "call_sub": -4459,
       "put_sub": -926
     },
     "BBY": {
-      "call_add": 1243,
-      "put_add": 1557,
-      "call_sub": -482,
-      "put_sub": -336
+      "call_add": 3130,
+      "put_add": 2335,
+      "call_sub": -1383,
+      "put_sub": -338
     },
     "BIDU": {
-      "call_add": 1490,
-      "put_add": 5411,
+      "call_add": 1825,
+      "put_add": 6828,
       "call_sub": 0,
-      "put_sub": -460
+      "put_sub": 0
     },
     "BKNG": {
-      "call_add": 6074,
-      "put_add": 3867,
+      "call_add": 6676,
+      "put_add": 4722,
       "call_sub": 0,
       "put_sub": 0
     },
     "BN": {
-      "call_add": 0,
+      "call_add": 184,
       "put_add": 322,
       "call_sub": 0,
       "put_sub": 0
     },
     "BULL": {
-      "call_add": 3517,
-      "put_add": 1614,
+      "call_add": 13207,
+      "put_add": 2722,
       "call_sub": -771,
-      "put_sub": 0
+      "put_sub": -641
     },
     "CAVA": {
-      "call_add": 187,
-      "put_add": 0,
+      "call_add": 1888,
+      "put_add": 567,
       "call_sub": 0,
       "put_sub": 0
     },
     "CB": {
-      "call_add": 39,
+      "call_add": 185,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "CDNS": {
-      "call_add": 616,
-      "put_add": 962,
+      "call_add": 954,
+      "put_add": 1592,
       "call_sub": 0,
       "put_sub": 0
     },
     "CEG": {
-      "call_add": 4730,
-      "put_add": 964,
+      "call_add": 5712,
+      "put_add": 1047,
       "call_sub": 0,
       "put_sub": 0
     },
     "CHPT": {
       "call_add": 302,
-      "put_add": 140,
+      "put_add": 150,
       "call_sub": 0,
-      "put_sub": 0
+      "put_sub": -250
     },
     "CIEN": {
       "call_add": 0,
@@ -3259,49 +3259,49 @@
     },
     "CLS": {
       "call_add": 830,
-      "put_add": 942,
+      "put_add": 1606,
       "call_sub": 0,
       "put_sub": 0
     },
     "CMCSA": {
-      "call_add": 1881,
-      "put_add": 2075,
+      "call_add": 2767,
+      "put_add": 2176,
       "call_sub": 0,
       "put_sub": 0
     },
     "COHR": {
-      "call_add": 667,
-      "put_add": 5302,
+      "call_add": 1371,
+      "put_add": 7756,
       "call_sub": 0,
       "put_sub": 0
     },
     "COIN": {
-      "call_add": 5659,
-      "put_add": 1491,
+      "call_add": 30544,
+      "put_add": 15482,
       "call_sub": 0,
       "put_sub": 0
     },
     "COST": {
-      "call_add": 5507,
-      "put_add": 259,
+      "call_add": 6730,
+      "put_add": 1519,
       "call_sub": -145,
       "put_sub": 0
     },
     "CPRT": {
-      "call_add": 506,
-      "put_add": 0,
+      "call_add": 574,
+      "put_add": 591,
       "call_sub": 0,
       "put_sub": 0
     },
     "CRCL": {
-      "call_add": 6519,
-      "put_add": 9164,
-      "call_sub": -598,
+      "call_add": 22690,
+      "put_add": 14834,
+      "call_sub": -1520,
       "put_sub": 0
     },
     "CRDO": {
-      "call_add": 3141,
-      "put_add": 5074,
+      "call_add": 3850,
+      "put_add": 6707,
       "call_sub": 0,
       "put_sub": 0
     },
@@ -3312,463 +3312,463 @@
       "put_sub": 0
     },
     "CRWV": {
-      "call_add": 19701,
-      "put_add": 49306,
+      "call_add": 27774,
+      "put_add": 56014,
       "call_sub": 0,
       "put_sub": 0
     },
     "CRWD": {
-      "call_add": 8493,
-      "put_add": 9537,
+      "call_add": 20942,
+      "put_add": 28930,
       "call_sub": 0,
-      "put_sub": -642
+      "put_sub": 0
     },
     "CSCO": {
-      "call_add": 12647,
-      "put_add": 8781,
-      "call_sub": 0,
+      "call_add": 22163,
+      "put_add": 12311,
+      "call_sub": -839,
       "put_sub": -526
     },
     "CVNA": {
-      "call_add": 3922,
-      "put_add": 29360,
+      "call_add": 12378,
+      "put_add": 50979,
       "call_sub": 0,
       "put_sub": -5091
     },
     "DAL": {
-      "call_add": 685,
-      "put_add": 2685,
+      "call_add": 7543,
+      "put_add": 9357,
       "call_sub": 0,
       "put_sub": 0
     },
     "DDOG": {
-      "call_add": 63,
-      "put_add": 958,
-      "call_sub": -71,
+      "call_add": 2779,
+      "put_add": 5660,
+      "call_sub": -287,
       "put_sub": 0
     },
     "DE": {
-      "call_add": 107,
-      "put_add": 0,
+      "call_add": 286,
+      "put_add": 985,
       "call_sub": 0,
       "put_sub": 0
     },
     "DECK": {
-      "call_add": 179,
-      "put_add": 0,
+      "call_add": 966,
+      "put_add": 264,
       "call_sub": 0,
       "put_sub": 0
     },
     "DELL": {
-      "call_add": 473,
-      "put_add": 3131,
+      "call_add": 6064,
+      "put_add": 8348,
       "call_sub": 0,
       "put_sub": 0
     },
     "DG": {
-      "call_add": 915,
-      "put_add": 239,
+      "call_add": 927,
+      "put_add": 352,
       "call_sub": 0,
       "put_sub": 0
     },
     "DIS": {
-      "call_add": 2221,
-      "put_add": 5087,
+      "call_add": 5242,
+      "put_add": 9734,
       "call_sub": 0,
       "put_sub": 0
     },
     "DOCU": {
-      "call_add": 103,
-      "put_add": 0,
+      "call_add": 1320,
+      "put_add": 145,
       "call_sub": 0,
       "put_sub": 0
     },
     "ELF": {
-      "call_add": 476,
-      "put_add": 863,
+      "call_add": 574,
+      "put_add": 1523,
       "call_sub": 0,
       "put_sub": 0
     },
     "ENVX": {
-      "call_add": 1479,
-      "put_add": 677,
+      "call_add": 1832,
+      "put_add": 1061,
       "call_sub": -188,
-      "put_sub": -225
+      "put_sub": -229
     },
     "ETN": {
-      "call_add": 439,
-      "put_add": 747,
+      "call_add": 633,
+      "put_add": 1821,
       "call_sub": -122,
       "put_sub": 0
     },
     "FCEL": {
-      "call_add": 8566,
-      "put_add": 6258,
+      "call_add": 11121,
+      "put_add": 7305,
       "call_sub": -165,
       "put_sub": -499
     },
     "FIG": {
-      "call_add": 123297,
-      "put_add": 4935,
+      "call_add": 129521,
+      "put_add": 8714,
       "call_sub": -465,
-      "put_sub": 0
+      "put_sub": -107
     },
     "FIS": {
-      "call_add": 442,
+      "call_add": 537,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "FLEX": {
-      "call_add": 1446,
-      "put_add": 3119,
+      "call_add": 2943,
+      "put_add": 3318,
       "call_sub": 0,
-      "put_sub": -959
+      "put_sub": -995
     },
     "FUTU": {
-      "call_add": 458,
-      "put_add": 1391,
+      "call_add": 583,
+      "put_add": 6911,
       "call_sub": 0,
       "put_sub": 0
     },
     "GEV": {
       "call_add": 2574,
-      "put_add": 2097,
+      "put_add": 2199,
       "call_sub": 0,
       "put_sub": 0
     },
     "GFS": {
-      "call_add": 127,
-      "put_add": 1808,
+      "call_add": 235,
+      "put_add": 2369,
       "call_sub": 0,
       "put_sub": -688
     },
     "GLW": {
-      "call_add": 13013,
-      "put_add": 17777,
+      "call_add": 15295,
+      "put_add": 22333,
       "call_sub": 0,
       "put_sub": 0
     },
     "GNRC": {
-      "call_add": 334,
+      "call_add": 484,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "GOOG": {
-      "call_add": 18548,
-      "put_add": 9368,
+      "call_add": 28652,
+      "put_add": 10073,
       "call_sub": 0,
       "put_sub": 0
     },
     "GOOGL": {
-      "call_add": 19325,
-      "put_add": 21998,
+      "call_add": 39651,
+      "put_add": 35608,
       "call_sub": -644,
-      "put_sub": 0
+      "put_sub": -163
     },
     "GRAB": {
-      "call_add": 2794,
-      "put_add": 727,
+      "call_add": 3137,
+      "put_add": 1005,
       "call_sub": 0,
       "put_sub": 0
     },
     "HD": {
-      "call_add": 6366,
-      "put_add": 7168,
-      "call_sub": 0,
+      "call_add": 10263,
+      "put_add": 7561,
+      "call_sub": -277,
       "put_sub": 0
     },
     "HIMS": {
-      "call_add": 6058,
-      "put_add": 1504,
+      "call_add": 24018,
+      "put_add": 21019,
       "call_sub": -2169,
       "put_sub": 0
     },
     "HOOD": {
-      "call_add": 27201,
-      "put_add": 25323,
+      "call_add": 72669,
+      "put_add": 55581,
       "call_sub": 0,
       "put_sub": 0
     },
     "HPE": {
-      "call_add": 3731,
-      "put_add": 5457,
+      "call_add": 7690,
+      "put_add": 8449,
       "call_sub": 0,
       "put_sub": 0
     },
     "HSAI": {
-      "call_add": 504,
+      "call_add": 506,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "HTZ": {
-      "call_add": 4263,
-      "put_add": 2287,
+      "call_add": 5448,
+      "put_add": 2724,
       "call_sub": 0,
-      "put_sub": -1123
+      "put_sub": -1319
     },
     "HUT": {
-      "call_add": 2817,
-      "put_add": 2750,
+      "call_add": 4405,
+      "put_add": 10662,
       "call_sub": 0,
       "put_sub": 0
     },
     "IGV": {
-      "call_add": 28193,
-      "put_add": 10135,
+      "call_add": 30867,
+      "put_add": 43513,
       "call_sub": 0,
-      "put_sub": -268
+      "put_sub": -18511
     },
     "INTC": {
-      "call_add": 44016,
-      "put_add": 64952,
-      "call_sub": -6738,
-      "put_sub": -229
+      "call_add": 75925,
+      "put_add": 139297,
+      "call_sub": -8545,
+      "put_sub": -763
     },
     "INTU": {
-      "call_add": 5793,
-      "put_add": 3555,
+      "call_add": 6012,
+      "put_add": 3564,
       "call_sub": 0,
       "put_sub": 0
     },
     "IONQ": {
-      "call_add": 23448,
-      "put_add": 33801,
-      "call_sub": -10280,
-      "put_sub": -1954
+      "call_add": 25291,
+      "put_add": 36073,
+      "call_sub": -10282,
+      "put_sub": -2748
     },
     "ISRG": {
-      "call_add": 58,
-      "put_add": 228,
+      "call_add": 115,
+      "put_add": 837,
       "call_sub": 0,
       "put_sub": 0
     },
     "JBL": {
       "call_add": 0,
-      "put_add": 1530,
+      "put_add": 1533,
       "call_sub": 0,
       "put_sub": -733
     },
     "JD": {
-      "call_add": 3152,
-      "put_add": 1849,
+      "call_add": 34168,
+      "put_add": 2941,
       "call_sub": -2948,
       "put_sub": 0
     },
     "JPM": {
-      "call_add": 10047,
-      "put_add": 25474,
-      "call_sub": 0,
+      "call_add": 18395,
+      "put_add": 30586,
+      "call_sub": -1063,
       "put_sub": -529
     },
     "KEYS": {
-      "call_add": 110,
+      "call_add": 112,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "KHC": {
-      "call_add": 326,
-      "put_add": 265,
+      "call_add": 4583,
+      "put_add": 1514,
       "call_sub": 0,
-      "put_sub": -571
+      "put_sub": -581
     },
     "KLAC": {
-      "call_add": 3584,
-      "put_add": 2752,
+      "call_add": 3600,
+      "put_add": 2881,
       "call_sub": 0,
       "put_sub": 0
     },
     "KO": {
-      "call_add": 12532,
-      "put_add": 4198,
-      "call_sub": -726,
+      "call_add": 32045,
+      "put_add": 7288,
+      "call_sub": -4181,
       "put_sub": 0
     },
     "KTOS": {
-      "call_add": 303,
-      "put_add": 2902,
+      "call_add": 781,
+      "put_add": 3034,
       "call_sub": 0,
       "put_sub": 0
     },
     "LABU": {
-      "call_add": 0,
-      "put_add": 260,
+      "call_add": 210,
+      "put_add": 1286,
       "call_sub": 0,
       "put_sub": 0
     },
     "LION": {
-      "call_add": 801,
+      "call_add": 2646,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "LITE": {
-      "call_add": 0,
-      "put_add": 5667,
+      "call_add": 489,
+      "put_add": 5772,
       "call_sub": 0,
       "put_sub": 0
     },
     "LLY": {
-      "call_add": 1196,
-      "put_add": 728,
-      "call_sub": -588,
+      "call_add": 4822,
+      "put_add": 4439,
+      "call_sub": -867,
       "put_sub": 0
     },
     "LOW": {
-      "call_add": 14270,
-      "put_add": 2431,
+      "call_add": 15496,
+      "put_add": 3565,
       "call_sub": 0,
       "put_sub": 0
     },
     "LRCX": {
-      "call_add": 11444,
-      "put_add": 39738,
+      "call_add": 12776,
+      "put_add": 40284,
       "call_sub": 0,
       "put_sub": 0
     },
     "LULU": {
-      "call_add": 7910,
-      "put_add": 5076,
-      "call_sub": -74,
+      "call_add": 10731,
+      "put_add": 5553,
+      "call_sub": 0,
       "put_sub": 0
     },
     "LUMN": {
-      "call_add": 0,
-      "put_add": 339,
+      "call_add": 455,
+      "put_add": 410,
       "call_sub": 0,
       "put_sub": 0
     },
     "LUNR": {
-      "call_add": 3206,
-      "put_add": 2517,
+      "call_add": 5454,
+      "put_add": 9809,
       "call_sub": 0,
-      "put_sub": -744
+      "put_sub": -748
     },
     "M": {
-      "call_add": 1313,
-      "put_add": 545,
+      "call_add": 2600,
+      "put_add": 1255,
       "call_sub": 0,
       "put_sub": 0
     },
     "MAGS": {
-      "call_add": 2428,
-      "put_add": 3808,
+      "call_add": 5491,
+      "put_add": 4526,
       "call_sub": 0,
       "put_sub": 0
     },
     "MCD": {
-      "call_add": 1624,
-      "put_add": 1077,
-      "call_sub": 0,
-      "put_sub": -111
+      "call_add": 4245,
+      "put_add": 3349,
+      "call_sub": -387,
+      "put_sub": -113
     },
     "MDB": {
-      "call_add": 213,
-      "put_add": 1105,
+      "call_add": 637,
+      "put_add": 3183,
       "call_sub": 0,
       "put_sub": 0
     },
     "MDT": {
-      "call_add": 324,
-      "put_add": 504,
+      "call_add": 1256,
+      "put_add": 782,
       "call_sub": 0,
       "put_sub": 0
     },
     "META": {
-      "call_add": 33634,
-      "put_add": 20230,
-      "call_sub": -2019,
-      "put_sub": -139
+      "call_add": 116199,
+      "put_add": 36279,
+      "call_sub": -20753,
+      "put_sub": 0
     },
     "MP": {
-      "call_add": 3271,
-      "put_add": 4493,
+      "call_add": 5236,
+      "put_add": 6249,
       "call_sub": 0,
-      "put_sub": -1159
+      "put_sub": -1160
     },
     "MRNA": {
-      "call_add": 2213,
-      "put_add": 4572,
+      "call_add": 48205,
+      "put_add": 20215,
       "call_sub": 0,
       "put_sub": 0
     },
     "MRVL": {
-      "call_add": 26602,
-      "put_add": 39172,
-      "call_sub": -8614,
-      "put_sub": -236
+      "call_add": 36826,
+      "put_add": 51158,
+      "call_sub": -9781,
+      "put_sub": 0
     },
     "MSTR": {
-      "call_add": 12537,
-      "put_add": 26425,
+      "call_add": 42950,
+      "put_add": 43278,
       "call_sub": 0,
       "put_sub": 0
     },
     "MSFT": {
-      "call_add": 67893,
-      "put_add": 17675,
-      "call_sub": -3550,
-      "put_sub": -1630
+      "call_add": 118914,
+      "put_add": 28266,
+      "call_sub": -4230,
+      "put_sub": -1786
     },
     "MTZ": {
-      "call_add": 3240,
+      "call_add": 3243,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "NAIL": {
-      "call_add": 140,
-      "put_add": 591,
+      "call_add": 148,
+      "put_add": 1208,
       "call_sub": 0,
       "put_sub": 0
     },
     "NBIS": {
-      "call_add": 18398,
-      "put_add": 8766,
-      "call_sub": -3442,
+      "call_add": 29227,
+      "put_add": 12288,
+      "call_sub": -3521,
       "put_sub": 0
     },
     "NET": {
-      "call_add": 1996,
-      "put_add": 3205,
-      "call_sub": 0,
+      "call_add": 10353,
+      "put_add": 9017,
+      "call_sub": -706,
       "put_sub": 0
     },
     "NFLX": {
-      "call_add": 33772,
-      "put_add": 34601,
-      "call_sub": -1823,
-      "put_sub": -1231
+      "call_add": 77462,
+      "put_add": 102693,
+      "call_sub": -6847,
+      "put_sub": -1153
     },
     "NIO": {
-      "call_add": 16772,
-      "put_add": 1549,
-      "call_sub": 0,
+      "call_add": 22177,
+      "put_add": 3392,
+      "call_sub": -1234,
       "put_sub": 0
     },
     "NKE": {
-      "call_add": 2491,
-      "put_add": 8640,
-      "call_sub": -1228,
-      "put_sub": 0
+      "call_add": 28276,
+      "put_add": 15265,
+      "call_sub": -3143,
+      "put_sub": -1945
     },
     "NOK": {
-      "call_add": 39308,
-      "put_add": 19911,
-      "call_sub": -4079,
+      "call_add": 56366,
+      "put_add": 34422,
+      "call_sub": -6732,
       "put_sub": -613
     },
     "NOW": {
-      "call_add": 44912,
-      "put_add": 14017,
-      "call_sub": -2330,
+      "call_add": 48867,
+      "put_add": 17734,
+      "call_sub": -2934,
       "put_sub": 0
     },
     "NRG": {
-      "call_add": 447,
+      "call_add": 454,
       "put_add": 215,
       "call_sub": 0,
       "put_sub": 0
@@ -3780,182 +3780,182 @@
       "put_sub": 0
     },
     "NU": {
-      "call_add": 3751,
-      "put_add": 215,
+      "call_add": 11983,
+      "put_add": 409,
       "call_sub": 0,
       "put_sub": 0
     },
     "NUGT": {
-      "call_add": 48,
-      "put_add": 80,
+      "call_add": 70,
+      "put_add": 86,
       "call_sub": 0,
       "put_sub": 0
     },
     "NVO": {
-      "call_add": 744,
-      "put_add": 3864,
-      "call_sub": -1717,
+      "call_add": 5388,
+      "put_add": 14612,
+      "call_sub": -1804,
       "put_sub": 0
     },
     "NVDA": {
-      "call_add": 165397,
-      "put_add": 358056,
-      "call_sub": -23219,
-      "put_sub": -2375
+      "call_add": 357088,
+      "put_add": 430506,
+      "call_sub": -45320,
+      "put_sub": -13545
     },
     "NVTS": {
-      "call_add": 4978,
-      "put_add": 876,
+      "call_add": 18385,
+      "put_add": 3728,
       "call_sub": 0,
       "put_sub": 0
     },
     "OKLO": {
-      "call_add": 5541,
-      "put_add": 8173,
+      "call_add": 11452,
+      "put_add": 9835,
       "call_sub": -1024,
       "put_sub": 0
     },
     "ON": {
-      "call_add": 1525,
-      "put_add": 10463,
+      "call_add": 2539,
+      "put_add": 11323,
       "call_sub": 0,
       "put_sub": 0
     },
     "ONDS": {
-      "call_add": 24771,
-      "put_add": 17273,
-      "call_sub": -685,
-      "put_sub": -11166
+      "call_add": 43756,
+      "put_add": 38651,
+      "call_sub": -813,
+      "put_sub": -16658
     },
     "ORCL": {
-      "call_add": 56397,
-      "put_add": 77394,
+      "call_add": 77252,
+      "put_add": 89152,
       "call_sub": 0,
-      "put_sub": -591
+      "put_sub": 0
     },
     "OXY": {
-      "call_add": 15483,
-      "put_add": 7363,
-      "call_sub": -6669,
+      "call_add": 23634,
+      "put_add": 7867,
+      "call_sub": -7227,
       "put_sub": 0
     },
     "PANW": {
-      "call_add": 1726,
-      "put_add": 1801,
+      "call_add": 1799,
+      "put_add": 2575,
       "call_sub": 0,
       "put_sub": 0
     },
     "PATH": {
-      "call_add": 6803,
-      "put_add": 866,
-      "call_sub": 0,
+      "call_add": 11950,
+      "put_add": 1872,
+      "call_sub": -69,
       "put_sub": 0
     },
     "PBR": {
-      "call_add": 12922,
-      "put_add": 992,
-      "call_sub": -731,
+      "call_add": 16834,
+      "put_add": 9868,
+      "call_sub": -831,
       "put_sub": 0
     },
     "PEP": {
-      "call_add": 3983,
-      "put_add": 3658,
+      "call_add": 7513,
+      "put_add": 7210,
       "call_sub": 0,
       "put_sub": 0
     },
     "PFE": {
-      "call_add": 14407,
-      "put_add": 10213,
+      "call_add": 21738,
+      "put_add": 13597,
       "call_sub": -1055,
-      "put_sub": -7348
+      "put_sub": -9272
     },
     "PG": {
-      "call_add": 4902,
-      "put_add": 1960,
-      "call_sub": -165,
+      "call_add": 21539,
+      "put_add": 2557,
+      "call_sub": -5319,
       "put_sub": -598
     },
     "PL": {
-      "call_add": 1837,
-      "put_add": 155,
-      "call_sub": 0,
+      "call_add": 4159,
+      "put_add": 2894,
+      "call_sub": -1534,
       "put_sub": 0
     },
     "PLTR": {
-      "call_add": 83441,
-      "put_add": 21484,
-      "call_sub": -1827,
-      "put_sub": -1124
+      "call_add": 132574,
+      "put_add": 30481,
+      "call_sub": -2660,
+      "put_sub": -1915
     },
     "POET": {
-      "call_add": 5238,
-      "put_add": 987,
-      "call_sub": -7726,
-      "put_sub": -2295
+      "call_add": 7233,
+      "put_add": 1941,
+      "call_sub": -7734,
+      "put_sub": -2322
     },
     "POWL": {
       "call_add": 0,
-      "put_add": 126,
+      "put_add": 127,
       "call_sub": 0,
       "put_sub": 0
     },
     "PSIX": {
-      "call_add": 142,
+      "call_add": 146,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "PVH": {
-      "call_add": 0,
-      "put_add": 50,
+      "call_add": 74,
+      "put_add": 97,
       "call_sub": 0,
       "put_sub": 0
     },
     "PWR": {
-      "call_add": 0,
-      "put_add": 437,
+      "call_add": 155,
+      "put_add": 2105,
       "call_sub": 0,
       "put_sub": 0
     },
     "PYPL": {
-      "call_add": 49073,
-      "put_add": 5339,
-      "call_sub": -5546,
-      "put_sub": 0
+      "call_add": 75372,
+      "put_add": 10345,
+      "call_sub": -6983,
+      "put_sub": -146
     },
     "QBTS": {
-      "call_add": 7424,
-      "put_add": 10193,
+      "call_add": 13158,
+      "put_add": 15924,
       "call_sub": 0,
       "put_sub": 0
     },
     "QCOM": {
-      "call_add": 4331,
-      "put_add": 10086,
+      "call_add": 12025,
+      "put_add": 18247,
       "call_sub": -226,
       "put_sub": -739
     },
     "QSR": {
-      "call_add": 1553,
+      "call_add": 2129,
       "put_add": 0,
-      "call_sub": -1420,
+      "call_sub": -3445,
       "put_sub": 0
     },
     "QUBT": {
-      "call_add": 4771,
-      "put_add": 4368,
+      "call_add": 8042,
+      "put_add": 9269,
       "call_sub": 0,
       "put_sub": -9365
     },
     "RGTI": {
-      "call_add": 8003,
-      "put_add": 6886,
+      "call_add": 12149,
+      "put_add": 11264,
       "call_sub": 0,
       "put_sub": 0
     },
     "RKLB": {
-      "call_add": 9011,
-      "put_add": 14492,
+      "call_add": 14272,
+      "put_add": 20362,
       "call_sub": 0,
       "put_sub": -3982
     },
@@ -3973,86 +3973,86 @@
     },
     "ROST": {
       "call_add": 0,
-      "put_add": 245,
+      "put_add": 470,
       "call_sub": 0,
       "put_sub": -6551
     },
     "S": {
-      "call_add": 986,
-      "put_add": 107,
-      "call_sub": 0,
+      "call_add": 8953,
+      "put_add": 259,
+      "call_sub": -1316,
       "put_sub": 0
     },
     "SBLK": {
-      "call_add": 816,
+      "call_add": 817,
       "put_add": 0,
-      "call_sub": 0,
+      "call_sub": -204,
       "put_sub": -82
     },
     "SE": {
-      "call_add": 1149,
+      "call_add": 2598,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "SEDG": {
-      "call_add": 294,
-      "put_add": 4685,
+      "call_add": 642,
+      "put_add": 5645,
       "call_sub": 0,
       "put_sub": -1010
     },
     "SHOP": {
-      "call_add": 6145,
-      "put_add": 3074,
+      "call_add": 9593,
+      "put_add": 12686,
       "call_sub": 0,
       "put_sub": 0
     },
     "SIG": {
-      "call_add": 501,
+      "call_add": 757,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "SIMO": {
-      "call_add": 301,
+      "call_add": 304,
       "put_add": 635,
       "call_sub": 0,
       "put_sub": 0
     },
     "SNOW": {
-      "call_add": 5636,
-      "put_add": 1697,
+      "call_add": 11285,
+      "put_add": 2679,
       "call_sub": 0,
-      "put_sub": 0
+      "put_sub": -216
     },
     "SNPS": {
-      "call_add": 0,
+      "call_add": 484,
       "put_add": 525,
       "call_sub": 0,
       "put_sub": 0
     },
     "SOUN": {
-      "call_add": 9459,
-      "put_add": 1791,
+      "call_add": 11513,
+      "put_add": 3072,
       "call_sub": 0,
-      "put_sub": -229
+      "put_sub": -285
     },
     "SOXL": {
-      "call_add": 8488,
-      "put_add": 26662,
+      "call_add": 8950,
+      "put_add": 26866,
       "call_sub": 0,
       "put_sub": 0
     },
     "SPOT": {
-      "call_add": 237,
-      "put_add": 525,
+      "call_add": 615,
+      "put_add": 1626,
       "call_sub": 0,
       "put_sub": 0
     },
     "SQQQ": {
-      "call_add": 31290,
-      "put_add": 3930,
-      "call_sub": -2167,
+      "call_add": 59930,
+      "put_add": 6082,
+      "call_sub": 0,
       "put_sub": 0
     },
     "STX": {
@@ -4062,104 +4062,104 @@
       "put_sub": 0
     },
     "T": {
-      "call_add": 6312,
-      "put_add": 2683,
-      "call_sub": -68,
-      "put_sub": -1759
+      "call_add": 11491,
+      "put_add": 4110,
+      "call_sub": -938,
+      "put_sub": -22535
     },
     "TDG": {
-      "call_add": 2932,
+      "call_add": 2935,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "TEM": {
-      "call_add": 2223,
-      "put_add": 614,
+      "call_add": 8363,
+      "put_add": 6966,
       "call_sub": 0,
       "put_sub": 0
     },
     "TER": {
       "call_add": 0,
-      "put_add": 1286,
-      "call_sub": 0,
+      "put_add": 2097,
+      "call_sub": -1123,
       "put_sub": 0
     },
     "TJX": {
-      "call_add": 3063,
-      "put_add": 623,
+      "call_add": 4181,
+      "put_add": 746,
       "call_sub": 0,
       "put_sub": 0
     },
     "TLN": {
-      "call_add": 793,
+      "call_add": 964,
       "put_add": 303,
       "call_sub": 0,
       "put_sub": 0
     },
     "TLT": {
-      "call_add": 77586,
-      "put_add": 74703,
-      "call_sub": -4644,
-      "put_sub": -13762
+      "call_add": 161178,
+      "put_add": 97121,
+      "call_sub": -8618,
+      "put_sub": -21480
     },
     "TQQQ": {
-      "call_add": 27247,
-      "put_add": 100956,
+      "call_add": 38230,
+      "put_add": 112948,
       "call_sub": 0,
-      "put_sub": 0
+      "put_sub": -405
     },
     "TSEM": {
-      "call_add": 1478,
-      "put_add": 1429,
+      "call_add": 1486,
+      "put_add": 3018,
       "call_sub": 0,
       "put_sub": 0
     },
     "TSLA": {
-      "call_add": 60225,
-      "put_add": 111498,
+      "call_add": 75119,
+      "put_add": 120925,
       "call_sub": 0,
       "put_sub": -1500
     },
     "TTMI": {
-      "call_add": 131,
+      "call_add": 1131,
       "put_add": 321,
       "call_sub": 0,
       "put_sub": -447
     },
     "TTWO": {
-      "call_add": 1053,
-      "put_add": 766,
+      "call_add": 4813,
+      "put_add": 5570,
       "call_sub": 0,
       "put_sub": 0
     },
     "UAA": {
-      "call_add": 99,
+      "call_add": 105,
       "put_add": 0,
       "call_sub": 0,
       "put_sub": 0
     },
     "UBER": {
-      "call_add": 2993,
-      "put_add": 8234,
+      "call_add": 8744,
+      "put_add": 10343,
       "call_sub": 0,
-      "put_sub": -1590
+      "put_sub": -1646
     },
     "ULTA": {
-      "call_add": 313,
-      "put_add": 201,
+      "call_add": 319,
+      "put_add": 203,
       "call_sub": 0,
       "put_sub": 0
     },
     "UPRO": {
-      "call_add": 0,
-      "put_add": 157,
+      "call_add": 557,
+      "put_add": 229,
       "call_sub": 0,
       "put_sub": 0
     },
     "UPST": {
-      "call_add": 2328,
-      "put_add": 7055,
+      "call_add": 5508,
+      "put_add": 10970,
       "call_sub": 0,
       "put_sub": -445
     },
@@ -4171,117 +4171,171 @@
     },
     "VEEV": {
       "call_add": 0,
-      "put_add": 118,
+      "put_add": 138,
       "call_sub": 0,
-      "put_sub": -64
+      "put_sub": -73
     },
     "VFC": {
-      "call_add": 1175,
-      "put_add": 0,
+      "call_add": 2315,
+      "put_add": 567,
       "call_sub": 0,
       "put_sub": 0
     },
     "VGT": {
-      "call_add": 220,
-      "put_add": 1187,
+      "call_add": 268,
+      "put_add": 1191,
       "call_sub": 0,
       "put_sub": 0
     },
     "V": {
-      "call_add": 11881,
-      "put_add": 1349,
-      "call_sub": -845,
+      "call_add": 14039,
+      "put_add": 1893,
+      "call_sub": -155,
       "put_sub": 0
     },
     "VOO": {
-      "call_add": 86,
-      "put_add": 0,
+      "call_add": 586,
+      "put_add": 140,
       "call_sub": 0,
       "put_sub": 0
     },
     "VRT": {
-      "call_add": 1368,
-      "put_add": 19509,
+      "call_add": 2427,
+      "put_add": 21149,
       "call_sub": 0,
       "put_sub": 0
     },
     "VST": {
-      "call_add": 3049,
-      "put_add": 3042,
-      "call_sub": -546,
+      "call_add": 4288,
+      "put_add": 3236,
+      "call_sub": -547,
       "put_sub": 0
     },
     "WDAY": {
-      "call_add": 2997,
-      "put_add": 0,
+      "call_add": 3872,
+      "put_add": 170,
       "call_sub": 0,
       "put_sub": 0
     },
     "WDC": {
-      "call_add": 2231,
+      "call_add": 2300,
       "put_add": 5002,
       "call_sub": 0,
       "put_sub": 0
     },
     "WEN": {
-      "call_add": 2875,
-      "put_add": 129475,
-      "call_sub": -1103,
+      "call_add": 7104,
+      "put_add": 130847,
+      "call_sub": -1096,
       "put_sub": 0
     },
     "WFC": {
-      "call_add": 17047,
-      "put_add": 21183,
+      "call_add": 30187,
+      "put_add": 27781,
       "call_sub": -846,
-      "put_sub": -2623
+      "put_sub": -3893
     },
     "WMT": {
-      "call_add": 9017,
-      "put_add": 1996,
-      "call_sub": 0,
+      "call_add": 15934,
+      "put_add": 5084,
+      "call_sub": -12287,
       "put_sub": 0
     },
     "WOLF": {
-      "call_add": 1207,
-      "put_add": 15883,
+      "call_add": 1804,
+      "put_add": 24865,
       "call_sub": 0,
-      "put_sub": -822
+      "put_sub": 0
     },
     "WULF": {
-      "call_add": 45805,
-      "put_add": 18458,
-      "call_sub": -22604,
-      "put_sub": -899
+      "call_add": 70216,
+      "put_add": 83017,
+      "call_sub": -18985,
+      "put_sub": -13428
     },
     "ZIM": {
-      "call_add": 153,
-      "put_add": 99,
+      "call_add": 236,
+      "put_add": 1374,
       "call_sub": 0,
       "put_sub": 0
     },
     "ZM": {
-      "call_add": 8104,
-      "put_add": 449,
+      "call_add": 8300,
+      "put_add": 1772,
       "call_sub": -84,
       "put_sub": 0
     },
     "ZS": {
-      "call_add": 5184,
-      "put_add": 1994,
+      "call_add": 7754,
+      "put_add": 4135,
       "call_sub": 0,
       "put_sub": 0
     },
     "MXL": {
-      "call_add": 5478,
-      "put_add": 260,
-      "call_sub": -433,
+      "call_add": 5490,
+      "put_add": 335,
+      "call_sub": -435,
       "put_sub": 0
     },
     "DRAM": {
-      "call_add": 69229,
-      "put_add": 178413,
+      "call_add": 78830,
+      "put_add": 195143,
       "call_sub": 0,
       "put_sub": -397
+    },
+    "CRS": {
+      "call_add": 0,
+      "put_add": 1000,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "FLO": {
+      "call_add": 132,
+      "put_add": 0,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "GOSS": {
+      "call_add": 60,
+      "put_add": 0,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "HAS": {
+      "call_add": 1296,
+      "put_add": 0,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "MCK": {
+      "call_add": 215,
+      "put_add": 0,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "PACS": {
+      "call_add": 100,
+      "put_add": 0,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "TOL": {
+      "call_add": 0,
+      "put_add": 419,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "URBN": {
+      "call_add": 200,
+      "put_add": 0,
+      "call_sub": 0,
+      "put_sub": 0
+    },
+    "MUU": {
+      "call_add": 0,
+      "put_add": 518,
+      "call_sub": 0,
+      "put_sub": 0
     }
   }
 }
