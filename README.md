@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `spx_stock_flow_latest.json` | 个股期权流量报告 | 2026-07-14 09:53 | [下载](SPXalerts/20260714/spx_stock_flow_latest.json) | {} |
 | `spx_0dte_20260714_0952.json` | SPX 0DTE信号 | 2026-07-14 09:52 | [下载](SPXalerts/20260714/spx_0dte_20260714_0952.json) | {"signals": 90, "timestamp_et": "2026-07-14 09:52 ET"} |
 | `claude_analysis_095108.json` | Claude深度分析 | 2026-07-14 09:51 | [下载](ClaudeAnalysis/20260714/claude_analysis_095108.json) | {"generated_at": "2026-07-14T09:51:08.435469-04:00", "generated_at_display": "20 |
 | `spx_ndte_report_20260714_0950.json` | SPX 非0DTE信号 | 2026-07-14 09:50 | [下载](SPXalerts/20260714/spx_ndte_report_20260714_0950.json) | {"label": "非0DTE · 09:50 ET", "signals": 1150, "direction": "偏多 🟢", "net_premium |
