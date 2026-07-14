@@ -99,28 +99,28 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260714/spx_gamma_latest.json",
-    "upload_time": "2026-07-14 12:51",
+    "upload_time": "2026-07-14 12:49",
     "summary": {
-      "ts": "12:51",
-      "ts_full": "2026-07-14T12:51:05.516865-04:00",
+      "ts": "12:49",
+      "ts_full": "2026-07-14T12:49:39.746841-04:00",
       "symbol": "SPX",
-      "spot": 7540.13,
+      "spot": 7538.13,
       "day_high": 7557.44,
       "day_low": 7513.23,
       "day_open": 7536.7,
       "prev_close": null,
       "total_volume": 1155025917,
-      "ovwap": 7533.16,
+      "ovwap": 7532.96,
       "ovwap_day_high": 7536.11,
       "ovwap_day_high_spot": 7541.91,
       "ovwap_day_low": 7514.45,
       "ovwap_day_low_spot": 7524.98,
-      "net_gex": 80540312.0,
-      "net_gex_b": 0.0805,
+      "net_gex": 65744062.0,
+      "net_gex_b": 0.0657,
       "zero_gamma": 7528.2,
       "gamma_wall_call": 7550.0,
       "gamma_wall_put": 7525.0,
-      "dte_days": 0.1312
+      "dte_days": 0.1322
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260714/spx_gamma_latest.json"
   },
@@ -153,21 +153,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260714/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_124053.json",
-    "github_path": "ClaudeAnalysis/20260714/claude_analysis_124053.json",
-    "upload_time": "2026-07-14 12:40",
+    "filename": "claude_analysis_125104.json",
+    "github_path": "ClaudeAnalysis/20260714/claude_analysis_125104.json",
+    "upload_time": "2026-07-14 12:51",
     "summary": {
-      "generated_at": "2026-07-14T12:40:53.009070-04:00",
-      "generated_at_display": "2026-07-14 12:40:53 ET",
+      "generated_at": "2026-07-14T12:51:04.615199-04:00",
+      "generated_at_display": "2026-07-14 12:51:04 ET",
       "category": "daily",
-      "text": "⑤【收盘预测】\n\n**【原始分析法】**\nSPX预测：$7,535–$7,545（0DTE大额LONG CALL从7460铺到7575，量方向看多但SHORT CALL压顶7550）\nNDX预测：$29,580–$29,620（量方向强看多，绿BAR磁吸7600/29580双向夹）\n\n**【VS3D绿BAR法】**\n最近绿BAR：SPX上方$7540（0DTE 54K）/ 下方$7530（非0DTE）；NDX上方$29600 / 下方$29580\nVS预测收盘：SPX $7,540（磁吸最近绿BAR + 多头主导）；NDX $29,590（上下绿BAR夹紧，现价居中）\n\n**【GEX排名法】**\nSPX：#1=$7,550 × 60% + #2=$7,565 × 40% = **$7,556**\nNDX：#1=$29,600 × 60% + #2=$29,580 × 40% = **$29,592**\n\n**【综合拟定】（GEX50%+VS3D30%+原始20%）**\nSPX综合拟定：$7,546\nNDX综合拟定：$29,592\n\n⑥【专业建议】\n\n**波动判断：不宜做卖方。** SPX Straddle虽收缩31%、NDX收缩34%，但12:35爆炸性大单同时涌现LONG CALL和LONG PUT（双边各数亿），方向换手已确认（11点多→12点空），这种双边同时押注+换手信号说明市场在挑选方向——卖方此时是站在两把刀中间。\n\n**买方机会：** SPX $7,560 CALL值得关注。理由：彩票信号$7,560 mid$1.62已有63K张、V/OI 32x新开仓，GEX #3磁吸$7,560，若多头突破$7,550压顶，$7,560是下一个爆发点，风险有限（$1.62），涨幅不对称。NDX $29,670 CALL同样有V/OI 120x的量信号，mid约$19，也可小仓关注。\n\n**仓位提醒（真实持仓）：**\n- **$SPX SHORT CALL（2张均价$5.95）+ SHORT PUT（1张均价$6.91）**：这是最紧迫的。SHORT CALL在7550压顶附近，若多头突破则直接受损；SHORT PUT在当前行情双边大单夹击下也不安全。**建议14:00前全部处理，不要等最后一小时。**\n- MU SHORT CALL（2张均价$41.41）：离收盘仍有3小时以上，但MU与半导体板块联动，若NVDA/AVGO走强需警惕，**建议14:30前评估是否平仓。**\n- NVDA SHORT系列（多个SHORT CALL均价分布$1.31–$14.35）：NVDA非0DTE，今日到期风险相对低，但仓位分散复杂，**建议逐一核对行权价是否安全，今日内尽量把最近价外的SHORT平掉。**\n\n①【关键磁铁】\n\n**SPX：**\n- $7,550：🧢SHORT CALL压顶（85K张0DTE + 26K非0DTE），GEX #1磁吸",
+      "text": "⑤【收盘预测】\n\n**【原始分析法】**\nSPX预测：$7,540–$7,555（0DTE CALL爆炸性涌入+C/P背离建多，多方主导但$7,565顶盖压制）\nNDX预测：$29,600–$29,650（0DTE CALL量压倒性看多，$29,700 SHORT CALL压顶）\n\n**【VS3D绿BAR法】**\n最近绿BAR：SPX上方$7,565(51K SHORT CALL) / 下方$7,540(最近绿BAR)\n　　　　　　NDX上方$29,620 / 下方$29,560\nVS预测收盘：SPX $7,545（磁吸下方$7,540绿BAR+方向偏多，夹在两绿BAR之间）\n　　　　　　NDX $29,600（磁吸上方$29,620偏下，现价附近震荡）\n\n**【GEX排名法】**\nSPX GEX预测：$7,554（#1=$7,550×60% + #2=$7,565×40%）\nNDX GEX预测：$29,684（#1=$29,600×60% + #2=$29,840×40%）→ 受$29,700压顶修正至$29,650\n\n**【综合拟定】**（GEX 50% + VS3D 30% + 原始分析 20%）\nSPX综合拟定：$7,550\nNDX综合拟定：$29,630\n\n⑥【专业建议】\n\n**波动判断：现在可以谨慎做卖方。** Straddle已收缩36%（SPX）/31%（NDX），Theta加速消耗，波动预算所剩无几，方向明确偏多但上方$7,565/$29,700有硬顶，区间已经清晰。\n\n**买方机会：** SPX $7,555 CALL值得轻仓持有——上方彩票信号$7,560/$7,565大量堆积，若现价突破$7,550 Gamma墙有加速效应，风险收益比合理，但$1.80以下才值得买，超过放弃。\n\n**仓位提醒（针对真实持仓）：**\n- **$SPX SHORT CALL（均价$5.95×2张 + $1.45×1张）**：这是最高风险仓位。多方CALL爆发$618M，如果SPX突破$7,550持续走高，SHORT CALL裸露风险急剧上升。**建议14:00前确认价格是否稳在$7,550以下，若突破立即评估平仓**，不要拖到收盘前30分钟。\n- 其余个股（NVDA/MSFT/AMZN/MU/CRWV等）均为spread结构（LONG+SHORT配对），净敞口有限，今日无需紧急处理，按原计划管理即可。\n- METU/DRAM/BABA小仓位流动性风险高，临近收盘注意滑点，若有利润今日可考虑了结。\n\n①【关键磁铁】\n\n**SPX：**\n- $7,565：客户SHORT CALL 51K → 🟢绿BAR磁吸 + 🧢顶盖双重作用\n- $7,550：客户SHORT CALL 27K（非0DTE）+ 客户LONG CALL 88K(0DTE)红BAR排斥 → 强阻",
       "meta": {
-        "spx": 7537.92,
-        "ndx": 29593.34,
-        "ts": "12:40 ET"
+        "spx": 7541.08,
+        "ndx": 29601.16,
+        "ts": "12:50 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260714/claude_analysis_124053.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260714/claude_analysis_125104.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260714.json",
