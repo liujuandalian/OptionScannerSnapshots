@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-15 15:31",
+  "_updated": "2026-07-15 15:32",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -151,21 +151,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260715/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_153048.json",
-    "github_path": "ClaudeAnalysis/20260715/claude_analysis_153048.json",
-    "upload_time": "2026-07-15 15:30",
+    "filename": "claude_analysis_153216.json",
+    "github_path": "ClaudeAnalysis/20260715/claude_analysis_153216.json",
+    "upload_time": "2026-07-15 15:32",
     "summary": {
-      "generated_at": "2026-07-15T15:30:48.561579-04:00",
-      "generated_at_display": "2026-07-15 15:30:48 ET",
-      "category": "daily",
-      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,558–$7,565（0DTE CALL从7535–7565全线涌入$500M+，成交量P/C=0.45极度偏多，现价附近磁吸收口）\nNDX预测：$29,420–$29,450（CALL端量/张数领先，但🔀方向换手+SHORT CALL压顶$29,450形成天花板）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,565(125K) / 下方$7,555(228K)；NDX上方$29,440 / 下方无\nVS预测收盘：SPX $7,560（上下绿BAR夹击，现价就在中间，磁吸极强）；NDX $29,440（最近绿BAR磁吸，但现价$29,427偏下）\n\n【GEX排名法】\nSPX：#1=$7,560 #2=$7,565，加权(60/40)→ $7,562\nNDX：#1=$29,450 #2=$29,400，加权(60/40)→ $29,430\n\n【综合拟定】(GEX 50% + VS3D 30% + 原始 20%)\nSPX综合拟定：**$7,561**\nNDX综合拟定：**$29,435**\n\n⑥【专业建议】\n\n波动判断：**不宜做卖方**。Straddle虽已收缩33%(SPX)和42%(NDX)，但距收盘仅30分钟，15:22后0DTE单笔涌入超$700M的CALL大单（$7,535–$7,565共十余个行权价）本质是临收盘Gamma加速阶段的方向性押注，随时可能触发单边拉升或做市商被迫对冲——这种末盘Gamma加速环境下卖方被针对的概率很高，不碰。\n\n买方机会：**暂无明显新建仓机会**。$7,560 CALL在V/OI=93x时已是信息充分定价，现在才追入成本过高；如有持仓中的SPX CALL可持有等收盘磁吸$7,561，但15:55前必须决定是否平仓，不要留到最后1分钟。\n\n仓位提醒（针对你的真实持仓）：\n- **$SPX PUT SHORT卖方2张（均价$2.81）**：这是最危险的仓位。现价$7,558，短PUT面临被CALL大单推高后变ITM的风险极低，但30分钟内Gamma爆炸仍可能快速吞掉权利金收益。建议**15:50前确认是否平仓**，剩余价值很薄，别为了最后几分钱扛Gamma风险。\n- **$SPX PUT LONG买方（均价$7.80和$9.75）**：方向看跌，与当前偏多流量完全逆势。若这两张是今日0DTE，基本已接近归零，不要加仓也不要抱希望，15:50前处理。\n- **$SPX PUT LONG买方（均价$0.92）**：彩票性质，随它去。\n- 股票类（NVDA/MSFT/CRWV等）期权：今日非0DTE，不受今日Gamma收口影响，正常管理即可。\n\n①【关键磁铁】\n\nSPX：$7",
-      "meta": {
-        "spx": 7558.33,
-        "ndx": 29427.16,
-        "ts": "15:30 ET"
-      }
+      "generated_at": "2026-07-15T15:32:16.613156-04:00",
+      "generated_at_display": "2026-07-15 15:32:16 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 0DTE 复盘分析｜20260715\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 核心发现：从\"方向性押注\"到\"双向对冲架构\"的根本转变\n\n**过去两日的结构特征（713/714）：方向清晰的单边博弈**\n\n713日SPX 0DTE的最大特征是**卖方主导的做市型流量**：PUT大单以SHORT PUT为核心（7550/7540/7525/7570均为卖PUT），配合SHORT CALL压制上行，这是典型的**机构做市商Gamma中性再平衡**信号，不是方向性押注。量P/C=1.29（均衡）进一步证实——大资金在收盘前做的是\"钉死波动率、吃Theta\"的操作，而非单边赌方向。\n\n714日完全反转为**收盘时段的净多头扫货**：16:08密集出现的ITM CALL（7530/7535/7540，均为LONG CALL），V/OI高达30-65倍，时间点集中在收盘前2分钟，这是典型的**隔夜Gap风险对冲+多头追涨**叠加信号，量P/C=0.70，纠偏后仍看多。NDX量P/C=0.23，极度偏多，且大单全部是LONG CALL为主，结构极为干净。\n\n**今日715的结构：完全不同的第三种形态——双边深度对冲+方向模糊**\n\n今日SPX 0DTE呈现出一个罕见的**镜像对称结构**：\n\n- CALL$7550：84,379张 SHORT CALL（$91.97M）vs 84,248张 LONG CALL（$88.04M）**——同一Strike，买卖几乎等量**\n- PUT$7570：75,751张 LONG PUT（$82.57M）vs 75,668张 SHORT PUT（$87.77M）**——同一Strike，买卖几乎等量**\n- CALL$7540：LONG/SHORT均约37,600张\n- CALL$7545/7535：同样呈现双向等量\n\n这不是方向性押注，**这是大规模Spread/Straddle/Collar的建仓或平仓**。两个时间戳15:22:53和15:24:30之间相差约90秒，几乎相同数量的对立方向单子同时出现，说明：\n\n> **结论1：今日的$985M CALL爆发和$936M PUT爆发并非多空对峙，而是同一批机构在进行期权结构重组——很可能是大量Straddle/Strangle的开仓（做空波动率）或现有Collar结构的腿位调整。**\n\nStraddle收缩33%（信号触发）与这一解读高度吻合——隐含波动率在被压制，不是自然消化，是有人在主动卖出波动率。\n\n**SPX非0DTE的方向换手是今日最重要的结构信号：**\n\n非0DTE从PUT主导→CALL主导（$3151M CALL vs $2762M PUT），这个体量（非0DTE CALL$3151M是今日0DTE CALL$985M的3倍多）意味着**主力资金在更长时间维度上转向看涨**，而不是在今天的0DTE里博方向。这是典型的\"大手慢钱\"换仓——0DTE层面做对冲，非0DTE层面建仓。\n\n**NDX今日的分裂信号：**\n\nNDX 0DTE权利金偏空（$78.46M CALL vs $88.33M PUT），但量P/C=0.72实际偏多，同时NDX非0DTE发生了与SPX相同的PUT→CALL换手。NDX 0DTE的PUT大单（29500/29600/29550）全为LONG PUT，且OI倍数都在极高水平（29500的V/OI=15.5x，29600的V/OI=6.2x），**这些是真实的尾部风险对冲，而非看跌方向博弈**——即有人在买保险，不是在做空。\n\n### 三日结构对比总结表\n\n| 维度 | 20260713 | 20260714 | 20260715（今日） |\n|------|---------|---------|--------------|\n| 主导逻辑 | 做市商Gamma再平衡 | 隔夜追涨/Gap对冲 | 波动率结构重组+慢钱换仓 |\n| 方向清晰度 | 模糊（均衡） | 明确偏多 | 0DTE模糊，非0DTE偏多 |\n| 资金层次 | 单层（0DTE） | 单层（0DTE） | **双层分裂（0DTE对冲，非0DTE建仓）** |\n| 隐含波动率信号 | 平稳 | 无异常 | **主动压制（Straddle收缩33%/NDX42%）** |\n| 大单密度 | 136个信号 | 118个信号 | **SPX 250个，NDX 178个（史诗级）** |\n| 彩票信号 | 无 | 无 | **0DTE 50笔，非0DTE 67笔** |\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：Vol/OI极端聚集——29600/7565/7570打穿历史OI\n\n**SPX PUT$7565，V/OI=487.2x**——这意味着今天该Strike的成交量是原有持仓量的487倍。在正常市场里，V/OI超过10x就值得关注，超过50x已属异常，**487x是系统性清仓或新建超大头寸的信号**。同样PUT$7570的V/OI=348.7x，PUT$7560=304.8x。\n\n这三个Strike（7560/7565/7570）恰好在当前SPX现价7558附近形成密集簇聚——**这是市场对7560-7570区间极度敏感的直接证明**，大量期权在这个区间被建立/对冲/平仓。\n\n**NDX CALL$29400，V/OI=133.1x**，CALL$29350=79.5x，这些是相对NDX现价（29427）的ATM区域，说明NDX的ATM被大量扫货。\n\n### 异常二：彩票信号集中爆发（SPX 0DTE 50笔 + 非0DTE 67笔）\n\n彩票信号（极度OTM、低权利金、高V/OI的小额大量单）在一天内双层同时出现50+67=117笔，这在正常交易日极为罕见。可能的解释：\n\n1. **散户/零售参与度爆炸式上升**："
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260715/claude_analysis_153048.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260715/claude_analysis_153216.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260715.json",
