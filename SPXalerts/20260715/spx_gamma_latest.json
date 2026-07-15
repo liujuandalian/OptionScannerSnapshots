@@ -1,52 +1,52 @@
 {
-  "ts": "11:09",
-  "ts_full": "2026-07-15T11:09:22.256558-04:00",
+  "ts": "11:10",
+  "ts_full": "2026-07-15T11:10:35.755245-04:00",
   "symbol": "SPX",
-  "spot": 7566.21,
+  "spot": 7563.32,
   "day_high": 7581.5,
   "day_low": 7552.96,
   "day_open": 7571.72,
   "prev_close": null,
   "total_volume": 731250717,
-  "ovwap": 7562.58,
+  "ovwap": 7562.53,
   "ovwap_day_high": 7578.95,
   "ovwap_day_high_spot": 7579.12,
   "ovwap_day_low": 7552.83,
   "ovwap_day_low_spot": 7575.23,
-  "net_gex": 135718948.0,
-  "net_gex_b": 0.1357,
+  "net_gex": 114956647.0,
+  "net_gex_b": 0.115,
   "zero_gamma": 7542.0,
-  "gamma_wall_call": 7600.0,
+  "gamma_wall_call": 7550.0,
   "gamma_wall_put": 7550.0,
   "ranked": [
     {
       "rank": 1,
       "strike": 7585.0,
-      "gex": 21535552.0,
+      "gex": 19001570.0,
       "side": "CALL"
     },
     {
       "rank": 2,
-      "strike": 7600.0,
-      "gex": 19979327.0,
+      "strike": 7570.0,
+      "gex": 17970420.0,
       "side": "CALL"
     },
     {
       "rank": 3,
-      "strike": 7570.0,
-      "gex": 18370259.0,
+      "strike": 7600.0,
+      "gex": 16185484.0,
       "side": "CALL"
     },
     {
       "rank": 4,
       "strike": 7580.0,
-      "gex": 17015375.0,
+      "gex": 15530435.0,
       "side": "CALL"
     },
     {
       "rank": 5,
       "strike": 7560.0,
-      "gex": 12021559.0,
+      "gex": 12339839.0,
       "side": "CALL"
     }
   ],
@@ -58,5 +58,5 @@
     "moved_pts": 15.0,
     "stable": true
   },
-  "dte_days": 0.2018
+  "dte_days": 0.201
 }
