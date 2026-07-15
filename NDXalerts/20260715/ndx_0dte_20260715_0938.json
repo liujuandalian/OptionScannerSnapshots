@@ -1,0 +1,38 @@
+{
+  "generated": "2026-07-15T09:38:10.015307",
+  "timestamp_et": "2026-07-15 09:38 ET",
+  "type": "0DTE",
+  "symbol": "NDX",
+  "count": 1,
+  "signals": [
+    {
+      "ts": "09:37:50",
+      "exp_date": "2026-07-15",
+      "expiry": "2026-07-15",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "PUT",
+      "strike": 29700.0,
+      "volume": 34,
+      "bid": 90.0,
+      "ask": 96.0,
+      "mid": 93.0,
+      "iv": 27.623,
+      "delta": -0.491,
+      "open_int": 9,
+      "est_premium": 316200.0,
+      "ndx_price": 29696.7,
+      "spx_price": 29696.7,
+      "position": "SHORT",
+      "market_dir": "看涨(sell Put) 🟢",
+      "trade_label": "📉 SHORT PUT → 看涨(sell Put) 🟢",
+      "dist_pct": 0.011112345816199349,
+      "straddle_str": "$181.95  (C$88.95+P$93.00)",
+      "sd1_str": "±$512.1  [29,184.6 ~ 30,208.8]",
+      "sd1_low": 29184.61,
+      "sd1_high": 30208.79,
+      "sd1": 512.09,
+      "atm_iv": 27.62
+    }
+  ]
+}
