@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `ndx_ndte_report_20260715_1036.json` | NDX 非0DTE信号 | 2026-07-15 10:36 | [下载](NDXalerts/20260715/ndx_ndte_report_20260715_1036.json) | {"label": "非0DTE · 10:36 ET", "signals": 68, "direction": "多空均衡 ⚪", "net_premium |
 | `ndx_0dte_report_20260715_1036.json` | NDX 0DTE信号 | 2026-07-15 10:36 | [下载](NDXalerts/20260715/ndx_0dte_report_20260715_1036.json) | {"label": "0DTE · 10:36 ET", "signals": 84, "direction": "极度偏空 🔴🔴", "net_premium |
 | `spx_0dte_report_20260715_1034.json` | SPX 0DTE信号 | 2026-07-15 10:34 | [下载](SPXalerts/20260715/spx_0dte_report_20260715_1034.json) | {"label": "0DTE · 10:34 ET", "signals": 190, "direction": "极度偏多 🟢🟢", "net_premiu |
 | `ndx_0dte_report_20260715_1034.json` | NDX 0DTE信号 | 2026-07-15 10:34 | [下载](NDXalerts/20260715/ndx_0dte_report_20260715_1034.json) | {"label": "0DTE · 10:34 ET", "signals": 78, "direction": "极度偏空 🔴🔴", "net_premium |
