@@ -20,7 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
-| `spx_eod_20260715_0dte.json` | SPX 0DTE信号 | 2026-07-15 16:15 | [下载](SPXalerts/20260715/spx_eod_20260715_0dte.json) | {"date": "2026-07-15", "signals": 243123, "spx_close": 7572.4, "0dte_dir": "BULL |
+| `spx_eod_20260715.json` | SPX盘后EOD报告 | 2026-07-15 16:15 | [下载](SPXalerts/20260715/spx_eod_20260715.json) | {"date": "2026-07-15", "signals": 243123, "spx_close": 7572.4, "0dte_dir": "BULL |
 | `ndx_ndte_report_20260715_1610.json` | NDX 非0DTE信号 | 2026-07-15 16:10 | [下载](NDXalerts/20260715/ndx_ndte_report_20260715_1610.json) | {"label": "非0DTE · 16:10 ET", "signals": 336, "direction": "极度偏多 🟢🟢", "net_premi |
 | `ndx_0dte_report_20260715_1606.json` | NDX 0DTE信号 | 2026-07-15 16:06 | [下载](NDXalerts/20260715/ndx_0dte_report_20260715_1606.json) | {"label": "0DTE · 16:06 ET", "signals": 174, "direction": "极度偏多 🟢🟢", "net_premiu |
 | `spx_0dte_report_20260715_1606.json` | SPX 0DTE信号 | 2026-07-15 16:06 | [下载](SPXalerts/20260715/spx_0dte_report_20260715_1606.json) | {"label": "0DTE · 16:06 ET", "signals": 135, "direction": "极度偏多 🟢🟢", "net_premiu |
