@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-16 12:53",
+  "_updated": "2026-07-16 12:54",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -57,16 +57,14 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_ndte_20260716_1153.json"
   },
   "ndx_0dte": {
-    "filename": "ndx_0dte_report_20260716_1253.json",
-    "github_path": "NDXalerts/20260716/ndx_0dte_report_20260716_1253.json",
-    "upload_time": "2026-07-16 12:53",
+    "filename": "ndx_0dte_20260716_1241.json",
+    "github_path": "NDXalerts/20260716/ndx_0dte_20260716_1241.json",
+    "upload_time": "2026-07-16 12:41",
     "summary": {
-      "label": "0DTE · 12:53 ET",
-      "signals": 107,
-      "direction": "偏空 🔴",
-      "net_premium_M": -35.4
+      "signals": 112,
+      "timestamp_et": "2026-07-16 12:41 ET"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_0dte_report_20260716_1253.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_0dte_20260716_1241.json"
   },
   "stock_flow": {
     "filename": "spx_stock_flow_latest.json",
@@ -153,21 +151,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_125125.json",
-    "github_path": "ClaudeAnalysis/20260716/claude_analysis_125125.json",
-    "upload_time": "2026-07-16 12:51",
+    "filename": "claude_analysis_125407.json",
+    "github_path": "ClaudeAnalysis/20260716/claude_analysis_125407.json",
+    "upload_time": "2026-07-16 12:54",
     "summary": {
-      "generated_at": "2026-07-16T12:51:25.937656-04:00",
-      "generated_at_display": "2026-07-16 12:51:25 ET",
-      "category": "daily",
-      "text": "⑤【收盘预测】\n\n**【原始分析法】**\nSPX预测：$7,543–$7,555（CALL端大量主动多头押注+SHORT CALL压在$7,570形成天花板，磁吸在$7,545–$7,550区间）\nNDX预测：$29,070–$29,110（0DTE PUT大量主动看跌+VS3D双绿BAR夹住现价，偏向下方磁吸）\n\n**【VS3D绿BAR法】**\n最近绿BAR：SPX上方$7,545(0DTE最近)/非0DTE$7,550 / 下方非0DTE$7,545\n　　　　　　NDX上方$29,110 / 下方$29,070\nVS预测收盘：SPX $7,548（上下绿BAR夹击，现价居中，磁吸在$7,545–$7,550之间取中）\n　　　　　　NDX $29,085（上下绿BAR极近，现价夹在中间，偏向$29,070–$29,110中值）\n\n**【GEX排名法】**\nSPX GEX预测：$7,528（#1=$7,525×60% + #2=$7,540×40%，加权中值≈$7,531；但PUT主导排斥向上，实际价格倾向在$7,525–$7,540之间）→ 取$7,530\nNDX GEX预测：$29,146（#1=$29,150×60% + #2=$29,140×40%，加权≈$29,146）\n\n**【综合拟定】**（GEX 50% + VS3D 30% + 原始 20%）\nSPX综合拟定：**$7,543**（GEX拉低但VS3D/多头流量支撑在$7,545，合力约$7,540–$7,545）\nNDX综合拟定：**$29,100**（GEX $29,146×50% + VS3D $29,085×30% + 原始$29,090×20%≈$29,108，取整）\n\n⑥【专业建议】\n\n**波动判断：现在不宜做卖方。** SPX 0DTE Straddle仍有$19.20，NDX $131.85，方向换手刚发生（SPX 11→12点PUT主导切CALL主导），NDX同时存在CALL彩票信号，市场还在寻找方向，卖方被双向捅穿风险实在。\n\n**买方机会：** SPX方向偏向窄幅震荡，暂无明显方向性买方机会。NDX有一个值得关注——**NDX CALL$29,300**（0DTE，成交量843张，V/OI高达168.6x，LONG CALL，权利金$6.55附近）：这是今天NDX最真实的方向性多头押注，若NDX能守住$29,070上方，这笔彩票有意义；但鉴于NDX整体PUT偏空，仓位控制在极小size，仅做参考。\n\n**仓位提醒（真实持仓）：**\n- **$SPX SHORT PUT（均价$6.85、$14.31、$3.22三腿）**：三个方向不同但都是SPX卖方，行权价数据缺失，无法精确判断是否接近现价。关键提醒：现在SPX在$7,543附近，GEX#1在$7,525，若下午出现任何宏观消息导致",
-      "meta": {
-        "spx": 7543.09,
-        "ndx": 29078.91,
-        "ts": "12:50 ET"
-      }
+      "generated_at": "2026-07-16T12:54:07.568255-04:00",
+      "generated_at_display": "2026-07-16 12:54:07 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 0DTE 专业交易台复盘 | 20260716\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 核心结论先行：今天是**\"盘中主动做空覆盖\"结构，而非历史两日的\"收盘对冲平仓\"结构**\n\n**时间维度是最大的结构性差异。**\n\n7/14和7/15的大单均集中在15:41-16:09 ET（收盘前20分钟至盘后），这是典型的**做市商EOD对冲再平衡**窗口——机构在当日仓位到期前的最后集中调仓。今天12:46-12:51 ET的信号爆发发生在**交易日正中间**，距离收盘还有3.5小时，这意味着这不是被动的到期对冲，而是**主动的盘中方向性押注**，信号的预测权重远高于收盘前的噪音。\n\n---\n\n### SPX方向结构对比——\"三日演变图\"\n\n| 日期 | 权利金净方向 | 量/张数纠偏 | 主力行为特征 |\n|------|------------|------------|------------|\n| 7/14 | **偏多↑**（多$387M vs 空$37M，极端） | 偏多🟢 | 全面LONG CALL，无方向分歧 |\n| 7/15 | 偏空↓（多$790M vs 空$1452M） | **纠偏偏多🟢** | 背离→深ITM PUT假象，真多 |\n| 7/16 | 偏空↓（多$96M vs 空$131M） | **纠偏极度偏多🟢🟢**（P/C=0.00） | **PUT成交量归零**，纯CALL博弈 |\n\n**7/14的结构最干净**：权利金和量方向一致看多，是真实的多头清仓节点（当时SPX在7543，收盘后本日7543，说明7/14的多头对今天的价格判断极为精准）。\n\n**7/15出现了大量SHORT CALL**（$7550/$7540/$7545/$7555/$7535均被大量SHORT），这是**Covered Call或上方顶部对冲**信号，机构在7566的位置开始系统性卖出上方CALL，构建顶部压制。\n\n**今日7/16最关键的结构性信号：量/张数P/C=0.00，即0DTE PUT成交量字面为零。** 这在统计上几乎不可能是自然市场状态，只有两种解释：\n1. **做空力量完全撤离0DTE市场**——认为下跌概率极低，无需买PUT保护\n2. **大量SHORT PUT在盘中被建仓**（卖PUT在量/张数上登记为CALL端多头），这与权利金端显示的$131M PUT爆发形成张力\n\n结合触发信息里同时出现\"CALL爆发$96M\"和\"PUT爆发$131M\"以及**\"方向换手 CALL主导→PUT主导\"**，今日结构最可能是：**上午CALL端主导被PUT大单在12:46打断，形成盘中急速方向换手**——这是典型的**主力机构在盘中高位转向**的信号，不是收盘前的常规对冲噪音。\n\n---\n\n### NDX的结构性翻转最为显著\n\n| 日期 | 量P/C | 主力特征 |\n|------|-------|---------|\n| 7/14 | 0.23（极度偏多） | 74张LONG CALL vs 20张LONG PUT，纯多结构 |\n| 7/15 | 0.44（偏多） | SHORT CALL开始出现，顶部压制 |\n| 7/16 | **2.26（极度偏空）** | **28张LONG PUT vs 5张CALL**，结构180°翻转 |\n\nNDX的P/C从7/14的0.23到今日的2.26，**10倍的翻转**，且今天的信号发生在12:50 ET（盘中），不是尾盘噪音。NDX从29586（7/14）→29502（7/15）→**29098（今日12:51）**，已经下跌488点（约1.65%），且PUT大单集中在29200/29150/29240/29230/29225区域——这些不是OTM彩票，而是**接近当前价格的真实方向性做空**。\n\n---\n\n### 非0DTE的结构背书\n\n触发信号中**SPX非0DTE CALL爆发$934M vs PUT爆发$886M**，且方向换手为**PUT主导→CALL主导**，这与0DTE的PUT换手方向**相反**。这个分裂信号的含义：\n- 非0DTE（更长期限）：机构在用CALL做**中期反弹押注**\n- 0DTE：机构在用PUT做**今日/明日下行保护**\n\n这是**\"短期看空、中期看多\"**的典型机构对冲结构，不是单边押注，而是**Tail Risk Hedge + Medium-term Bull的组合**。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常①：SPX 0DTE SHORT CALL密集堆叠在7550-7580区间\n\n按成交量排序：$7570（89K）、$7575（70K）、$7580（69K）、$7565（63K）、$7585（51K）、$7590（44K）、$7600（44K）——几乎全部是SHORT CALL或LONG CALL（$7560/7590买入用于构建Spread）。\n\n这不是散乱的方向押注，而是**系统性的Call Spread卖出结构**：有人在7560买入CALL，同时在7570/75/80/85/90/00卖出CALL，构建**Bear Call Spread**，将今日上方封顶在7560-7600区间。权利金规模显示这是机构级别的操作（总权利金流入超$96M CALL端但净方向偏空，即卖出权利金大于买入）。\n\n**关键含义：机构认为今日SPX不会有效突破7560-7570**。\n\n### 异常②：Vol/OI比率极端异常\n\n- CALL$7560：V/OI=74.6x，vol=66,056\n- CALL$7565：V/OI=76.5x，vol=62,710\n- CALL$7570：V/OI=84.0x，vol=89,255\n- CALL$7575：V/OI=44.6x，vol=69,724\n\nV/OI超过30x通常是异常，超过70x是极端事件。**84倍**意味着今天的成交量是原有持仓的84倍，这是**全新建仓**而非平仓"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260716/claude_analysis_125125.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260716/claude_analysis_125407.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260716.json",
