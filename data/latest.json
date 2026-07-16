@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-16 15:35",
+  "_updated": "2026-07-16 15:36",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -153,21 +153,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_152805.json",
-    "github_path": "ClaudeAnalysis/20260716/claude_analysis_152805.json",
-    "upload_time": "2026-07-16 15:28",
+    "filename": "claude_analysis_153557.json",
+    "github_path": "ClaudeAnalysis/20260716/claude_analysis_153557.json",
+    "upload_time": "2026-07-16 15:36",
     "summary": {
-      "generated_at": "2026-07-16T15:28:05.330158-04:00",
-      "generated_at_display": "2026-07-16 15:28:05 ET",
+      "generated_at": "2026-07-16T15:35:57.856190-04:00",
+      "generated_at_display": "2026-07-16 15:35:57 ET",
       "category": "daily",
-      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,520–$7,530（0DTE大单LONG CALL扫货7510-7530带动做市商买入，上方7535是SHORT CALL顶盖压力）\nNDX预测：$28,930–$29,000（0DTE PUT压制明显，量/张数看空，GEX磁吸双位夹击）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7530(89K SHORT CALL) / 下方无（0DTE）；非0DTE上方$7525 / 下方$7520\nVS预测收盘：SPX $7,525（0DTE绿BAR $7530磁吸 + 非0DTE $7520-7525夹击，折中）\n　　　　　　NDX $28,950（上方$29000 / 下方$28930绿BAR夹击，现价$28,949正在中间）\n\n【GEX排名法】\nSPX：#1$7,525(PUT主导) × 60% + #2$7,510 × 40% = $7,519 → 约$7,519\nNDX：#1$28,990 × 60% + #2$28,980 × 40% = $28,986 → 约$28,986\n\n【综合拟定】（GEX 50% + VS3D 30% + 原始 20%）\nSPX综合拟定：$7,522\nNDX综合拟定：$28,966\n\n⑥【专业建议】\n\n波动判断：Straddle已收缩32-61%，Theta加速消耗，**现在可以做卖方**，但注意SPX 0DTE最后34分钟大单仍在涌入，如果已有卖方仓位不新开，守住即可。\n\n买方机会：暂无明显不对称入场机会——SPX $7,530 CALL已是SHORT CALL顶盖，突破需要额外催化剂；NDX量/张数方向看空但GEX磁吸偏多，方向混沌不宜博方向性。\n\n仓位提醒（针对你的SPX持仓，距收盘仅34分钟）：\n- **$SPX SHORT PUT（均价$6.85 × 1张、$4.82 × 2张）**：现价$7,521附近，最近支撑$7,515-7,520，若最后10分钟破$7,515需立即止损，否则hold。\n- **$SPX SHORT CALL（均价$5.13 × 1张、$0.22 × 2张）**：顶盖$7,535有SHORT CALL 89K张压制，方向大概率不会突破，安全，hold。\n- **$SPX SHORT PUT均价$14.31 × 1张**：这张最危险——若行权价接近7,520以上ITM区域，剩余时间短，**建议15:45前确认行权价相对现价位置，偏高则即刻平**。\n- **$SPX SHORT PUT均价$3.22 × 1张**：行权价应偏低，暂时安全，hold到收盘。\n\n①【关键磁铁】\n\nSPX：\n- $7,535：🧢 SHORT CALL压顶（客户SHORT 89K张，绿BAR磁吸 + 顶盖双重属性）\n- $7,530：绿BAR磁吸（客户SHORT CALL 33K，同时有LONG CALL红BAR对冲，实际磁力",
+      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,515–$7,525（0DTE大量LONG CALL堆积在7520-7525，但非0DTE ITM PUT巨量对冲将价格锁在区间）\nNDX预测：$28,900–$28,990（量信号看空，0DTE PUT主导压制，绿BAR磁吸到28900-28990区间）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7525(客户SHORT CALL) / 下方$7520(客户SHORT PUT) → 极窄磁吸带\nNDX上方$29,000 / 下方$28,900\nVS预测收盘：SPX $7,520（上下绿BAR夹住，收盘钉在7520±5）\nNDX $28,950（两端绿BAR中间，偏下压力更强）\n\n【GEX排名法】\nSPX：#1=$7,510 #2=$7,525 → 加权中值≈$7,516\nNDX：#1=$28,990 #2=$28,980 → 加权中值≈$28,986\n\n【综合拟定】（GEX 50% + VS3D 30% + 原始 20%）\nSPX综合拟定：$7,518\nNDX综合拟定：$28,960\n\n⑥【专业建议】\n\n波动判断：**不宜再开新卖方**。Straddle收缩已40-61%，波动预算所剩无几，但非0DTE出现PUT$7600单笔$113-117M级别超巨量押注+整排7525-7575的LONG PUT，这不是普通对冲——有人在押尾部风险。最后26分钟别碰新卖方。\n\n买方机会：**暂无明显机会**。方向被多空双方夹死在7515-7525；NDX量信号偏空但绿BAR在28900撑着，不对称机会不清晰，26分钟内买方赔率极差。\n\n仓位提醒（针对你的SPX持仓，最紧急）：\n- **$SPX SHORT CALL（均价$5.13/$0.22/$3.45）**：现价7516贴近行权价区域，若非0DTE那批巨量LONG PUT($117M)触发恐慌下砸，SHORT CALL虽然方向上安全，但波动率spike会让你的CALL卖方瞬间亏损。**立即评估行权价，确认Strike够高**。\n- **$SPX SHORT PUT（均价$6.85/$4.82/$14.31/$3.22）**：$14.31那张成本高、风险最大——若市场被那批ITM PUT巨量砸破7500支撑，直接吃亏。**$14.31那张建议15:45前确认Delta风险可控，不可持有到收盘**。\n- 其余个股（NVDA/MSFT/NFLX）SHORT仓位：今天大盘方向不稳，个股跟随性强，**15:50前检查每个SHORT的当前价格，亏损超过买入成本1.5倍立即平**。\n\n①【关键磁铁】\n\nSPX：\n- $7,525 绿BAR磁吸（客户SHORT CALL 28K张）+ 🧢SHORT CALL压顶\n- $7,520 红BAR排斥（客户LONG CALL 18K张）——注意：红BAR会阻止价格在",
       "meta": {
-        "spx": 7521.62,
-        "ndx": 28949.29,
-        "ts": "15:26 ET"
+        "spx": 7515.11,
+        "ndx": 28933.4,
+        "ts": "15:33 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260716/claude_analysis_152805.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260716/claude_analysis_153557.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260716.json",
