@@ -1,0 +1,75 @@
+{
+  "count": 1,
+  "mag7": [],
+  "top_bull": [
+    [
+      "WULF",
+      {
+        "bull_prem": 685000.0,
+        "bear_prem": 0.0,
+        "bull_cnt": 1,
+        "bear_cnt": 0,
+        "total_prem": 685000.0,
+        "max_single": 685000.0,
+        "max_voi": 1.2351778656126482,
+        "signals": [
+          {
+            "timestamp": "09:30:41",
+            "ticker": "WULF",
+            "signal_type": "BIG_PREMIUM",
+            "direction": "BULL",
+            "expiry": "2026-08-21",
+            "strike": 18.0,
+            "option_type": "CALL",
+            "volume": 2500,
+            "open_interest": 2024,
+            "vol_oi_ratio": 1.2,
+            "iv": 105.5,
+            "bid": 2.59,
+            "ask": 2.89,
+            "mid": 2.74,
+            "est_premium": 685000.0,
+            "detail": "Est. Premium = $685,000  (Vol 2,500 × $2.74)",
+            "ticker_price": 18.4828,
+            "open_int": 2024,
+            "opt_type": "CALL",
+            "ts": "09:30:41",
+            "trade_label": "LONG CALL → 看涨",
+            "position": "LONG"
+          }
+        ],
+        "ticker_price": 18.4828,
+        "net_prem": 685000.0
+      }
+    ]
+  ],
+  "top_bear": [],
+  "top10": [
+    {
+      "timestamp": "09:30:41",
+      "ticker": "WULF",
+      "signal_type": "BIG_PREMIUM",
+      "direction": "BULL",
+      "expiry": "2026-08-21",
+      "strike": 18.0,
+      "option_type": "CALL",
+      "volume": 2500,
+      "open_interest": 2024,
+      "vol_oi_ratio": 1.2,
+      "iv": 105.5,
+      "bid": 2.59,
+      "ask": 2.89,
+      "mid": 2.74,
+      "est_premium": 685000.0,
+      "detail": "Est. Premium = $685,000  (Vol 2,500 × $2.74)",
+      "ticker_price": 18.4828,
+      "open_int": 2024,
+      "opt_type": "CALL",
+      "ts": "09:30:41",
+      "trade_label": "LONG CALL → 看涨",
+      "position": "LONG"
+    }
+  ],
+  "generated": "2026-07-16T09:31:02.060377",
+  "timestamp_et": "2026-07-16 09:31 ET"
+}
