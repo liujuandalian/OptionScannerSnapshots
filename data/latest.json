@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-16 13:25",
+  "_updated": "2026-07-16 13:26",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -28,14 +28,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260716/spx_intraday_20260716_1320.json"
   },
   "spx_0dte": {
-    "filename": "spx_0dte_20260716_1325.json",
-    "github_path": "SPXalerts/20260716/spx_0dte_20260716_1325.json",
-    "upload_time": "2026-07-16 13:25",
+    "filename": "spx_0dte_report_20260716_1323.json",
+    "github_path": "SPXalerts/20260716/spx_0dte_report_20260716_1323.json",
+    "upload_time": "2026-07-16 13:23",
     "summary": {
-      "signals": 143,
-      "timestamp_et": "2026-07-16 13:25 ET"
+      "label": "0DTE · 13:23 ET",
+      "signals": 227,
+      "direction": "偏空 🔴",
+      "net_premium_M": -293.0
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260716/spx_0dte_20260716_1325.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260716/spx_0dte_report_20260716_1323.json"
   },
   "unknown": {
     "filename": "spx_stock_flow_latest.json",
@@ -55,14 +57,14 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_ndte_20260716_1322.json"
   },
   "ndx_0dte": {
-    "filename": "ndx_0dte_20260716_1321.json",
-    "github_path": "NDXalerts/20260716/ndx_0dte_20260716_1321.json",
-    "upload_time": "2026-07-16 13:21",
+    "filename": "ndx_0dte_20260716_1326.json",
+    "github_path": "NDXalerts/20260716/ndx_0dte_20260716_1326.json",
+    "upload_time": "2026-07-16 13:26",
     "summary": {
       "signals": 106,
-      "timestamp_et": "2026-07-16 13:21 ET"
+      "timestamp_et": "2026-07-16 13:26 ET"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_0dte_20260716_1321.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260716/ndx_0dte_20260716_1326.json"
   },
   "stock_flow": {
     "filename": "spx_stock_flow_latest.json",
