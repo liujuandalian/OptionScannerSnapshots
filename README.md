@@ -20,7 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
-| `ndx_0dte_20260717_1512.json` | NDX 0DTE信号 | 2026-07-17 15:12 | [下载](NDXalerts/20260717/ndx_0dte_20260717_1512.json) | {"signals": 76, "timestamp_et": "2026-07-17 15:12 ET"} |
+| `ndx_0dte_report_20260717_1512.json` | NDX 0DTE信号 | 2026-07-17 15:12 | [下载](NDXalerts/20260717/ndx_0dte_report_20260717_1512.json) | {"label": "0DTE · 15:12 ET", "signals": 76, "direction": "多空均衡 ⚪", "net_premium_ |
 | `ndx_ndte_report_20260717_1511.json` | NDX 非0DTE信号 | 2026-07-17 15:11 | [下载](NDXalerts/20260717/ndx_ndte_report_20260717_1511.json) | {"label": "非0DTE · 15:11 ET", "signals": 378, "direction": "多空均衡 ⚪", "net_premiu |
 | `claude_analysis_151055.json` | Claude深度分析 | 2026-07-17 15:10 | [下载](ClaudeAnalysis/20260717/claude_analysis_151055.json) | {"generated_at": "2026-07-17T15:10:55.393782-04:00", "generated_at_display": "20 |
 | `ndx_0dte_report_20260717_1510.json` | NDX 0DTE信号 | 2026-07-17 15:10 | [下载](NDXalerts/20260717/ndx_0dte_report_20260717_1510.json) | {"label": "0DTE · 15:10 ET", "signals": 173, "direction": "多空均衡 ⚪", "net_premium |
