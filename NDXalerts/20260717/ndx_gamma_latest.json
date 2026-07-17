@@ -1,52 +1,52 @@
 {
-  "ts": "09:42",
-  "ts_full": "2026-07-17T09:42:21.869225-04:00",
+  "ts": "09:53",
+  "ts_full": "2026-07-17T09:53:44.125790-04:00",
   "symbol": "NDX",
-  "spot": 28259.22,
+  "spot": 28416.77,
   "day_high": 28507.84,
-  "day_low": 28257.93,
+  "day_low": 28231.32,
   "day_open": 28457.33,
   "prev_close": null,
-  "total_volume": 217789017,
-  "ovwap": 28156.0,
-  "ovwap_day_high": 28316.34,
-  "ovwap_day_high_spot": 28438.22,
-  "ovwap_day_low": 28156.0,
-  "ovwap_day_low_spot": 28259.22,
-  "net_gex": -1977401.0,
-  "net_gex_b": -0.002,
-  "zero_gamma": 28408.5,
-  "gamma_wall_call": 28410.0,
-  "gamma_wall_put": 28100.0,
+  "total_volume": 297593474,
+  "ovwap": 28401.73,
+  "ovwap_day_high": 28401.73,
+  "ovwap_day_high_spot": 28416.77,
+  "ovwap_day_low": 28151.98,
+  "ovwap_day_low_spot": 28233.42,
+  "net_gex": -2156954.0,
+  "net_gex_b": -0.0022,
+  "zero_gamma": 28408.4,
+  "gamma_wall_call": 28420.0,
+  "gamma_wall_put": 28600.0,
   "ranked": [
     {
       "rank": 1,
-      "strike": 28100.0,
-      "gex": -387545.0,
+      "strike": 28600.0,
+      "gex": -269675.0,
       "side": "PUT"
     },
     {
       "rank": 2,
-      "strike": 28200.0,
-      "gex": -200642.0,
+      "strike": 28400.0,
+      "gex": -238591.0,
       "side": "PUT"
     },
     {
       "rank": 3,
-      "strike": 28400.0,
-      "gex": -199059.0,
+      "strike": 28480.0,
+      "gex": -189685.0,
       "side": "PUT"
     },
     {
       "rank": 4,
-      "strike": 28480.0,
-      "gex": -140666.0,
+      "strike": 28490.0,
+      "gex": -188789.0,
       "side": "PUT"
     },
     {
       "rank": 5,
-      "strike": 28490.0,
-      "gex": -138202.0,
+      "strike": 28200.0,
+      "gex": -171027.0,
       "side": "PUT"
     }
   ],
@@ -54,9 +54,9 @@
     "migrated": true,
     "direction": "DOWN",
     "old_rank1": 28900.0,
-    "new_rank1": 28100.0,
-    "moved_pts": -800.0,
+    "new_rank1": 28600.0,
+    "moved_pts": -300.0,
     "stable": false
   },
-  "dte_days": 0.2622
+  "dte_days": 0.2544
 }
