@@ -20,7 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
-| `ndx_0dte_20260717_0954.json` | NDX 0DTE信号 | 2026-07-17 09:54 | [下载](NDXalerts/20260717/ndx_0dte_20260717_0954.json) | {"signals": 39, "timestamp_et": "2026-07-17 09:54 ET"} |
+| `ndx_0dte_report_20260717_0954.json` | NDX 0DTE信号 | 2026-07-17 09:54 | [下载](NDXalerts/20260717/ndx_0dte_report_20260717_0954.json) | {"label": "0DTE · 09:54 ET", "signals": 39, "direction": "多空均衡 ⚪", "net_premium_ |
 | `ndx_0dte_20260717_0952.json` | NDX 0DTE信号 | 2026-07-17 09:52 | [下载](NDXalerts/20260717/ndx_0dte_20260717_0952.json) | {"signals": 31, "timestamp_et": "2026-07-17 09:52 ET"} |
 | `ndx_0dte_20260717_0949.json` | NDX 0DTE信号 | 2026-07-17 09:49 | [下载](NDXalerts/20260717/ndx_0dte_20260717_0949.json) | {"signals": 30, "timestamp_et": "2026-07-17 09:49 ET"} |
 | `claude_analysis_094230.json` | Claude深度分析 | 2026-07-17 09:42 | [下载](ClaudeAnalysis/20260717/claude_analysis_094230.json) | {"generated_at": "2026-07-17T09:42:30.904816-04:00", "generated_at_display": "20 |
