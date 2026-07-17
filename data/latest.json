@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-17 13:30",
+  "_updated": "2026-07-17 13:31",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -149,21 +149,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260717/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_132101.json",
-    "github_path": "ClaudeAnalysis/20260717/claude_analysis_132101.json",
-    "upload_time": "2026-07-17 13:21",
+    "filename": "claude_analysis_133122.json",
+    "github_path": "ClaudeAnalysis/20260717/claude_analysis_133122.json",
+    "upload_time": "2026-07-17 13:31",
     "summary": {
-      "generated_at": "2026-07-17T13:21:01.560000-04:00",
-      "generated_at_display": "2026-07-17 13:21:01 ET",
+      "generated_at": "2026-07-17T13:31:22.226064-04:00",
+      "generated_at_display": "2026-07-17 13:31:22 ET",
       "category": "daily",
-      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,490–$7,500（0DTE量信号纯多头CALL+⚡大单涌入看涨，但🧢$7,500压顶+🔀换手抑制突破）\nNDX预测：$28,850–$28,900（0DTE LONG CALL横扫ITM全线看涨，成交量P/C=0.05极端偏多）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,495(49K) / 下方无；NDX上方$28,880(214张) / 下方无\nVS预测收盘：SPX $7,495（磁吸到ATM绿BAR）；NDX $28,880（磁吸最近SHORT CALL堆积位）\n\n【GEX排名法】\nSPX：#1=$7,515 #2=$7,520，加权中值≈$7,517（但现价$7,494，GEX位在上方，需突破动力）\nNDX：#1=$28,900 #2=$28,890，加权中值≈$28,896\n\n【综合拟定】（GEX50%+VS3D30%+原始20%）\nSPX综合拟定：**$7,500**\nNDX综合拟定：**$28,885**\n\n⑥【专业建议】\n\n波动判断：**现在不宜新开卖方**。Straddle确实收缩了30%+，但🔀方向换手刚发生（12:00多→13:00空），加上非0DTE PUT爆发$2.1B量级，市场在$7,500关口有真实博弈，方向未定型前卖方没有保护。\n\n买方机会：SPX 0DTE **$7,510 LONG CALL**值得小注——NDX 0DTE全线LONG CALL扫货，V/OI最高818x，两市共振向上；$7,510已有$18.22M主动押注，若$7,500被穿当期还有$1.5–2.0空间，风险收益比可接受，mid约$3.50，建议买1张控制风险。\n\n仓位提醒（针对你的持仓）：\n- **$SPX CALL SHORT卖方2张（均价$9.53）**：数据显示$7,500上方有⚡大单涌入和彩票堆积，若下午反弹突破$7,500这两张裸SHORT CALL暴露最大。**建议14:30前评估止损或买回保护，不要扛到收盘。**\n- **$SPX PUT LONG/SHORT组合**：PUT LONG均价$72.31 vs SHORT均价$77.99，当前看空方向与0DTE量信号冲突，建议监控$7,490支撑，跌破再持有，守住则考虑平LONG PUT锁定收益。\n- **NFLX SHORT 4张 vs LONG 4张**：净头寸基本对冲，问题不大，临近收盘保持观察即可。\n\n①【关键磁铁】\n\nSPX：$7,500（🧢客户SHORT CALL 107K，最强压顶绿BAR+Gamma Wall）；$7,495（绿BAR49K，磁吸收盘点）；$7,510（🔴红BAR52K，客户LONG排斥，突破阻力）；$7,400（🛡️非0DTE SHORT PUT护盘）\nNDX：$28,880（绿",
+      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,490–$7,500（0DTE大量LONG CALL集中在7460-7500，量信号看多但短期方向换手+PUT爆发压制上冲）\nNDX预测：$28,850–$28,900（0DTE方向背离警告已触发，真实方向看多，ITM CALL大量存在提供支撑）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,495(51K) / 下方$7,490(34K)；NDX上方$28,870(580) / 下方无\nVS预测收盘：SPX $7,492（上下绿BAR夹住，磁吸在两者之间）；NDX $28,870（唯一上方绿BAR磁吸）\n\n【GEX排名法】\nSPX GEX：#1=$7,515 #2=$7,520，但PUT主导环境下做市商对冲偏压制；加权中值$7,517，但现价$7,495明显偏低，实际磁吸偏#1下沿\nSPX GEX预测：$7,510（#1×60%+#2×40%加权=7,517，但PUT压顶修正下移）\nNDX GEX：#1=$28,900 #2=$28,890，加权$28,896\nNDX GEX预测：$28,895\n\n【综合拟定】（GEX50%+VS3D30%+原始20%）\nSPX综合拟定：$7,500（GEX $7,510×50% + VS $7,492×30% + 原始$7,495×20%）\nNDX综合拟定：$28,883（GEX $28,895×50% + VS $28,870×30% + 原始$28,875×20%）\n\n⑥【专业建议】\n\n波动判断：**现在不宜做新卖方**。0DTE Straddle虽已收缩28%（$27.40→$19.60），但13:00出现明确🔀方向换手（多翻空），非0DTE端PUT$7505（V/OI=93.9x，$31M）和PUT$7530（$35M）是真实方向性大单，不是对冲——有人在认真买下行保护，收盘前150分钟做新IC/Credit Spread风险不对称。\n\n买方机会：0DTE **CALL $7,500，现价$6.90，值得少量参与**。理由：量信号明确看多（P/C=0.68），GEX#1在$7,515/7,520，彩票CALL $7,520（65K张）和$7,525（48K张）放量说明有人在押突破；现价离7500只有5点，风险收益合理。但注意🧢SHORT CALL $7,510压顶（53K张），突破$7,510前不要加仓。\n\n仓位提醒：\n- **$SPX SHORT CALL（均价$9.53，2张）**：当前价格$7,495，非0DTE有PUT$7,505大单V/OI=93.9x在下方持续建仓，说明机构认为当前价格有下行风险——但你的SHORT CALL方向正确（看跌/不涨）。问题是0DTE CALL爆发$524M，若价格突破$7,500向$7,510冲，SHORT CALL会快速亏损。**建议15:30前观察，若SPX突破$7,505立",
       "meta": {
-        "spx": 7493.79,
-        "ndx": 28858.4,
-        "ts": "13:20 ET"
+        "spx": 7494.92,
+        "ndx": 28856.66,
+        "ts": "13:30 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260717/claude_analysis_132101.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260717/claude_analysis_133122.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260717.json",
