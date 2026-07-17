@@ -1,28 +1,28 @@
 {
-  "label": "0DTE · 16:01 ET",
-  "count": 151,
-  "bull_count": 101,
-  "bear_count": 50,
+  "label": "0DTE · 16:03 ET",
+  "count": 119,
+  "bull_count": 71,
+  "bear_count": 48,
   "call_premium": 191.725,
-  "put_premium": 1347.71,
-  "total_premium": 1539.436,
-  "net_premium": -1155.985,
-  "pc_ratio": 7.029,
-  "cp_ratio": 0.142,
-  "pcv_ratio": 1.032,
-  "sp_premium": 710.655,
-  "lp_premium": 633.153,
+  "put_premium": 609.586,
+  "total_premium": 801.311,
+  "net_premium": -417.86,
+  "pc_ratio": 3.179,
+  "cp_ratio": 0.315,
+  "pcv_ratio": 0.723,
+  "sp_premium": 0.0,
+  "lp_premium": 605.683,
   "sc_premium": 19.304,
   "lc_premium": 164.392,
-  "short_put_cnt": 30,
-  "long_put_cnt": 38,
+  "short_put_cnt": 0,
+  "long_put_cnt": 36,
   "short_call_cnt": 2,
   "long_call_cnt": 63,
-  "direction": "极度偏空 🔴🔴",
-  "true_dir": "实际偏多 🟢",
+  "direction": "偏空 🔴",
+  "true_dir": "实际偏空 🔴",
   "top10": [
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BEAR",
@@ -49,7 +49,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BEAR",
@@ -76,7 +76,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BEAR",
@@ -103,34 +103,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
-      "exp_date": "2026-07-17",
-      "is_0dte": true,
-      "direction": "BULL",
-      "opt_type": "PUT",
-      "strike": 7500.0,
-      "volume": 27720,
-      "bid": 41.1,
-      "ask": 48.0,
-      "mid": 44.55,
-      "iv": 28.491,
-      "delta": -0.995,
-      "open_int": 5195,
-      "est_premium": 123492600.0,
-      "spx_price": 7457.67,
-      "position": "SHORT",
-      "market_dir": "看涨(卖Put) 🟢",
-      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
-      "dist_pct": 0.567603554461379,
-      "straddle_str": "$2.98  (C$0.72+P$2.25)",
-      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
-      "sd1_low": 7457.67,
-      "sd1_high": 7457.67,
-      "sd1": 0.0,
-      "atm_iv": 6.05
-    },
-    {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BEAR",
@@ -157,88 +130,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
-      "exp_date": "2026-07-17",
-      "is_0dte": true,
-      "direction": "BULL",
-      "opt_type": "PUT",
-      "strike": 7470.0,
-      "volume": 89033,
-      "bid": 11.0,
-      "ask": 12.3,
-      "mid": 11.65,
-      "iv": 9.274,
-      "delta": -0.986,
-      "open_int": 4012,
-      "est_premium": 103723445.0,
-      "spx_price": 7457.67,
-      "position": "SHORT",
-      "market_dir": "看涨(卖Put) 🟢",
-      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
-      "dist_pct": 0.16533314024353354,
-      "straddle_str": "$2.98  (C$0.72+P$2.25)",
-      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
-      "sd1_low": 7457.67,
-      "sd1_high": 7457.67,
-      "sd1": 0.0,
-      "atm_iv": 6.05
-    },
-    {
-      "ts": "16:00:24",
-      "exp_date": "2026-07-17",
-      "is_0dte": true,
-      "direction": "BULL",
-      "opt_type": "PUT",
-      "strike": 7495.0,
-      "volume": 25313,
-      "bid": 36.1,
-      "ask": 42.9,
-      "mid": 39.5,
-      "iv": 25.426,
-      "delta": -0.995,
-      "open_int": 1975,
-      "est_premium": 99986350.0,
-      "spx_price": 7457.67,
-      "position": "SHORT",
-      "market_dir": "看涨(卖Put) 🟢",
-      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
-      "dist_pct": 0.5005584854250715,
-      "straddle_str": "$2.98  (C$0.72+P$2.25)",
-      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
-      "sd1_low": 7457.67,
-      "sd1_high": 7457.67,
-      "sd1": 0.0,
-      "atm_iv": 6.05
-    },
-    {
-      "ts": "16:00:24",
-      "exp_date": "2026-07-17",
-      "is_0dte": true,
-      "direction": "BULL",
-      "opt_type": "PUT",
-      "strike": 7505.0,
-      "volume": 12552,
-      "bid": 46.1,
-      "ask": 57.9,
-      "mid": 52.0,
-      "iv": 31.522,
-      "delta": -0.996,
-      "open_int": 4691,
-      "est_premium": 65270400.0,
-      "spx_price": 7457.67,
-      "position": "SHORT",
-      "market_dir": "看涨(卖Put) 🟢",
-      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
-      "dist_pct": 0.6346486234976866,
-      "straddle_str": "$2.98  (C$0.72+P$2.25)",
-      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
-      "sd1_low": 7457.67,
-      "sd1_high": 7457.67,
-      "sd1": 0.0,
-      "atm_iv": 6.05
-    },
-    {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BEAR",
@@ -265,25 +157,133 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
-      "opt_type": "PUT",
-      "strike": 7530.0,
-      "volume": 6907,
-      "bid": 71.1,
-      "ask": 81.0,
-      "mid": 76.05,
-      "iv": 46.328,
-      "delta": -0.997,
-      "open_int": 4773,
-      "est_premium": 52527735.0,
+      "opt_type": "CALL",
+      "strike": 7450.0,
+      "volume": 33891,
+      "bid": 7.4,
+      "ask": 8.9,
+      "mid": 8.15,
+      "iv": 7.102,
+      "delta": 0.983,
+      "open_int": 1635,
+      "est_premium": 27621165.000000004,
+      "spx_price": 7457.67,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -0.1028471359016968,
+      "straddle_str": "$2.98  (C$0.72+P$2.25)",
+      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
+      "sd1_low": 7457.67,
+      "sd1_high": 7457.67,
+      "sd1": 0.0,
+      "atm_iv": 6.05
+    },
+    {
+      "ts": "16:02:04",
+      "exp_date": "2026-07-17",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7440.0,
+      "volume": 10147,
+      "bid": 17.0,
+      "ask": 18.9,
+      "mid": 17.95,
+      "iv": 13.991,
+      "delta": 0.991,
+      "open_int": 302,
+      "est_premium": 18213865.0,
+      "spx_price": 7457.67,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -0.236937273974312,
+      "straddle_str": "$2.98  (C$0.72+P$2.25)",
+      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
+      "sd1_low": 7457.67,
+      "sd1_high": 7457.67,
+      "sd1": 0.0,
+      "atm_iv": 6.05
+    },
+    {
+      "ts": "16:02:04",
+      "exp_date": "2026-07-17",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7435.0,
+      "volume": 7724,
+      "bid": 22.0,
+      "ask": 23.9,
+      "mid": 22.95,
+      "iv": 17.234,
+      "delta": 0.992,
+      "open_int": 84,
+      "est_premium": 17726580.0,
+      "spx_price": 7457.67,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -0.30398234301061955,
+      "straddle_str": "$2.98  (C$0.72+P$2.25)",
+      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
+      "sd1_low": 7457.67,
+      "sd1_high": 7457.67,
+      "sd1": 0.0,
+      "atm_iv": 6.05
+    },
+    {
+      "ts": "16:02:04",
+      "exp_date": "2026-07-17",
+      "is_0dte": true,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 7445.0,
+      "volume": 13412,
+      "bid": 12.0,
+      "ask": 13.9,
+      "mid": 12.95,
+      "iv": 10.611,
+      "delta": 0.988,
+      "open_int": 136,
+      "est_premium": 17368540.0,
+      "spx_price": 7457.67,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": -0.1698922049380044,
+      "straddle_str": "$2.98  (C$0.72+P$2.25)",
+      "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
+      "sd1_low": 7457.67,
+      "sd1_high": 7457.67,
+      "sd1": 0.0,
+      "atm_iv": 6.05
+    },
+    {
+      "ts": "16:02:04",
+      "exp_date": "2026-07-17",
+      "is_0dte": true,
+      "direction": "BEAR",
+      "opt_type": "CALL",
+      "strike": 7430.0,
+      "volume": 5267,
+      "bid": 27.0,
+      "ask": 29.0,
+      "mid": 28.0,
+      "iv": 20.432,
+      "delta": 0.994,
+      "open_int": 258,
+      "est_premium": 14747600.0,
       "spx_price": 7457.67,
       "position": "SHORT",
-      "market_dir": "看涨(卖Put) 🟢",
-      "trade_label": "📉 SHORT PUT → 看涨(卖Put) 🟢",
-      "dist_pct": 0.9698739686792246,
+      "market_dir": "看跌 🔴",
+      "trade_label": "📉 SHORT CALL → 看跌 🔴",
+      "dist_pct": -0.3710274120469272,
       "straddle_str": "$2.98  (C$0.72+P$2.25)",
       "sd1_str": "±$0.0  [7,457.7 ~ 7,457.7]",
       "sd1_low": 7457.67,
@@ -294,7 +294,7 @@
   ],
   "vol_oi_alerts": [
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -321,7 +321,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -348,7 +348,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BEAR",
@@ -375,7 +375,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -402,7 +402,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -429,7 +429,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -456,7 +456,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -483,7 +483,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -510,7 +510,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -537,7 +537,7 @@
       "atm_iv": 6.05
     },
     {
-      "ts": "16:00:24",
+      "ts": "16:02:04",
       "exp_date": "2026-07-17",
       "is_0dte": true,
       "direction": "BULL",
@@ -579,12 +579,12 @@
       123816360.00000001
     ],
     [
-      7500.0,
-      123492600.0
-    ],
-    [
       7475.0,
       111797375.0
+    ],
+    [
+      7465.0,
+      56829400.0
     ]
   ],
   "top_call_strikes": [
@@ -609,48 +609,48 @@
       14747600.0
     ]
   ],
-  "generated": "2026-07-17T16:01:05.591475",
+  "generated": "2026-07-17T16:03:16.860761",
   "daily": {
-    "daily_count": 24371,
-    "daily_call_prem": 97520.479,
-    "daily_put_prem": 82129.763,
+    "daily_count": 24490,
+    "daily_call_prem": 97712.205,
+    "daily_put_prem": 82739.349,
     "daily_sp_prem": 30581.663,
-    "daily_lp_prem": 49245.658,
-    "daily_sc_prem": 44158.983,
-    "daily_lc_prem": 53119.058,
-    "daily_true_bull": 83700.72,
-    "daily_true_bear": 93404.641,
+    "daily_lp_prem": 49851.341,
+    "daily_sc_prem": 44178.288,
+    "daily_lc_prem": 53283.449,
+    "daily_true_bull": 83865.112,
+    "daily_true_bear": 94029.628,
     "daily_true_dir": "实际偏空 🔴",
     "daily_call_walls": [
       [
         7450.0,
-        9069764050.0
+        9097385215.0
       ],
       [
         7480.0,
-        6108211100.0
+        6108449745.0
       ],
       [
         7460.0,
-        6023808600.0
+        6028365007.5
       ],
       [
         7470.0,
-        5925273337.5
+        5925538790.0
       ],
       [
         7500.0,
-        5152962277.5
+        5153348747.5
       ]
     ],
     "daily_put_walls": [
       [
         7480.0,
-        7602740775.0
+        7753459275.0
       ],
       [
         7490.0,
-        7355406180.0
+        7515876180.0
       ],
       [
         7500.0,
@@ -658,7 +658,7 @@
       ],
       [
         7485.0,
-        5472683865.0
+        5596500225.0
       ],
       [
         7495.0,
