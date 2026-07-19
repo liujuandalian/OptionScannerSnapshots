@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `oi_report_core72_20260719.json` | OI变化对比报告 | 2026-07-19 18:51 | [下载](oi_snapshots/20260719/oi_report_core72_20260719.json) | {"date": "2026-07-19", "surging": 100, "shrinking": 100} |
 | `oi_core72_20260719.json` | 盘后OI核心快照 | 2026-07-19 18:51 | [下载](oi_snapshots/20260719/oi_core72_20260719.json) | {"tickers": 73} |
 
 
