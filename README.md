@@ -20,7 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
-| `ndx_0dte_20260720_1533.json` | NDX 0DTE信号 | 2026-07-20 15:33 | [下载](NDXalerts/20260720/ndx_0dte_20260720_1533.json) | {"signals": 29, "timestamp_et": "2026-07-20 15:33 ET"} |
+| `spx_0dte_20260720_1533.json` | SPX 0DTE信号 | 2026-07-20 15:33 | [下载](SPXalerts/20260720/spx_0dte_20260720_1533.json) | {"signals": 39, "timestamp_et": "2026-07-20 15:33 ET"} |
 | `spx_intraday_20260720_1530.json` | SPX盘中5分钟快报 | 2026-07-20 15:30 | [下载](SPXalerts/20260720/spx_intraday_20260720_1530.json) | {} |
 | `ndx_0dte_report_20260720_1528.json` | NDX 0DTE信号 | 2026-07-20 15:29 | [下载](NDXalerts/20260720/ndx_0dte_report_20260720_1528.json) | {"label": "0DTE · 15:28 ET", "signals": 53, "direction": "极度偏空 🔴🔴", "net_premium |
 | `ndx_0dte_report_20260720_1524.json` | NDX 0DTE信号 | 2026-07-20 15:24 | [下载](NDXalerts/20260720/ndx_0dte_report_20260720_1524.json) | {"label": "0DTE · 15:24 ET", "signals": 6, "direction": "极度偏多 🟢🟢", "net_premium_ |
