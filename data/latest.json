@@ -28,16 +28,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260720/spx_intraday_20260720_1240.json"
   },
   "spx_0dte": {
-    "filename": "spx_0dte_report_20260720_1247.json",
-    "github_path": "SPXalerts/20260720/spx_0dte_report_20260720_1247.json",
-    "upload_time": "2026-07-20 12:47",
+    "filename": "spx_0dte_report_20260720_1244.json",
+    "github_path": "SPXalerts/20260720/spx_0dte_report_20260720_1244.json",
+    "upload_time": "2026-07-20 12:44",
     "summary": {
-      "label": "0DTE · 12:47 ET",
-      "signals": 102,
+      "label": "0DTE · 12:44 ET",
+      "signals": 136,
       "direction": "多空均衡 ⚪",
-      "net_premium_M": 65.5
+      "net_premium_M": -126.7
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260720/spx_0dte_report_20260720_1247.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260720/spx_0dte_report_20260720_1244.json"
   },
   "unknown": {
     "filename": "spx_stock_flow_latest.json",
@@ -101,28 +101,28 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260720/spx_gamma_latest.json",
-    "upload_time": "2026-07-20 12:43",
+    "upload_time": "2026-07-20 12:47",
     "summary": {
-      "ts": "12:43",
-      "ts_full": "2026-07-20T12:43:34.206492-04:00",
+      "ts": "12:47",
+      "ts_full": "2026-07-20T12:47:32.556836-04:00",
       "symbol": "SPX",
-      "spot": 7481.55,
+      "spot": 7486.11,
       "day_high": 7513.23,
       "day_low": 7462.37,
       "day_open": 7489.18,
       "prev_close": null,
-      "total_volume": 1020461078,
-      "ovwap": 7479.86,
+      "total_volume": 1088524238,
+      "ovwap": 7480.14,
       "ovwap_day_high": 7520.92,
       "ovwap_day_high_spot": 7497.93,
       "ovwap_day_low": 7479.34,
       "ovwap_day_low_spot": 7477.88,
-      "net_gex": -52272442.0,
-      "net_gex_b": -0.0523,
-      "zero_gamma": 7484.8,
+      "net_gex": -36897600.0,
+      "net_gex_b": -0.0369,
+      "zero_gamma": 7484.9,
       "gamma_wall_call": 7500.0,
       "gamma_wall_put": 7500.0,
-      "dte_days": 0.1364
+      "dte_days": 0.1337
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260720/spx_gamma_latest.json"
   },
