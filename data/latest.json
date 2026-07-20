@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-20 15:51",
+  "_updated": "2026-07-20 15:52",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -57,16 +57,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260720/ndx_ndte_20260720_1548.json"
   },
   "ndx_0dte": {
-    "filename": "ndx_0dte_report_20260720_1551.json",
-    "github_path": "NDXalerts/20260720/ndx_0dte_report_20260720_1551.json",
-    "upload_time": "2026-07-20 15:51",
+    "filename": "ndx_0dte_report_20260720_1533.json",
+    "github_path": "NDXalerts/20260720/ndx_0dte_report_20260720_1533.json",
+    "upload_time": "2026-07-20 15:33",
     "summary": {
-      "label": "0DTE · 15:51 ET",
-      "signals": 40,
+      "label": "0DTE · 15:33 ET",
+      "signals": 29,
       "direction": "纯空 🔴🔴（无CALL信号）",
-      "net_premium_M": -69.2
+      "net_premium_M": -85.3
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260720/ndx_0dte_report_20260720_1551.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260720/ndx_0dte_report_20260720_1533.json"
   },
   "stock_flow": {
     "filename": "spx_stock_flow_latest.json",
@@ -153,21 +153,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260720/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_145049.json",
-    "github_path": "ClaudeAnalysis/20260720/claude_analysis_145049.json",
-    "upload_time": "2026-07-20 14:50",
+    "filename": "claude_analysis_155141.json",
+    "github_path": "ClaudeAnalysis/20260720/claude_analysis_155141.json",
+    "upload_time": "2026-07-20 15:52",
     "summary": {
-      "generated_at": "2026-07-20T14:50:49.549470-04:00",
-      "generated_at_display": "2026-07-20 14:50:49 ET",
+      "generated_at": "2026-07-20T15:51:41.127046-04:00",
+      "generated_at_display": "2026-07-20 15:51:41 ET",
       "category": "daily",
-      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,460–$7,470（0DTE CALL爆发+大规模主动LONG CALL将价格往上拉，$7,470是短期天花板）\nNDX预测：$28,640–$28,700（0DTE PUT爆发压制，现价已在$28,700附近，向下磁吸到短PUT护盘位）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,470(62K客户SHORT CALL) / 下方无\n　　　　　 NDX上方$28,750(240张) / 下方$28,640(568张)\nVS预测：SPX $7,470（绿BAR强磁吸，客户SHORT CALL集中在此，做市商Delta对冲推价靠拢）\n　　　 NDX $28,640–$28,700（0DTE空头压制，非0DTE SHORT PUT护盘在$28,700，两力拉锯偏$28,640–$28,700）\n\n【GEX排名法】\nSPX GEX：#1=$7,450 #2=$7,440 → 加权中值$7,446\nNDX GEX：#1=$28,630 #2=$28,620 → 加权中值$28,626\n\n【综合拟定】（GEX 50% + VS3D 30% + 原始分析 20%）\nSPX综合拟定：**$7,462**（GEX往下拉$7,446，绿BAR往上拉$7,470，取加权）\nNDX综合拟定：**$28,650**（GEX磁吸$28,626，VS3D $28,640，PUT压力一致）\n\n⑥【专业建议】\n\n波动判断：SPX Straddle收缩78%、仅剩$15.50，**现在可以做卖方，但窗口极窄**——收益空间小，稍有意外就亏钱，性价比偏低。NDX Straddle仍有$81，IV28%，**NDX今日不适合做卖方**，PUT方向不明、单边风险过大。\n\n买方机会：SPX上方$7,470 CALL彩票（$1.38–$1.58）——机构刚刚砸入$10M级LONG CALL到$7,465–$7,470，若70分钟内能突破$7,460站稳，$7,470 CALL可博最后一段跳升，但Theta极快，**15:30前必须止损或止盈**。NDX方向看空，**$28,600 PUT**值得关注（0DTE PUT爆发+C/P背离明确），但NDX已在$28,700附近，空间有限，小仓位试水。\n\n仓位提醒：你账户里的SPX SHORT仓位——**$SPX SHORT CALL（均价$12.55/$13.23/$21.60附近）和SHORT PUT（均价$4.42/$4.92/$77.99）需要立刻对照当前价格**。SPX现价$7,451，如果你的SHORT CALL行权价低于$7,460，**15:15前必须平或Roll**，机构正在大举LONG CALL $7,460–$7,470，你的SHORT CALL顶盖风险真实存在。SHORT PUT仓位（$4.42/$4.92）如果行权价在$7,440以上，尚有缓冲，但NDX传来空头信号，不排除联动下砸，**建议15:30前",
+      "text": "⑤【收盘预测】\n\n**【原始分析法】**\nSPX预测：$7,440–$7,450（0DTE大量SHORT PUT护盘$7440/7445，LONG PUT压制反弹上限）\nNDX预测：$28,650–$28,720（0DTE CALL主导看多但非0DTE方向换手偏空，夹在绿BAR之间）\n\n**【VS3D绿BAR法】**\n最近绿BAR：SPX上方无/下方$7,445（80K）；NDX上方$28,830/下方$28,650\nVS预测收盘：SPX $7,445（最近绿BAR精准磁吸）；NDX $28,680（两绿BAR之间偏下方）\n\n**【GEX排名法】**\nSPX：#1=$7,450 #2=$7,455 → 加权$7,452\nNDX：#1=$28,680 #2=$28,630 → 加权$28,660\n\n**【综合拟定】（GEX 50%+VS 30%+原始 20%）**\nSPX综合拟定：**$7,447**\nNDX综合拟定：**$28,668**\n\n⑥【专业建议】\n\n**波动判断**：现在坚决不能新开卖方。SPX 0DTE Straddle仅剩$11.30，表面平静，但15:21爆发的累计$1.5B+巨量LONG PUT说明对冲盘仍在运动，最后11分钟单边冲击完全可能把ATM Gamma做死。\n\n**买方机会**：暂无新的高胜率入场。NDX 0DTE彩票CALL$28,880(V/OI:130x)/$28,900(91x)属于极端投机，距收盘11分钟Theta已吃掉57%，不追。\n\n**仓位提醒——针对你的SPX持仓（最紧急）**：\n- **SPX CALL LONG × 多张（均价$21.60/$17.38/$6.15/$1.53/$0.52）**：综合预测收盘$7,447，低于你这批CALL的行权价预期，**现在立刻检查每个行权价，若行权价高于$7,450的CALL还有残值，立即市价出掉，别等收盘归零。**\n- **SPX CALL SHORT × 2张（均价$5.35）**：方向对（压制上行），但11分钟后到期，持有到期即可，不需要动。\n- **SPX PUT LONG（均价$1.97/$72.31）+ SHORT（均价$4.42/$77.99）**：看起来是PUT垂直价差，方向今天顺空，但收盘预测$7,447仍在所有SHORT PUT行权价上方的话，结构性盈亏基本锁定，维持不动。\n\n①【关键磁铁】\n\n**SPX**：$7,445（绿BAR磁吸，SHORT PUT 80K张）、$7,440（绿BAR护盘99K张=最厚地板🛡️）、$7,430（绿BAR76K次级支撑）；$7,460–$7,470（LONG PUT红墙，排斥上行）\n\n**NDX**：$28,830（绿BAR上方磁吸）、$28,650（绿BAR下方磁吸）；$28,900–$28,890（红BAR排斥，客户LONG CALL 357张压顶）\n\n②【机构",
       "meta": {
-        "spx": 7450.97,
-        "ndx": 28707.18,
-        "ts": "14:50 ET"
+        "spx": 7445.89,
+        "ndx": 28681.97,
+        "ts": "15:48 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260720/claude_analysis_145049.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260720/claude_analysis_155141.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260720.json",
