@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `ndx_gamma_latest.json` | NDX GammaTracker快照 | 2026-07-21 09:29 | [下载](NDXalerts/20260721/ndx_gamma_latest.json) | {"ts": "09:29", "ts_full": "2026-07-21T09:29:21.125842-04:00", "symbol": "NDX",  |
 | `oi_report_pre_mkt_20260721.json` | OI变化对比报告 | 2026-07-21 08:47 | [下载](oi_snapshots/20260721/oi_report_pre_mkt_20260721.json) | {"date": "2026-07-21", "surging": 100, "shrinking": 100} |
 | `oi_pre_mkt_20260721.json` | 盘前OI快照 | 2026-07-21 08:47 | [下载](oi_snapshots/20260721/oi_pre_mkt_20260721.json) | {"tickers": 264} |
 
