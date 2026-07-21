@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-21 11:39",
+  "_updated": "2026-07-21 11:40",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -153,21 +153,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260721/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_113038.json",
-    "github_path": "ClaudeAnalysis/20260721/claude_analysis_113038.json",
-    "upload_time": "2026-07-21 11:30",
+    "filename": "claude_analysis_114040.json",
+    "github_path": "ClaudeAnalysis/20260721/claude_analysis_114040.json",
+    "upload_time": "2026-07-21 11:40",
     "summary": {
-      "generated_at": "2026-07-21T11:30:38.759439-04:00",
-      "generated_at_display": "2026-07-21 11:30:38 ET",
+      "generated_at": "2026-07-21T11:40:40.520447-04:00",
+      "generated_at_display": "2026-07-21 11:40:40 ET",
       "category": "daily",
-      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,500–$7,510（0DTE大量LONG CALL集中在$7480-$7510，买方推力在现价上方，但$7500有SHORT CALL压顶）\nNDX预测：$29,150–$29,250（0DTE全面LONG CALL主导，$29200是最大磁吸方向，无绿BAR约束）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7505（39K）/ 下方$7485（25K）；NDX上方无 / 下方无\nVS预测收盘：SPX $7500–$7505（上下绿BAR夹击，收盘被钉在这个区间概率极高）；NDX 无绿BAR，方向性动能自由运行偏上\n\n【GEX排名法】\nSPX：#1=$7500（-4pt）#2=$7515（+11pt）→ 加权：$7500×60%+$7515×40%=$7506\nNDX：#1=$29090（-36pt）#2=$29250（+124pt）→ 加权：$29090×60%+$29250×40%=$29154\n\n【综合拟定】（GEX50%+VS3D30%+原始20%）\nSPX综合拟定：**$7,503**\nNDX综合拟定：**$29,180**\n\n⑥【专业建议】\n\n波动判断：**可以做卖方，但区间极窄**。SPX Straddle已收缩41%至$18.70，NDX收缩41%，今天的波动预算基本消耗完毕，卖方时间窗口开启——但SPX上方$7510有LONG CALL红BAR排斥、$7520有SHORT CALL压顶，做Iron Condor建议$7485P/$7520C两侧，不要追宽。\n\n买方机会：**NDX $29,300 CALL值得关注**。0DTE成交量榜615-618张、V/OI 19.8x，彩票$29400也在跟进，NDX非0DTE虽有偏空但那是SHORT CALL对冲仓（$29000 ITM CALL V/OI=180x，典型卖出对冲而非方向押注）。0DTE CALL全面看涨，$29,200突破后$29,300是下一目标，现价$6左右买入风险回报合理。SPX方面**$7510 CALL**（现价$6.25，V/OI 33.7x大量进场）作为短线博突破，止损$7500跌破即出。\n\n仓位提醒：\n- **SPX SHORT CALL×2（均价$6.95）**：现价$7504贴近，$7505绿BAR是你的朋友，但$7510一旦突破立刻变成烫手山芋。**建议13:30前处理或设好止损$7510**，不要等最后半小时。\n- **SPX PUT LONG/SHORT对冲组合**：PUT买方均价$72.31 vs 卖方$77.99，方向看多时PUT端逐渐吃亏，Theta正在烧，可以考虑今日提前了结PUT端。\n\n①【关键磁铁】\n\nSPX：$7505（绿BAR 39K，磁吸✅）；$7480（绿BAR 30K，下方支撑磁吸）；$7520（🧢SHORT CALL压顶，43K，",
+      "text": "⑤【收盘预测】\n\n**【原始分析法】**\nSPX预测：$7,495–$7,510（0DTE大量LONG CALL集中在7480-7510，CALL爆发主导，但SHORT CALL压顶7520限制上行）\nNDX预测：$29,100–$29,200（0DTE CALL单面倒，29120/29200 V/OI极高，方向明确向上）\n\n**【VS3D绿BAR法】**\n最近绿BAR：SPX上方$7505(39K) / 下方$7485(25K)；NDX上方无 / 下方$29000(352)\nVS预测收盘：SPX $7,500–$7,505（磁吸上方绿BAR，当前价已在7504附近）\nNDX $29,100（上方无绿BAR磁吸，LONG CALL红BAR排斥29200，向上阻力大）\n\n**【GEX排名法】**\nSPX：#1=$7,500（60%）× + #2=$7,495（40%）→ 加权 $7,498\nNDX：#1=$29,090（60%）+ #2=$29,250（40%）→ 加权 $29,154\n\n**【综合拟定】**（GEX 50% + VS3D 30% + 原始 20%）\nSPX综合拟定：**$7,500**\nNDX综合拟定：**$29,120**\n\n⑥【专业建议】\n\n**波动判断：不宜做卖方新仓。** Straddle虽已收缩41%，但0DTE期间LONG PUT $7490/7495的V/OI高达37-40x，加上非0DTE方向换手刚发生（多→空），波动未完全定向前新开Iron Condor风险不对称。\n\n**买方机会：** SPX 0DTE CALL $7510（现价mid $6.25，V/OI 33.7x，LONG CALL确认）值得关注——若价格在$7,500站稳，这里有追涨价值，止损设$7,490破位。NDX $29,200 CALL（V/OI 58.7x，量最大）若NDX能突破29,120阻力，有非对称机会，但现价距29200还有90点，Straddle仅$119，时间价值消耗快，入场需谨慎。\n\n**仓位提醒（你的真实持仓）：**\n- $SPX SHORT CALL 2张（均价$6.95）：当前市场看涨信号强烈，LONG CALL机构大量涌入，这个仓位压力最大。**建议13:00前观察，若SPX站稳7505以上立即平仓，不要等**\n- $SPX SHORT PUT 1张（均价$77.99）：PUT护盘在7480，这个仓位目前安全，可继续持有至14:30后再评估\n- $SPX LONG PUT 1张（均价$72.31）：与SHORT PUT组合，净风险可控，不急于动\n- NVDA/MSFT/CRWV/AMZN的垂直价差组合：今日非0DTE持仓，远离到期日，不受今日Theta冲击，无需今日操作\n\n①【关键磁铁】\n\n**SPX：**\n$7,520 🧢SHORT CALL压顶（客户SHORT 43K张=绿BAR，但更是顶盖阻力）\n$7,505 绿BAR磁吸（客",
       "meta": {
         "spx": 7504.19,
-        "ndx": 29144.5,
-        "ts": "11:30 ET"
+        "ndx": 29111.86,
+        "ts": "11:40 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260721/claude_analysis_113038.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260721/claude_analysis_114040.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260721.json",
