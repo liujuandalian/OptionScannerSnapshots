@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-21 16:04",
+  "_updated": "2026-07-21 16:05",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -28,14 +28,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260721/spx_intraday_20260721_1550.json"
   },
   "spx_0dte": {
-    "filename": "spx_0dte_20260721_1604.json",
-    "github_path": "SPXalerts/20260721/spx_0dte_20260721_1604.json",
+    "filename": "spx_0dte_report_20260721_1604.json",
+    "github_path": "SPXalerts/20260721/spx_0dte_report_20260721_1604.json",
     "upload_time": "2026-07-21 16:04",
     "summary": {
+      "label": "0DTE · 16:04 ET",
       "signals": 118,
-      "timestamp_et": "2026-07-21 16:04 ET"
+      "direction": "极度偏多 🟢🟢",
+      "net_premium_M": 679.5
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260721/spx_0dte_20260721_1604.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260721/spx_0dte_report_20260721_1604.json"
   },
   "unknown": {
     "filename": "spx_stock_flow_latest.json",
@@ -99,23 +101,23 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260721/spx_gamma_latest.json",
-    "upload_time": "2026-07-21 16:03",
+    "upload_time": "2026-07-21 16:05",
     "summary": {
-      "ts": "16:03",
-      "ts_full": "2026-07-21T16:03:54.126168-04:00",
+      "ts": "16:05",
+      "ts_full": "2026-07-21T16:05:13.152495-04:00",
       "symbol": "SPX",
       "spot": 7509.2,
       "day_high": 7515.31,
       "day_low": 7467.86,
       "day_open": 7489.95,
       "prev_close": null,
-      "total_volume": 1979559589,
+      "total_volume": 2728502465,
       "ovwap": 7493.13,
       "ovwap_day_high": 7493.13,
       "ovwap_day_high_spot": 7509.18,
       "ovwap_day_low": 7466.81,
       "ovwap_day_low_spot": 7488.79,
-      "net_gex": 176182919.0,
+      "net_gex": 176181835.0,
       "net_gex_b": 0.1762,
       "zero_gamma": 7477.2,
       "gamma_wall_call": 7510.0,
