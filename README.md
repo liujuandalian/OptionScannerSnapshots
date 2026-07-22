@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `ndx_gamma_latest.json` | NDX GammaTracker快照 | 2026-07-22 22:42 | [下载](NDXalerts/20260722/ndx_gamma_latest.json) | {"ts": "10:42", "ts_full": "2026-07-22T10:42:13.335170-04:00", "symbol": "NDX",  |
 | `spx_gamma_latest.json` | SPX GammaTracker快照 | 2026-07-22 22:40 | [下载](SPXalerts/20260722/spx_gamma_latest.json) | {"ts": "10:40", "ts_full": "2026-07-22T10:40:03.209221-04:00", "symbol": "SPX",  |
 
 ---|------|---------|
