@@ -1,62 +1,62 @@
 {
-  "ts": "14:11",
-  "ts_full": "2026-07-23T14:11:24.775357-04:00",
+  "ts": "14:13",
+  "ts_full": "2026-07-23T14:13:15.055971-04:00",
   "symbol": "NDX",
-  "spot": 28387.54,
+  "spot": 28413.91,
   "day_high": 28726.62,
   "day_low": 28274.52,
   "day_open": 28545.98,
   "prev_close": null,
   "total_volume": 807122496,
-  "ovwap": 28491.44,
+  "ovwap": 28505.45,
   "ovwap_day_high": 28649.46,
   "ovwap_day_high_spot": 28625.41,
   "ovwap_day_low": 28360.19,
   "ovwap_day_low_spot": 28294.01,
-  "net_gex": -1352923.0,
+  "net_gex": -1425949.0,
   "net_gex_b": -0.0014,
-  "zero_gamma": 28276.9,
+  "zero_gamma": 28276.8,
   "gamma_wall_call": 28300.0,
   "gamma_wall_put": 28400.0,
   "ranked": [
     {
       "rank": 1,
-      "strike": 28350.0,
-      "gex": -200300.0,
+      "strike": 28500.0,
+      "gex": -194659.0,
       "side": "PUT"
     },
     {
       "rank": 2,
-      "strike": 28325.0,
-      "gex": -169487.0,
+      "strike": 28350.0,
+      "gex": -187218.0,
       "side": "PUT"
     },
     {
       "rank": 3,
-      "strike": 28500.0,
-      "gex": -163632.0,
+      "strike": 28400.0,
+      "gex": -160921.0,
       "side": "PUT"
     },
     {
       "rank": 4,
-      "strike": 28400.0,
-      "gex": -156003.0,
+      "strike": 28325.0,
+      "gex": -151954.0,
       "side": "PUT"
     },
     {
       "rank": 5,
       "strike": 28300.0,
-      "gex": 144241.0,
+      "gex": 124029.0,
       "side": "CALL"
     }
   ],
   "migration": {
-    "migrated": true,
-    "direction": "DOWN",
+    "migrated": false,
+    "direction": "FLAT",
     "old_rank1": 28500.0,
-    "new_rank1": 28350.0,
-    "moved_pts": -150.0,
-    "stable": true
+    "new_rank1": 28500.0,
+    "moved_pts": 0.0,
+    "stable": false
   },
-  "dte_days": 0.0754
+  "dte_days": 0.0741
 }
