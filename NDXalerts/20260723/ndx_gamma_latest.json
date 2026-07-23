@@ -1,62 +1,62 @@
 {
-  "ts": "16:13",
-  "ts_full": "2026-07-22T16:13:58.750659-04:00",
+  "ts": "09:29",
+  "ts_full": "2026-07-23T09:29:01.423554-04:00",
   "symbol": "NDX",
   "spot": 28998.1,
   "day_high": 29176.91,
   "day_low": 28934.52,
   "day_open": 28949.81,
   "prev_close": null,
-  "total_volume": 1156892248,
-  "ovwap": 29101.75,
-  "ovwap_day_high": 29182.02,
-  "ovwap_day_high_spot": 29149.5,
-  "ovwap_day_low": 29039.76,
-  "ovwap_day_low_spot": 29018.89,
-  "net_gex": -457612.0,
-  "net_gex_b": -0.0005,
-  "zero_gamma": 28828.1,
-  "gamma_wall_call": 29000.0,
-  "gamma_wall_put": 29000.0,
+  "total_volume": 1186909288,
+  "ovwap": null,
+  "ovwap_day_high": null,
+  "ovwap_day_high_spot": null,
+  "ovwap_day_low": null,
+  "ovwap_day_low_spot": null,
+  "net_gex": -564005.0,
+  "net_gex_b": -0.0006,
+  "zero_gamma": 28958.7,
+  "gamma_wall_call": 29160.0,
+  "gamma_wall_put": 29100.0,
   "ranked": [
     {
       "rank": 1,
-      "strike": 28990.0,
-      "gex": -173026.0,
-      "side": "PUT"
-    },
-    {
-      "rank": 2,
-      "strike": 28975.0,
-      "gex": -137955.0,
-      "side": "PUT"
-    },
-    {
-      "rank": 3,
-      "strike": 28980.0,
-      "gex": 121806.0,
+      "strike": 29160.0,
+      "gex": 346953.0,
       "side": "CALL"
     },
     {
+      "rank": 2,
+      "strike": 29200.0,
+      "gex": 238878.0,
+      "side": "CALL"
+    },
+    {
+      "rank": 3,
+      "strike": 28770.0,
+      "gex": -164026.0,
+      "side": "PUT"
+    },
+    {
       "rank": 4,
-      "strike": 28950.0,
-      "gex": -120457.0,
+      "strike": 28760.0,
+      "gex": -145332.0,
       "side": "PUT"
     },
     {
       "rank": 5,
-      "strike": 29000.0,
-      "gex": -107500.0,
-      "side": "PUT"
+      "strike": 29150.0,
+      "gex": 144929.0,
+      "side": "CALL"
     }
   ],
   "migration": {
-    "migrated": true,
-    "direction": "DOWN",
-    "old_rank1": 29040.0,
-    "new_rank1": 28990.0,
-    "moved_pts": -50.0,
+    "migrated": false,
+    "direction": "NONE",
+    "old_rank1": 0,
+    "new_rank1": 0,
+    "moved_pts": 0,
     "stable": true
   },
-  "dte_days": 0.0007
+  "dte_days": 0.2715
 }
