@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-07-27 22:41",
+  "_updated": "2026-07-27 22:42",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -95,28 +95,28 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260727/spx_gamma_latest.json",
-    "upload_time": "2026-07-27 22:40",
+    "upload_time": "2026-07-27 22:42",
     "summary": {
-      "ts": "10:40",
-      "ts_full": "2026-07-27T10:40:25.936824-04:00",
+      "ts": "10:41",
+      "ts_full": "2026-07-27T10:41:50.738519-04:00",
       "symbol": "SPX",
-      "spot": 7401.14,
+      "spot": 7390.53,
       "day_high": 7480.57,
-      "day_low": 7395.08,
+      "day_low": 7389.85,
       "day_open": 7464.2,
       "prev_close": null,
       "total_volume": 657307490,
-      "ovwap": 7433.25,
+      "ovwap": 7430.77,
       "ovwap_day_high": 7469.72,
       "ovwap_day_high_spot": 7459.65,
-      "ovwap_day_low": 7433.25,
-      "ovwap_day_low_spot": 7401.14,
-      "net_gex": -44634494.0,
-      "net_gex_b": -0.0446,
+      "ovwap_day_low": 7430.77,
+      "ovwap_day_low_spot": 7390.53,
+      "net_gex": -74073495.0,
+      "net_gex_b": -0.0741,
       "zero_gamma": 7418.6,
       "gamma_wall_call": 7425.0,
       "gamma_wall_put": 7400.0,
-      "dte_days": 0.2219
+      "dte_days": 0.2209
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260727/spx_gamma_latest.json"
   },
