@@ -1,62 +1,62 @@
 {
-  "ts": "12:06",
-  "ts_full": "2026-07-27T12:06:57.801814-04:00",
+  "ts": "15:48",
+  "ts_full": "2026-07-27T15:48:18.187280-04:00",
   "symbol": "SPX",
-  "spot": 7401.86,
+  "spot": 7410.69,
   "day_high": 7480.57,
-  "day_low": 7386.55,
+  "day_low": 7382.74,
   "day_open": 7464.2,
   "prev_close": null,
-  "total_volume": 1113210466,
-  "ovwap": 7420.39,
-  "ovwap_day_high": 7469.72,
-  "ovwap_day_high_spot": 7459.65,
-  "ovwap_day_low": 7420.39,
-  "ovwap_day_low_spot": 7401.86,
-  "net_gex": -52272483.0,
-  "net_gex_b": -0.0523,
-  "zero_gamma": 7418.6,
-  "gamma_wall_call": 7425.0,
-  "gamma_wall_put": 7400.0,
+  "total_volume": 2122853471,
+  "ovwap": 7413.52,
+  "ovwap_day_high": 7421.73,
+  "ovwap_day_high_spot": 7418.78,
+  "ovwap_day_low": 7412.07,
+  "ovwap_day_low_spot": 7390.81,
+  "net_gex": -30358397.0,
+  "net_gex_b": -0.0304,
+  "zero_gamma": 7419.2,
+  "gamma_wall_call": 7410.0,
+  "gamma_wall_put": 7410.0,
   "ranked": [
     {
       "rank": 1,
       "strike": 7400.0,
-      "gex": -12303667.0,
+      "gex": -13693688.0,
       "side": "PUT"
     },
     {
       "rank": 2,
-      "strike": 7395.0,
-      "gex": -9278022.0,
+      "strike": 7415.0,
+      "gex": -8974693.0,
       "side": "PUT"
     },
     {
       "rank": 3,
-      "strike": 7350.0,
-      "gex": -6572728.0,
+      "strike": 7405.0,
+      "gex": -6715880.0,
       "side": "PUT"
     },
     {
       "rank": 4,
-      "strike": 7375.0,
-      "gex": -6145267.0,
+      "strike": 7410.0,
+      "gex": -4480158.0,
       "side": "PUT"
     },
     {
       "rank": 5,
       "strike": 7425.0,
-      "gex": 5942422.0,
+      "gex": 3885040.0,
       "side": "CALL"
     }
   ],
   "migration": {
-    "migrated": false,
-    "direction": "FLAT",
-    "old_rank1": 7400.0,
+    "migrated": true,
+    "direction": "DOWN",
+    "old_rank1": 7425.0,
     "new_rank1": 7400.0,
-    "moved_pts": 0.0,
-    "stable": true
+    "moved_pts": -25.0,
+    "stable": false
   },
-  "dte_days": 0.1618
+  "dte_days": 0.0081
 }
