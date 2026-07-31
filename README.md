@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `oi_pre_mkt_20260731.json` | 盘前OI快照 | 2026-07-31 13:57 | [下载](oi_snapshots/20260731/oi_pre_mkt_20260731.json) | {"tickers": 264} |
 | `spx_0dte_report_20260731_1355.json` | SPX 0DTE信号 | 2026-07-31 13:55 | [下载](SPXalerts/20260731/spx_0dte_report_20260731_1355.json) | {"label": "0DTE · 13:55 ET", "signals": 188, "direction": "极度偏多 🟢🟢", "net_premiu |
 | `spx_gamma_latest.json` | SPX GammaTracker快照 | 2026-07-31 13:55 | [下载](SPXalerts/20260731/spx_gamma_latest.json) | {"ts": "13:55", "ts_full": "2026-07-31T13:55:30.872274-04:00", "symbol": "SPX",  |
 | `ndx_gamma_latest.json` | NDX GammaTracker快照 | 2026-07-31 13:54 | [下载](NDXalerts/20260731/ndx_gamma_latest.json) | {"ts": "13:54", "ts_full": "2026-07-31T13:54:14.627898-04:00", "symbol": "NDX",  |
