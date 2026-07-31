@@ -1,62 +1,62 @@
 {
-  "ts": "13:45",
-  "ts_full": "2026-07-30T13:45:11.553936-04:00",
+  "ts": "09:29",
+  "ts_full": "2026-07-31T09:29:09.506803-04:00",
   "symbol": "SPX",
-  "spot": 7423.93,
-  "day_high": 7426.04,
-  "day_low": 7370.98,
-  "day_open": 7390.45,
+  "spot": 7437.63,
+  "day_high": null,
+  "day_low": null,
+  "day_open": null,
   "prev_close": null,
-  "total_volume": 1848124847,
-  "ovwap": 7397.44,
-  "ovwap_day_high": 7399.35,
-  "ovwap_day_high_spot": 7415.75,
-  "ovwap_day_low": 7385.47,
-  "ovwap_day_low_spot": 7371.85,
-  "net_gex": 97306977.0,
-  "net_gex_b": 0.0973,
-  "zero_gamma": 7354.5,
-  "gamma_wall_call": 7425.0,
-  "gamma_wall_put": 7425.0,
+  "total_volume": 3646095601,
+  "ovwap": null,
+  "ovwap_day_high": null,
+  "ovwap_day_high_spot": null,
+  "ovwap_day_low": null,
+  "ovwap_day_low_spot": null,
+  "net_gex": 19007145.0,
+  "net_gex_b": 0.019,
+  "zero_gamma": 7418.7,
+  "gamma_wall_call": 7450.0,
+  "gamma_wall_put": 7450.0,
   "ranked": [
     {
       "rank": 1,
-      "strike": 7440.0,
-      "gex": 11334523.0,
-      "side": "CALL"
+      "strike": 7400.0,
+      "gex": -19374909.0,
+      "side": "PUT"
     },
     {
       "rank": 2,
-      "strike": 7425.0,
-      "gex": 10214027.0,
+      "strike": 7475.0,
+      "gex": 14095373.0,
       "side": "CALL"
     },
     {
       "rank": 3,
-      "strike": 7410.0,
-      "gex": 10141898.0,
+      "strike": 7425.0,
+      "gex": 8896523.0,
       "side": "CALL"
     },
     {
       "rank": 4,
-      "strike": 7430.0,
-      "gex": 9542882.0,
+      "strike": 7455.0,
+      "gex": 8422750.0,
       "side": "CALL"
     },
     {
       "rank": 5,
-      "strike": 7450.0,
-      "gex": 9254968.0,
+      "strike": 7460.0,
+      "gex": 8172489.0,
       "side": "CALL"
     }
   ],
   "migration": {
     "migrated": false,
-    "direction": "FLAT",
-    "old_rank1": 7440.0,
-    "new_rank1": 7440.0,
-    "moved_pts": 0.0,
-    "stable": false
+    "direction": "NONE",
+    "old_rank1": 0,
+    "new_rank1": 0,
+    "moved_pts": 0,
+    "stable": true
   },
-  "dte_days": 0.0936
+  "dte_days": 0.2714
 }
