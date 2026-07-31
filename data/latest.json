@@ -125,42 +125,47 @@
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260731/ndx_gamma_latest.json",
-    "upload_time": "2026-07-31 14:07",
+    "upload_time": "2026-07-31 14:06",
     "summary": {
-      "ts": "14:07",
-      "ts_full": "2026-07-31T14:07:34.533913-04:00",
+      "ts": "14:06",
+      "ts_full": "2026-07-31T14:06:12.361910-04:00",
       "symbol": "NDX",
-      "spot": 28313.96,
+      "spot": 28310.89,
       "day_high": 28606.77,
       "day_low": 27954.24,
       "day_open": 28446.99,
       "prev_close": null,
       "total_volume": 925262674,
-      "ovwap": 28270.65,
+      "ovwap": 28269.84,
       "ovwap_day_high": 28280.13,
       "ovwap_day_high_spot": 28328.5,
       "ovwap_day_low": 28263.43,
       "ovwap_day_low_spot": 28299.56,
-      "net_gex": 6444207.0,
+      "net_gex": 6359153.0,
       "net_gex_b": 0.0064,
       "zero_gamma": 28075.2,
       "gamma_wall_call": 28340.0,
       "gamma_wall_put": 28200.0,
-      "dte_days": 0.0781
+      "dte_days": 0.079
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260731/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_155703.json",
-    "github_path": "ClaudeAnalysis/20260721/claude_analysis_155703.json",
-    "upload_time": "2026-07-21 15:57",
+    "filename": "claude_analysis_140736.json",
+    "github_path": "ClaudeAnalysis/20260731/claude_analysis_140736.json",
+    "upload_time": "2026-07-31 14:07",
     "summary": {
-      "generated_at": "2026-07-21T15:57:03.074402-04:00",
-      "generated_at_display": "2026-07-21 15:57:03 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 专业复盘报告 | 20260721\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### SPX 0DTE：从\"彩票狂欢\"到\"PUT卖方主导的底部保护\"\n\n**20260717（周四）** 是一个典型的**临近到期多空双向彩票对冲日**——大单分布在CALL 7440-7470和PUT 7465-7530两侧，价格围绕7463横盘，大量V/OI超100x的极速周转，说明当天是机构大面积平仓+散户双向博弈的结构，方向信息噪音极高。但净方向偏多、量纠偏也偏多，本质是**买方主导的方向性多头**加上卖PUT的看涨结构并存。\n\n**20260720（周一）** 的0DTE SPX信号极其干净——全部是7490-7560的OTM CALL，mid只有$0.03，V/OI 10-130x，时间集中在15:46。这是**纯粹的收盘前彩票扫货**，没有方向意义，是清仓日常见的\"收盘前$0.03清仓或对赌\"操作。结构上中性到轻微看多，但实际上是垃圾信号。\n\n**20260721（今日）** 结构完全不同，且具有强烈的信息含量：\n\n- **全部是PUT，没有一张CALL进入Top 15大单**——这在历史对比中是首次出现的纯PUT主导\n- **SHORT PUT占主导，但混有真实方向性LONG PUT**：7500/7505/7510/7515/7520/7535/7540等大量SHORT PUT（卖方收权利金看涨），但7525/7530/7600/7650/7570/7490/7495/7480/7475是LONG PUT（买方看跌或对冲）\n- **关键识别**：SHORT PUT集中在7500-7520（贴近现价7509），LONG PUT集中在7490以下（OTM）以及7525-7650（ITM/深ITM）。这个结构不是简单的看涨或看空——这是**Collar结构的底端**，机构在用LONG PUT $7525-7650保护高位多头仓位，同时用SHORT PUT $7500-7510补贴权利金成本。\n- **量纠偏P/C=9.90看空** vs **权利金方向偏多**，这个裂口本身就说明：名义权利金多是因为SHORT PUT权利金高（ITM），而成交量看空是因为大量OTM LONG PUT（低价格高量）。两个指标各自捕捉不同层面，**综合判断是对冲性质而非纯方向押注**。\n\n**结论：今日SPX 0DTE的核心结构是\"高位保护性平仓对冲+PUT spread收益增强\"，而非单纯方向性押注。**\n\n---\n\n### SPX 非0DTE：方向换手是今日最重要的结构信号\n\n非0DTE出现了CALL→PUT主导的**方向换手**，且规模达到：\n- CALL爆发 $1106.30M\n- PUT爆发 $1360.01M\n- Straddle收缩75%\n\n三天对比中，非0DTE的方向换手在7/17和7/20均未出现——**7/21是首次出现PUT在非0DTE占主导**。这不是0DTE的收盘前噪音，这是跨周/月的期限结构中机构在建立PUT保护头寸。Straddle收缩75%说明隐含波动率被压缩，市场不再为尾部风险付费——但同时PUT爆发比CALL更大，说明是**定向保护而非全面对冲**。\n\n这个组合（IV压缩+PUT爆发）在历史上通常出现在：\n1. 机构认为近期不会有大幅波动（压IV），但担心中期（1-4周）有下行风险\n2. 大型持仓的\"cheap hedge\"建仓窗口\n\n---\n\n### NDX 0DTE：今日出现了三天中最强的反向结构\n\n- **7/17**：P/C=1.00均衡，权利金偏多，结构中性\n- **7/20**：P/C=2.12看空，大量LONG PUT（28700/28750/28850），净方向偏空，**这是真实的熊市对冲**\n- **7/21**：P/C=0.26看多，**信号完全反转**。但注意今日NDX已升至29165（比7/20高出560点），大量LONG CALL在29150-29400，多为$0.03-$19的OTM/深OTM。同时权利金偏空（SHORT CALL为主的压制结构）\n\n**关键结构差异**：7/20的PUT买入是低位恐慌性保护；7/21的CALL买入是**高位突破后的动量追涨+彩票押注**。两者都有合理性，但前者是机构对冲，后者更多是散户/动量资金。7/21同时有PUT爆发$36.12M（NDX 0DTE）触发，与大量LONG CALL并存，说明是**CALL为主的垂直价差+底部PUT保护**的复合结构。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：SPX PUT $7500 vol=136,787，V/OI=96.8x — 极端异常\n\n现价7509，$7500 PUT是轻微OTM，mid=$0.23。**136,787张×100股×$0.23=$3.08M**，V/OI高达96.8x说明这几乎全是新开仓而非平仓。这个量级的短期OTM PUT在收盘前14分钟出现，有两种解读：\n1. **大型持仓的收盘保护**：在收盘前用廉价OTM PUT锁定当日涨幅（今日SPX从7455附近涨至7509）\n2. **看跌方向性押注**：赌明天开盘跳水\n\n结合$7505 PUT（109,201张）、$7510 PUT（88,539张），形成了一条从7500到7510的**密集防守带**，这更像是机构用PUT spread在保护今日的多头涨幅。\n\n### 异常二：SPX PUT $7490-$7480-$7475-$7470 彩票带（mid=$0.03）\n\n按成交量排名4-8位，均价$0.03，合计成交量约305,000张+，这是**纯彩票结构**——类似7/20的CALL彩票扫货，方向正好相反。今日收盘前有人在买7500以下的PUT彩票，要么是尾盘跌破保险"
+      "generated_at": "2026-07-31T14:07:36.540069-04:00",
+      "generated_at_display": "2026-07-31 14:07:36 ET",
+      "category": "daily",
+      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,490–$7,505（CALL端压倒性主动买入，量/张数P/C=0.45极度偏多，推动价格向$7,500磁吸）\nNDX预测：$28,320–$28,350（0DTE/非0DTE双端CALL爆发，量信号压倒性看多，磁吸$28,340）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,480(客户SHORT CALL量最大) / 下方$7,475\n　　　　　NDX上方$28,330 / 下方无\nVS预测收盘：SPX $7,490（$7,480绿BAR已被穿越，下一磁吸目标$7,500的47K SHORT CALL）\n　　　　　NDX $28,330（上方最近绿BAR $28,330磁吸）\n\n【GEX排名法】\nSPX GEX：#1=$7,500(+17pt) #2=$7,490(+7pt) → 加权：$7,500×60%+$7,490×40%=$7,496\nNDX GEX：#1=$28,340(+29pt) #2=$28,310(-1pt) → 加权：$28,340×60%+$28,310×40%=$28,328\n\n【综合拟定】（GEX 50%+VS 30%+原始 20%）\nSPX综合拟定：$7,496\nNDX综合拟定：$28,335\n\n⑥【专业建议】\n\n波动判断：暂时不宜做卖方。SPX Straddle $49仍有空间，CALL端大资金在13:53-14:04连续三轮扫货——行情还在走，卖方随时被踩。\n\n买方机会：SPX $7,500 CALL（今日到期或08-03）值得轻仓跟进——$7,500是47K客户SHORT CALL绿BAR磁吸位+GEX #1，做市商Delta对冲会推波助澜，目标是下午收盘前最后一冲。成本控制在$3以内，止损设$7,485破位。\n\n仓位提醒：\n- **$SPX SHORT PUT 2张（均价$8.30）**：下方支撑$7,425-$7,475，当前安全，但临近收盘需警惕。建议15:30前确认SPX仍在$7,475上方后可持到期，否则15:15平仓。\n- **$SPX SHORT CALL 2张（均价$6.92）**：⚠️最高风险！CALL端机构在疯狂买入，若SPX突破$7,500，卖方亏损加速。建议**立即评估**行权价——若SHORT CALL在$7,490以下，15:00前必须处理，不要等。\n\n①【关键磁铁】\nSPX：$7,500（47K客户SHORT CALL，绿BAR强磁吸+GEX #1）；$7,490（GEX #2）；$7,475（客户SHORT PUT绿BAR护盘）；$7,450（LONG CALL红BAR排斥，已被突破变支撑）\nNDX：$28,340（GEX #1/客户SHORT CALL绿BAR）；$28,330（VS3D最近绿BAR）；$28,400（LONG CALL红BAR排斥顶压）\n\n②【机构方向】\nSPX：强烈看",
+      "meta": {
+        "spx": 7479.32,
+        "ndx": 28311.22,
+        "ts": "13:54 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260721/claude_analysis_155703.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260731/claude_analysis_140736.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260731.json",
