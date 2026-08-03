@@ -1,62 +1,62 @@
 {
-  "ts": "09:30",
-  "ts_full": "2026-08-03T09:30:32.664483-04:00",
+  "ts": "09:31",
+  "ts_full": "2026-08-03T09:31:50.903323-04:00",
   "symbol": "NDX",
-  "spot": 28279.5,
+  "spot": 28219.98,
   "day_high": 28288.63,
-  "day_low": 28277.27,
+  "day_low": 28215.36,
   "day_open": 28278.59,
   "prev_close": null,
   "total_volume": 1601676838,
-  "ovwap": 28580.27,
+  "ovwap": 28352.24,
   "ovwap_day_high": 28580.27,
   "ovwap_day_high_spot": 28279.5,
-  "ovwap_day_low": 28580.27,
-  "ovwap_day_low_spot": 28279.5,
-  "net_gex": 608114.0,
-  "net_gex_b": 0.0006,
-  "zero_gamma": 28084.9,
-  "gamma_wall_call": 28400.0,
-  "gamma_wall_put": 28050.0,
+  "ovwap_day_low": 28351.33,
+  "ovwap_day_low_spot": 28235.83,
+  "net_gex": -151744.0,
+  "net_gex_b": -0.0002,
+  "zero_gamma": 28009.9,
+  "gamma_wall_call": 28110.0,
+  "gamma_wall_put": 28000.0,
   "ranked": [
     {
       "rank": 1,
-      "strike": 28110.0,
-      "gex": 195302.0,
-      "side": "CALL"
+      "strike": 28000.0,
+      "gex": -266394.0,
+      "side": "PUT"
     },
     {
       "rank": 2,
-      "strike": 28400.0,
-      "gex": 179778.0,
+      "strike": 28110.0,
+      "gex": 215713.0,
       "side": "CALL"
     },
     {
       "rank": 3,
-      "strike": 28050.0,
-      "gex": -152327.0,
+      "strike": 27970.0,
+      "gex": -198993.0,
       "side": "PUT"
     },
     {
       "rank": 4,
-      "strike": 28040.0,
-      "gex": -118499.0,
+      "strike": 28050.0,
+      "gex": -173186.0,
       "side": "PUT"
     },
     {
       "rank": 5,
-      "strike": 28300.0,
-      "gex": -109177.0,
-      "side": "PUT"
+      "strike": 28400.0,
+      "gex": 159962.0,
+      "side": "CALL"
     }
   ],
   "migration": {
-    "migrated": false,
-    "direction": "NONE",
-    "old_rank1": 0,
-    "new_rank1": 0,
-    "moved_pts": 0,
-    "stable": true
+    "migrated": true,
+    "direction": "DOWN",
+    "old_rank1": 28110.0,
+    "new_rank1": 28000.0,
+    "moved_pts": -110.0,
+    "stable": false
   },
-  "dte_days": 0.2705
+  "dte_days": 0.2695
 }
