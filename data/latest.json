@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-03 11:22",
+  "_updated": "2026-08-03 11:23",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -129,28 +129,28 @@
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260803/ndx_gamma_latest.json",
-    "upload_time": "2026-08-03 11:21",
+    "upload_time": "2026-08-03 11:23",
     "summary": {
-      "ts": "11:21",
-      "ts_full": "2026-08-03T11:21:54.642669-04:00",
+      "ts": "11:23",
+      "ts_full": "2026-08-03T11:23:13.931130-04:00",
       "symbol": "NDX",
-      "spot": 28665.91,
+      "spot": 28666.76,
       "day_high": 28682.39,
       "day_low": 28196.88,
       "day_open": 28278.59,
       "prev_close": null,
       "total_volume": 529686700,
-      "ovwap": 28627.13,
-      "ovwap_day_high": 28627.23,
-      "ovwap_day_high_spot": 28663.34,
+      "ovwap": 28627.28,
+      "ovwap_day_high": 28627.28,
+      "ovwap_day_high_spot": 28666.76,
       "ovwap_day_low": 28172.34,
       "ovwap_day_low_spot": 28219.92,
-      "net_gex": 5175571.0,
+      "net_gex": 5207665.0,
       "net_gex_b": 0.0052,
       "zero_gamma": 28579.0,
       "gamma_wall_call": 28600.0,
       "gamma_wall_put": 28600.0,
-      "dte_days": 0.1931
+      "dte_days": 0.1922
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260803/ndx_gamma_latest.json"
   },
