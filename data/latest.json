@@ -129,46 +129,47 @@
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260804/ndx_gamma_latest.json",
-    "upload_time": "2026-08-04 12:10",
+    "upload_time": "2026-08-04 12:09",
     "summary": {
-      "ts": "12:10",
-      "ts_full": "2026-08-04T12:10:51.584687-04:00",
+      "ts": "12:09",
+      "ts_full": "2026-08-04T12:09:33.459699-04:00",
       "symbol": "NDX",
-      "spot": 29554.6,
+      "spot": 29557.5,
       "day_high": 29577.36,
       "day_low": 29109.26,
       "day_open": 29109.26,
       "prev_close": null,
       "total_volume": 683937419,
-      "ovwap": 29504.48,
+      "ovwap": 29504.54,
       "ovwap_day_high": 29509.02,
       "ovwap_day_high_spot": 29575.97,
       "ovwap_day_low": 28789.48,
       "ovwap_day_low_spot": 29139.98,
-      "net_gex": 3486563.0,
+      "net_gex": 3465624.0,
       "net_gex_b": 0.0035,
       "zero_gamma": 0.0,
       "gamma_wall_call": 29650.0,
       "gamma_wall_put": 29800.0,
-      "dte_days": 0.1591
+      "dte_days": 0.16
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260804/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_120346.json",
-    "github_path": "ClaudeAnalysis/20260804/claude_analysis_120346.json",
-    "upload_time": "2026-08-04 12:03",
+    "filename": "claude_analysis_121047.json",
+    "github_path": "ClaudeAnalysis/20260804/claude_analysis_121047.json",
+    "upload_time": "2026-08-04 12:10",
     "summary": {
-      "generated_at": "2026-08-04T12:03:46.841160-04:00",
-      "generated_at_display": "2026-08-04 12:03:46 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 复盘分析报告\n**日期：2026-08-04 | 截至11:30/12:02 ET（盘中，非收盘）**\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 时间维度的根本性差异——这是最关键的结构差异\n\n首先必须指出一个被大多数人忽视的根本性问题：**今日数据截取于盘中（11:30/12:02 ET），而历史两日数据均为收盘后（16:05-16:10 ET）**。这意味着今日数据天然无法直接对比——收盘前30分钟的Gamma挤压和做市商强制Delta对冲会产生几倍于盘中的异常成交量。今日SPX信号数205个（历史均值约100-140个），NDX 124个（历史约57-142个），**这一信号数量的膨胀不代表活跃度异常增加，而是因为盘中持续滚动积累所致**。用这个口径比较绝对量是失真的。但结构性特征可以对比，下面进行深度解剖。\n\n---\n\n### A. SPX：从「收盘时间戳聚集型」到「双快照重复型」的结构变化\n\n**20260731（收盘前）**：Top大单的时间戳清一色`15:40:26`，是典型的收盘撮合瞬间大宗成交——做市商在最后30分钟统一处理日内对冲残余头寸，信号高度集中。这种结构下，SHORT CALL大量出现（7450、7460、7480、7475、7440等7张里有8张空头），表面上形成「ITM CALL被做空」的格局，但结合量/张纠偏（P/C=0.11极端偏多），**正确解读是：这些SHORT CALL是做市商或机构在ITM Call上的Covered Spread收尾——卖出ITM call获取权利金，但真实Delta敞口是做多的**。这是典型的Collar/Bull Call Spread了结结构，而非真实看跌押注。\n\n**20260803（收盘后）**：时间戳`16:05:25`高度集中，是收盘后AH撮合的特征。Top15全是CALL，几乎清一色LONG CALL（仅7570和7525两个SHORT CALL），结构极为干净——**这是机构在收盘后对次日进行方向性买入的信号，不含太多对冲噪音**。量P/C=0.51，比前日更加均衡，但CALL端主导明显。关键在于7595的V/OI=62.0x（超高），这是OTM投机性购买，机构对次日上涨有明确方向押注。\n\n**20260804（盘中11:30）**：时间戳出现`11:28:39`和`11:30:12`双快照——**同一标的同一strike出现两条几乎完全相同的记录（vol差异仅数十张，价格差$0.15-0.20）**，这是系统在约90秒内两次抓取相同订单簿的结果，并非真实发生了两笔独立大单。这意味着**今日Top15实际有效信号约为表面数量的一半**，真实大单数约7-8笔而非15笔。去重后，今日SPX盘中结构是：\n\n- CALL$7650（LONG，~$189M）：最大单笔多头，现价698距此执行价约50点，ATM附近\n- CALL$7675（SHORT，~$148M）：最大单笔空头，位于现价上方约23点\n- CALL$7700（SHORT/LONG混合，~$97M/~$93M）：7700处出现多空博弈，这是今日最关键的结构位\n\n**结构性结论：今日的CALL空头（SHORT CALL at 7675/7680/7690/7700）呈现明显的「上方区间封顶」特征——多个机构在7675-7700区间密集卖出CALL，同时在7650-7670区间买入CALL，这是一个典型的Bull Call Spread批量建仓结构，而非真实做空。** 真实多头意图被Spread结构包裹。\n\n---\n\n### B. NDX：从「纯多方向性」到「夹层对冲+方向背离」的质变\n\n**20260731**：NDX信号数最少（57个），但结构最纯粹——Top15清一色LONG CALL，从28000到28220密集覆盖，P/C=0.00（无PUT），量/张纠偏与权利金方向完全一致。这是最强烈的机构单边做多信号，不含对冲噪音，收盘日多头坚定。\n\n**20260803**：TOP15中出现了`SHORT CALL@28600、28700`（V/OI分别50.6x和21.7x），而在28490-28650之间密集LONG CALL——这是更复杂的Bear Call Spread on top + Bull Call Spread on bottom的夹层结构，机构在28700封顶（卖出Call），同时在28490-28650大量买入，净头寸仍然做多但有天花板限制。\n\n**20260804（盘中12:02）**：出现了本报告中最值得关注的NDX异常——**权利金方向偏空（$139M空 > $89M多），但量/张数P/C=0.02，几乎是纯CALL单边**，触发方向背离警告。但与20260731的背离不同，今日NDX背离的来源更值得深究：\n\n在Top15中，空头信号集中在`29300（SHORT $6.59M）`、`29440（SHORT $6.57M，V/OI=437.0x！）`、`29350（SHORT $4.55M）`、`29550（SHORT×2，约$9M）`——注意**29440的V/OI=437.0x极度异常**，意味着成交量是持仓量的437倍，这是今日最大的异常信号。在29440没有OI基础的情况下出现如此高V/OI，只有两种可能：一是全新建仓（今日首次）且立即大规模成交，二是系统OI数据滞后导致的计算失真（常见于盘中）。结合该位置是现价(29558)下方约118点的ITM区域，**这很可能是机构做空深度ITM Call作为对冲的Bear Spread腿**，而非真实看跌。\n\n---\n\n### C. 三日价格水平与信号密度的关系\n\n| 日期 | SPX价格 | NDX价格 | SPX信号数 | NDX信号数 | 时间 |\n|------|---------|---------|-----------|-----------|------|\n| 20260731 | 7,",
+      "generated_at": "2026-08-04T12:10:47.016512-04:00",
+      "generated_at_display": "2026-08-04 12:10:47 ET",
+      "category": "daily",
+      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,705–$7,720（0DTE大规模LONG CALL堆叠7650-7720，买方控制上方空间）\nNDX预测：$29,550–$29,650（0DTE CALL全线看多，$29,600压力位附近收盘）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,715(45K) / 下方$7,695(23K)；NDX上方无绿BAR / 下方无绿BAR\nVS预测收盘：SPX $7,710–$7,715（双绿BAR夹击，磁吸中间偏上）\nNDX $29,575（非0DTE绿BAR $29,575磁吸，0DTE无绿BAR参考非0DTE）\n\n【GEX排名法】\nSPX GEX预测：$7,697（#1=$7,700×60% + #2=$7,690×40%）\nNDX GEX预测：$29,601（#1=$29,650×60% + #2=$29,525×40%）\n\n【综合拟定】（GEX 50% + VS3D 30% + 原始分析 20%）\nSPX综合拟定：$7,708\nNDX综合拟定：$29,600\n\n⑥【专业建议】\n\n波动判断：SPX Straddle $23仍有空间，NDX已收缩27%（$163→$119），现在NDX卖方窗口合理但SPX方向博弈仍激烈——7710附近SHORT CALL和7695下方SHORT PUT两侧都有大量客户对冲，整体偏向震荡收盘，可以考虑极窄区间铁鹰，但风险收益不对称，建议谨慎。\n\n买方机会：SPX $7,735 CALL彩票值得关注——V/OI 19972x（几乎全是今日新开仓），成本极低，若午后突破$7,720绿BAR压力有加速空间；NDX $29,700 CALL（V/OI 127x，LONG CALL主导，$1.54M押注）性价比较高，现价$29,557距行权价仅+0.5%，是今日最值得考虑的不对称买方机会。\n\n仓位提醒（针对你的真实持仓）：\n- $SPX PUT SHORT（均价$3.53）+ $SPX CALL SHORT（均价$3.97）：你持有的SPX卖方仓位当前处于$7,695–$7,740绿BAR夹击区，行情偏稳。但距收盘还有230分钟，若14:30前SPX未能站稳$7,700，PUT SHORT面临被挤压风险，建议14:45前视情况平掉PUT SHORT保护下行。CALL SHORT若现价在$7,712已有浮亏压力，重点关注$7,720突破信号，突破立刻止损。\n- NVDA SHORT CALL两张（均价$3.19）：今日CALL流量全线偏多，NVDA跟随情绪风险较大，建议13:30前确认NVDA现价方向，若继续走高立即平仓。\n\n①【关键磁铁】\n\nSPX：$7,715（客户SHORT CALL 45K，绿BAR磁吸最强）；$7,695（客户SHORT PUT 23K，绿BAR下方支撑）；$7,700（红BA",
       "meta": {
-        "ts": "2026-08-04 12:02 ET",
-        "trigger": "固定频率"
+        "spx": 7712.2,
+        "ndx": 29569.16,
+        "ts": "12:10 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260804/claude_analysis_120346.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260804/claude_analysis_121047.json"
   },
   "oi_report": {
     "filename": "oi_report_core72_20260803.json",
