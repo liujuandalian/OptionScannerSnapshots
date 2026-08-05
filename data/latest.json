@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-05 14:30",
+  "_updated": "2026-08-05 14:31",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -149,16 +149,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260805/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_142242.json",
-    "github_path": "ClaudeAnalysis/20260805/claude_analysis_142242.json",
-    "upload_time": "2026-08-05 14:22",
+    "filename": "claude_analysis_143116.json",
+    "github_path": "ClaudeAnalysis/20260805/claude_analysis_143116.json",
+    "upload_time": "2026-08-05 14:31",
     "summary": {
-      "generated_at": "2026-08-05T14:22:42.512818-04:00",
-      "generated_at_display": "2026-08-05 14:22:42 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 专业交易台复盘 | 20260805\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 核心结构翻转：从\"收盘轧空\"到\"盘中对冲重建\"\n\n过去两天（0803/0804）的数据有一个极其清晰的共同特征：**所有大单几乎集中在收盘前最后30分钟**（16:05-16:10 ET），且方向高度单一——压倒性的CALL多头，SPX权利金多空比约 6:1 到 13:1，NDX量/张数方向CALL vs PUT更达到 82:6（0804）和 86:22（0803）。这种形态的本质是**做市商收盘前Delta对冲+机构年终仓位滚仓**，不是方向性押注，是被动的流量现象。\n\n今天（0805）的结构完全不同，体现在三个维度：\n\n**① 时间维度：盘中主动建仓 vs 收盘被动对冲**\n\n今日信号时间为 14:07-14:19 ET，距收盘还有近2小时。这不是做市商被动平衡，而是主动方向性建仓。盘中大规模期权布局意味着有人在**当天交易时段内**对未来走势有明确预判，且愿意承担时间价值损耗——这种行为的信息含量远高于收盘前的机械对冲。\n\n**② 方向维度：从全面CALL多头到PUT主导的空头结构**\n\n- 0803：净权利金多/空 = 2003M/301M，偏多比约 6.6:1\n- 0804：净权利金多/空 = 4953M/372M，偏多比约 13.3:1\n- 0805（今日）：净权利金多/空 = 209M/**526M**，**偏空比 2.5:1**\n\n这是方向的完全反转。但需要进一步解构：今日SPX 0DTE顶部大单中出现了 PUT$7780（SHORT PUT，卖方，$75M），这笔是**看涨性质的卖PUT**，修正后实际\"看跌\"资金并非全部为方向性做多看跌，部分是Spread结构。但即便剔除这笔，剩余PUT多头（LONG PUT at $7750/$7800/$7755/$7745/$7825）合计仍超过$200M，且这些PUT行权价均在当前价（$7742）附近，是**ATM/近ATM的真实方向性押注**，不是OTM彩票。\n\n**③ 结构质量维度：ITM/ATM真实博弈 vs 深度OTM噪音**\n\n0803/0804的\"偏多\"信号中，大量成交量来自深度OTM CALL（如0804的 CALL$7750/7760 mid=$0.03，量达181K/143K），这些接近零价的期权更像是**做市商处理过期仓位或小散彩票单**，信噪比极低。\n\n今日的大单则集中在 PUT$7750（mid=$11.30）、PUT$7800（mid=$57.00）、CALL$7740（mid=$9.25）等ATM区域，**每张权利金都有实质价值**，这意味着大资金在认真押注今日收盘方向，而非投机零成本彩票。\n\n**④ 非0DTE层面（更重要的结构信号）**\n\n今日触发信号中，**非0DTE SPX的规模远超0DTE**：\n- 非0DTE CALL爆发：$2126M\n- 非0DTE PUT爆发：$3875M\n- 彩票信号（非0DTE）：117笔\n\n非0DTE的PUT/CALL比约 1.82:1，且规模是0DTE的约6倍。这说明资金不只是在博今日收盘，而是在**布局未来数日乃至数周的保护性对冲**。非0DTE大规模PUT爆发叠加0DTE盘中看跌，是**系统性风险意识上升**的信号，不是单纯的日内噪音。\n\n**结构性差异总结：**\n\n| 维度 | 0803/0804 | 0805今日 |\n|---|---|---|\n| 建仓时间 | 收盘前机械对冲 | 盘中主动方向性 |\n| 主导方向 | CALL全面主导 | PUT主导，混合结构 |\n| 大单行权价质量 | 大量深度OTM彩票 | ATM/近ATM真实博弈 |\n| 非0DTE配合 | 未特别触发 | PUT爆发$3875M，彩票117笔 |\n| 信号解读 | 收盘Gamma中性 | 主动空头/对冲建立 |\n\n---\n\n## 2.【今日值得关注的异常】\n\n### A. PUT$7780 SHORT PUT $75M——最大单笔，需特别解读\n\n这是今日按权利金排名**第一大单**，但方向是SHORT PUT（卖方），行权价$7780，而当前价$7742——这是一张**ITM的SHORT PUT**，卖方正在承受 $38 的内在价值风险，却选择在盘中卖出。\n\n两种可能解读：\n1. **Collar/Spread的腿**：这笔SHORT PUT可能是某个PUT Spread的上行腿（sell $7780 put, buy $7750 put），与下方LONG PUT$7750（$62M）形成结构。如果是这样，净风险是有限的，整体偏向\"接受下跌但限制收益\"，是**熊市价差**，看跌但风险受控。\n2. **裸卖PUT的被动解套**：若是某机构在上方持有的SHORT PUT被推进ITM，今日盘中试图以更高权利金平仓或Rollover。\n\n无论哪种，$7780这个行权价成为**今日最受机构关注的关键点位**。\n\n### B. CALL空头集群：$7730-$7740区域形成压制带\n\n今日CALL方向大单中，SHORT CALL集中在：\n- SHORT CALL $7740: $44M\n- SHORT CALL $7735: $28M  \n- SHORT CALL $7730: $25M\n- SHORT CALL $7725: $17M\n- SHORT CALL $7720: $15M\n- SHORT CALL $7700: $17M（V/OI=0.8x，轻微异常）\n- SHORT CALL $7575: $20M（深度ITM卖CALL，可能是Covered Call或Collar腿）\n\n$7730-$7745这个区间出现**密集SHORT CALL集群**，当前价$7742已经突破这个区域，这意味着**如果价格在此附近收盘，大"
+      "generated_at": "2026-08-05T14:31:16.149906-04:00",
+      "generated_at_display": "2026-08-05 14:31:16 ET",
+      "category": "daily",
+      "text": "⑤【收盘预测】\n\n【原始分析法】\nSPX预测：$7,740–$7,750（LONG CALL海量涌入+绿BAR双边夹，现价就是磁吸核心）\nNDX预测：$29,600–$29,650（0DTE PUT占主导+成交量偏空，现价附近震荡）\n\n【VS3D绿BAR法】\n最近绿BAR：SPX上方$7,745(22K SHORT CALL) / 下方$7,740(10K SHORT PUT)\n　　　　　NDX上方无绿BAR / 下方$29,350\nVS预测收盘：SPX $7,742（绿BAR极窄夹，磁吸力极强，收盘几乎钉在这个区间）\n　　　　　NDX 无绿BAR磁吸，下方$29,350距离远，方向由流量决定\n\n【GEX排名法】\nSPX：#1=$7,740(60%) + #2=$7,745(40%) → 加权$7,742\nNDX：#1=$29,700(60%) + #2=$29,650(40%) → 加权$29,680\n\n【综合拟定】（GEX50%+VS3D30%+原始20%）\nSPX综合拟定：**$7,742**\nNDX综合拟定：**$29,660**\n\n⑥【专业建议】\n\n波动判断：**现在不宜做新的卖方**。SPX Straddle $46.50未见明显收缩，NDX Straddle $70.65（0DTE）且PUT爆发持续，方向博弈激烈，90分钟内仍有突破风险。\n\n买方机会：**SPX 7755 CALL值得关注**——V/OI 12x+，14:15起持续出现在🚨大单里，如果现价从$7,740向上突破$7,745绿BAR，7755是下一个阻力突破目标，小仓位博突破有不对称性。**NDX方向明确偏空，但0DTE PUT$29,600已是当日最活跃，现价贴近，买入意义不大，不追。**\n\n仓位提醒（针对真实持仓）：\n- **$SPX SHORT CALL（均价$3.75和$11.07/$10.75）**：现价$7,741，绿BAR在$7,745/$7,750，上方大量LONG CALL堆积到$7,800，若15:00前突破$7,750，SHORT CALL压力骤增——**建议15:15前确认价格方向，若SPX站上$7,748立即平SHORT CALL仓位，不要等收盘**。\n- CRWV/NVDA/KTOS/META：个股期权与指数流量无直接关联，维持现有Delta对冲结构，但注意NDX偏空环境对科技股有压制，NVDA SHORT CALL仓位（均价$3.18/$14.35）同样建议15:15前再评估一次。\n\n①【关键磁铁】\n\nSPX：\n- $7,745——绿BAR(22K SHORT CALL)，**最强磁吸位**\n- $7,740——绿BAR(10K SHORT PUT)，下方磁吸\n- $7,750——红BAR(69K)+🧢已被大量LONG CALL压制，也是GEX #2，双重排斥但同时是突破目标\n- $7,800——🧢SHORT CALL压顶34K+红BAR146K，",
+      "meta": {
+        "spx": 7742.23,
+        "ndx": 29649.5,
+        "ts": "14:30 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260805/claude_analysis_142242.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260805/claude_analysis_143116.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260805.json",
