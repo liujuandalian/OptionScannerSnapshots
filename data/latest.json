@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-05 13:41",
+  "_updated": "2026-08-05 13:42",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -76,14 +76,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260805/spx_stock_flow_latest.json"
   },
   "spx_ndte": {
-    "filename": "spx_ndte_20260805_1311.json",
-    "github_path": "SPXalerts/20260805/spx_ndte_20260805_1311.json",
-    "upload_time": "2026-08-05 13:11",
+    "filename": "spx_ndte_report_20260805_1342.json",
+    "github_path": "SPXalerts/20260805/spx_ndte_report_20260805_1342.json",
+    "upload_time": "2026-08-05 13:42",
     "summary": {
-      "signals": 6784,
-      "timestamp_et": "2026-08-05 13:11 ET"
+      "label": "非0DTE · 13:42 ET",
+      "signals": 7282,
+      "direction": "极度偏多 🟢🟢",
+      "net_premium_M": 3547.7
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260805/spx_ndte_20260805_1311.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260805/spx_ndte_report_20260805_1342.json"
   },
   "oi_pre_mkt": {
     "filename": "oi_pre_mkt_20260805.json",
