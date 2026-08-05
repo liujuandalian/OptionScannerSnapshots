@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `oi_report_core72_20260805.json` | OI变化对比报告 | 2026-08-05 16:31 | [下载](oi_snapshots/20260805/oi_report_core72_20260805.json) | {"date": "2026-08-05", "surging": 100, "shrinking": 100} |
 | `oi_core72_20260805.json` | 盘后OI核心快照 | 2026-08-05 16:31 | [下载](oi_snapshots/20260805/oi_core72_20260805.json) | {"tickers": 73} |
 | `spx_eod_20260805.json` | SPX盘后EOD报告 | 2026-08-05 16:15 | [下载](SPXalerts/20260805/spx_eod_20260805.json) | {"date": "2026-08-05", "signals": 110857, "spx_close": 7723.55, "0dte_dir": "BUL |
 | `spx_0dte_report_20260805_1610.json` | SPX 0DTE信号 | 2026-08-05 16:10 | [下载](SPXalerts/20260805/spx_0dte_report_20260805_1610.json) | {"label": "0DTE · 16:10 ET", "signals": 121, "direction": "极度偏空 🔴🔴", "net_premiu |
