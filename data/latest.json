@@ -153,21 +153,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260807/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_123030.json",
-    "github_path": "ClaudeAnalysis/20260807/claude_analysis_123030.json",
-    "upload_time": "2026-08-07 12:30",
+    "filename": "claude_analysis_123156.json",
+    "github_path": "ClaudeAnalysis/20260807/claude_analysis_123156.json",
+    "upload_time": "2026-08-07 12:31",
     "summary": {
-      "generated_at": "2026-08-07T12:30:30.376176-04:00",
-      "generated_at_display": "2026-08-07 12:30:30 ET",
-      "category": "daily",
-      "text": "一、【方向 & 形态】\n\nSPX看涨，今天更像**窄幅震荡偏多**。现价$7,739，上方压力$7,760（SHORT CALL最密集+GEX#1磁吸），下方支撑$7,750（SHORT PUT护盘$5.6K张）。GEX磁吸预测收盘在$7,755-7,760区间钉住。NDX同向偏多，但0DTE换手信号（多→空）和非0DTE的PUT$29100大单让NDX上行动能弱于SPX。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按量：CALL$7750（今日最大成交量3900+张）持续LONG CALL，量方向看多；PUT$7575（4861张V/OI 3.1x）是量第二但为OTM对冲，不改多头主基调。按权利金：CALL铺天盖地超过100笔≥$1.5M全方向看涨，两者一致，无背离。购买速度：12:14→12:22短短8分钟连续5波刷新，CALL$7750/7760/7765/7880全在**加速涌入**，$7750从$24.5M拉到$25.5M，$7880的76x V/OI反复出现。结论：**接下来倾向继续涨，目标磁吸$7760，但顶盖就在那里，突破概率低**。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：**CALL$7880，prem $8.5M，V/OI 76.5x**——每轮快照持续出现，新开仓纯方向押注，是今天最异常的单笔，方向做多；**NDX非0DTE PUT$29100，prem $31M+，V/OI 144.4x，1300张**——连续5个快照持续加仓，对冲色彩极强，但量和倍数均为全场最大，需警惕下周NDX尾部风险。\n\n🎰彩票：**SPX CALL $8025，mid $1.43，V/OI 40.5x，vol 3,034张新开仓，量在多波次重复确认**——赌收盘前SPX再拉或下周初续涨突破，彩票赔率合适，止损就是全没。",
-      "meta": {
-        "spx": 7755.88,
-        "ndx": 29594.99,
-        "ts": "12:30 ET"
-      }
+      "generated_at": "2026-08-07T12:31:56.946086-04:00",
+      "generated_at_display": "2026-08-07 12:31:56 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 大单异常复盘 | 20260807 交易台分析报告\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化解读\n\n### SPX：从\"0DTE恐慌对冲\"到\"非0DTE方向性建仓\"的本质切换\n\n这三天的最核心结构差异不在于多空比数字，而在于**期权产品层的迁移**。\n\n**8月5日（周二）**：战场在0DTE，且发生在15:27-15:29的收盘前最后2分钟。274个信号、名义空方权利金$1328M vs 多方$614M，但量/张数纠偏后偏多。这是典型的**收盘前机构对冲潮**——大量PUT成交集中在7750-7800区间（现价$7743），V/OI高达100-400x，意味着这些合约在当日开盘时几乎没有持仓，是**当天临时建立的纯方向性赌注或delta对冲**，不是真正的战略持仓。PUT$7750被大量short（卖方），PUT$7775/7765亦被short，说明机构在最后时刻**卖出近端PUT收权利金**，本质是认为当日不会大跌。\n\n**8月6日（周三）**：节奏切换到12:30的午盘时段，信号数降至108，SPX价格滑落至$7705。0DTE的方向同样出现经典背离——权利金偏空但量偏多——但大单结构更干净：深度ITM的PUT$7720/7730/7715被大量LONG，这些合约以当时$7705现价计算已是ATM偏ITM，$84-79M的权利金是ITM溢价堆叠。**真实信息在CALL端**：5-6张LONG CALL密集分布在7710-7730区间，合计权利金近$90M，这是**方向性看多押注，不是对冲**（对冲不会同时long这么多不同行权价的CALL）。\n\n**8月7日（今日）**：这是三天中最重要的结构性突变——**0DTE今日已经不是主战场，非0DTE才是**。\n\n触发异常里，CALL爆发$2155M、PUT爆发$1029M均来自**非0DTE**。这意味着什么？\n\n> **非0DTE大单 = 机构在为未来数天到数周建立头寸，而非今日收盘前的对冲噪音。**\n\n$2155M的非0DTE CALL爆发是三天中规模最大的单一方向资金流，且**方向发生了换手**（PUT主导→CALL主导），这不是散户行为。同时，彩票信号集中出现3笔（深度OTM小权利金高Gamma合约），说明有人在押注**短期内的向上跳空**。\n\n0DTE层面今日SPX呈现的反而是相对均衡结构：量P/C=0.49（偏多），权利金偏多$447M vs $289M，CALL端的成交分布在7750-7780这个价格区间有密集的SHORT CALL（$7750 57k张SHORT、$7760 49k张SHORT），这是**做市商卖出上行保护**的特征，也是\"Call Spread\"结构的上端——市场预期上行但不会无限突破。\n\n**结论：三天结构演变路径 = 5日恐慌对冲→6日试探性看多→7日机构系统性非0DTE CALL建仓。这是反转初期的典型期权流特征。**\n\n---\n\n### NDX：0DTE和非0DTE同时发出相反信号，说明存在跨期限的对冲套利结构\n\n**8月5日NDX**：收盘后（16:08-16:09），PUT爆发集中在29590-29700区间，且同时存在大量SHORT PUT（29630/29640/29660/29590）。这是**Strangle/Butterfly的腿**，不是单边看跌——有人在用SHORT PUT收钱、用LONG PUT买保护，典型的Put Spread结构，净方向并非强烈看跌。\n\n**8月6日NDX**：量P/C=1.69，0DTE PUT压倒性主导，权利金$70M空 vs $24M多。与SPX不同，NDX在8月6日没有出现SPX那样的量/张数与权利金背离——这里的PUT主导是真实的，说明NDX在6日确实承受了更大的做空压力（这与NDX/科技股beta更高，对宏观敏感度更高一致）。\n\n**8月7日NDX**：出现本次分析中最有意思的**跨期限分裂信号**：\n- 0DTE：PUT爆发$37M，Straddle收缩28%，方向换手→偏空\n- 非0DTE：CALL爆发$101M，PUT爆发$243M，Straddle收缩42%\n\nStraddle同时收缩42%意味着**隐含波动率被双向压缩**——市场认为大幅波动的概率在下降。但同时出现CALL $101M和PUT $243M的双爆发，这是**Strangle建仓**的特征：有大资金在认为IV已经够高、开始卖出两侧波动。\n\n0DTE层面PUT$37M爆发是**当日对冲，明日尾部风险保险**，而非战略性看跌。量/张数纠偏后偏多（P/C=0.65），说明CALL张数更多但权利金更小——小权利金CALL大量成交=低Delta彩票押注上行尾部。\n\n**NDX结构结论：0DTE是对冲噪音，非0DTE的Strangle建仓说明大资金认为NDX未来1-2周区间震荡、IV会收缩，同时保留对上行突破的低成本敞口。**\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：SPX 0DTE的CALL上方密集SHORT结构——7750/7755/7760三连SHORT\n\n按成交量，今日SPX 0DTE最大3张分别是SHORT CALL$7750（57k张）、SHORT CALL$7760（49k张）、SHORT CALL$7755（39k张）。当前价$7755.88，这三个行权价围绕当前价±5点密集排列。\n\n这个结构有两种解读：\n1. **做市商Delta对冲**：日内涨势已消化，做市商卖出上行端CALL\n2. **机构Collar/Call Spread上端**：有人买了低端CALL（7730/7740已见大量LONG），同时卖出高端CALL形成价差——这意味着最大盈利区间被锁定在7730-7755/7760"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_123030.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_123156.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
