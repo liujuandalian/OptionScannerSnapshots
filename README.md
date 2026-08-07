@@ -16,6 +16,13 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 目录 | 内容 | 生成方式 |
 |---
+## 📅 2026-08-07
+
+| 文件 | 类型 | 上传时间 | 链接 | 摘要 |
+|---|---|---|---|---|
+| `oi_pre_mkt_20260807.json` | 盘前OI快照 | 2026-08-07 07:40 | [下载](oi_snapshots/20260807/oi_pre_mkt_20260807.json) | {"tickers": 264} |
+
+
 ## 📅 2026-08-06
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
