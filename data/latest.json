@@ -155,21 +155,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260807/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_111026.json",
-    "github_path": "ClaudeAnalysis/20260807/claude_analysis_111026.json",
-    "upload_time": "2026-08-07 11:10",
+    "filename": "claude_analysis_112025.json",
+    "github_path": "ClaudeAnalysis/20260807/claude_analysis_112025.json",
+    "upload_time": "2026-08-07 11:20",
     "summary": {
-      "generated_at": "2026-08-07T11:10:26.690829-04:00",
-      "generated_at_display": "2026-08-07 11:10:26 ET",
+      "generated_at": "2026-08-07T11:20:25.222529-04:00",
+      "generated_at_display": "2026-08-07 11:20:25 ET",
       "category": "daily",
-      "text": "一、【方向 & 形态】\n\nSPX **看涨**，今天更像**窄幅震荡**。现价$7,753，上方压力$7,770（SHORT CALL最厚顶盖+VS3D绿BAR），下方支撑$7,750（SHORT PUT护盘+GEX锁仓）。GEX磁吸把价格钉死在$7,750-$7,755区间，Straddle已收缩36%，波动窗口基本关闭。NDX同向偏多，0DTE全CALL方向，但非0DTE有笔NDX PUT$29100/V/OI 144x的机构对冲压着，上方$29,700是顶。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量最大：SPX 0DTE量冠是CALL$7750（48,118张）LONG CALL，方向**看涨**；权利金最大同样是CALL端压倒性堆积（7730-7780全线LONG CALL合计超$2.5亿）。两者**完全一致，均看多**。但大单涌入速度在**放缓**——11:09快照一次性砸入，之后无续单，PUT$7740/7745两笔V/OI 39x/44x的LONG PUT构成短期对冲噪音。综合判断：**接下来倾向横盘偏涨，收盘磁吸$7,755**，不会大涨也不会跌，就是在$7,750-$7,770之间来回耗Theta。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨**异常**：NDX非0DTE PUT$29,100（08-21到期）V/OI **144.4x**，1,300张持续出现，权利金$31M——这是机构级别的尾部对冲，不是看跌押注，但说明有人在防范未来两周NDX大跌1700点以上的黑天鹅。SPX 0DTE层面PUT$7745（V/OI 43.9x，$12.37M）和PUT$7740（V/OI 39.1x，$14.48M）同样异常，是当日最高V/OI，性质偏对冲。\n\n🎰**彩票**：**7785 CALL**，mid $1.52、V/OI 18.1x、vol 17,964张新开仓——距现价+0.4%，若午后CALL端继续加速冲破$7,770顶盖，这张直接变款，性价比最高。",
+      "text": "一、【方向 & 形态】\n\nSPX 看涨，今天更像**窄幅震荡**。现价 $7,753，上方压力 $7,770（SHORT CALL压顶+GEX#1），下方支撑 $7,750（SHORT PUT护盘+VS3D磁吸）。磁吸区间就是 $7,750–$7,770，收盘大概率钉死在这里。NDX 0DTE 量信号同向看多，但非0DTE有笔 $29,100 PUT V/OI 144x 的异常单（下详），结构上NDX略偏谨慎。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n0DTE 按量看：最大成交量是 CALL$7750 的 SHORT CALL（50,967张）——这是做市商卖顶，不是方向性看跌；真正方向性的 LONG CALL 大量堆在 $7,740/$7,745/$7,760，V/OI 11x–12x，**量方向看涨**。按权利金最大的是深ITM LONG CALL（$7590–$7650系列），权利金信号喊涨，与量方向一致，无背离。非0DTE方向换手信号（10:00多→11:00空）需警惕，但0DTE量仍主导当日。大单涌入**节奏在放缓**——11:17 同一批次一次性扫入，不是持续加速流入，更像一次性建仓完毕。结论：**短期倾向横盘偏涨，不会大涨，更不会跌破 $7,740**。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX 非0DTE **PUT$29100（8月21日到期）V/OI 144.4x，1,300张，权利金~$3,000万**，连续4个快照持续出现、方向坚定 LONG PUT——这是真实尾部风险对冲或定向押注NDX未来两周跌超1,800点（约-6%），体量和V/OI均极度异常，需重视。\n\n🎰彩票：**CALL$7785，mid $1.50，V/OI 19.1x，18,872张新开仓**。理由：V/OI接近20x纯新开仓、量大速度快、SPX若突破 $7,770压力顶则下一个磁吸目标直接奔 $7,785，赔率合理。",
       "meta": {
-        "spx": 7753.11,
-        "ndx": 29640.71,
-        "ts": "11:10 ET"
+        "spx": 7753.21,
+        "ndx": 29641.2,
+        "ts": "11:20 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_111026.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_112025.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
