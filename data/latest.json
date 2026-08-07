@@ -153,21 +153,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260807/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_205237.json",
-    "github_path": "ClaudeAnalysis/20260806/claude_analysis_205237.json",
-    "upload_time": "2026-08-06 20:52",
+    "filename": "claude_analysis_094121.json",
+    "github_path": "ClaudeAnalysis/20260807/claude_analysis_094121.json",
+    "upload_time": "2026-08-07 09:41",
     "summary": {
-      "generated_at": "2026-08-06T20:52:37.342843-04:00",
-      "generated_at_display": "2026-08-06 20:52:37 ET",
+      "generated_at": "2026-08-07T09:41:21.096835-04:00",
+      "generated_at_display": "2026-08-07 09:41:21 ET",
       "category": "daily",
-      "text": "一、【方向 & 形态】\n\n今天看**涨**，形态更像**震荡偏多**。SPX现价$7,728，上方压力$7,745（VS3D最近绿BAR磁吸位），下方支撑$7,700（GEX PUT主导密集区）。NDX同向偏多，$29,000有SHORT PUT护盘地板，方向一致。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\nNDX是今天的主战场。按成交量最大的是PUT$29,000的SHORT PUT（302张×4次）——卖PUT护盘，方向看涨；按权利金最大的是CALL$29,400 LONG CALL（V/OI高达50.2x，$7M+级别，每分钟重复成交）——两者方向完全一致，都是**看涨**，无打架。\n\n关键：CALL$29,400以V/OI 50.2x在12:21-12:25连续四次刷新大单，每分钟一次，**加速涌入**，不是试探，是主动建仓。配合CALL$29,500 V/OI 5.6x同步进场，$29,000 SHORT PUT持续压住下方。SPX侧0DTE活动微弱、非0DTE全是ITM CALL滚仓噪音，真实信号来自NDX。\n\n结论：接下来倾向**涨**，NDX目标$29,400-$29,500区间。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX CALL$29,400 exp 08-12，V/OI **50.2x**，12:21-12:25连续四笔总权利金逾$28M，主动LONG CALL，纯方向性押注明确看涨；配套PUT$29,000 V/OI 30.2x SHORT PUT护盘，组合信号极强。\n\n🎰彩票：**NDX CALL$29,500 exp 08-07**，mid约$103，V/OI 5.6x新开仓，量在每分钟加速，押明日收盘突破$29,500，一夜赔率合理。",
+      "text": "一、【方向 & 形态】\n\n今天看**轻微偏空、震荡**为主。SPX现价$7,734，上方压力$7,750（SHORT CALL压顶+GEX墙双重封顶），下方支撑$7,720（SHORT PUT护盘+VS3D磁吸地板）。VS3D磁吸预测收盘钉在$7,720–$7,735区间，别指望大方向突破。NDX同向，$29,700是磁吸靶位，方向基本一致偏中性略多。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量看：最大活跃单是$7,800 LONG CALL（5,470张，看涨），但紧接着$7,795 SHORT CALL（3,768张，V/OI 2.5x）直接压住，再往下$7,750/$7,780/$7,770/$7,770全是SHORT CALL海量堆叠——量方向信号是**卖方主导、压制上行**。权利金方向同样偏空（PUT爆发$31.9M）。两者一致：**偏空**，无背离。购买速度方面，所有大单集中在09:37:31同一时间戳快照涌入，是开盘建仓的集中爆发，后续节奏待观察，但SHORT CALL覆盖宽度从$7,730一路铺到$7,800，明确告诉你上方空间被机构封死。接下来倾向**横盘偏跌，反弹到$7,750即顶**。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：09:37:31同时出现LONG CALL$7700（$1.91M）+ LONG PUT$7725（$1.93M）+ LONG PUT$7700（$1.57M）——前两笔构成跨式/宽跨式结构，押注今日大幅波动而非单边方向，值得警惕波动率突然放大。\n\n🎰彩票：**$7,800 CALL，mid$1.17、V/OI 0.5x、量5,470张全场最大**——虽然SHORT CALL压顶，但若消息驱动硬突破$7,750，这张票直接变成最大受益者，距离+0.9%、成本极低，赌一把突破行情性价比最高。",
       "meta": {
-        "spx": 7728.35,
-        "ndx": 29363.55,
-        "ts": "12:22 ET"
+        "spx": 7734.09,
+        "ndx": 29658.57,
+        "ts": "09:40 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260806/claude_analysis_205237.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_094121.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
