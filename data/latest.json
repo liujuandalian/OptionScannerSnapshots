@@ -155,16 +155,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260807/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_120055.json",
-    "github_path": "ClaudeAnalysis/20260807/claude_analysis_120055.json",
-    "upload_time": "2026-08-07 12:00",
+    "filename": "claude_analysis_120137.json",
+    "github_path": "ClaudeAnalysis/20260807/claude_analysis_120137.json",
+    "upload_time": "2026-08-07 12:01",
     "summary": {
-      "generated_at": "2026-08-07T12:00:55.072477-04:00",
-      "generated_at_display": "2026-08-07 12:00:55 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 复盘分析 | 20260807\n\n---\n\n## 1.【今日 vs 历史关键差异：结构性变化解读】\n\n### 核心结论先行：从\"恐慌性定向对冲\"切换到\"做市商主导的区间博弈\"\n\n**20260805（周三）** 是一个典型的**尾盘恐慌性平仓/对冲场景**：\n- 时间点在15:27-15:29，距收盘仅30分钟，大量深度ITM PUT涌现（$7800/$7780/$7770，当时现价$7743）——这些不是方向性做空，而是**机构存量多头的紧急Collar对冲**，他们不在乎付多少权利金，只在乎在当天结算前锁住下行风险。\n- 同期最大成交量在ATM CALL $7750（vol 113K），多空方向混杂，说明这是**Delta neutral的做市商展期**，而非方向性押注。\n- 关键特征：**权利金极度偏空（PUT/CALL=2.16x），但量方向偏多（P/C=0.69）**——这是教科书级别的ITM-PUT失真，结构本质是\"机构在为既有多头买保险\"。\n\n**20260806（周四）** NDX的结构截然不同：\n- 时间点12:28-12:30，正午，并非收盘前。大量ATM/微ITM PUT集中成交（$29300-$29500，当时现价$29362）。\n- V/OI极高（29300的V/OI=30.3x，29410的V/OI=34.2x），说明这些是**当日新开仓**而非平仓/展期。\n- 同时出现大量OTM CALL（$29500/$29600）的买入，说明是**Risk Reversal结构**——卖深度ITM区域保护，同时用便宜OTM CALL押方向。\n- 关键特征：**量方向坚决看空（P/C=1.69），权利金也偏空**，两者方向一致，没有失真，是**真实的做空意图**，并非对冲。\n\n**20260807（今日，11:40，当前）** 结构发生了根本性切换：\n- **CALL端完全占据主导**：按权利金排名的Top 15中，前14个都是CALL，且横跨$7700-$7775的宽幅区间——这是典型的**做市商Gamma展期特征**，不是单一方向押注。\n- **SHORT CALL为主，但夹杂大量LONG CALL**：$7755（LONG）、$7730（LONG）、$7775（LONG）、$7720（LONG）……这明显是**垂直Call Spread的买方腿**，配合大量SHORT CALL，说明今天的主体结构是**Bull Call Spread的大规模部署**，而非单纯看跌。\n- **PUT几乎销声匿迹**：Top 15中仅$7755 PUT出现（$11.25M），相较于前两日的PUT主导，今天的PUT量极度萎缩——这是市场**从防御切换到温和进攻**的结构信号。\n- **Straddle收缩40%**：这是今日最重要的结构性信号。前两日Straddle活跃（08/05尾盘Straddle买入很多）意味着市场预期波动；今天Straddle大幅收缩，说明**IV定价快速下降，市场不再预期大幅波动**——这与VIX从高位回落的环境一致。\n- **NDX今日结构更为纯粹看多**：CALL P/C=0.31，且多数为接近ATM的ITM/ATM CALL的LONG（$29625/$29630/$29750），这不是对冲结构，是**方向性多头建仓**。\n\n### 三日结构演变总结表\n\n| 日期 | 主体结构 | 真实方向 | 市场情绪 | 关键特征 |\n|------|---------|---------|---------|---------|\n| 08/05 | 机构Collar对冲+做市商展期 | 中性偏多（量） | 恐慌性防御 | 尾盘深ITM PUT失真 |\n| 08/06 | NDX主动做空+OTM CALL豪赌 | 真实偏空 | 主动方向性做空 | 正午建仓，V/OI极高 |\n| 08/07 | Bull Call Spread+IV压缩 | 结构偏多 | 从防御转进攻 | CALL宽幅主导，Straddle萎缩 |\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：CALL端的\"梳状分布\"——做市商Gamma墙\n今日SPX CALL大单覆盖$7700至$7780，间隔$5-10点密集分布，每档都有大量成交。这种梳状结构在0DTE中意味着**做市商在每一个整数位都积累了大量SHORT CALL敞口**，这会产生强烈的**Pin效应**——现价$7758附近，最大Gamma聚集区在$7750-$7760。**市场倾向于在收盘前被钉住在这个区域**。\n\n### 异常二：PUT $7720的异常大成交（vol 41,491）\n在按成交量排名中，PUT $7720以41K张位居第四，mid价仅$1.42——这是典型的**OTM彩票PUT**（距现价约-0.5%）。这笔单的性质有两种解读：\n1. **尾部风险对冲**：机构持有大量多头，用便宜PUT买保险；\n2. **方向性下注**：认为今日收盘前会有快速下挫至$7720。\n\n结合整体CALL主导的结构，倾向于认为这是（1）——是Bull Call Spread的\"配套保险腿\"，而非独立看空押注。\n\n### 异常三：彩票信号集中出现7笔\n触发的7笔彩票信号（极度OTM、高V/OI、小权利金的赌博型合约）通常出现在两种场景：一是**反弹初期的FOMO买入**，二是**下跌前的对冲撒网**。结合今日整体偏多结构，更可能是**反弹行情中散户追涨的OTM CALL彩票**，而非做空信号。\n\n### 异常四：非0DTE资金的分歧信号\n非0DTE SPX：CALL爆发$1341M vs PUT爆发$1621M——这是**周级/月级持仓的机构在表态**。PUT $1621M远大于CALL，说明**中期资金对上行仍有"
+      "generated_at": "2026-08-07T12:01:37.865963-04:00",
+      "generated_at_display": "2026-08-07 12:01:37 ET",
+      "category": "daily",
+      "text": "一、【方向 & 形态】\n\n看涨，今天更像**窄幅震荡偏多**。SPX现价$7,752，上方压力$7,760（0DTE SHORT CALL顶盖+VS3D绿BAR），下方支撑$7,730（SHORT PUT护盘+绿BAR）。VS3D磁吸收盘锁定$7,755–$7,760区间。NDX同向偏多，但$29,700有SHORT CALL压顶，上行同样受限。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按量最大的Top单：7770 CALL（48,925张LONG）、7775 CALL（45,820张LONG）、7780 CALL（43,196张LONG）——清一色OTM CALL新开仓，方向看涨。权利金最大的是7750 SHORT CALL（$73M），两者打架——但量信号压倒权利金信号，以LONG CALL为准。\n\n购买速度：7765/7770/7780 CALL的V/OI分别21x/26x/17x，属**爆发式新开**，且11点方向换手已完成（空转多）。大单**正在加速涌入**CALL侧。结论：接下来**倾向涨**，但7760顶盖压制，突破前是缓涨而非飙升。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX非0DTE **PUT$29100 exp08-21，V/OI 144.4x，权利金$27M+**，连续5个快照持续挂单——超级大对冲，有人在用真金白银保护NDX下行2%+，值得警惕尾部风险。\n\n🎰彩票：**7785 CALL，mid$1.12、V/OI 24.3x、vol 24,066张新开**——OTM约+30pt，量在上方CALL群里同步涌入，若SPX突破7760顶盖可快速翻倍，性价比最高。",
+      "meta": {
+        "spx": 7755.88,
+        "ndx": 29694.11,
+        "ts": "12:01 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_120055.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260807/claude_analysis_120137.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
