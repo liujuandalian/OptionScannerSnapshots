@@ -151,16 +151,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260810/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_141812.json",
-    "github_path": "ClaudeAnalysis/20260810/claude_analysis_141812.json",
-    "upload_time": "2026-08-10 14:18",
+    "filename": "claude_analysis_142042.json",
+    "github_path": "ClaudeAnalysis/20260810/claude_analysis_142042.json",
+    "upload_time": "2026-08-10 14:20",
     "summary": {
-      "generated_at": "2026-08-10T14:18:12.497008-04:00",
-      "generated_at_display": "2026-08-10 14:18:12 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 专业复盘分析 — 20260810\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 核心差异：从\"空头主导\"到\"方向撕裂+卖方主导\"\n\n**20260806（基准日）：** 典型的\"假空真多\"结构。权利金偏空（多$177M vs 空$299M），但量/张数纠偏后CALL量碾压PUT，系统明确标记背离→以量为准看多。大单集中于ATM附近的CALL spread区（7710-7730），实际上机构在建CALL多头同时卖出更远OTM CALL，这是标准的call spread牛市结构。PUT端的大单多是delta对冲或collar的PUT腿，并非真实空头押注。结果：市场在这个日内结构下向上收。\n\n**20260807（警示日）：** 结构彻底翻转为\"真实空头\"。量/张数方向（免疫ITM失真后）P/C=1.42，明确偏空——这才是真实的方向性空头押注，不是ITM失真。大单清单更是直接：PUT$7740-$7770区间连续6个LONG PUT，权利金合计$356M+，且V/OI全部超过50x甚至160x，说明是纯新开仓而非平旧仓。CALL端只有零星的7730/7735 LONG CALL，规模远不能抗衡。**这是三日内唯一一次量和权利金双重指向真实空头的日子。**\n\n**20260810（今日）：** 出现了三日中最复杂、最值得解读的结构——\n\n**关键结构性差异一：CALL端出现\"梯级卖出圆顶\"**\n\n按成交量排序：CALL$7770(102K)、CALL$7760(97K)、CALL$7765(91K)、CALL$7775(89K)——这四个CALL成交量全部在90K+级别，但方向标签上CALL$7760和$7765是SHORT CALL（做空），CALL$7770和$7775是LONG CALL（做多）。这不是随机噪音，这是**精密的CALL spread结构**：大资金在7770/7775买入CALL的同时，在7760/7765卖出CALL，形成**Bull Call Spread**（7760/7770）或更宽的spread结构。这说明机构认为今天收盘或明日开盘SPX会在7760-7780区间，但**不愿意为更高的上涨敞口付全价**——这是温和看涨、控制成本的专业姿态，不是赌单边暴涨的赌注。\n\n**关键结构性差异二：PUT端从\"进攻性空头\"变为\"保护性PUT卖出\"**\n\n今日PUT端最大单是PUT$7765的SHORT PUT（$46.25M），第二大是PUT$7740的SHORT PUT（$8.78M）。对比20260807的情况——807那天PUT端清一色是LONG PUT进攻性空头。今天PUT端的主力反而是**卖PUT**，即卖方收权利金同时承担下行风险，这是典型的**cash-secured put或naked put**策略，信号指向：做市商/机构认为当前价格附近支撑扎实，不愿意付权利金买保险，转而成为保险卖家。\n\n**关键结构性差异三：量/张数P/C=0.26，今日三日最低（最看多）**\n\n807的纠偏后P/C=1.42（偏空），806的P/C=0.57（温和看多），**今日P/C=0.26（强烈看多）**。CALL量324K vs PUT量83K，差距悬殊。即便把CALL端的spread结构折算（买方和卖方各贡献一半量），净CALL方向仍然是PUT量的3-4倍。这是三日中最不像空头的一天。\n\n**关键结构性差异四：Straddle收缩57%——隐波崩塌中的方向选择**\n\n前两日没有straddle收缩信号，今日SPX straddle收缩57%、NDX straddle收缩38%。这意味着什么？做市商/大资金在**主动卖出跨式组合**——即同时卖出ATM CALL和ATM PUT。这通常发生在以下两种情景：①市场认为今日波动已定价过高，预期收窄波动率；②配合定向单边持仓，用卖straddle回收权利金成本。结合今日其他信号，更可能是①：市场认为今天不会大涨也不会大跌，窗口期内SPX锁定在有限区间。这与806/807完全不同——807那天是单边方向爆量，今天是\"我知道你不会大动\"的做市商心态。\n\n**关键结构性差异五：非0DTE异常才是今日最大结构信号**\n\n今日SPX非0DTE CALL爆发$1884.40M（！），PUT爆发$1439.20M，合计超过$3.3B流入跨日期权。这个量级远超0DTE，说明今日真正的大资金博弈不在日内，而在**跨日/跨周方向押注**。非0DTE CALL $1884M vs PUT $1439M，CALL明显占优，这是机构在今日建立跨日看涨头寸的信号——不是日内投机，是有计划的方向性布局，矛头指向**下周或更远的上涨**。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：SPX 0DTE Vol/OI超常聚集区——7760-7775\n\n今日CALL端最活跃的四个行权价（7760/7765/7770/7775）V/OI全部在50-120x区间，且四个行权价合计量约376K张，均在当日之前OI极低的状态下爆量成交（V/OI=98x-119x说明今日之前该行权价几乎没有持仓，全是新开仓）。这个聚集带意义重大：**7760-7775就是今日机构押注的\"战场价位\"**，是今日下午所有spread结构的核心轴。\n\n### 异常二：PUT$7800 LONG PUT $16M——深度ITM异常\n\n现价$7753，PUT$7800是约47点ITM的深度ITM PUT，成交量3403张，V/OI=5.7x，权利金$16.01M。这个单独出现在今日大单列表中显得格格不入。两种可能：①这是某个存量多头头寸的**collar下行保护**，买入深度ITM PUT锁定已有盈利；②这是机构对冲股票多头"
+      "generated_at": "2026-08-10T14:20:42.132290-04:00",
+      "generated_at_display": "2026-08-10 14:20:42 ET",
+      "category": "daily",
+      "text": "一、【方向 & 形态】\n\n看涨，今天更像**窄幅震荡偏多**收尾。SPX现价$7,750，上方压力$7,760（SHORT CALL盖顶+GEX墙），下方支撑$7,750（SHORT PUT护盘+GEX锚点），活动空间就这10点。NDX同向偏多但略弱，ITM PUT堆积在现价上方，GEX前三名全在$29,710-$29,750，磁吸收敛。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量看多：0DTE量最大的是ATM CALL$7750（58K张）和OTM CALL$7770（103K）、CALL$7760（100K），CALL方向10张对比PUT方向3张，量的纠偏明确看多。权利金最大的是PUT$7750（$49M）和PUT$7775（$24M），两者打架——但ITM PUT权利金天然虚高，量才是真相，以量为准看多。\n\n关键点：这批大单全部集中在14:18:36同一时刻批量落地，是一次性结构建仓，不是持续加速涌入，之后无新增流量——说明大资金**已完成布局，不是在加速**。结合$7760顶盖SHORT CALL压着100K张、VS3D磁吸指向$7755，后100分钟方向：**窄幅偏多，向$7755磁吸，突破$7760概率低，不会大跌**。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：非0DTE中**CALL$7550 exp:08-13 单笔$120.61M**，V/OI仅0.6x疑为现有头寸mark-to-market，但规模极端——若是新开，是全场最大多头押注，目标指向市场继续上行。另外非0DTE CALL$7700 持续出现$13M+，多快照稳定存在，是真实多头底仓。\n\n🎰彩票：**7770 CALL（0DTE）**，mid$0.28、V/OI 95x、量103K张已是全场成交量第一，便宜OTM新开仓，距收盘100分钟、现价只差20点，磁吸若破$7760则直奔$7770，赔率极高。",
+      "meta": {
+        "spx": 7750.64,
+        "ndx": 29642.97,
+        "ts": "14:20 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260810/claude_analysis_141812.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260810/claude_analysis_142042.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
