@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `spx_0dte_report_20260810_1059.json` | SPX 0DTE信号 | 2026-08-10 10:59 | [下载](SPXalerts/20260810/spx_0dte_report_20260810_1059.json) | {"label": "0DTE · 10:59 ET", "signals": 108, "direction": "极度偏多 🟢🟢", "net_premiu |
 | `claude_analysis_105713.json` | Claude深度分析 | 2026-08-10 10:57 | [下载](ClaudeAnalysis/20260810/claude_analysis_105713.json) | {"generated_at": "2026-08-10T10:57:13.031069-04:00", "generated_at_display": "20 |
 | `ndx_0dte_report_20260810_1055.json` | NDX 0DTE信号 | 2026-08-10 10:55 | [下载](NDXalerts/20260810/ndx_0dte_report_20260810_1055.json) | {"label": "0DTE · 10:55 ET", "signals": 47, "direction": "多空均衡 ⚪", "net_premium_ |
 | `spx_0dte_report_20260810_1055.json` | SPX 0DTE信号 | 2026-08-10 10:55 | [下载](SPXalerts/20260810/spx_0dte_report_20260810_1055.json) | {"label": "0DTE · 10:55 ET", "signals": 107, "direction": "极度偏多 🟢🟢", "net_premiu |
