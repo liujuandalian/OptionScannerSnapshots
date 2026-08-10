@@ -74,14 +74,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_stock_flow_latest.json"
   },
   "spx_ndte": {
-    "filename": "spx_ndte_20260810_1415.json",
-    "github_path": "SPXalerts/20260810/spx_ndte_20260810_1415.json",
-    "upload_time": "2026-08-10 14:15",
+    "filename": "spx_ndte_report_20260810_1446.json",
+    "github_path": "SPXalerts/20260810/spx_ndte_report_20260810_1446.json",
+    "upload_time": "2026-08-10 14:47",
     "summary": {
-      "signals": 6056,
-      "timestamp_et": "2026-08-10 14:15 ET"
+      "label": "非0DTE · 14:46 ET",
+      "signals": 6300,
+      "direction": "极度偏多 🟢🟢",
+      "net_premium_M": 1664.9
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_ndte_20260810_1415.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_ndte_report_20260810_1446.json"
   },
   "oi_pre_mkt": {
     "filename": "oi_pre_mkt_20260810.json",
@@ -95,12 +97,12 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260810/spx_gamma_latest.json",
-    "upload_time": "2026-08-10 14:47",
+    "upload_time": "2026-08-10 14:45",
     "summary": {
-      "ts": "14:47",
-      "ts_full": "2026-08-10T14:47:03.061676-04:00",
+      "ts": "14:45",
+      "ts_full": "2026-08-10T14:45:57.490839-04:00",
       "symbol": "SPX",
-      "spot": 7751.98,
+      "spot": 7752.01,
       "day_high": 7773.76,
       "day_low": 7743.11,
       "day_open": 7751.74,
@@ -111,12 +113,12 @@
       "ovwap_day_high_spot": 7756.61,
       "ovwap_day_low": 7749.5,
       "ovwap_day_low_spot": 7749.04,
-      "net_gex": 63715077.0,
-      "net_gex_b": 0.0637,
+      "net_gex": 69074631.0,
+      "net_gex_b": 0.0691,
       "zero_gamma": 7723.1,
       "gamma_wall_call": 7750.0,
       "gamma_wall_put": 7750.0,
-      "dte_days": 0.0507
+      "dte_days": 0.0514
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_gamma_latest.json"
   },
