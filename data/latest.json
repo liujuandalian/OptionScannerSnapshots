@@ -151,16 +151,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260810/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_112833.json",
-    "github_path": "ClaudeAnalysis/20260810/claude_analysis_112833.json",
-    "upload_time": "2026-08-10 11:28",
+    "filename": "claude_analysis_113041.json",
+    "github_path": "ClaudeAnalysis/20260810/claude_analysis_113041.json",
+    "upload_time": "2026-08-10 11:30",
     "summary": {
-      "generated_at": "2026-08-10T11:28:33.630820-04:00",
-      "generated_at_display": "2026-08-10 11:28:33 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 期权大单复盘分析 | 20260810\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化解读\n\n### 核心差异：从\"纯方向性恐慌对冲\"到\"非线性Gamma博弈\"\n\n**20260806（上周五）→ NDX 0DTE：典型的单边恐慌结构**\n\n806的NDX数据是教科书式的空头对冲/方向性做空结构。ITM PUT大量堆积（29400/29500/29450全是LONG PUT），成交量加权后P/C=1.69，权利金偏空，量方向偏空——两者罕见地一致指向同一方向。这不是Spread、不是Collar，就是机构在市场中午时段（12:30 ET）密集建立的方向性PUT头寸。结合当时NDX现价29,361，这些PUT的行权价横跨29,200-29,500，全部接近或ATM，是真实的恐慌买入或预期性做空。\n\n**20260807（上周一）→ SPX 0DTE：规模级PUT爆发 + 尾盘Dealer Gamma对冲的混合结构**\n\n807的SPX是本周最关键的对照组。三点看穿其本质：\n\n第一，时间戳全部集中在14:49:57，这是典型的**临近收盘前的Gamma摊平或ETF对冲触发**，不是散户的方向性押注。机构或ETF rebalance在最后30分钟集中平仓，引发Dealer被动对冲。\n\n第二，7730 PUT出现SHORT PUT（$25.71M）——在一片看跌PUT买入中突然出现一笔大额卖PUT，这是Spread或Risk Reversal的下腿，说明有人在构建定义风险的结构，而非裸多PUT。\n\n第三，量方向修正：CALL 7750/7755/7760/7770均出现大量SHORT CALL，配合7730-7735的LONG PUT，这是典型的**Collar/Protective Put + Covered Call组合**，即机构对持仓进行尾盘风险压缩，而非纯粹看跌。\n\nNDX 807则相反——CALL主导，价格都是ITM CALL（29600/29650），且16:08与16:09出现完全镜像重复数据（这是system tick duplicate，不是真实两笔），实际是**收盘后期货对冲平仓或Synthetic Long调整**。\n\n---\n\n**20260810（今日）→ 结构性转变：从对冲主导切换到Gamma Squeeze博弈**\n\n今日的结构性差异是质变，不是量变：\n\n**① 时间维度前移：上午10:31-10:33 vs 过去两天的12:30/14:49**\n\n807和806的大单都在下午或正午出现，今天的SPX 0DTE核心信号在**开盘后约1.5小时**就爆发，信号数199（807当天147，806 NDX 105），密度最高。这意味着今天的押注是**预期性建仓**，不是被动对冲或收盘摊平。主动买方在早盘就已经完成方向性布局。\n\n**② 权利金偏空 vs 量方向偏多：罕见分裂**\n\n今日SPX 0DTE：权利金净多$205.78M vs 净空$301.12M（偏空），但量/张数P/C=0.23（极度偏多）。\n\n这个分裂结构的含义：空方的权利金大是因为部分CALL处于ITM（7750/7755等，现价7768，这些已是ATM附近），**SHORT CALL的高权利金拉高了名义空头敞口**，但实际看，SHORT CALL在这个位置更可能是**Call Spread的上腿**（卖高行权价CALL）或**Covered Call对冲**，并非真实做空方向押注。而19张多头CALL方向（vol 226,527）对9张空头PUT（vol 51,949）——纯数量上看，这是今日**流量最偏多的一天**，超过806和807任何一天的多头强度。\n\n**③ 非0DTE的体量爆发是今日最大的结构性异常**\n\n触发信号里最重要的不是0DTE，而是：**非0DTE CALL爆发$1038.72M + PUT爆发$752.09M，方向从PUT主导换手至CALL主导**。\n\n过去两天的数据几乎都是0DTE主导。今天出现近$1.8B的非0DTE期权大流量，说明机构在为**未来1-4周的区间/方向**建仓，而不是赌今天收盘价。彩票信号45笔（极度OTM、低权利金、高V/OI）集中出现，通常是机构Tail Risk对冲或Lottery Play的标志——但在换手方向为CALL主导的背景下，这45笔彩票CALL更可能是**做多波动率/看涨尾部风险的押注**。\n\n**④ NDX 0DTE今日出现Straddle收缩38%（非0DTE收缩63%）**\n\nStraddle价格收缩代表**隐含波动率压缩**，市场对短期波动的预期在降温。结合NDX今日量方向偏多（P/C=0.49，远好于806的1.69），机构在NDX上的操作逻辑是：**IV卖出 + 方向性CALL买入**，即预期市场将在一个相对低波动的环境中温和上行，而不是剧烈拉升或下跌。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### A. SPX 0DTE — 7760-7780区间的CALL堆积形成Gamma Wall\n\n今日CALL流量在7760/7765/7770/7775/7780形成密集分布，且V/OI比率极高：\n- 7760: V/OI=24.0x（全新仓位，几乎没有历史OI）\n- 7775: V/OI=8.3x\n- 7780: V/OI=11.8x\n\n这不是滚仓（rollover），是今天新开的仓位，现价7768.16正好处于这个CALL堆积区的**正中心**。这意味着今天SPX在7760-7780区间存在极高的Dealer Gamma敞口——做市商在这个区域被迫对冲Delta，将对价格产生\"磁石效应\"：若价格在收盘前维持此区间，Gamma平衡将使价格趋于稳定；若突破7780，Dealer需要继续买入正Delta，可能形成短暂加速上行。\n\n### B. NDX 0DTE — ATM Straddle（29700 PUT + CALL同时出现）\n\n11"
+      "generated_at": "2026-08-10T11:30:41.667242-04:00",
+      "generated_at_display": "2026-08-10 11:30:41 ET",
+      "category": "daily",
+      "text": "一、【方向 & 形态】\n\n**看跌，今天更像震荡偏空收敛**。SPX现价$7,760，上方压力$7,765（最近SHORT CALL绿BAR顶盖+GEX墙），下方支撑$7,750（大量LONG PUT建仓+SHORT PUT护盘区）。VS3D磁吸目标锁定$7,760-$7,765窄区间，Straddle已收缩38%，剩余波动空间极窄，大概率在此区间内横盘收敛。NDX同向偏空，现价$29,664夹在$29,660/$29,690两个磁吸绿BAR之间，方向一致。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量最大的0DTE大单：$7,775/$7,770/$7,780三道SHORT CALL合计超14万张，全是压顶信号，量方向看跌。权利金最大单是$7,760 LONG PUT（$25.8M）、$7,765 LONG PUT（$22M），PUT买方暴力涌入——量和权利金方向完全一致，都指向跌。非0DTE则连续多快照在$7,765-$7,780区间大量LONG CALL，两者方向打架，但0DTE的SHORT CALL墙是今日收盘前的硬约束，优先权更高。\n\n关键节点：11:29整批0DTE大单集中爆发，PUT $7,735-$7,765区间V/OI高达32-101x，属于**加速涌入**，不是慢慢建仓。结论：接下来**偏跌**，但跌幅受限于$7,750支撑，更可能是压着$7,760-$7,765区间慢磨。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨**异常**：PUT$7,765，V/OI=101.2x，权利金$22.08M，11:29单笔爆发；PUT$7,760，V/OI=75.2x，$25.84M——这两笔是今日全场最极端的新开仓押注，主动做空ATM，方向明确向下。\n\n🎰**彩票**：**7785 CALL，mid$0.82，V/OI=33.7x，量27,617张加速**——逻辑是非0DTE持续买入$7,775/$7,785 CALL对冲，若下午出现任何正面消息触发逼空突破$7,775顶盖，这张单日内可翻3-5倍；风险是SHORT CALL墙很厚，大概率归零，纯赌突破。",
+      "meta": {
+        "spx": 7760.6,
+        "ndx": 29663.75,
+        "ts": "11:30 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260810/claude_analysis_112833.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260810/claude_analysis_113041.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
