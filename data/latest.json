@@ -153,21 +153,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260810/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_123033.json",
-    "github_path": "ClaudeAnalysis/20260810/claude_analysis_123033.json",
-    "upload_time": "2026-08-10 12:30",
+    "filename": "claude_analysis_123156.json",
+    "github_path": "ClaudeAnalysis/20260810/claude_analysis_123156.json",
+    "upload_time": "2026-08-10 12:31",
     "summary": {
-      "generated_at": "2026-08-10T12:30:33.173936-04:00",
-      "generated_at_display": "2026-08-10 12:30:33 ET",
-      "category": "daily",
-      "text": "一、【方向 & 形态】\n\nSPX **看涨**，今天更像**窄幅震荡偏多**。现价$7,757，上方压力$7,765（SHORT CALL顶盖+GEX #1），下方支撑$7,760（SHORT PUT护盘）——两者仅5点，现价夹在中间，GEX磁吸把收盘钉在$7,760-$7,765区间概率极高。NDX 0DTE同向偏多（CALL爆发+方向换手确认），但非0DTE有机构在建空头对冲，短期别指望NDX冲破$29,750。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按量：成交量最大的是7925/7950 CALL（各7,000+张），便宜OTM彩票性质，全部方向看涨。按权利金：$7700/$7750/$7850的深度ITM/远期CALL合计超$30M，同样看涨，量与权利金方向**完全一致，无打架**。12:13到12:21每个快照CALL大单持续滚动涌入，每90秒一批，属于**加速涌入**状态——接下来倾向**涨**，但GEX顶盖在$7,765压着，涨幅受限，别追，等突破$7,765再说。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：PUT$7765 V/OI **21.3x**（$3.17M，12:20），PUT$7760 V/OI **12.0x**（$4.13M），NDX非0DTE PUT$29500 V/OI **10.8x**（$3.6M持续堆积）——有人在现价附近买保险，警惕尾盘若$7,760失守快速砸盘。\n\n🎰彩票：**7925 CALL**，mid $0.55、V/OI 10.1x、量7,056张加速放量，是今日成交量王者，主流押注方向明确，若下午突破$7,765则迅速变值钱。",
-      "meta": {
-        "spx": 7760.6,
-        "ndx": 29709.68,
-        "ts": "12:30 ET"
-      }
+      "generated_at": "2026-08-10T12:31:56.654625-04:00",
+      "generated_at_display": "2026-08-10 12:31:56 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 0DTE 专业复盘 | 20260810\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性分析\n\n### SPX：从\"对冲型多空博弈\"退化为\"单向PUT压制+CALL卖出对冲\"的纯防御结构\n\n**8月6日**的SPX 0DTE是典型的**方向分歧市场**——权利金端偏空（ITM PUT拉高），但量/张数端偏多（CALL方向22张 vs PUT 12张），系统已标注\"方向背离\"。这种结构的本质是：机构在用深度ITM PUT做已有多头头寸的保险，同时主动买CALL加仓上行暴露。中午12:30出现，更像是开盘后方向确认后的**动态调仓**，非单向押注。\n\n**8月7日**的SPX 0DTE发生在14:49——收盘前1小时。CALL端出现大量彩票式OTM买入（$7750 CALL 13万张），同时多条深度ATM PUT被大量买入（$7740/$7745/$7750 PUT，V/OI高达160-193倍），量/张数11张PUT对7张CALL，整体偏空但结构更像**尾盘Gamma挤压**——机构在收盘前同时做多波动率（双向买权），而非单纯看跌。这是典型的\"当日事件驱动不确定性对冲\"。\n\n**今日8月10日**的结构与前两天有本质区别：\n\n> **核心差异：今日是\"有组织的CALL卖出 + PUT买入\"的复合结构，不是单纯方向押注，也不是波动率对冲，而是机构主动构建顶部压制带。**\n\n具体表现：\n- **CALL端全面是SHORT CALL**：$7760/$7765/$7755/$7770/$7775/$7780/$7800，按成交量排行前8笔中有6笔是SHORT CALL，且行权价从$7760连续排列至$7800，间隔均匀，这不是散乱的卖方，而是**系统性地构建Call Wall/Covered Call带**。\n- **PUT端全面是LONG PUT**：$7760/$7765/$7770/$7755/$7750/$7775/$7780，连续行权价的LONG PUT，V/OI普遍超过30-100倍（$7765 PUT的V/OI高达101.2x，$7760 PUT的75.2x），说明原有OI极低，这是**全新建仓**，不是平仓或展期。\n- **量/张数P/C=3.49**：这是三天中最极端的读数（8/6是0.57，8/7是1.42）。结合前两点，今天的PUT不是ITM对冲带来的虚假信号，是真实的方向性LONG PUT。\n\n**结论性差异**：8/6是\"确认多头后买CALL\"，8/7是\"尾盘事件对冲买波动率\"，8/10是\"主动构建当日顶部+方向性看跌\"——三种完全不同的机构行为，今日最为悲观。\n\n---\n\n### NDX：表面看多，内部出现罕见的\"镜像套利结构\"\n\n今日NDX 0DTE的方向读数是偏多（权利金+量/张数均偏多），但仔细看大单明细，存在一个极其重要的细节：\n\n**同一行权价在不同分钟出现相反方向**：\n- 12:28:00 CALL$29700 LONG（$3.45M）→ 12:29:02 CALL$29700 SHORT（$3.36M）\n- 12:28:00 CALL$29750 LONG（$1.63M）→ 12:29:02 CALL$29750 SHORT（$1.60M）\n\n这是**跨账户的配对交易**，或是同一账户在1分钟内完成的开平仓确认。规模几乎相等，方向相反——这不是方向性押注，而是**精确的Delta中性结构**（Straddle/Strangle建仓的两个leg，或是Delta对冲调整）。\n\nNDX触发信号中\"Straddle收缩35%\"与此高度吻合——有人在主动**压缩NDX的隐含波动率预期**，认为当日不会有大幅波动，这与SPX方向性LONG PUT的结构形成了有趣对立：\n\n> **SPX在押方向性下行，NDX在押波动率收缩** —— 这两者可以同时成立吗？可以：如果市场预期是缓慢阴跌或窄幅震荡，SPX跌幅有限，NDX相对抗跌（科技股相对强势），那么SPX下行+NDX波动率压缩是自洽的。\n\n此外，NDX的非0DTE PUT爆发$78.63M，与0DTE的\"方向换手CALL主导\"形成**跨期矛盾**：非0DTE大资金在买远期PUT保护，但当日0DTE却换手做多。这种结构通常意味着：**大资金认为短期(今日)可能有反弹，但对中期(本周/下周)持悲观态度**。\n\n---\n\n### SPX非0DTE：彩票信号52笔+CALL爆发$1333M才是今日最大变量\n\n今日触发的最重要异常其实是**非0DTE数据**，而非0DTE。\n\n- **SPX非0DTE CALL爆发$1333.51M**：这是极其罕见的数字。对比今日0DTE的CALL/PUT权利金（71M/316M），非0DTE的CALL量是0DTE CALL的**近19倍**。\n- **彩票信号52笔集中出现**：低Delta、高OTM的CALL，通常是机构在对冲空头头寸的上行风险，或是押注催化剂事件（财报/政策/宏观数据）。\n- **非0DTE PUT同样爆发$575.11M**：双向爆发，但CALL/PUT比约为2.3:1，偏多方向。\n\n**结构性解读**：非0DTE大资金在用远期CALL构建上行暴露（可能是下周/本月到期），同时用今日0DTE的SHORT CALL压制当日上行，今日的PUT保护当日下行。这是一个**跨期对角线策略（Diagonal Spread）的机构级版本**：\n\n- 卖今日CALL（收今日Theta）\n- 买远期CALL（持有Gamma/Vega上行暴露）\n- 买今日PUT（保护当日下行）\n\n这种结构说明：**机构对今日持中性偏空判断，但对中期方向并不悲观**。\n\n---\n\n## 2.【今日值得关"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260810/claude_analysis_123033.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260810/claude_analysis_123156.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
