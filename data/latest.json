@@ -28,16 +28,14 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_intraday_20260810_1530.json"
   },
   "spx_0dte": {
-    "filename": "spx_0dte_report_20260810_1545.json",
-    "github_path": "SPXalerts/20260810/spx_0dte_report_20260810_1545.json",
+    "filename": "spx_0dte_20260810_1545.json",
+    "github_path": "SPXalerts/20260810/spx_0dte_20260810_1545.json",
     "upload_time": "2026-08-10 15:45",
     "summary": {
-      "label": "0DTE · 15:45 ET",
       "signals": 259,
-      "direction": "多空均衡 ⚪",
-      "net_premium_M": 88.0
+      "timestamp_et": "2026-08-10 15:45 ET"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_0dte_report_20260810_1545.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_0dte_20260810_1545.json"
   },
   "unknown": {
     "filename": "spx_stock_flow_latest.json",
@@ -95,12 +93,12 @@
   "spx_gamma": {
     "filename": "spx_gamma_latest.json",
     "github_path": "SPXalerts/20260810/spx_gamma_latest.json",
-    "upload_time": "2026-08-10 15:43",
+    "upload_time": "2026-08-10 15:45",
     "summary": {
-      "ts": "15:43",
-      "ts_full": "2026-08-10T15:43:50.228236-04:00",
+      "ts": "15:45",
+      "ts_full": "2026-08-10T15:45:18.856208-04:00",
       "symbol": "SPX",
-      "spot": 7754.3,
+      "spot": 7754.14,
       "day_high": 7773.76,
       "day_low": 7743.11,
       "day_open": 7751.74,
@@ -111,12 +109,12 @@
       "ovwap_day_high_spot": 7756.61,
       "ovwap_day_low": 7749.5,
       "ovwap_day_low_spot": 7749.04,
-      "net_gex": 59174016.0,
-      "net_gex_b": 0.0592,
-      "zero_gamma": 7721.7,
+      "net_gex": 56308817.0,
+      "net_gex_b": 0.0563,
+      "zero_gamma": 7721.6,
       "gamma_wall_call": 7750.0,
       "gamma_wall_put": 7750.0,
-      "dte_days": 0.0112
+      "dte_days": 0.0102
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260810/spx_gamma_latest.json"
   },
