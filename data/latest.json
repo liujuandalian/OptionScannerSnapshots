@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-11 14:28",
+  "_updated": "2026-08-11 14:29",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -57,14 +57,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_ndte_20260811_1329.json"
   },
   "ndx_0dte": {
-    "filename": "ndx_0dte_20260811_1409.json",
-    "github_path": "NDXalerts/20260811/ndx_0dte_20260811_1409.json",
-    "upload_time": "2026-08-11 14:09",
+    "filename": "ndx_0dte_report_20260811_1429.json",
+    "github_path": "NDXalerts/20260811/ndx_0dte_report_20260811_1429.json",
+    "upload_time": "2026-08-11 14:29",
     "summary": {
-      "signals": 98,
-      "timestamp_et": "2026-08-11 14:09 ET"
+      "label": "0DTE · 14:29 ET",
+      "signals": 2,
+      "direction": "纯空 🔴🔴（无CALL信号）",
+      "net_premium_M": -0.8
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_0dte_20260811_1409.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_0dte_report_20260811_1429.json"
   },
   "stock_flow": {
     "filename": "spx_stock_flow_latest.json",
