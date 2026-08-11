@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `claude_analysis_155641.json` | Claude深度分析 | 2026-08-11 15:56 | [下载](ClaudeAnalysis/20260811/claude_analysis_155641.json) | {"generated_at": "2026-08-11T15:56:41.222565-04:00", "generated_at_display": "20 |
 | `claude_analysis_155521.json` | Claude深度分析 | 2026-08-11 15:55 | [下载](ClaudeAnalysis/20260811/claude_analysis_155521.json) | {"generated_at": "2026-08-11T15:55:21.434017-04:00", "generated_at_display": "20 |
 | `claude_analysis_155156.json` | Claude深度分析 | 2026-08-11 15:51 | [下载](ClaudeAnalysis/20260811/claude_analysis_155156.json) | {"generated_at": "2026-08-11T15:51:56.812990-04:00", "generated_at_display": "20 |
 | `claude_analysis_155033.json` | Claude深度分析 | 2026-08-11 15:50 | [下载](ClaudeAnalysis/20260811/claude_analysis_155033.json) | {"generated_at": "2026-08-11T15:50:33.444077-04:00", "generated_at_display": "20 |
