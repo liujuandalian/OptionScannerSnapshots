@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-11 10:39",
+  "_updated": "2026-08-11 10:40",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -153,16 +153,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_103207.json",
-    "github_path": "ClaudeAnalysis/20260811/claude_analysis_103207.json",
-    "upload_time": "2026-08-11 10:32",
+    "filename": "claude_analysis_104034.json",
+    "github_path": "ClaudeAnalysis/20260811/claude_analysis_104034.json",
+    "upload_time": "2026-08-11 10:40",
     "summary": {
-      "generated_at": "2026-08-11T10:32:07.078626-04:00",
-      "generated_at_display": "2026-08-11 10:32:07 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 专业交易台复盘 | 20260811\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 核心结构翻转：从\"PUT主导的对冲盘\"到\"CALL驱动的方向性押注\"\n\n过去两日（0807、0810）的共同特征是：**权利金层面偏空，但量层面存在显著分歧**。这种分歧的本质是深度ITM PUT被大量用于收盘时刻的风险对冲（Delta Hedge收尾、机构Collar展期），而非真实方向性押注。具体证据：0807日SPX 0DTE中PUT$7740权利金$65.83M、PUT$7750权利金$94.92M，这些合约mid价格$6.90-$14.55，V/OI高达26x-193x，明显是盘中就已是ITM或接近ATM的合约被大批量买入——这是典型的**收盘前Gamma Hedging展期**，不代表新方向性押注。\n\n今日（0811）结构发生根本性变化：\n\n**第一个差异——CALL端的权利金与量同步偏多，ITM失真消失**\n\n今日SPX 0DTE前8大按权利金排名的大单，**全部是CALL**，且这些CALL的mid价格范围$2.60-$15.95（CALL$7760 mid$9.75、CALL$7780 mid$2.60），对应的是**ATM到OTM区间**，不存在ITM权利金虚高问题。这意味着今日$109.24M的CALL权利金是真实的方向性净权利金流入，而非被ITM定价扭曲的假象。与此对比，0810日权利金显示偏空但量纠偏为偏多——两个信号打架。0807日权利金偏空且量也偏空——双重确认偏空。**今日是过去两日没有出现过的\"双信号同向偏多\"结构**。\n\n**第二个差异——时间窗口：盘中信号 vs 收盘信号，性质截然不同**\n\n0807和0810的大单信号时间戳集中在14:49-16:09 ET，属于**收盘前最后1-2小时的平仓/展期/对冲流量**，信息含量关于明日方向有限。今日信号时间戳是**10:11-10:29 ET**，盘前2.5小时，这是主动方向性建仓窗口。盘中大单的信息密度远高于收盘大单。这是性质上的根本差异，不是量级差异。\n\n**第三个差异——NDX的方向换手是\"分层博弈\"而非简单翻转**\n\n触发信号提示NDX 0DTE从PUT主导换手为CALL主导，同时NDX非0DTE从CALL主导换手为PUT主导。这两个方向相反的信号叠加，揭示的是一个**期限结构分层**：今日（0DTE）做多NDX，但非0DTE端在建立对冲或方向性偏空的跨期头寸。这不是简单的看多，而是**短多长空的时间价差结构**，或者是机构在当日方向性做多的同时用非0DTE PUT购买尾部风险保护。\n\n**第四个差异——Straddle全线收缩：SPX 0DTE -21%、非0DTE -26%、NDX 0DTE -30%**\n\n过去两日没有出现如此全面的Straddle收缩信号。Straddle收缩意味着隐含波动率压缩，市场对短期大波动的定价在下降。结合CALL爆发，这形成一个**典型的\"volatility crush + directional call buying\"**组合——这是熟悉VIX结构的机构玩家在押注\"温和上涨+vol下降\"，而非押注单纯的波动率扩张。如果是简单的FOMO追涨，不会同时做空波动率。\n\n**第五个差异——非0DTE彩票信号集中出现（7笔）**\n\n非0DTE CALL爆发$526.60M同时出现7笔彩票信号，这在过去两日数据中未见。彩票信号通常是深度OTM、到期日较远、V/OI异常高的低价期权被大量买入。7笔集中出现说明有资金在**布局更远期的上涨保护或投机性CALL**，这种信号往往先于价格移动1-5个交易日出现。与0DTE的短期方向性信号形成**时间维度上的共振**。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### SPX 0DTE：CALL密集堆积形成\"阶梯式弹射结构\"\n\n今日SPX 0DTE的特殊性在于CALL大单**不是集中在单一行权价**，而是在7760/7765/7770/7775/7780连续5个行权价上均有显著成交量（16311/16269/14364/19329张，加上7760的20193张）。这种\"宽基CALL扫货\"有两种解读：\n\n- **看涨解读**：机构在做CALL Ladder或连续OTM CALL买入，押注日内突破7780甚至更高\n- **对冲解读**：有人在做CALL Spread或BPS（Bull Put Spread对应端），即卖出高端CALL买入低端CALL，收取价差权利金\n\n但关键证据是：CALL$7780 mid$2.60 vol19329 vs CALL$7800 mid$0.68 vol13441（后者为SHORT CALL）。这个组合暗示：7760-7780是主力买入区，7800是卖出端。这是一个**多头垂直价差**结构（Long 7760C / Short 7800C），隐含的最大涨幅预期在7800附近。\n\n**今日SPX现价7760.04，7800是天然的阻力/最大收益点**。\n\n### NDX 0DTE：PUT异常集中在29570-29600，质量高于量\n\nNDX 0DTE中PUT$29570 V/OI=100x，PUT$29580 V/OI=293x，这两个数字在今日NDX数据中极为突出。V/OI 293倍意味着今日成交量是未平仓合约的293倍——几乎可以确定这是**全新建仓的方向性PUT**，不是平仓或对冲已有头寸。NDX现价29643，这些PUT距现价约60-70点（0.2%）。这不是保险性PUT（保险PUT通常买深度OTM），而是**接近ATM的定向做空**。\n\n但这与0DTE整体偏多的方向相矛盾——这"
+      "generated_at": "2026-08-11T10:40:34.866251-04:00",
+      "generated_at_display": "2026-08-11 10:40:34 ET",
+      "category": "daily",
+      "text": "一、【方向 & 形态】\n\n看涨，今天更像**窄幅震荡偏多**。SPX现价$7,757，上方压力$7,780（GEX#1）/$7,800（SHORT CALL封顶10K张），下方支撑$7,750（SHORT PUT护盘2K张）/$7,755（VS3D磁吸）。收盘磁吸目标$7,760。NDX同向偏多，但0DTE刚出现大PUT砸单需警惕。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量：最大量是7915 CALL（6024张，V/OI 19x，OTM彩票型），方向看涨；7560 PUT（4998张）看跌对冲。按权利金：7575/7580深ITM CALL（$38-68M级别）是持仓滚动噪音，7760/7765/7765 CALL大单主动买入，量与权利金**方向一致，均偏多**。购买速度：7760/7765 CALL从10:22到10:30持续加速涌入（$2.1M→$2.3M→$3.4M递增），⚡大单连续5个快照全绿，**买速在加速**。结论：接下来**倾向涨**，目标磁吸$7,760-$7,780，但$7,800封顶，不会一冲而过。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：**7765 CALL，V/OI 5.2x**，从$2.14M涨到$2.32M，10分钟内连砸两笔，纯新开仓方向性押注看涨——这是今天最干净的主动多头信号。NDX端：**PUT$29580，V/OI 293.5x**，近乎全新开仓，$1.85-1.89M连续两笔，是真实下行对冲，警惕NDX短线回调拖累SPX。\n\n🎰彩票：**7915 CALL，mid $0.15，V/OI 19.2x，量6024张持续积累**——全天最大量成交+极高V/OI新开仓，若SPX午后放量突破$7,780压力，这张单非线性爆发概率最高，赌一把性价比最佳。",
+      "meta": {
+        "spx": 7760.04,
+        "ndx": 29638.59,
+        "ts": "10:40 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_103207.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_104034.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
