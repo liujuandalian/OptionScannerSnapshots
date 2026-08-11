@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-11 11:30",
+  "_updated": "2026-08-11 11:31",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -151,21 +151,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_113033.json",
-    "github_path": "ClaudeAnalysis/20260811/claude_analysis_113033.json",
-    "upload_time": "2026-08-11 11:30",
+    "filename": "claude_analysis_113158.json",
+    "github_path": "ClaudeAnalysis/20260811/claude_analysis_113158.json",
+    "upload_time": "2026-08-11 11:31",
     "summary": {
-      "generated_at": "2026-08-11T11:30:33.258315-04:00",
-      "generated_at_display": "2026-08-11 11:30:33 ET",
-      "category": "daily",
-      "text": "一、【方向 & 形态】\n\n**看涨，今天更像震荡偏强**。SPX现价$7,748，上方压力$7,780（GEX CALL主导）、顶盖$7,800（SHORT CALL 11K张压顶）；下方支撑$7,750（SHORT PUT护盘3K张）、再看$7,725。GEX磁吸预测收盘钉在$7,750-$7,755区间，别指望大幅突破。NDX现价$29,609，0DTE盘面偏空但非0DTE量信号看多，与SPX方向基本同向但弱一档。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量最大的真实活跃度看：SPX最大量单是OTM PUT$7560（6083张，看跌）和CALL$7915彩票（6034张，看涨）——两边都在博尾盘波动，但权利金绝对规模CALL压倒性碾压PUT（CALL侧$1804M vs PUT侧$471M）。以量纠偏方向，CALL 824张 vs PUT 213张，P/C=0.39，**真实方向看多**，两者一致。\n\n购买速度：11:13到11:21连续7批次LONG CALL大单重复涌入，$7575/$7580/$7775/$7660等行权价权利金每批微降但量未减——是**持续建仓不是一次性冲击**，属于加速堆量特征。结论：接下来**倾向继续涨**，但空间被$7,800顶盖压住，别幻想突破，更可能是在$7,750-$7,780区间向上摩擦收盘。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：**CALL$7860 V/OI=297x**，连续6个快照出现，权利金每批$1.7M，量在同一批次重复确认——这是本场最极端的新开仓押注，方向看涨，赌收盘突破$7,860，属于低概率高赔率的超激进多头。另外CALL$7765 V/OI=8.9x、PUT$29580 V/OI=308x（NDX今日极端押注，看NDX下跌）均值得警惕。\n\n🎰彩票：**7915 CALL，mid$0.10-$0.12、V/OI=19.2x、vol 6034张持续堆量**。纯粹赌尾盘CALL爆拉突破$7,915，量在每批快照里不动如山说明有人在反复吃货，$0.10入场赔率极高，SPX今日上行动能存在则值得博一把。",
-      "meta": {
-        "spx": 7760.04,
-        "ndx": 29608.93,
-        "ts": "11:30 ET"
-      }
+      "generated_at": "2026-08-11T11:31:58.454561-04:00",
+      "generated_at_display": "2026-08-11 11:31:58 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 期权大单结构性分析 | 20260811\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化解读\n\n### 核心转变：从\"对冲主导\"到\"方向性押注主导\"\n\n过去两个交易日（0807、0810）的0DTE数据呈现出典型的**收盘对冲/Gamma平仓特征**——大量交易集中在16:07-16:09的收盘窗口，V/OI极高（常见50-200x），权利金方向与量方向频繁背离，这是做市商和机构在收盘前快速展期或平仓的特征，**不代表真实方向押注**。\n\n今日（0811）的数据完全不同：时间戳在**10:11-11:30 ET**，这是盘中活跃时段，不是收盘机械对冲窗口。这意味着今天的大单是**有人在盘中主动建仓**，信号质量远高于前两日收盘时段的噪音。\n\n### SPX：三日方向演变的结构性逻辑\n\n| 日期 | 权利金净方向 | 量纠偏方向 | 结构解读 |\n|------|------------|-----------|---------|\n| 0807 | 极度偏空 | 偏空确认 | 双重偏空，恐慌性PUT购入，护盘式大量SHORT PUT混杂 |\n| 0810 | 偏空 | **偏多（背离）** | 深度ITM PUT拉高权利金空头名义值，但实际CALL成交量压倒性 |\n| 0811 | **偏多** | **强多确认** | 两项指标罕见同向，且是盘中建仓，结构最干净 |\n\n0807的PUT爆发（PUT$7740 prem $65.83M、PUT$7750 prem $94.92M）是近ATM的保护性PUT集中购入，量/张数也确认偏空——那是真实的下行对冲需求。0810出现了关键转折：权利金仍因深度ITM PUT（$29M+量级）显示偏空，但CALL$7760成交165,549张、CALL$7755成交151,261张——这些几乎是penny级别的OTM CALL，机构在低成本布局上行。**今天这个布局在开花：同样的Strike区间（7760-7780）出现了有真实权利金（$5-$19.7 mid）的实值/近值CALL大量成交，说明0810的廉价CALL布局者正在追加或者原始仓位产生了正Gamma效应。**\n\n### NDX：今日出现独特的\"对称博弈\"结构\n\n0807 NDX 0DTE的量方向极度偏多（P/C=0.32），以ITM CALL为主，是典型的机构收盘前Gamma Squeeze布局。0810均衡但PUT权重略重。\n\n今日0811 NDX 0DTE出现了前所未有的特征：**CALL和PUT的张数/种类完全对称（22 vs 22），但成交量略偏多（P/C=0.79）**。这不是简单的均衡——这是**双向建仓的典型Straddle/Strangle分拆买入结构**，结合触发信号中NDX 0DTE Straddle收缩44%，说明IV正在快速压缩，有人在低IV环境下对称买入波动率，押注今日有幅度移动。\n\n### 非0DTE信号的结构性意义（最重要的部分）\n\n今日触发的异常中，**最值得深挖的是非0DTE端**：\n- **SPX非0DTE CALL爆发$1804.46M**：这个量级远超过0DTE数据的任何单项，且是CALL端——非0DTE大单代表**未来数日至数周的方向押注**，不受当日Gamma到期影响。这是机构在买入跨期上行敞口。\n- **SPX非0DTE PUT爆发$471.70M**：与CALL同日爆发，但量级约为CALL的1/4，结构上更像是**Collar的保护性PUT腿**（买CALL同时买PUT保底），或者是Spread结构的一部分。\n- **彩票信号集中6笔**：深度OTM、短期到期的廉价CALL/PUT，成本极低但Delta极小。6笔集中出现代表有人在押某个Catalyst触发大幅移动——考虑日期（8月中旬），可能是押CPI/PPI数据或Jackson Hole相关消息。\n- **三个品种Straddle同步收缩**（SPX -28%、NDX 0DTE -44%、NDX非0DTE -57%）：这是**IV全面压缩**的信号，市场对近期事件风险定价降低，做市商在主动做空波动率。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常①：SPX 0DTE盘中CALL密度异常高且Strike连续\n\n今日10:11 ET，7750-7785的Strike带几乎每个点位都有大量CALL成交：\n- CALL$7760: 20,193张 mid=$9.75（ATM附近，真实权利金）\n- CALL$7780: 19,329张 mid=$2.60\n- CALL$7765-7775: 每级14,000-16,000张\n\n这种**\"CALL阶梯\"结构**不是单一方向押注，更像是**Delta中性的Gamma分布建仓**——机构在多个Strike上同时建立多头，目的是无论从哪个方向突破，都能捕捉到Gamma收益。7760是当时ATM，向上到7800的CALL Short（13,441张），形成了一个隐含的**Bull Call Spread群**，上限约在7800。\n\n### 异常②：NDX 0DTE中PUT$29570的106x V/OI\n\nPUT$29570，vol=742，V/OI=106x，prem=$2.64M——OI只有7张，742张是开仓，而且是在盘中11:29 ET。这是标准的**方向性PUT买入，而非对冲**（如果是对冲，V/OI应该接近1x，而不是106x）。29570相对当时29602的价格约下方30点，这笔单子在押NDX今日内跌破29570。配合PUT$29400（604张）的存在，有人在防范快速下行。\n\n### 异常③：SPX非0DTE $1804M CALL vs $471M PUT的不对称\n\n这个比例（约3.8:1）在历史上偏高。如果是单纯Collar结构，PUT/CALL比例通常更接近1:1（保护等量）。**3.8:1的CALL超配意味着这不是纯粹对"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_113033.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_113158.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
