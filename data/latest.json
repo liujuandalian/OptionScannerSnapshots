@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-11 13:11",
+  "_updated": "2026-08-11 13:12",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -155,21 +155,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_131037.json",
-    "github_path": "ClaudeAnalysis/20260811/claude_analysis_131037.json",
-    "upload_time": "2026-08-11 13:10",
+    "filename": "claude_analysis_131202.json",
+    "github_path": "ClaudeAnalysis/20260811/claude_analysis_131202.json",
+    "upload_time": "2026-08-11 13:12",
     "summary": {
-      "generated_at": "2026-08-11T13:10:37.653778-04:00",
-      "generated_at_display": "2026-08-11 13:10:37 ET",
-      "category": "daily",
-      "text": "一、【方向 & 形态】\n\nSPX看涨，今天更像**窄幅震荡偏多**。现价$7,732，上方压力$7,745（SHORT CALL顶盖，GEX#1/磁吸绿BAR双重压制），下方支撑$7,720（GEX PUT墙+短期磁吸）。VS3D磁吸把收盘钉向$7,735附近。NDX与SPX背离——0DTE量/张数P/C=1.72看空，方向换手信号已出，NDX偏弱但SPX主导今日节奏。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量排第一的真实大单：7760 SHORT CALL（85K张）和7740 LONG PUT（76K张）——表面像空头，但规模最大的LONG CALL集中在7750（72K）、7765（67K）、7770（60K），多头CALL张数10支压倒PUT的6支，量/张数方向铁定看多。权利金端被7750/7755 ITM PUT撑到$409M偏空，是标准失真噪音，以量为准忽略。13:00:54那波大单是今日最关键爆发：7730/7740/7750 LONG CALL同时砸入$25M+，与SHORT CALL在7745/7760形成夹击——当前在**加速建仓但上方顶盖明确**。结论：接下来**横盘略偏涨**，在$7,735–$7,745之间收盘概率最高，很难有效突破7745。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX 0DTE PUT$29570，V/OI=124x，$6.38M，属于真实方向性押注做空NDX，配合方向换手信号，NDX尾盘存在向29490–29480 GEX磁吸位下砸的风险。SPX端7740 LONG CALL $10.45M（V/OI 41.9x）是今日最干净的多头大单。\n\n🎰彩票：**SPX 7760 CALL**，mid $0.43、V/OI 51.9x、vol 85K全场量最大。磁吸目标$7735–7745意味着这张大概率归零，但若SPX意外突破7750，这张是最暴力的加速器，赌突破用、控制仓位。非0DTE端 **CALL$7915**（非0DTE，mid $0.12、V/OI 19.9x、6256张持续出现）——超低价押远端大涨，今日尾盘前有Theta保护，适合极小仓位博尾段。",
-      "meta": {
-        "spx": 7732.97,
-        "ndx": 29505.08,
-        "ts": "13:10 ET"
-      }
+      "generated_at": "2026-08-11T13:12:02.159110-04:00",
+      "generated_at_display": "2026-08-11 13:12:02 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 0DTE 专业复盘 | 20260811\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性分析\n\n### SPX：从\"收盘结算博弈\"到\"盘中定向押注\"的性质切换\n\n这是三天数据中最值得警惕的结构性变化。\n\n**时间维度的本质差异**：8/7和8/10的SPX大单全部集中在14:49~16:08这个收盘前窗口，这是典型的**做市商对冲Gamma Exposure平仓、日内庄家锁价**的行为模式——大量ITM PUT的出现是因为收盘前需要通过深度ITM期权精确对冲Delta，成本不敏感，权利金虚高是结构性噪音。而今日13:00:54的大单爆发发生在**盘中（距收盘还有近3小时）**，这不是对冲收盘风险，这是**主动的方向性建仓**。这一点是三日数据中最大的结构性差异。\n\n**PUT的行权价分布发生漂移**：8/7时PUT大单集中在7730-7770区间（当时现价7736），属于近ATM短打；8/10的PUT集中在7755-7800（现价7753），同样ATM附近；今日PUT大单集中在7740-7780（现价7733），但今日的现价**低于前两日**，意味着这些PUT的行权价相对现价更\"ITM\"——建仓成本更高，说明买方愿意付溢价买保护，**保护意愿在升级**。\n\n**CALL端出现质的变化**：8/7的CALL大单中大量是SHORT CALL（7740、7760、7770均为卖方），呈现典型的**Covered Call/顶部卖压**结构；8/10的CALL以LONG为主（7750、7745、7740全是买方）；今日CALL端出现明显分层：7750/7755/7765/7770/7780的LONG CALL体量庞大（vol合计达到342,508），而7760的SHORT CALL以84,927成为成交量最大的单一合约——这不是单边押注，这是一个**Bull Call Spread的集体建仓信号**，上方7760-7780是有组织的顶部锁定，但下方的CALL LONG量级远大于上方的CALL SHORT，**净向量仍然偏多**。\n\n**非0DTE CALL爆发33亿是今日最大异常**：这是当日整个数据集中信息密度最高的信号，却在触发提醒中被列在SPX 0DTE之后。33.31亿美元的非0DTE CALL，远超0DTE的所有方向性信号。非0DTE CALL通常意味着机构在**布局跨日乃至跨周的上涨敞口**，这与0DTE盘中的看多纠偏方向高度一致，形成**跨期共振**。这种非0DTE CALL爆发在8/7和8/10均未出现，是今日独有的结构。\n\n### NDX：与SPX出现明罕见的方向背离\n\n这是今日第二个关键结构性异常。\n\n8/7的NDX量/张数方向强烈看多（CALL 36张 vs PUT 10张，P/C=0.32），配合SPX的量端看多，两者方向一致。8/10的NDX接近均衡（P/C=0.85）。但今日NDX的量/张数方向**明确看空**（PUT 47张 vs CALL 16张，P/C=1.51），而SPX同时段量端明确看多（P/C=0.55），**两个指数今日出现方向背离**。\n\n这种背离有三种解读：\n- **解读A（概率最高）**：NDX相对SPX更弱，资金在SPX上做多但同时用NDX PUT对冲科技股尾部风险，这是一种**跨指数对冲套利结构**，净效果是看好SPX但担忧NDX/科技股单独回调。\n- **解读B**：NDX的PUT集中在29500-29650区间，而当前NDX现价29505——大量PUT行权价就在现价附近甚至已经ATM/轻微ITM，这不是远期保护，这是**近期下行的主动押注**。\n- **解读C（最悲观）**：科技股领跌，NDX先于SPX下行，两者的背离是市场结构转换的前兆。\n\n今日NDX还出现\"方向换手\"——从CALL主导切换到PUT主导，这与8/7的NDX图景（当日CALL主导量端）形成鲜明对比，说明NDX内部**做多科技的底气在下降**。\n\n### Straddle收缩的结构含义\n\n今日SPX Straddle收缩47%，NDX收缩26%。历史两日没有这一信号。Straddle收缩意味着**隐含波动率被主动压制**——这通常有两种来源：做市商大量卖出双边期权（认为不会有大波动），或机构在用Straddle回购来锁定已有的波动率敞口。结合今日13:00盘中时间窗口，这更可能是机构在**主动压波动率为后续方向性押注创造更低成本入场环境**，然后用CALL端的大量建仓捕捉上行。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常①：PUT$7740，Vol/OI=64.9x，75,881张——今日最重要的单一合约\n\n这个合约的V/OI=64.9x，意味着今日成交量是持仓量的64.9倍，是无中生有的全新仓位。权利金$78.54M，是今日PUT端前三大。但关键在于：7740 PUT距现价7733仅差7点（约0.09%），这是**接近平价的PUT**，不是深度ITM的对冲噪音。它的$10.35 mid价格代表真实的期权权利金而非ITM内在价值膨胀。这笔交易具有真实的方向性——有人在13:00用约7800万美元买入或卖出7740 PUT。结合后续SHORT PUT在7800/7775出现（SHORT PUT看涨），这可能是一个**Bull Put Spread**：买7740 PUT + 卖7800 PUT，押注指数不会跌破7740。\n\n### 异常②：SPX非0DTE CALL爆发$33.31亿——跨期做多主力资金\n\n单日超过33亿的非0DTE CALL爆发是过去三日数据中最大的单一权利金流。非0DTE到期日通常是下周或更远，这类交易的特点是：机构不会用"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_131037.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_131202.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
