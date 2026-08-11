@@ -153,21 +153,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_121037.json",
-    "github_path": "ClaudeAnalysis/20260811/claude_analysis_121037.json",
-    "upload_time": "2026-08-11 12:10",
+    "filename": "claude_analysis_121158.json",
+    "github_path": "ClaudeAnalysis/20260811/claude_analysis_121158.json",
+    "upload_time": "2026-08-11 12:11",
     "summary": {
-      "generated_at": "2026-08-11T12:10:37.314054-04:00",
-      "generated_at_display": "2026-08-11 12:10:37 ET",
-      "category": "daily",
-      "text": "一、【方向 & 形态】\n\nSPX看涨偏震荡。现价$7,742，上方压力$7,755（SHORT CALL最近绿BAR磁吸顶）/真正顶盖$7,765，下方支撑$7,740（SHORT PUT护盘绿BAR）。GEX排名PUT主导意味着做市商对冲方向压制波幅，今天大概率在$7,740-$7,760之间来回磨——单边突破概率低。NDX 0DTE量方向看空、方向换手已发生，与SPX有分歧，整体偏谨慎。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量最大榜：7760 CALL（65,944张，LONG）和7765 CALL（53,747张，SHORT）对打，同时7750/7745 PUT大量涌入（LONG PUT）。量方向纠偏显示均衡⚪，但非0DTE CALL侧资金持续累积看涨。两者打架——CALL侧LONG在7760/7780，PUT侧LONG在7750/7745大手笔对冲。\n\n关键判断：大单涌入信号集中在11:56前后一次性爆发，**之后没有加速迹象**，节奏已明显放缓。Straddle收缩37%、Theta加速吃权利金，市场倾向**横盘收窄震荡**，下午大方向偏**小幅向上磁吸$7,755**，但无力突破$7,765。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX PUT$29,580，V/OI **329.5x**，prem近$3.2M，12:07-12:08连续两笔，现价正ATM，纯粹方向性做空NDX的主动押注，信号极强——NDX下行风险不可忽视。\n\n🎰彩票：**SPX 0DTE CALL$7,760**，mid$1.58、V/OI 40.3x、65,944张新开、非0DTE同行权价CALL也在持续加仓——若下午价格从$7,742向$7,755磁吸过程中突破，这张票赔率最佳，是今天唯一值得赌的彩票位。",
-      "meta": {
-        "spx": 7741.75,
-        "ndx": 29570.52,
-        "ts": "12:10 ET"
-      }
+      "generated_at": "2026-08-11T12:11:58.889156-04:00",
+      "generated_at_display": "2026-08-11 12:11:58 ET",
+      "category": "deep",
+      "text": "# 专业交易台复盘 | 20260811 SPX/NDX 0DTE 结构性分析\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化解读\n\n### 核心差异：从\"收盘对冲清仓\"到\"日中主动方向性押注\"\n\n**时间结构是今日最大的结构性异常。**\n\n20260807和20260810的数据时间戳均集中在16:07-16:09 ET——这是收盘前最后几分钟的Gamma/Delta对冲清仓行为，本质上是做市商和大型机构的被动流量，信号的方向含义需要大幅折扣。而今日（20260811）信号发生在**11:56-12:09 ET**，距收盘还有整整4小时以上，这是**主动的日中方向性押注**，信号的前瞻性质完全不同——有人在今天中午选择大量买入今日到期PUT，这不是被动对冲，是主动的方向性赌注。\n\n---\n\n### SPX 0DTE结构演变：三日对比\n\n| 维度 | 20260807 | 20260810 | 20260811 |\n|------|----------|----------|----------|\n| 信号时间 | 收盘前（14:51/Gamma挤压期） | 收盘后扫尾 | **日中（11:56，主动流）** |\n| 量/张数P/C | 1.42（偏空双确认） | 0.59（偏多） | **0.80（均衡，但结构不均衡）** |\n| 权利金空头比 | $605M vs $183M，3.3:1 | $251M vs $120M，2.1:1 | **$268M vs $94M，2.8:1** |\n| CALL端结构 | CALL多空混杂，SHORT CALL明显 | LONG CALL主导，ITM清仓流 | **CALL多空撕裂，做市商两面建仓** |\n| PUT端结构 | 大规模LONG PUT，ATM+OTM连续 | 收盘对冲，ITM PUT高权利金 | **ATM区域密集LONG PUT+少量SHORT PUT对冲** |\n\n**20260807是真熊**：量/张数偏空双确认，大量ATM PUT在14:51被主动买入，SPX随后下行有效。\n\n**20260810是假熊真多**：表面权利金偏空，但量修正后偏多（0.59），且时间在收盘后，实质是ITM PUT的结算清仓，造成权利金虚高。次日行情应被理解为偏中性偏多。\n\n**20260811是\"均衡中藏偏空\"**：名义上量P/C=0.80接近均衡，但仔细看结构——**CALL端出现大量SHORT CALL（7755、7765、7740均为SHORT），CALL多头实际被大量CALL空头稀释**；PUT端则几乎清一色LONG PUT，无明显对冲结构。这不是Collar/Spread对冲的均衡，而是**\"主动买PUT + 做市商被动卖CALL覆盖Gamma\"的不对称结构**。\n\n---\n\n### NDX 0DTE结构：今日出现罕见单边PUT爆发\n\n这是三日中NDX最清晰的方向信号——\n\n**20260807 NDX**：量P/C=0.32，CALL主导，但大量SHORT CALL（做市商卖CALL收权利金），实质是区间震荡预期。\n\n**20260810 NDX**：量P/C=0.85，均衡，PUT主要集中在深度ITM（$29700以上，当日现价$29621），是收盘结算流，方向信号弱。\n\n**20260811 NDX**：**量P/C=2.22，看空双确认，且是日中主动流。** 46张多头PUT vs 15张多头CALL，总成交量12,664 vs 5,710——这个比值在三日中最极端。更重要的是，PUT的执行价集中在$29570-$29800区间，其中$29570/29580是ATM附近（现价$29570），$29800是深度ITM，这表明有人在同时买**ATM下跌押注**和**ITM保护**，结构更像是**方向性+保护性的组合建仓**，而非单纯的日内博弈。\n\n触发原因中明确提到**\"方向换手 CALL主导→PUT主导\"**，这印证了今日NDX的结构性转向。\n\n---\n\n### 非0DTE异常的结构意义\n\n非0DTE CALL爆发$2162.38M、PUT爆发$1049.55M，CALL/PUT比约2:1偏多——这与0DTE的偏空信号形成**时间维度上的分裂**：\n\n- **短期（今日）：偏空**——0DTE PUT爆发，日中主动建仓\n- **中期（数日至数周）：偏多**——非0DTE CALL资金量是PUT的两倍，机构在用更长期权建多头\n\n这种分裂结构通常意味着：**市场预期短期有一个回调/洗盘，但中期方向向上**。这是典型的\"买入回调机会\"的机构行为——先通过0DTE PUT制造或预期一次日内下压，再用非0DTE CALL在低位布局。\n\n---\n\n### Straddle收缩的结构含义\n\n- SPX 0DTE Straddle收缩37%\n- NDX 0DTE Straddle收缩30%\n- NDX 非0DTE Straddle收缩49%\n\n**Straddle收缩≠方向判断，Straddle收缩=隐含波动率预期下降**。\n\n三个品种同时收缩，且非0DTE NDX收缩最大（49%），说明**市场整体认为近期波动率高峰已过**，大资金在卖出波动率。结合彩票信号集中出现（SPX 0DTE 9笔、非0DTE 7笔），这形成矛盾：**卖出波动率（Straddle收缩）与买入彩票（远OTM单向押注）并存**——这是典型的\"Gamma结构重组\"信号，有人在平掉双向波动率头寸，同时保留单向尾部风险敞口。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：SPX 0DTE的$7760 PUT——日内核心压力位\n\nPUT$7760 prem:$72.96M，vol:36,942，V/OI:47.0x\n\n$7760是今日最大单权利金PUT，且V/OI比47倍极高，说明**这是全新建仓而非平仓**。现价$7741，$7760是上方约19点的ITM区域，这"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_121037.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_121158.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
