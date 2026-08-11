@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `ndx_gamma_latest.json` | NDX GammaTracker快照 | 2026-08-11 09:31 | [下载](NDXalerts/20260811/ndx_gamma_latest.json) | {"ts": "09:31", "ts_full": "2026-08-11T09:31:30.744045-04:00", "symbol": "NDX",  |
 | `spx_stock_flow_latest.json` | 个股期权流量报告 | 2026-08-11 09:30 | [下载](SPXalerts/20260811/spx_stock_flow_latest.json) | {} |
 | `spx_gamma_latest.json` | SPX GammaTracker快照 | 2026-08-11 09:29 | [下载](SPXalerts/20260811/spx_gamma_latest.json) | {"ts": "09:29", "ts_full": "2026-08-11T09:29:17.735128-04:00", "symbol": "SPX",  |
 | `oi_pre_mkt_20260811.json` | 盘前OI快照 | 2026-08-11 09:16 | [下载](oi_snapshots/20260811/oi_pre_mkt_20260811.json) | {"tickers": 269} |
