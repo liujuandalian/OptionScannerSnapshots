@@ -155,21 +155,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_105022.json",
-    "github_path": "ClaudeAnalysis/20260811/claude_analysis_105022.json",
-    "upload_time": "2026-08-11 10:50",
+    "filename": "claude_analysis_110032.json",
+    "github_path": "ClaudeAnalysis/20260811/claude_analysis_110032.json",
+    "upload_time": "2026-08-11 11:00",
     "summary": {
-      "generated_at": "2026-08-11T10:50:22.904421-04:00",
-      "generated_at_display": "2026-08-11 10:50:22 ET",
+      "generated_at": "2026-08-11T11:00:32.925220-04:00",
+      "generated_at_display": "2026-08-11 11:00:32 ET",
       "category": "daily",
-      "text": "一、【方向 & 形态】\n\n看涨，今天更像**窄幅震荡偏多**。SPX现价$7,761，上方压力$7,780（GEX #1）和$7,800（SHORT CALL盖顶），下方支撑$7,755（VS3D绿BAR磁吸）和$7,700（SHORT PUT护盘）。NDX同向看多，磁吸目标$29,670-$29,700。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量最大的是$7,915 CALL（6,026张，V/OI 19.2x），纯多头押注；权利金最大的是$7,575深度ITM CALL（$75M级，典型ITM噪音，忽略方向）。两者不打架——以量为准看$7,915 CALL放量=真实看多。PUT方面$7,560 PUT（5,000张）同步在跑，但CALL成交量P/C=0.46压倒性偏多。大单涌入节奏：10:31到10:41共10分钟内CALL大单密集轰炸超30笔，且$7,760、$7,765、$7,750 CALL均在加速堆量。**结论：接下来看涨，目标盯$7,780，突破看$7,800。**\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：**$7,860 CALL，V/OI 296x**，权利金$1.85M，10:38-10:41连续出现三次，极小OI基数上爆量，这是今天最大的异常主动押注，方向看涨。NDX侧**PUT $29,580，V/OI 296x**（592张），是防守性对冲还是真空单存疑，但量在加速。\n\n🎰彩票：**7,915 CALL，mid $0.12-0.17，V/OI 19.2x，vol 6,026持续新开仓**——连续5个快照稳定放量不减速，成本极低，赌收盘前一波加速拉升的最佳标的。",
+      "text": "一、【方向 & 形态】\n\n看涨，今天更像**窄幅震荡偏多**。SPX现价$7,759，上方压力$7,780（GEX#1，SHORT CALL 1万张顶盖），下方支撑$7,755（VS3D绿BAR磁吸双向夹击，SHORT PUT护盘$7,700兜底）。GEX全线CALL主导，Straddle收缩27%，今天就是在$7,755–$7,780里磨。NDX同向偏多，0DTE方向换手已由空转多，但非0DTE短线有SHORT CALL压顶迹象，跑不远。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量排名第一的真实大单是**CALL$7,915，6031张，V/OI 19.2x全新开仓**，纯方向性看涨押注。权利金榜最大是ITM CALL$7,575（$75M），是深度ITM噪音，剔除。两者方向**一致看涨**，量说话。购买节奏上，CALL$7,760/$7,765大单从10:42连续三批每90秒刷新加仓，V/OI从5.8x→7.2x加速堆积，属于**⚡大单加速涌入**。结论：接下来**倾向涨**，目标磁吸$7,780，但SHORT CALL$7,800是硬盖，不要追破位。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：CALL$7,860，V/OI **296x**，权利金$1.85M，全快照持续出现——这是全场最离谱的异常押注，新开仓压倒性，方向纯看涨，赌今天或近期SPX冲$7,860。其次PUT$7,800（10:47，$6.58M）对冲性质强，注意若价格靠近$7,780有对冲平仓反弹。\n\n🎰彩票：**CALL$7,915，mid $0.15，V/OI 19.2x，量6031张新开仓且每轮刷新都在加**——赌今天收盘前SPX能突破$7,800触发gamma，低成本纯彩票，值得小仓位赌一把。",
       "meta": {
         "spx": 7760.04,
-        "ndx": 29661.75,
-        "ts": "10:50 ET"
+        "ndx": 29681.2,
+        "ts": "11:00 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_105022.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_110032.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
