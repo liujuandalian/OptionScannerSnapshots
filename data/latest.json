@@ -149,21 +149,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260811/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_115033.json",
-    "github_path": "ClaudeAnalysis/20260811/claude_analysis_115033.json",
-    "upload_time": "2026-08-11 11:50",
+    "filename": "claude_analysis_120040.json",
+    "github_path": "ClaudeAnalysis/20260811/claude_analysis_120040.json",
+    "upload_time": "2026-08-11 12:00",
     "summary": {
-      "generated_at": "2026-08-11T11:50:33.691869-04:00",
-      "generated_at_display": "2026-08-11 11:50:33 ET",
+      "generated_at": "2026-08-11T12:00:40.848454-04:00",
+      "generated_at_display": "2026-08-11 12:00:40 ET",
       "category": "daily",
-      "text": "一、【方向 & 形态】\n\n看涨，今天更像**窄幅震荡偏多**。SPX现价$7,744，上方压力$7,750（SHORT CALL顶盖+GEX PUT主导钉住），下方支撑$7,725-7,730（大PUT买盘堆积形成地板）。磁吸目标$7,750收盘。NDX同向偏多但弱，$29,560有SHORT PUT护盘磁吸，涨不动但不跌。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量：7760/7765/7775/7780 CALL全是LONG，62K/51K/39K/42K张，真实方向性买入压倒一切。权利金端PUT$7760权利金$66M看似偏空——但那些PUT行权价都在现价附近甚至轻微ITM，大概率是对冲/套保，不是方向押注。两者**打架，以量为准：看多**。\n\n购买速度：11:45:37单次快照CALL端$100M权利金爆发，7760-7780区间CALL集中涌入V/OI全部30x+，是**加速涌入**信号。但$7,750 SHORT CALL压顶36K张是真实盖子，突破需要催化剂。结论：**接下来倾向在7744-7760之间窄幅向上蠕动，收盘大概率钉$7,750附近，不会大跌。**\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX PUT$29,580，V/OI=325x，$3.55M，两笔连续砸入（11:47/11:48），纯方向押注NDX今日收跌——值得警惕，但SPX量信号更强，NDX这笔可能是对冲。\n\n🎰彩票：**CALL$7,760，mid$1.90、V/OI 38.4x、vol 62,871加速**——全场成交量最大、新开仓比例最高，若下午SPX能突破$7,750压盖，这张直接翻倍。",
+      "text": "一、【方向 & 形态】\n\nSPX看涨偏震荡，今天更像窄幅震荡吸筹。现价$7,741，上方压力$7,755（SHORT CALL最近绿BAR），下方支撑$7,740（SHORT PUT护盘绿BAR）——只有15点活动空间，典型钉板结构。NDX量级偏空但GEX磁吸在$29,570附近，与SPX不同向，跟SPX分歧、单独偏弱。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量看：CALL$7760（65,944张，LONG，看涨）是全场最大成交量单，紧随其后是CALL$7765（53,747张，SHORT）和PUT$7750（53,137张，LONG）。量最大的是看涨CALL，但同时大量ITM PUT涌入——两者打架。关键裁判：非0DTE量/张数P/C=0.48强烈偏多，CALL大单押注7760、7765、7775持续在加速涌入（跨4个快照权利金未减），买CALL的节奏明显快于PUT对冲收敛速度。结论：接下来偏涨，目标磁吸$7,755，突破概率存在但上方$7,765有SHORT CALL压盖，强行突破需要催化剂。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：NDX PUT$29580，V/OI=329x，单笔$3.59M，11:58刚成交——极度异常新开仓，押注NDX今日收盘下破现价，是全场最刺眼的定向裸押。另：SPX非0DTE CALL$7860，V/OI=297x，连续多个快照持续出现，有人在悄悄建远OTM多头头寸。\n\n🎰彩票：**SPX 0DTE CALL$7760，mid$1.58，V/OI 40.3x，65,944张全场最大量，量仍在堆积**——距收盘4小时，现价$7,741离行权价只差19点，若下午小幅拉升磁吸到$7,755以上即进钱，赔率合理，是今天最值得赌的彩票。",
       "meta": {
-        "spx": 7744.32,
-        "ndx": 29569.14,
-        "ts": "11:50 ET"
+        "spx": 7741.75,
+        "ndx": 29560.36,
+        "ts": "12:00 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_115033.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260811/claude_analysis_120040.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260806.json",
