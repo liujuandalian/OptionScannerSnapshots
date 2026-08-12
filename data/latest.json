@@ -149,21 +149,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260812/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_153040.json",
-    "github_path": "ClaudeAnalysis/20260812/claude_analysis_153040.json",
-    "upload_time": "2026-08-12 15:30",
+    "filename": "claude_analysis_153527.json",
+    "github_path": "ClaudeAnalysis/20260812/claude_analysis_153527.json",
+    "upload_time": "2026-08-12 15:35",
     "summary": {
-      "generated_at": "2026-08-12T15:30:40.372055-04:00",
-      "generated_at_display": "2026-08-12 15:30:40 ET",
+      "generated_at": "2026-08-12T15:35:27.419744-04:00",
+      "generated_at_display": "2026-08-12 15:35:27 ET",
       "category": "daily",
-      "text": "一、【方向 & 形态】\n\n**收盘前30分钟看多偏震荡**，今天更像区间钉住。SPX现价$7,751.86，上方压力$7,760（LONG CALL红BAR排斥）+$7,765/7770的SHORT CALL封顶；下方支撑$7,750（SHORT PUT护盘252K张，GEX#1）。区间就是$7,750–$7,760，Straddle收缩至$6.07，今天大概率就在这里收。NDX现价$29,754，方向同向偏多，GEX钉在$29,810/29,750。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量：量最大的是LONG 7760C（14.1万张）、LONG 7755C（11.9万张）、SHORT 7750P（12.7万张，即卖出护盘）——三笔合力全部看多。与结论矛盾的大单：SHORT 7750C（10.9万张）是ATM卖出压顶，说明市场不认为会突破$7,750上方太多，但这是做市商价差中的远档卖腿，不改变近档LONG主导的看涨净方向。权利金端PUT$7800的$2.4M大单是唯一看跌压力，但那是单笔ITM深值PUT，量仅3,104张，与CALL端14万张的量级完全不在一个档次——两者打架，以量为准，方向看多。购买速度：LONG CALL端7760/7755大量集中在15:24帧涌入，属于尾盘加速建仓而非放缓。**接下来倾向横盘略偏多，$7,750不破，有望贴近$7,755–7,760收盘。**\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨**异常**：15:24 LONG PUT $7800，权利金$2.40M，V/OI 6.1x——单笔$2.4M主动看跌押注，是今天唯一超门槛大单。方向看跌，但量少（3,104张），更像对冲而非方向性押注，不足以翻转整体。\n\n🎰**彩票**：**7760 CALL，mid $0.47，V/OI 79.3x，量14.1万张加速**。距收盘30分钟、现价$7,751贴$7,750支撑，SHORT PUT护盘在脚下，一旦$7,752–7,755站稳，7760C从$0.47直冲深度实值，赔率极佳。这是今天唯一值得博的彩票。",
+      "text": "一、【方向 & 形态】\n\n收盘前25分钟看**轻微偏空、震荡**。SPX现价$7,751，上方压力$7,755（0DTE红BAR排斥）、非0DTE SHORT CALL封顶$7,800；下方支撑$7,750（非0DTE SHORT PUT护盘5K张）、$7,745（0DTE红BAR）。GEX最密集钉在$7,750，钉死不动概率极高。NDX现价$29,754同向，GEX钉$29,750附近，与SPX共振震荡。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按量看：0DTE量前5里CALL侧近档LONG（7750/7755）、远档SHORT（7760/7765/7770）——标准看涨价差结构，净方向偏多；但PUT侧量前5全是LONG PUT（7745/7740/7755/7735），在现价正下方密集压注跌破。两侧对冲激烈，真实合力接近均衡（量P/C=1.00印证）。非0DTE口径PUT爆发$3.66M、量P/C=1.64，偏空方向更重。综合来看：**多空双方都在加速离场/对冲，而非单边押注**；大单购买速度放缓（Straddle收缩45%/69%、Theta加速燃烧）。方向结论：**收盘大概率横盘钉在$7,750，偏向小幅收低**，不具备大方向性突破条件。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：非0DTE SHORT CALL $7,800（5,798张，权利金$1.31M），单笔超$1.5M量级的机构卖顶动作，明确压制$7,800以上空间，持续有效至8月21日。矛盾方需说明：同档LONG CALL $7,800（3,863张）部分对冲，但SHORT量远超LONG，净压顶方向成立。\n\n🎰彩票：**PUT $7,740**，mid $0.32、V/OI 139.9x（全场最高），量94,575张新开仓加速涌入。距现价仅0.1%，若最后25分钟出现任何负面消息跌破$7,745，这张迅速x3+。",
       "meta": {
-        "spx": 7751.86,
+        "spx": 7751.05,
         "ndx": 29766.09,
-        "ts": "15:30 ET"
+        "ts": "15:35 ET"
       }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260812/claude_analysis_153040.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260812/claude_analysis_153527.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260812.json",
