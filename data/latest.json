@@ -71,7 +71,7 @@
   "stock_flow": {
     "filename": "spx_stock_flow_latest.json",
     "github_path": "SPXalerts/20260812/spx_stock_flow_latest.json",
-    "upload_time": "2026-08-12 10:03",
+    "upload_time": "2026-08-12 09:48",
     "summary": {},
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/SPXalerts/20260812/spx_stock_flow_latest.json"
   },
@@ -125,28 +125,28 @@
   "ndx_gamma": {
     "filename": "ndx_gamma_latest.json",
     "github_path": "NDXalerts/20260812/ndx_gamma_latest.json",
-    "upload_time": "2026-08-12 10:02",
+    "upload_time": "2026-08-12 10:03",
     "summary": {
-      "ts": "10:02",
-      "ts_full": "2026-08-12T10:02:00.022115-04:00",
+      "ts": "10:03",
+      "ts_full": "2026-08-12T10:03:12.895580-04:00",
       "symbol": "NDX",
-      "spot": 29797.18,
+      "spot": 29776.94,
       "day_high": 29881.5,
       "day_low": 29750.34,
       "day_open": 29875.18,
       "prev_close": null,
       "total_volume": 250589742,
-      "ovwap": 29832.56,
+      "ovwap": 29824.79,
       "ovwap_day_high": 29853.15,
       "ovwap_day_high_spot": 29849.65,
       "ovwap_day_low": 29657.36,
       "ovwap_day_low_spot": 29875.6,
-      "net_gex": 5208829.0,
-      "net_gex_b": 0.0052,
-      "zero_gamma": 29563.3,
+      "net_gex": 5028364.0,
+      "net_gex_b": 0.005,
+      "zero_gamma": 29536.5,
       "gamma_wall_call": 29810.0,
       "gamma_wall_put": 29720.0,
-      "dte_days": 0.2486
+      "dte_days": 0.2478
     },
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260812/ndx_gamma_latest.json"
   },
