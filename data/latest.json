@@ -1,5 +1,5 @@
 {
-  "_updated": "2026-08-12 15:56",
+  "_updated": "2026-08-12 15:57",
   "_note": "各类型最新快照索引，AI Agent 读取入口",
   "alerts_full": {
     "filename": "alerts_20260701_full.json",
@@ -151,21 +151,16 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260812/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_155536.json",
-    "github_path": "ClaudeAnalysis/20260812/claude_analysis_155536.json",
-    "upload_time": "2026-08-12 15:55",
+    "filename": "claude_analysis_155701.json",
+    "github_path": "ClaudeAnalysis/20260812/claude_analysis_155701.json",
+    "upload_time": "2026-08-12 15:57",
     "summary": {
-      "generated_at": "2026-08-12T15:55:36.450140-04:00",
-      "generated_at_display": "2026-08-12 15:55:36 ET",
-      "category": "daily",
-      "text": "一、【方向 & 形态】\n\n收盘前5分钟看**震荡偏多**，更像**高位钉住**。SPX现价$7,750，上方压力$7,755（SHORT CALL顶盖+绿BAR双重封顶），下方支撑$7,745（LONG PUT红BAR密集护盘）。区间就5个点，今天就这样收了。NDX $29,753同向钉住$29,750，一致。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量：0DTE最大单是LONG PUT$7750（152K张）看跌，但紧跟着是LONG CALL$7750（120K+119K张）抵消，两边ATM对冲成Straddle结构，不是单边押注。7755C是SHORT CALL（134K+132K）压顶卖出，7760C是LONG/SHORT各约150K、对冲轧平。非0DTE口径：LONG CALL$7805（8.3K张，V/OI 37x）和SHORT PUT$7875（护盘）是实质看涨信号；反面大单SHORT CALL$7800（8.6K）封顶但近档LONG $7805构成价差，净方向随近档走**偏多**。权利金侧CALL爆发$12.37M远压过PUT $3.81M，两者一致偏多。购买速度：15:44-15:46两帧集中爆量，已是收盘前最后冲刺，**没有加速**信号，流量在**收窄**。结论：**横盘收盘，明日小幅偏多**，今天不会再动。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：非0DTE LONG CALL$7550（$2.11M，V/OI 0.1x为存量，ITM深度买入），配合SHORT PUT$7875（$2.46M卖出护盘），合计$4.5M+同向看涨结构，属于机构跨日多头建仓，不是0DTE噪音。\n\n🎰彩票：**7805 CALL，mid$1.73、V/OI 37.5x两帧连续放量**——非0DTE，距现价+0.7%，若明日gap up直接吃到；今天最后5分钟已无机会，留作明开盘第一笔观察。",
-      "meta": {
-        "spx": 7750.05,
-        "ndx": 29766.09,
-        "ts": "15:55 ET"
-      }
+      "generated_at": "2026-08-12T15:57:01.061108-04:00",
+      "generated_at_display": "2026-08-12 15:57:01 ET",
+      "category": "deep",
+      "text": "# SPX/NDX 0DTE 交易台复盘 — 20260812\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化分析\n\n### 从\"尾盘爆量混战\"到\"方向凝聚型稳态\"\n\n**20260810（两日前）** 是过去三日中最嘈杂也最有信息量的一天：信号数110、SPX 0DTE名义权利金偏空（多$120M vs 空$251M），但量/张数修正后**22张CALL vs 17张PUT**，出现了教科书级别的**方向背离**——深度ITM PUT把权利金端的名义方向完全扭曲。真实含义：大机构在尾盘用ITM PUT做账面对冲或Delta中性调仓，并非真实看跌。结合CALL端超高成交量主导（CALL$7760 vol:165K，CALL$7755 vol:151K全是$0.03的OTM彩票），这一天的实质是：**多头持仓者在尾盘大规模购入廉价OTM CALL作为gamma scalp，同时用ITM PUT锁定已有浮盈**，是典型的\"拿住多头 + 双边对冲\"的Collar结构，不是单边方向押注。\n\n**20260811（昨日）** 数据量骤降至36个信号，整体权利金偏空，量/张数修正后均衡（9CALL vs 8PUT），这是**流量真空日**——市场参与者在10号的大规模调仓后进入观望，尾盘大单集中在15:46-15:48的两分钟内爆发，而且出现了一个值得注意的细节：PUT$7730 142,758张SHORT PUT（卖PUT）和LONG PUT$7735/7740/7745同时存在，这是**Put Spread结构**（买高行权价PUT / 卖低行权价PUT），不是方向性做空，是有限风险下的温和看跌押注，而非裸空。CALL端的SHORT CALL$7725大量也印证了**对称式区间锁定（Iron Condor变体）**的思路。市场整体在等待方向。\n\n**20260812（今日）** 是三日中结构最干净的一天：\n- 信号数仅28，但方向高度一致：**权利金 + 量/张数双重确认偏多**（多$1.56M vs 空$1.14M；9CALL vs 7PUT）\n- 彩票信号集中出现9笔（0DTE）+ 6笔（非0DTE），同时出现**Straddle收缩43%/32%**，意味着隐含波动率被主动压缩——有人在**主动卖出波动率（Straddle做空Vega）**\n- 方向换手：PUT主导→CALL主导，这不是自然漂移，是资金主动切换\n\n**最核心的结构性差异**：8月10日是\"对冲主导的双边混战\"，8月11日是\"方向真空+价差结构构建\"，今天是**\"方向性凝聚 + 波动率主动压缩\"的组合**——这三天构成了一个完整的机构行为序列：先对冲锁仓 → 再观望建立价差 → 今天开始定向押注 + 卖波动率。这个序列在经验上通常发生在**短期顶部/底部确认后的方向延续阶段**。\n\n### 非0DTE数据的额外确认\n\n今天非0DTE出现$12.37M CALL爆发 vs $3.81M PUT爆发，CALL/PUT权利金比约3.25:1。更重要的是**Straddle收缩32%**同时出现——这意味着有人在**较远期权上同时做多方向（买CALL）+ 卖波动率**。这不是对冲操作，是对未来1-2周方向的主动押注，且押注者认为波动率已经被高估。\n\n---\n\n## 2.【今日值得关注的异常】\n\n### ① 7750行权价的\"战场\"：多空同时重兵压境\n\n今日最高成交量聚集在**SPX 7750**一个点位上：\n- PUT$7750 vol:152,460（最大单笔成交）\n- CALL$7750 vol:118,540 + 119,971\n\n这是极其不寻常的：同一行权价同时出现最大量的PUT和CALL，而当前价格恰好在$7750.05——**现价就在ATM**。这意味着：\n1. 大量Straddle在7750被拆解（有人在7750同时买了PUT和CALL，或者分别对应不同方向的参与者形成了对赌）\n2. 7750是**市场参与者公认的价值中枢**，也是今天的核心Pin区\n\n结合Straddle收缩43%的信号，部分资金在卖出7750 Straddle收Theta，另一部分在赌尾盘突破。两股力量的博弈会在尾盘形成磁吸效应——**今日收盘大概率钉在7745-7755区间**。\n\n### ② CALL$7755/7760的异常SHORT CALL行为\n\n注意成交量前8大中：\n- SHORT CALL$7755 vol:134,792 + 132,477（两次均为SHORT）\n- SHORT CALL$7760 vol:149,977（SHORT）+ 149,014（LONG，价格相同$0.23）\n\n$7760有一笔SHORT CALL和一笔LONG CALL几乎同量，这是**Calendar Spread或者对冲盘**。但$7755的双SHORT CALL信号是明确的：有人在**$7755设了CALL顶部压制**，这一行权价是今日上方的**Gamma Resistance**。如果SPX收盘突破7755，这批SHORT CALL卖家面临亏损，会形成**Delta对冲买入现货的反向推力**（逼空效应）。\n\n### ③ OTM PUT端的\"保险性\"小单\n\nPUT$7745 vol:111,373（@$0.62）和PUT$7740 vol:98,116（@$0.23）、PUT$7735 vol:61,185（@$0.12）呈现出典型的**OTM PUT梯形买入结构**：大量持多头的机构在今日上涨过程中买入这些廉价PUT作为尾部对冲。这本身是看涨的附属行为——你不会在看跌时特意买OTM PUT对冲，因为那是你的方向；只有**持有多头仓位时才需要买PUT保险**。这是今日看多最强的间接信号之一。\n\n### ④ 非0DTE CALL爆发$12.37M的结构含义\n\n非0DTE CALL在单日$12.37M是近三日"
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260812/claude_analysis_155536.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260812/claude_analysis_155701.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260812.json",
