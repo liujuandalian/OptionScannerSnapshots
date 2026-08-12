@@ -1,0 +1,185 @@
+{
+  "label": "非0DTE · 10:15 ET",
+  "count": 1,
+  "bull_count": 1,
+  "bear_count": 0,
+  "call_premium": 0.408,
+  "put_premium": 0.0,
+  "total_premium": 0.408,
+  "net_premium": 0.408,
+  "pc_ratio": 0.0,
+  "cp_ratio": 0,
+  "pcv_ratio": 0.0,
+  "sp_premium": 0.0,
+  "lp_premium": 0.0,
+  "sc_premium": 0.0,
+  "lc_premium": 0.408,
+  "short_put_cnt": 0,
+  "long_put_cnt": 0,
+  "short_call_cnt": 0,
+  "long_call_cnt": 1,
+  "direction": "极度偏多 🟢🟢",
+  "true_dir": "实际偏多 🟢",
+  "top10": [
+    {
+      "ts": "10:15:18",
+      "exp_date": "2026-08-28",
+      "expiry": "2026-08-28",
+      "is_0dte": false,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 30400.0,
+      "volume": 18,
+      "bid": 222.1,
+      "ask": 230.7,
+      "mid": 226.39999999999998,
+      "iv": 18.66,
+      "delta": 0.31,
+      "open_int": 5,
+      "est_premium": 407520.0,
+      "vol_delta": 18,
+      "cum_volume": 18,
+      "cum_premium": 407520.0,
+      "intrinsic": 0.0,
+      "extrinsic": 226.4,
+      "ext_ratio": 1.0,
+      "ext_premium": 407520.0,
+      "moneyness": "OTM",
+      "is_directional": true,
+      "vol_oi": 3.6,
+      "ndx_price": 29786.14,
+      "spx_price": 29786.14,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": 2.0608914078829974,
+      "straddle_str": "$946.80  (C$502.30+P$444.50)",
+      "sd1_str": "±$1118.5  [28,667.6 ~ 30,904.7]",
+      "sd1_low": 28667.6,
+      "sd1_high": 30904.68,
+      "sd1": 1118.54,
+      "atm_iv": 17.94
+    }
+  ],
+  "vol_oi_alerts": [
+    {
+      "ts": "10:15:18",
+      "exp_date": "2026-08-28",
+      "expiry": "2026-08-28",
+      "is_0dte": false,
+      "direction": "BULL",
+      "opt_type": "CALL",
+      "strike": 30400.0,
+      "volume": 18,
+      "bid": 222.1,
+      "ask": 230.7,
+      "mid": 226.39999999999998,
+      "iv": 18.66,
+      "delta": 0.31,
+      "open_int": 5,
+      "est_premium": 407520.0,
+      "vol_delta": 18,
+      "cum_volume": 18,
+      "cum_premium": 407520.0,
+      "intrinsic": 0.0,
+      "extrinsic": 226.4,
+      "ext_ratio": 1.0,
+      "ext_premium": 407520.0,
+      "moneyness": "OTM",
+      "is_directional": true,
+      "vol_oi": 3.6,
+      "ndx_price": 29786.14,
+      "spx_price": 29786.14,
+      "position": "LONG",
+      "market_dir": "看涨 🟢",
+      "trade_label": "📈 LONG CALL → 看涨 🟢",
+      "dist_pct": 2.0608914078829974,
+      "straddle_str": "$946.80  (C$502.30+P$444.50)",
+      "sd1_str": "±$1118.5  [28,667.6 ~ 30,904.7]",
+      "sd1_low": 28667.6,
+      "sd1_high": 30904.68,
+      "sd1": 1118.54,
+      "atm_iv": 17.94
+    }
+  ],
+  "dup_volume_groups": {},
+  "top_put_strikes": [],
+  "top_call_strikes": [
+    [
+      30400.0,
+      407520.0
+    ]
+  ],
+  "generated": "2026-08-12T10:15:26.621708",
+  "daily": {
+    "daily_count": 16,
+    "dir_count": 12,
+    "dir_call_prem": 6.483,
+    "dir_put_prem": 0.335,
+    "dir_cp_ratio": 19.329,
+    "dir_lc_prem": 5.075,
+    "dir_sc_prem": 0.449,
+    "dir_lp_prem": 0.335,
+    "dir_sp_prem": 0.0,
+    "dir_true_bull": 5.075,
+    "dir_true_bear": 0.785,
+    "daily_ext_prem": 8.052,
+    "dir_call_walls": [
+      [
+        29900.0,
+        4614695.0
+      ],
+      [
+        29700.0,
+        1517780.0
+      ],
+      [
+        29775.0,
+        621270.0
+      ],
+      [
+        30400.0,
+        407520.0
+      ]
+    ],
+    "dir_put_walls": [
+      [
+        29820.0,
+        346800.0
+      ]
+    ],
+    "daily_call_prem": 10.009,
+    "daily_put_prem": 0.347,
+    "daily_sp_prem": 0.0,
+    "daily_lp_prem": 0.347,
+    "daily_sc_prem": 0.87,
+    "daily_lc_prem": 5.781,
+    "daily_true_bull": 5.781,
+    "daily_true_bear": 1.217,
+    "daily_true_dir": "实际偏多 🟢",
+    "daily_call_walls": [
+      [
+        29900.0,
+        4614695.0
+      ],
+      [
+        29700.0,
+        4365345.0
+      ],
+      [
+        29775.0,
+        621270.0
+      ],
+      [
+        30400.0,
+        407520.0
+      ]
+    ],
+    "daily_put_walls": [
+      [
+        29820.0,
+        346800.0
+      ]
+    ]
+  }
+}
