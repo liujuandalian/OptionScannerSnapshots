@@ -1,15 +1,15 @@
 {
-  "label": "非0DTE · 11:00 ET",
+  "label": "非0DTE · 11:15 ET",
   "count": 1,
-  "bull_count": 1,
-  "bear_count": 0,
-  "call_premium": 0.941,
-  "put_premium": 0.0,
-  "total_premium": 0.941,
-  "net_premium": 0.941,
-  "pc_ratio": 0.0,
-  "cp_ratio": 0,
-  "pcv_ratio": 0.0,
+  "bull_count": 0,
+  "bear_count": 1,
+  "call_premium": 0.0,
+  "put_premium": 0.312,
+  "total_premium": 0.312,
+  "net_premium": -0.312,
+  "pc_ratio": 0,
+  "cp_ratio": 0.0,
+  "pcv_ratio": 0,
   "sp_premium": 0.0,
   "lp_premium": 0.0,
   "sc_premium": 0.0,
@@ -18,72 +18,72 @@
   "long_put_cnt": 0,
   "short_call_cnt": 0,
   "long_call_cnt": 0,
-  "direction": "极度偏多 🟢🟢",
+  "direction": "纯空 🔴🔴（无CALL信号）",
   "true_dir": "实际偏空 🔴",
   "top10": [
     {
-      "ts": "10:56:52",
-      "exp_date": "2026-09-09",
-      "expiry": "2026-09-09",
+      "ts": "11:13:28",
+      "exp_date": "2026-08-14",
+      "expiry": "2026-08-14",
       "is_0dte": false,
-      "direction": "BULL",
-      "opt_type": "CALL",
-      "strike": 30350.0,
-      "volume": 27,
-      "bid": 357.9,
-      "ask": 394.8,
-      "mid": 376.35,
-      "iv": 18.98,
-      "delta": 0.362,
+      "direction": "BEAR",
+      "opt_type": "PUT",
+      "strike": 29760.0,
+      "volume": 50,
+      "bid": 153.4,
+      "ask": 158.6,
+      "mid": 156.0,
+      "iv": 17.94,
+      "delta": -0.475,
       "open_int": 0,
-      "est_premium": 940875.0,
-      "vol_delta": 25,
-      "cum_volume": 27,
-      "cum_premium": 1016145.0000000001,
+      "est_premium": 312000.0,
+      "vol_delta": 20,
+      "cum_volume": 50,
+      "cum_premium": 780000.0,
       "intrinsic": 0.0,
-      "extrinsic": 376.35,
+      "extrinsic": 156.0,
       "ext_ratio": 1.0,
-      "ext_premium": 940875.0,
-      "moneyness": "OTM",
+      "ext_premium": 312000.0,
+      "moneyness": "ATM",
       "is_directional": true,
       "vol_oi": 0.0,
-      "ndx_price": 29757.68,
-      "spx_price": 29757.68,
+      "ndx_price": 29777.34,
+      "spx_price": 29777.34,
       "position": "UNKNOWN",
       "market_dir": "—",
-      "trade_label": "❓ UNKNOWN CALL → —",
-      "dist_pct": 1.9904777522978934,
-      "straddle_str": "$1243.35  (C$662.00+P$581.35)",
-      "sd1_str": "±$1449.9  [28,307.8 ~ 31,207.6]",
-      "sd1_low": 28307.75,
-      "sd1_high": 31207.61,
-      "sd1": 1449.93,
-      "atm_iv": 17.59
+      "trade_label": "❓ UNKNOWN PUT → —",
+      "dist_pct": -0.05823219938382725,
+      "straddle_str": "$337.25  (C$174.40+P$162.85)",
+      "sd1_str": "±$394.7  [29,382.7 ~ 30,172.0]",
+      "sd1_low": 29382.67,
+      "sd1_high": 30172.01,
+      "sd1": 394.67,
+      "atm_iv": 17.91
     }
   ],
   "vol_oi_alerts": [],
   "dup_volume_groups": {},
-  "top_put_strikes": [],
-  "top_call_strikes": [
+  "top_put_strikes": [
     [
-      30350.0,
-      940875.0
+      29760.0,
+      312000.0
     ]
   ],
-  "generated": "2026-08-12T11:00:34.002161",
+  "top_call_strikes": [],
+  "generated": "2026-08-12T11:15:35.408857",
   "daily": {
-    "daily_count": 22,
-    "dir_count": 18,
+    "daily_count": 23,
+    "dir_count": 19,
     "dir_call_prem": 9.04,
-    "dir_put_prem": 2.057,
-    "dir_cp_ratio": 4.394,
+    "dir_put_prem": 2.369,
+    "dir_cp_ratio": 3.815,
     "dir_lc_prem": 5.075,
     "dir_sc_prem": 2.066,
     "dir_lp_prem": 1.619,
     "dir_sp_prem": 0.438,
     "dir_true_bull": 5.513,
     "dir_true_bear": 3.685,
-    "daily_ext_prem": 12.331,
+    "daily_ext_prem": 12.643,
     "dir_call_walls": [
       [
         29900.0,
@@ -112,16 +112,16 @@
         1058800.0
       ],
       [
-        29820.0,
-        707300.0
+        29760.0,
+        798000.0
       ],
       [
-        29760.0,
-        486000.0
+        29820.0,
+        707300.0
       ]
     ],
     "daily_call_prem": 12.566,
-    "daily_put_prem": 2.252,
+    "daily_put_prem": 2.564,
     "daily_sp_prem": 0.574,
     "daily_lp_prem": 1.679,
     "daily_sc_prem": 2.486,
@@ -157,12 +157,12 @@
         1058800.0
       ],
       [
-        29820.0,
-        707300.0
+        29760.0,
+        798000.0
       ],
       [
-        29760.0,
-        486000.0
+        29820.0,
+        707300.0
       ]
     ]
   }
