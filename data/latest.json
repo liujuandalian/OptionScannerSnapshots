@@ -149,16 +149,21 @@
     "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/NDXalerts/20260812/ndx_gamma_latest.json"
   },
   "claude_analysis": {
-    "filename": "claude_analysis_153651.json",
-    "github_path": "ClaudeAnalysis/20260812/claude_analysis_153651.json",
-    "upload_time": "2026-08-12 15:36",
+    "filename": "claude_analysis_154039.json",
+    "github_path": "ClaudeAnalysis/20260812/claude_analysis_154039.json",
+    "upload_time": "2026-08-12 15:40",
     "summary": {
-      "generated_at": "2026-08-12T15:36:51.974582-04:00",
-      "generated_at_display": "2026-08-12 15:36:51 ET",
-      "category": "deep",
-      "text": "# SPX/NDX 0DTE 复盘分析 | 20260812\n\n---\n\n## 1.【今日 vs 历史关键差异】结构性变化，不是数字罗列\n\n### 核心结构转变：从\"对冲主导的混战\"到\"收敛主导的确认\"\n\n**8/10（周日前夕/周一开盘）：巨量对冲战场**\n\n8/10的数据是三天中信息密度最高的一天。SPX 0DTE信号数110个，权利金规模达到$371M（多$120M + 空$251M），表面上是\"极度偏空\"。但修正后的关键发现是：量/张数方向**明确偏多**（CALL 22张 vs PUT 17张），系统明确标注\"方向背离——深度ITM贵PUT撑高权利金的假象\"。\n\n这个结构的本质是：**机构在大规模做Collar/Protective Put对冲，同时增加CALL端的Beta敞口。** 深度ITM的PUT（比如PUT$7765 $12.10mid但权利金高达$48.96M，隐含极高OI背景下的ITM结构）是存量多头仓位的保险，不是新的方向性看空押注。当天NDX 0DTE同步出现37.47M CALL vs 33.94M PUT的权利金均衡，进一步印证：整个市场是在做\"有对冲的多头结构\"，不是裸空。\n\n**8/11（周二）：信号数骤降，尾盘换手测试**\n\n信号数从110降至36，规模萎缩至个位数百万。但结构上出现了一个值得关注的现象：尾盘15:46-15:48两分钟内，同一批行权价（7730/7735/7725）出现**LONG PUT + SHORT CALL + SHORT PUT + LONG CALL的对冲矩阵**。这不是方向性押注，这是做市商或机构在**尾盘进行delta中性的Straddle/Strangle轧平**，同时在7775附近有大额LONG PUT（$484K/240K）作为保护。\n\n纠偏方向是\"均衡\"——这一天市场其实是在**消化8/10的仓位，进行隔夜风险管理**，没有新的方向性信息注入。\n\n**8/12（今天）：结构性收缩 + 方向确认的双重信号**\n\n今天是三天中信号数最少的一天（14个），但结构最干净：\n- 权利金方向**明确偏多**（$1.33M多 vs $286K空）\n- 量/张数均衡（4:4），但CALL权利金质量明显高于PUT\n- Straddle收缩45%（异常触发），非0DTE Straddle收缩69%\n\n**收缩本身就是信息**：Straddle大幅收缩意味着隐波萎缩，市场在\"去保险\"。这与8/10的\"加保险\"形成鲜明对比。隐波收缩的同时方向从PUT主导换成CALL主导，这个组合释放的信号是：**机构认为下行风险已经定价完毕，开始释放CALL端敞口。**\n\n### 今天最关键的结构性异常：深度ITM CALL + 深度ITM PUT同时出现\n\n今天最大权利金单：\n- `CALL$7565 mid:$186.60 vol:52 prem:$485K` —— 距当前价7751低**186点**，深度ITM CALL\n- `PUT$7855 mid:$103.45 vol:46 prem:$310K` —— 距当前价7751高**104点**，深度ITM PUT\n\n这两笔是**同一时间戳 15:33:32**，一个极深ITM CALL（看涨）+ 一个OTM/ATM附近的SHORT PUT（也是看涨）。**两笔合计$795K，方向一致：看涨。** 但更重要的是这两笔的V/OI极低（0.3x和1.4x），说明这是**存量仓位的滚动/平仓操作**，不是新开的方向性赌注。\n\n这与8/10的深度ITM PUT（$48.96M）形成结构对称：8/10有人在买深ITM PUT保险，8/12有人在用深ITM CALL滚仓——**方向已经从防御性下行保护转向进攻性上行敞口。**\n\n---\n\n## 2.【今日值得关注的异常】\n\n### 异常一：CALL$7760的HIGH-VOLUME SHORT CALL（成交量第一，144,302张）\n\n这是今天按量排名第一的单子，方向是**SHORT CALL**。行权价7760，当前价7751，距价格+9点，几乎是ATM SHORT CALL。\n\n解读需要谨慎：这笔SHORT CALL可能是：\n1. **Covered Call / Collar的一部分**：持有多头现货的机构在ATM卖CALL锁定收益\n2. **Spread的上腿**：配合更低行权价的LONG CALL构成Bull Call Spread（但我们没看到明显的配对LONG CALL在7760以下的大量SHORT）\n3. **裸空CALL的风险限位**：认为7760是今天收盘前的上限\n\n**关键判断**：ATM SHORT CALL + 下方LONG PUT大量共存（PUT$7755 64,601张，PUT$7745 99,598张），这个结构看起来像**Collar + Range Bound**押注。市场在用SHORT CALL锁定上方，用LONG PUT保护下方，隐含的观点是：\"今天收在7745-7760区间\"。\n\n### 异常二：非0DTE PUT爆发$3.66M（触发警报）\n\n这是系统触发的原始异常之一，非0DTE大额PUT。结合8/10的保护性PUT结构，这笔非0DTE PUT的性质**很可能是跨周/跨月的保险续期**——8/10的0DTE对冲到期后，机构在8/12续买更长期限的PUT保护，而不是新的看空方向性押注。\n\n**区别在于：如果是方向性做空，通常会选择OTM PUT + 高杠杆；如果是续期保险，通常是ATM偏上的PUT + 较大名义规模。** 具体需要看行权价，但结合今天0DTE方向换手为CALL主导的背景，倾向判断为续期对冲。\n\n### 异常三：NDX 0DTE仅1个信号且是SHORT PUT看涨\n\nNDX在10:52仅触发1个信号：`PUT$29800 SHORT PUT $323K`。这笔SHORT PUT行权价29800，当前价29766，是轻度ITM的卖PUT——**卖方认为NDX不会跌破29800**，且"
+      "generated_at": "2026-08-12T15:40:39.701267-04:00",
+      "generated_at_display": "2026-08-12 15:40:39 ET",
+      "category": "daily",
+      "text": "一、【方向 & 形态】\n\n收盘前20分钟看**震荡偏多**，倾向钉住7750附近收盘。SPX现价7751，上方压力7755（非0DTE SHORT CALL压顶+VS3D绿BAR双重封顶），下方支撑7745（0DTE SHORT PUT护盘+VS3D绿BAR磁吸）。磁吸信号上下各一个，把现价夹在7745-7755这10点箱体里。NDX现价29747，GEX同样CALL主导，方向一致。\n\n二、【大单在买什么 → 接下来涨还是跌】\n\n按成交量：0DTE侧量最大的是7760C/7755C/7750C三张LONG CALL，合计38万张，方向清一色看涨；7745P是SHORT PUT（卖出保护），同样看多；唯一矛盾项是7765C SHORT CALL（8万张），但这是近档LONG（7755/7760）+远档SHORT（7765/7770）的经典牛市价差结构，净方向仍随近档走，看涨。PUT侧7755P LONG ITM是对冲/尾盘保险，7735P量小，不足以翻转方向。按权利金：LONG CALL权利金同样占优，两侧一致。非0DTE侧CALL爆发信号触发，LONG 7750C/7760C/7775C堆量明显，方向换手信号显示14:00空头主导已被15:00多头接管——空头回补中。大单**仍在持续涌入**但节奏在尾盘收敛，Straddle已收缩36-46%，波动窗口关闭。结论：接下来**横盘偏涨，7750-7755钉盘收官，向上突破7755概率低**。\n\n三、【异常大单 / 值得买的彩票单】\n\n🚨异常：PUT$7825 exp:09-04，LONG PUT，权利金$418K，距现价+0.9%，属较远期看跌对冲，单笔规模突出，疑似机构尾盘锁定下周下行风险，不影响今日方向但值得盯。\n\n🎰彩票：**7760 CALL，mid$0.38，V/OI 81.8x，LONG，14.5万张加速堆量**——距现价仅+0.1%，收盘前若SPX小幅拉升至7760即全数兑现，赔率极高，是今日最值得搏的彩票单。",
+      "meta": {
+        "spx": 7750.97,
+        "ndx": 29766.09,
+        "ts": "15:40 ET"
+      }
     },
-    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260812/claude_analysis_153651.json"
+    "raw_url": "https://raw.githubusercontent.com/liujuandalian/OptionScannerSnapshots/main/ClaudeAnalysis/20260812/claude_analysis_154039.json"
   },
   "oi_report": {
     "filename": "oi_report_pre_mkt_20260812.json",
