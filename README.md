@@ -20,6 +20,7 @@ https://liujuandalian.github.io/OptionScannerSnapshots/
 
 | 文件 | 类型 | 上传时间 | 链接 | 摘要 |
 |---|---|---|---|---|
+| `oi_core72_20260812.json` | 盘后OI核心快照 | 2026-08-12 16:30 | [下载](oi_snapshots/20260812/oi_core72_20260812.json) | {"tickers": 73} |
 | `spx_eod_20260812.json` | SPX盘后EOD报告 | 2026-08-12 16:15 | [下载](SPXalerts/20260812/spx_eod_20260812.json) | {"date": "2026-08-12", "signals": 4146, "spx_close": 7748.5, "0dte_dir": "BULL", |
 | `claude_analysis_155701.json` | Claude深度分析 | 2026-08-12 15:57 | [下载](ClaudeAnalysis/20260812/claude_analysis_155701.json) | {"generated_at": "2026-08-12T15:57:01.061108-04:00", "generated_at_display": "20 |
 | `claude_analysis_155536.json` | Claude深度分析 | 2026-08-12 15:55 | [下载](ClaudeAnalysis/20260812/claude_analysis_155536.json) | {"generated_at": "2026-08-12T15:55:36.450140-04:00", "generated_at_display": "20 |
